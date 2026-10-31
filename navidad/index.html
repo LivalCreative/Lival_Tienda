@@ -14,20 +14,126 @@
     <a href="../duende/" class="duende">🎅 Duende</a>
     <a href="../navidad/" aria-current="page">🎄 Navidad</a>
     <a href="../productos/">✨ Productos</a>
-    <a href="../#comprar">Cómo comprar</a>
+    <a href="../pedido/">🛒 Pedido</a>
   </nav>
 </div></header>
 <main class="wrap">
   <section>
-    <div class="soon-box">
-      <div class="big">🎄</div>
-      <h2>Navidad</h2>
-      <p>Estamos preparando adornos, regalos y detalles navideños. Muy pronto los verás aquí.</p>
-      <a class="btn wa" href="https://wa.me/524422791488?text=%C2%A1Hola%21%20Quiero%20informaci%C3%B3n%20de%20la%20secci%C3%B3n%20Navidad%20de%20Lival%20Creative%20Studio" target="_blank" rel="noopener">💬 Pregúntanos por WhatsApp</a>
-      <p style="margin-top:18px"><a href="../duende/">Mientras, conoce las Travesuras del Duende →</a></p>
-    </div>
+    <h2>🎄 Navidad</h2>
+    <p class="sub">Adornos y detalles navideños impresos en 3D.</p>
+    <article class="prod">
+      <div class="gal">
+        <img src="../img/navidad/foco-noche.jpg" alt="Focos encendidos de noche" draggable="false">
+        <img src="../img/navidad/foco-colores.jpg" alt="Los 4 colores" draggable="false">
+        <img src="../img/navidad/foco-arbol.jpg" alt="Foco colgado en el árbol" draggable="false">
+        <img src="../img/navidad/foco-tamano.jpg" alt="Tamaño junto a un plumón" draggable="false">
+      </div>
+      <div class="dots"><i class="on"></i><i></i><i></i><i></i></div>
+      <div class="info">
+        <span class="badge">✨ Nuevo · Se ilumina</span>
+        <h3>Foco Navideño Gigante</h3>
+        <p class="lead">El foquito clásico de las series navideñas… ¡en tamaño gigante y con luz! Ilumina tu casa con un brillo suave y acogedor.</p>
+        <ul>
+          <li><b>14 cm de alto</b>: se nota en cualquier rincón.</li>
+          <li><b>Se ilumina</b>: incluye velita LED con botón de encendido.</li>
+          <li>Para <b>repisa, mesa o centro de mesa</b>… o <b>cuélgalo en el árbol</b> con su gancho.</li>
+          <li>Colores: <span class="sw r"></span> rojo <span class="sw g"></span> verde <span class="sw b"></span> azul <span class="sw w"></span> blanco</li>
+        </ul>
+        <div class="var" id="vFOCO"></div>
+        <div class="sel" id="selFOCO"></div>
+      </div>
+    </article>
   </section>
 </main>
+<div class="nbar" id="nbar"><div class="t" id="nbarT"></div><a href="../pedido/">Ver mi pedido →</a></div>
+
+<style>
+.prod { background:#fff; border-radius:24px; overflow:hidden; box-shadow:0 12px 32px rgba(75,63,114,.12); max-width:560px; }
+.gal { display:flex; overflow-x:auto; scroll-snap-type:x mandatory; scrollbar-width:none; }
+.gal::-webkit-scrollbar { display:none; }
+.gal img { flex:none; width:100%; aspect-ratio:4/3; object-fit:cover; scroll-snap-align:center; pointer-events:none; -webkit-touch-callout:none; }
+.dots { display:flex; gap:6px; justify-content:center; margin-top:-22px; position:relative; }
+.dots i { width:7px; height:7px; border-radius:50%; background:rgba(255,255,255,.6); }
+.dots i.on { background:#fff; width:18px; border-radius:4px; }
+.info { padding:18px 20px 22px; }
+.badge { display:inline-block; background:#fdeaea; color:var(--red); font-weight:800; font-size:.8rem; padding:4px 10px; border-radius:999px; }
+.prod h3 { font-size:1.6rem; color:var(--lav-d); margin:8px 0 6px; }
+.lead { margin:0 0 10px; color:var(--ink); }
+.prod ul { margin:0 0 14px; padding-left:1.1rem; color:var(--ink); }
+.prod li { margin-bottom:4px; }
+.sw { display:inline-block; width:12px; height:12px; border-radius:50%; vertical-align:-1px; margin-left:4px; }
+.sw.r{background:#e53935}.sw.g{background:#2ecc40}.sw.b{background:#1e6fd9}.sw.w{background:#f4efe6;border:1px solid #d8d2c4}
+.opts { display:flex; gap:8px; flex-wrap:wrap; margin-bottom:14px; }
+.opt { border:2px solid var(--line); background:#fff; border-radius:999px; padding:8px 14px; font:inherit; font-weight:800; color:var(--lav-d); }
+.opt.on { border-color:var(--lav-d); background:var(--lav-l); }
+.buy { display:flex; align-items:center; justify-content:space-between; gap:12px; }
+.price { font-family:var(--display); font-size:2rem; color:var(--red); font-weight:700; }
+.btn.add { background:var(--red); color:#fff; box-shadow:0 6px 16px rgba(196,38,46,.35); }
+
+.var { display:grid; gap:8px; margin-bottom:12px; }
+.vrow { display:flex; align-items:center; justify-content:space-between; gap:10px; padding:8px 10px; border:1px solid var(--line); border-radius:14px; }
+.vrow.set { border:2px solid var(--gold); background:#fff9ec; flex-wrap:wrap; }
+.vrow.set .nm { flex:1 1 100%; }
+.vrow .qty { flex:none; }
+.vrow .nm { font-weight:800; color:var(--lav-d); display:flex; align-items:center; gap:8px; }
+.vrow .nm small { display:block; font-weight:600; color:var(--muted); font-size:.8rem; }
+.vrow .pr { font-weight:800; color:var(--ink); margin-left:auto; margin-right:6px; }
+.vrow .sw { width:18px; height:18px; margin:0; flex:none; }
+.sws { display:flex; gap:3px; }
+.qty { display:inline-flex; align-items:center; border:1px solid var(--line); border-radius:999px; overflow:hidden; }
+.qty button { width:34px; height:34px; border:0; background:var(--lav-l); color:var(--lav-d); font-size:1.15rem; font-weight:800; cursor:pointer; }
+.qty button.mas { background:var(--lav-d); color:#fff; }
+.qty span { min-width:28px; text-align:center; font-weight:800; }
+.sel { background:var(--lav-l); border-radius:14px; padding:12px 14px; font-size:.92rem; }
+.sel b.tot { font-family:var(--display); font-size:1.4rem; color:var(--red); }
+</style>
 <footer><img src="../img/logo.png" alt="">Lival Creative Studio · Querétaro · WhatsApp 442 279 1488</footer>
+
+<script src="../assets/carrito.js"></script>
+<script>
+const money = n => "$" + n.toLocaleString("es-MX");
+const E = LIVAL.EXTRA, COL = LIVAL.COLORES_FOCO;
+let cart = LIVAL.leer();
+function fila(id, nm, sub, pr, sw, set) {
+  return `<div class="vrow${set ? " set" : ""}"><div class="nm">${sw}<div>${nm}${sub ? `<small>${sub}</small>` : ""}</div></div><span class="pr">${money(pr)}</span>
+    <div class="qty"><button aria-label="Quitar" data-v="${id}" data-d="-1">−</button><span id="q-${id}">0</span><button class="mas" aria-label="Agregar" data-v="${id}" data-d="1">+</button></div></div>`;
+}
+const ahorro = E["FOCO-rojo"].price * 4 - E["FOCO-set4"].price;
+document.getElementById("vFOCO").innerHTML =
+  COL.map(c => fila("FOCO-" + c.id, `Foco ${c.nombre.toLowerCase()}`, "", E["FOCO-" + c.id].price, `<span class="sw" style="background:${c.color};border:1px solid rgba(0,0,0,.12)"></span>`)).join("") +
+  fila("FOCO-set4", "Set de 4 colores", `1 de cada color en automático · ahorras ${money(ahorro)}`, E["FOCO-set4"].price, `<span class="sws">${COL.map(c => `<span class="sw" style="width:10px;height:10px;background:${c.color};border:1px solid rgba(0,0,0,.12)"></span>`).join("")}</span>`, true);
+document.getElementById("vFOCO").addEventListener("click", e => {
+  const b = e.target.closest("button[data-v]"); if (!b) return;
+  cart = LIVAL.leer();
+  cart[b.dataset.v] = Math.max(0, (cart[b.dataset.v] || 0) + (+b.dataset.d));
+  LIVAL.guardar(cart); pintar();
+  const bar = document.getElementById("nbar"); bar.classList.remove("bump"); void bar.offsetWidth; bar.classList.add("bump");
+});
+function pintar() {
+  let total = 0; const lineas = [];
+  ["FOCO-rojo", "FOCO-verde", "FOCO-azul", "FOCO-blanco", "FOCO-set4"].forEach(k => {
+    const n = cart[k] || 0; document.getElementById("q-" + k).textContent = n;
+    if (n) { total += n * E[k].price; lineas.push(`${n} × ${k === "FOCO-set4" ? "Set de 4 colores" : E[k].name.replace("Foco navideño", "Foco")}`); }
+  });
+  const rc = LIVAL.resumenColores(cart);
+  document.getElementById("selFOCO").innerHTML = lineas.length
+    ? `<div><b>Tu selección</b></div>${lineas.map(l => `<div>• ${l}</div>`).join("")}<div style="margin-top:6px;color:var(--muted)">${rc.replace("Focos por color: ", "En total: ")}</div><div style="margin-top:6px">Subtotal: <b class="tot">${money(total)}</b></div>`
+    : `<span style="color:var(--muted)">Elige cuántos focos quieres de cada color, o el set de 4.</span>`;
+  // barra con todo el carrito (incluye lo del duende)
+  let all = 0, cnt = 0;
+  Object.entries(cart).forEach(([k, n]) => { const p = E[k]; if (p) { all += p.price * n; cnt += n; } else if (n) { cnt += n; } });
+  const otros = Object.keys(cart).some(k => !E[k] && cart[k] > 0);
+  document.getElementById("nbarT").innerHTML = cnt ? `${otros ? "Tu pedido" : money(all)}<small>${cnt} producto${cnt === 1 ? "" : "s"}${otros ? " (incluye travesuras)" : ""}</small>` : `Tu pedido<small>vacío</small>`;
+}
+pintar();
+window.addEventListener("pageshow", () => { cart = LIVAL.leer(); pintar(); });
+</script>
+<style>
+.nbar { position:fixed; left:0; right:0; bottom:0; z-index:20; display:flex; justify-content:space-between; align-items:center; gap:12px; padding:10px 16px; background:var(--lav-d); color:#fff; border-top:3px solid var(--gold); box-shadow:0 -8px 24px rgba(0,0,0,.18); }
+.nbar .t { font-weight:800; } .nbar .t small { display:block; font-weight:600; opacity:.85; }
+.nbar a { background:var(--red); color:#fff; text-decoration:none; font-weight:800; padding:10px 16px; border-radius:999px; }
+.nbar.bump { animation: bump .45s; } @keyframes bump { 30% { transform: translateY(-6px); } }
+body { padding-bottom: 80px; }
+</style>
 </body>
 </html>
