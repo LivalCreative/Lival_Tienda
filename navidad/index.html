@@ -21,7 +21,8 @@
   <section>
     <h2>🎄 Navidad</h2>
     <p class="sub">Adornos y detalles navideños impresos en 3D.</p>
-    <article class="prod">
+    <div class="prods">
+    <article class="prod" id="foco">
       <div class="gal">
         <img src="../img/navidad/foco-noche.jpg" alt="Focos encendidos de noche" draggable="false">
         <img src="../img/navidad/foco-colores.jpg" alt="Los 4 colores" draggable="false">
@@ -33,6 +34,8 @@
         <span class="badge">✨ Nuevo · Se ilumina</span>
         <h3>Foco Navideño Gigante</h3>
         <p class="lead">El foquito clásico de las series navideñas… ¡en tamaño gigante y con luz! Ilumina tu casa con un brillo suave y acogedor.</p>
+        <div class="mini"><span class="desde">Desde <b>$79</b></span><button type="button" class="btn ver" data-abrir="foco">Ver opciones</button></div>
+        <div class="det">
         <ul>
           <li><b>14 cm de alto</b>: se nota en cualquier rincón.</li>
           <li><b>Se ilumina</b>: incluye velita LED con botón de encendido.</li>
@@ -41,9 +44,11 @@
         </ul>
         <div class="var" id="vFOCO"></div>
         <div class="sel" id="selFOCO"></div>
+        </div>
+        <button type="button" class="cerrar" data-cerrar aria-label="Cerrar">✕</button>
       </div>
     </article>
-    <article class="prod" id="chimenea" style="margin-top:22px">
+    <article class="prod" id="chimenea">
       <div class="gal" id="galCh">
         <img src="../img/navidad/chimenea-6.jpg" alt="Chimenea con 6 botas personalizadas" draggable="false">
         <img src="../img/navidad/chimenea-5.jpg" alt="Chimenea con 5 botas" draggable="false">
@@ -54,6 +59,8 @@
         <span class="badge">🎁 Personalizada · Ideal para regalar</span>
         <h3>Chimenea Navideña con Botas Personalizadas</h3>
         <p class="lead">Una chimenea con una botita para cada integrante de la familia, con su nombre. El adorno que todos van a querer encontrar cada Navidad.</p>
+        <div class="mini"><span class="desde">Desde <b>$349</b></span><button type="button" class="btn ver" data-abrir="chimenea">Ver opciones</button></div>
+        <div class="det">
         <ul>
           <li><b>El letrero va con tu texto</b>: el apellido de tu familia o un mensaje navideño.</li>
           <li><b>Cada bota lleva un nombre</b>. Elige de 3 a 6 botas.</li>
@@ -71,8 +78,56 @@
         <div class="buy"><span class="price" id="chPrecio">$369</span><button class="btn add" id="chAdd">Agregar al pedido</button></div>
         <p class="err" id="chErr"></p>
         <div class="sel" id="chLista" hidden></div>
+        </div>
+        <button type="button" class="cerrar" data-cerrar aria-label="Cerrar">✕</button>
       </div>
     </article>
+    <article class="prod" id="casita">
+      <div class="gal">
+        <img src="../img/navidad/casa-1.jpg" alt="Casita de jengibre con utensilios" draggable="false">
+        <img src="../img/navidad/casa-frente.jpg" alt="Frente de la casita" draggable="false">
+        <img src="../img/navidad/casa-interior.jpg" alt="Interior de la casita" draggable="false">
+      </div>
+      <div class="dots"><i class="on"></i><i></i><i></i></div>
+      <div class="info">
+        <span class="badge">🍪 Para la cocina · Ideal para regalar</span>
+        <h3>Casita de Jengibre para Utensilios</h3>
+        <p class="lead">Una casita de galleta de jengibre con techo nevado que guarda tus utensilios de cocina y llena de Navidad tu barra o tu mesa.</p>
+        <div class="mini"><span class="desde">Desde <b>$349</b></span><button type="button" class="btn ver" data-abrir="casita">Ver opciones</button></div>
+        <div class="det">
+        <ul>
+          <li>Techo con <b>glaseado blanco</b>, <b>puertas rojas</b>, ventanitas y un <b>dulce de menta</b> al frente.</li>
+          <li>Grande y firme: cabe una <b>espátula, cucharones, rodillo</b> y más.</li>
+          <li>Elige el interior: <b>abierto</b>, o <b>con divisiones</b> para tener cada utensilio en su lugar.</li>
+          <li><b>Los utensilios de la foto no están incluidos.</b></li>
+        </ul>
+        <div class="var" id="vCASA"></div>
+        <div class="sel" id="selCASA"></div>
+        </div>
+        <button type="button" class="cerrar" data-cerrar aria-label="Cerrar">✕</button>
+      </div>
+    </article>
+    <article class="prod" id="corona">
+      <div class="gal"><img src="../img/navidad/corona-foto.jpg" alt="Adorno de corona con foto familiar en el árbol" draggable="false"></div>
+      <div class="info">
+        <span class="badge">📸 Con tu foto · Recuerdo para siempre</span>
+        <h3>Adorno Corona con tu Foto</h3>
+        <p class="lead">Una coronita navideña con brillo que enmarca tu foto favorita para colgar en el árbol. El regalo perfecto para abuelos, padrinos y maestras.</p>
+        <div class="mini"><span class="desde">Desde <b>$59</b></span><button type="button" class="btn ver" data-abrir="corona">Ver opciones</button></div>
+        <div class="det">
+        <ul>
+          <li><b>Va con tu foto</b>: después de hacer tu pedido, mándanosla por WhatsApp.</li>
+          <li>Acabado <b>verde brillante</b> con moño, como una corona de pino.</li>
+          <li>Incluye <b>listón rojo</b> para colgarla.</li>
+          <li>Foto de ejemplo: la tuya va en su lugar.</li>
+        </ul>
+        <div class="var" id="vCOR"></div>
+        <div class="sel" id="selCOR"></div>
+        </div>
+        <button type="button" class="cerrar" data-cerrar aria-label="Cerrar">✕</button>
+      </div>
+    </article>
+    </div>
   </section>
 </main>
 <div class="nbar" id="nbar"><div class="t" id="nbarT"></div><a href="../pedido/">Ver mi pedido →</a></div>
@@ -98,6 +153,7 @@
 .opt.on { border-color:var(--lav-d); background:var(--lav-l); }
 .buy { display:flex; align-items:center; justify-content:space-between; gap:12px; }
 .price { font-family:var(--display); font-size:2rem; color:var(--red); font-weight:700; }
+#casita .gal img { object-position:center 70%; }
 .btn.add { background:var(--red); color:#fff; box-shadow:0 6px 16px rgba(196,38,46,.35); }
 
 .var { display:grid; gap:8px; margin-bottom:12px; }
@@ -127,6 +183,38 @@
 .ch-item { display:flex; justify-content:space-between; gap:10px; align-items:flex-start; padding:8px 0; border-top:1px dashed #d9d0e6; }
 .ch-item:first-of-type { border-top:0; }
 .ch-item button { border:0; background:none; color:var(--red); font-weight:800; cursor:pointer; font:inherit; }
+
+/* Rejilla: 3 por fila en computadora, 2 en celular. Al tocar "Ver opciones" el producto se abre completo. */
+.wrap { max-width: 1100px; }
+.prods { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:12px; }
+@media (min-width:900px) { .prods { grid-template-columns:repeat(3,minmax(0,1fr)); gap:18px; } }
+.prods .prod { max-width:none; display:flex; flex-direction:column; border-radius:18px; }
+.prods .prod .gal img { aspect-ratio:1/1; }
+.prods .prod .gal { flex:none; }
+.prods .prod .dots { display:none; }
+.prods .prod .info { padding:12px 12px 14px; display:flex; flex-direction:column; flex:1; }
+.prods .prod .badge { font-size:.68rem; align-self:flex-start; }
+.prods .prod h3 { font-size:1.05rem; line-height:1.2; margin:8px 0 4px; }
+.prods .prod .lead { font-size:.85rem; color:var(--muted); display:-webkit-box; -webkit-line-clamp:3; -webkit-box-orient:vertical; overflow:hidden; }
+.mini { margin-top:auto; padding-top:10px; display:flex; flex-direction:column; gap:8px; }
+.desde { font-size:.85rem; color:var(--muted); } .desde b { font-family:var(--display); font-size:1.35rem; color:var(--red); }
+.btn.ver { background:var(--lav-d); color:#fff; justify-content:center; padding:10px 14px; font-size:.92rem; width:100%; }
+@media (min-width:900px) { .mini { flex-direction:row; align-items:center; justify-content:space-between; } .btn.ver { width:auto; } }
+.prod .det, .prod .cerrar { display:none; }
+/* Producto abierto */
+.prod.open { position:fixed; inset:0; z-index:50; overflow-y:auto; border-radius:0; max-width:none; background:#fff; }
+.prod.open .gal img { aspect-ratio:4/3; max-height:60vh; }
+.prod.open .dots { display:flex; }
+.prod.open .info { max-width:640px; margin:0 auto; width:100%; padding:18px 20px 110px; }
+.prod.open .lead { -webkit-line-clamp:unset; color:var(--ink); font-size:1rem; }
+.prod.open h3 { font-size:1.6rem; }
+.prod.open .badge { font-size:.8rem; }
+.prod.open .mini { display:none; }
+.prod.open .det { display:block; }
+.prod.open .cerrar { display:grid; place-items:center; position:fixed; top:12px; right:12px; z-index:60; width:42px; height:42px; border-radius:50%; border:0; background:rgba(255,255,255,.92); box-shadow:0 4px 14px rgba(0,0,0,.2); font-size:1.1rem; font-weight:800; cursor:pointer; color:var(--lav-d); }
+body.abierto { overflow:hidden; }
+body.abierto .nbar { z-index:70; }
+@media (max-width:420px) { .prods .prod .badge { display:none; } }
 </style>
 <footer><img src="../img/logo.png" alt="">Lival Creative Studio · Querétaro · WhatsApp 442 279 1488</footer>
 
@@ -218,6 +306,79 @@ body { padding-bottom: 80px; }
   });
   opciones(); campos(); lista();
   window.addEventListener("pageshow", lista);
+})();
+</script>
+
+<script>
+(function () {
+  const E = LIVAL.EXTRA, money = n => "$" + n.toLocaleString("es-MX");
+  const OPS = [["CASA-abierta", "Interior abierto", "Un solo espacio para todos tus utensilios"], ["CASA-div", "Interior con divisiones", "Separa cada utensilio"]];
+  const box = document.getElementById("vCASA");
+  box.innerHTML = OPS.map(([k, nm, sub]) => `<div class="vrow"><div class="nm"><div>${nm}<small>${sub}</small></div></div><span class="pr">${money(E[k].price)}</span>
+    <div class="qty"><button aria-label="Quitar" data-c="${k}" data-d="-1">−</button><span id="q-${k}">0</span><button class="mas" aria-label="Agregar" data-c="${k}" data-d="1">+</button></div></div>`).join("");
+  function pintarCasa() {
+    const c = LIVAL.leer(); let t = 0; const l = [];
+    OPS.forEach(([k, nm]) => { const n = c[k] || 0; document.getElementById("q-" + k).textContent = n; if (n) { t += n * E[k].price; l.push(`${n} × ${nm.toLowerCase()}`); } });
+    document.getElementById("selCASA").innerHTML = l.length ? `<div><b>Tu selección</b></div>${l.map(x => `<div>• ${x}</div>`).join("")}<div style="margin-top:6px">Subtotal: <b class="tot">${money(t)}</b></div>` : `<span style="color:var(--muted)">Elige cuántas casitas quieres y con qué interior.</span>`;
+  }
+  box.addEventListener("click", e => {
+    const b = e.target.closest("button[data-c]"); if (!b) return;
+    const c = LIVAL.leer(); c[b.dataset.c] = Math.max(0, (c[b.dataset.c] || 0) + (+b.dataset.d)); LIVAL.guardar(c);
+    if (typeof cart !== "undefined") cart = LIVAL.leer();
+    pintarCasa(); if (typeof pintar === "function") pintar();
+    const bar = document.getElementById("nbar"); bar.classList.remove("bump"); void bar.offsetWidth; bar.classList.add("bump");
+  });
+  pintarCasa(); window.addEventListener("pageshow", pintarCasa);
+})();
+</script>
+
+<script>
+(function () {
+  const E = LIVAL.EXTRA, money = n => "$" + n.toLocaleString("es-MX");
+  const OPS = [["CORONA-1", "1 adorno", "Con 1 foto"], ["CORONA-3", "Paquete de 3", "Con 3 fotos distintas · ahorras " + money(E["CORONA-1"].price * 3 - E["CORONA-3"].price)]];
+  const box = document.getElementById("vCOR");
+  box.innerHTML = OPS.map(([k, nm, sub], i) => `<div class="vrow${i ? " set" : ""}"><div class="nm"><div>${nm}<small>${sub}</small></div></div><span class="pr">${money(E[k].price)}</span>
+    <div class="qty"><button aria-label="Quitar" data-k="${k}" data-d="-1">−</button><span id="q-${k}">0</span><button class="mas" aria-label="Agregar" data-k="${k}" data-d="1">+</button></div></div>`).join("");
+  function pintarCor() {
+    const c = LIVAL.leer(); let t = 0, fotos = 0; const l = [];
+    OPS.forEach(([k, nm]) => { const n = c[k] || 0; document.getElementById("q-" + k).textContent = n; if (n) { t += n * E[k].price; fotos += n * (k === "CORONA-3" ? 3 : 1); l.push(`${n} × ${nm.toLowerCase()}`); } });
+    document.getElementById("selCOR").innerHTML = l.length ? `<div><b>Tu selección</b></div>${l.map(x => `<div>• ${x}</div>`).join("")}<div style="margin-top:6px;color:var(--muted)">Al terminar tu pedido, mándanos ${fotos === 1 ? "1 foto" : fotos + " fotos"} por WhatsApp.</div><div style="margin-top:6px">Subtotal: <b class="tot">${money(t)}</b></div>` : `<span style="color:var(--muted)">Elige cuántos adornos quieres.</span>`;
+  }
+  box.addEventListener("click", e => {
+    const b = e.target.closest("button[data-k]"); if (!b) return;
+    const c = LIVAL.leer(); c[b.dataset.k] = Math.max(0, (c[b.dataset.k] || 0) + (+b.dataset.d)); LIVAL.guardar(c);
+    if (typeof cart !== "undefined") cart = LIVAL.leer();
+    pintarCor(); if (typeof pintar === "function") pintar();
+    const bar = document.getElementById("nbar"); bar.classList.remove("bump"); void bar.offsetWidth; bar.classList.add("bump");
+  });
+  pintarCor(); window.addEventListener("pageshow", pintarCor);
+})();
+</script>
+
+<script>
+(function () {
+  function abrir(id) {
+    const a = document.getElementById(id); if (!a) return;
+    a.classList.add("open"); document.body.classList.add("abierto"); a.scrollTop = 0;
+    try { history.replaceState(null, "", "#" + id); } catch (e) {}
+  }
+  function cerrar() {
+    document.querySelectorAll(".prod.open").forEach(a => a.classList.remove("open"));
+    document.body.classList.remove("abierto");
+    try { history.replaceState(null, "", location.pathname); } catch (e) {}
+  }
+  document.addEventListener("click", e => {
+    const b = e.target.closest("[data-abrir]"); if (b) { abrir(b.dataset.abrir); return; }
+    if (e.target.closest("[data-cerrar]")) { cerrar(); return; }
+    const card = e.target.closest(".prods .prod:not(.open)");
+    if (card && (e.target.closest(".gal") || e.target.closest("h3"))) abrir(card.id);
+  });
+  document.addEventListener("keydown", e => { if (e.key === "Escape") cerrar(); });
+  document.querySelectorAll(".gal").forEach(g => {
+    const dots = g.parentElement.querySelectorAll(".dots i");
+    g.addEventListener("scroll", () => { const i = Math.round(g.scrollLeft / g.clientWidth); dots.forEach((d, k) => d.classList.toggle("on", k === i)); }, { passive: true });
+  });
+  if (location.hash && document.getElementById(location.hash.slice(1))) abrir(location.hash.slice(1));
 })();
 </script>
 </body>
