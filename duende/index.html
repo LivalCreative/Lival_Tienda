@@ -359,8 +359,10 @@ const FOTOS = {"T01": "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAA
 const PRODUCTS = { PAQ24: { name: "Paquete de 24 Travesuras", price: 1350, paquete: true } };
 CATS.forEach(c => c.items.forEach(([id, num, name, desc, price]) => { PRODUCTS[id] = { name: (num.startsWith("nº") ? num + " " : "") + name, price }; }));
 Object.entries(LIVAL.EXTRA).forEach(([k, v]) => { PRODUCTS[k] = { name: v.name, price: v.price }; });
+LIVAL.personales().forEach(p => { PRODUCTS[p.id] = { name: p.name, price: p.price }; });
 const qty = LIVAL.leer();
 Object.keys(qty).forEach(k => { if (!PRODUCTS[k] || !(qty[k] > 0)) delete qty[k]; });
+LIVAL.personales().forEach(p => { qty[p.id] = 1; });
 const money = n => "$" + n.toLocaleString("es-MX", { maximumFractionDigits: 0 });
 
 function howBlock(id) {
@@ -538,6 +540,7 @@ document.getElementById("orderForm").addEventListener("submit", e => e.preventDe
 // ===== Fechas disponibles según producción y pedidos (ocupacion.json se actualiza solo desde el tablero) =====
 const HORAS = {"T02": 0.4, "T04": 0.7, "T05": 0.7, "T17": 1.1, "T29": 0.4, "T10": 1.4, "T24": 1.5, "T06": 1.3, "T01": 2.1, "T09": 1.9, "T20": 2.3, "T28": 2.8, "T03": 2.6, "T11": 3.9, "T15": 4.6, "T07": 5.7, "T12": 5.4, "T08": 6.7, "T25": 5.9, "T27": 7.3, "T23": 8.2, "T18": 10.0, "T21": 7.6, "T14": 7.7, "T26": 8.8, "TFIN": 9.4, "T16": 11.0, "T19": 16.8, "T22": 18.3, "Z1": 1.2, "Z4": 3.5, "DMAN": 4.0, "CAM": 3.8, "HUE": 5.5, "DMAG": 6.4, "DPOL": 6.9, "CONT": 6.3, "MAGA": 7.3, "MODA": 8.7, "JING": 17.1, "PAQ24": 93.9};
 Object.entries(LIVAL.EXTRA).forEach(([k, v]) => { HORAS[k] = v.horas; });
+LIVAL.personales().forEach(p => { HORAS[p.id] = p.horas; });
 let OCUP = { cupo_por_dia: 4, horas_por_dia: 16, horas_pendientes: 0, entregas_por_fecha: {} };
 const DIAS_ES = ["domingo", "lunes", "martes", "miércoles", "jueves", "viernes", "sábado"];
 const MESES_ES = ["enero", "febrero", "marzo", "abril", "mayo", "junio", "julio", "agosto", "septiembre", "octubre", "noviembre", "diciembre"];

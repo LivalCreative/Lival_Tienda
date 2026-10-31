@@ -43,6 +43,36 @@
         <div class="sel" id="selFOCO"></div>
       </div>
     </article>
+    <article class="prod" id="chimenea" style="margin-top:22px">
+      <div class="gal" id="galCh">
+        <img src="../img/navidad/chimenea-6.jpg" alt="Chimenea con 6 botas personalizadas" draggable="false">
+        <img src="../img/navidad/chimenea-5.jpg" alt="Chimenea con 5 botas" draggable="false">
+        <img src="../img/navidad/chimenea-4.jpg" alt="Chimenea con 4 botas" draggable="false">
+      </div>
+      <div class="dots" id="dotsCh"><i class="on"></i><i></i><i></i></div>
+      <div class="info">
+        <span class="badge">🎁 Personalizada · Ideal para regalar</span>
+        <h3>Chimenea Navideña con Botas Personalizadas</h3>
+        <p class="lead">Una chimenea con una botita para cada integrante de la familia, con su nombre. El adorno que todos van a querer encontrar cada Navidad.</p>
+        <ul>
+          <li><b>El letrero va con tu texto</b>: el apellido de tu familia o un mensaje navideño.</li>
+          <li><b>Cada bota lleva un nombre</b>. Elige de 3 a 6 botas.</li>
+          <li>Guirnalda con moras y <b>estrella dorada</b>, fuego dorado y pared de ladrillo.</li>
+          <li>Se sostiene sola: perfecta para repisa, mueble o centro de mesa.</li>
+          <li>Botas en <span class="sw r"></span> rojo y <span class="sw g"></span> verde, alternadas.</li>
+        </ul>
+        <div class="lbl">¿Cuántas botas?</div>
+        <div class="opts" id="nBotas"></div>
+        <label class="lbl" for="chLetrero">Texto del letrero</label>
+        <input class="campo" id="chLetrero" maxlength="22" placeholder="Ej. Familia López">
+        <div class="lbl">Nombres en las botas</div>
+        <div id="chNombres" class="nombres"></div>
+        <p class="hint">Máximo 10 letras por nombre. Los colores van en orden: rojo, verde, rojo, verde…</p>
+        <div class="buy"><span class="price" id="chPrecio">$369</span><button class="btn add" id="chAdd">Agregar al pedido</button></div>
+        <p class="err" id="chErr"></p>
+        <div class="sel" id="chLista" hidden></div>
+      </div>
+    </article>
   </section>
 </main>
 <div class="nbar" id="nbar"><div class="t" id="nbarT"></div><a href="../pedido/">Ver mi pedido →</a></div>
@@ -86,6 +116,17 @@
 .qty span { min-width:28px; text-align:center; font-weight:800; }
 .sel { background:var(--lav-l); border-radius:14px; padding:12px 14px; font-size:.92rem; }
 .sel b.tot { font-family:var(--display); font-size:1.4rem; color:var(--red); }
+
+.lbl { display:block; font-weight:800; color:var(--lav-d); margin:12px 0 6px; }
+.campo { width:100%; padding:11px 12px; border:1px solid #d9d0e6; border-radius:10px; font:inherit; background:#fff; }
+.nombres { display:grid; gap:8px; }
+.nombres .n { display:flex; align-items:center; gap:10px; }
+.bota { width:26px; height:30px; flex:none; }
+.hint { font-size:.82rem; color:var(--muted); margin:6px 0 12px; }
+.err { color:var(--red); font-weight:800; font-size:.9rem; min-height:1em; margin:8px 0 0; }
+.ch-item { display:flex; justify-content:space-between; gap:10px; align-items:flex-start; padding:8px 0; border-top:1px dashed #d9d0e6; }
+.ch-item:first-of-type { border-top:0; }
+.ch-item button { border:0; background:none; color:var(--red); font-weight:800; cursor:pointer; font:inherit; }
 </style>
 <footer><img src="../img/logo.png" alt="">Lival Creative Studio · Querétaro · WhatsApp 442 279 1488</footer>
 
@@ -121,8 +162,9 @@ function pintar() {
     : `<span style="color:var(--muted)">Elige cuántos focos quieres de cada color, o el set de 4.</span>`;
   // barra con todo el carrito (incluye lo del duende)
   let all = 0, cnt = 0;
-  Object.entries(cart).forEach(([k, n]) => { const p = E[k]; if (p) { all += p.price * n; cnt += n; } else if (n) { cnt += n; } });
-  const otros = Object.keys(cart).some(k => !E[k] && cart[k] > 0);
+  const P = Object.fromEntries(LIVAL.personales().map(p => [p.id, p]));
+  Object.entries(cart).forEach(([k, n]) => { const p = E[k] || P[k]; if (p) { all += p.price * n; cnt += n; } else if (n) { cnt += n; } });
+  const otros = Object.keys(cart).some(k => !E[k] && !P[k] && cart[k] > 0);
   document.getElementById("nbarT").innerHTML = cnt ? `${otros ? "Tu pedido" : money(all)}<small>${cnt} producto${cnt === 1 ? "" : "s"}${otros ? " (incluye travesuras)" : ""}</small>` : `Tu pedido<small>vacío</small>`;
 }
 pintar();
@@ -135,5 +177,48 @@ window.addEventListener("pageshow", () => { cart = LIVAL.leer(); pintar(); });
 .nbar.bump { animation: bump .45s; } @keyframes bump { 30% { transform: translateY(-6px); } }
 body { padding-bottom: 80px; }
 </style>
+
+<script>
+(function () {
+  const OPC = { 3: { precio: 349, horas: 10.23 }, 4: { precio: 369, horas: 10.41 }, 5: { precio: 389, horas: 10.58 }, 6: { precio: 409, horas: 10.67 } };
+  const money = n => "$" + n.toLocaleString("es-MX");
+  let n = 4;
+  const bota = c => `<svg class="bota" viewBox="0 0 26 30" aria-hidden="true"><path d="M7 1h11v15c0 3-1 5-3 7l-4 4c-3 3-8 2-9-2-1-3 1-5 3-6l2-2z" fill="${c}"/><rect x="6" y="1" width="13" height="5" rx="2" fill="#f4efe6" stroke="#ddd"/></svg>`;
+  const color = i => i % 2 === 0 ? { nm: "roja", c: "#c62f37" } : { nm: "verde", c: "#1e6b45" };
+  function opciones() {
+    document.getElementById("nBotas").innerHTML = Object.keys(OPC).map(k => `<button type="button" class="opt${+k === n ? " on" : ""}" data-n="${k}">${k} botas · ${money(OPC[k].precio)}</button>`).join("");
+  }
+  function campos() {
+    const prev = [...document.querySelectorAll("#chNombres input")].map(i => i.value);
+    document.getElementById("chNombres").innerHTML = Array.from({ length: n }, (_, i) => `<div class="n">${bota(color(i).c)}<input class="campo" maxlength="10" data-i="${i}" placeholder="Bota ${i + 1} (${color(i).nm})" value="${(prev[i] || "").replace(/"/g, "&quot;")}"></div>`).join("");
+    document.getElementById("chPrecio").textContent = money(OPC[n].precio);
+  }
+  document.getElementById("nBotas").addEventListener("click", e => { const b = e.target.closest("[data-n]"); if (!b) return; n = +b.dataset.n; opciones(); campos(); });
+  function lista() {
+    const l = LIVAL.personales().filter(p => p.tipo === "chimenea"), box = document.getElementById("chLista");
+    box.hidden = !l.length;
+    box.innerHTML = `<b>Tus chimeneas en el pedido</b>` + l.map(p => `<div class="ch-item"><div>${p.resumen}<br><b>${money(p.price)}</b></div><button type="button" data-q="${p.id}">Quitar</button></div>`).join("");
+    if (typeof pintar === "function") pintar();
+  }
+  document.getElementById("chLista").addEventListener("click", e => { const b = e.target.closest("[data-q]"); if (!b) return; LIVAL.quitarPersonal(b.dataset.q); if (typeof cart !== "undefined") cart = LIVAL.leer(); lista(); });
+  document.getElementById("chAdd").addEventListener("click", () => {
+    const letrero = document.getElementById("chLetrero").value.trim();
+    const nombres = [...document.querySelectorAll("#chNombres input")].map(i => i.value.trim());
+    const err = document.getElementById("chErr");
+    if (!letrero) { err.textContent = "Escribe el texto del letrero."; return; }
+    if (nombres.some(x => !x)) { err.textContent = "Llena el nombre de todas las botas."; return; }
+    err.textContent = "";
+    const botas = nombres.map((x, i) => `${x} (${color(i).nm})`).join(", ");
+    const resumen = `Chimenea con ${n} botas · Letrero: "${letrero}" · Botas: ${botas}`;
+    LIVAL.agregarPersonal({ id: "CHIM-" + Date.now().toString(36), tipo: "chimenea", name: `Chimenea navideña con ${n} botas — Letrero: "${letrero}"; Botas: ${botas}`, resumen, price: OPC[n].precio, horas: OPC[n].horas });
+    if (typeof cart !== "undefined") cart = LIVAL.leer();
+    document.getElementById("chLetrero").value = ""; document.querySelectorAll("#chNombres input").forEach(i => i.value = "");
+    lista();
+    const bar = document.getElementById("nbar"); bar.classList.remove("bump"); void bar.offsetWidth; bar.classList.add("bump");
+  });
+  opciones(); campos(); lista();
+  window.addEventListener("pageshow", lista);
+})();
+</script>
 </body>
 </html>

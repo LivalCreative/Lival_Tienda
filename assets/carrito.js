@@ -23,5 +23,12 @@
     return tot.length ? "Focos por color: " + tot.map(x => `${x.n} ${x.c.nombre.toLowerCase()}`).join(" · ") : "";
   }
 
-  window.LIVAL = { EXTRA, COLORES_FOCO, leer, guardar, resumenColores, KEY };
+  // Productos personalizados (cada uno es una pieza única con sus nombres). Se guardan aparte.
+  const KEYP = "lival_personal_v1";
+  function personales() { try { return JSON.parse(localStorage.getItem(KEYP) || "[]") || []; } catch (e) { return []; } }
+  function guardarPersonales(l) { try { localStorage.setItem(KEYP, JSON.stringify(l)); } catch (e) {} }
+  function agregarPersonal(item) { const l = personales(); l.push(item); guardarPersonales(l); const c = leer(); c[item.id] = 1; guardar(c); }
+  function quitarPersonal(id) { guardarPersonales(personales().filter(p => p.id !== id)); const c = leer(); delete c[id]; guardar(c); }
+
+  window.LIVAL = { EXTRA, COLORES_FOCO, leer, guardar, resumenColores, KEY, personales, agregarPersonal, quitarPersonal };
 })();
