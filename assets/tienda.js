@@ -34,9 +34,17 @@
   const campo = document.getElementById("apellido");
   if (campo) {
     const salida = document.querySelectorAll("[data-letrero]"), pedir = document.getElementById("pedirChimenea");
+    // Achica la letra si el texto no cabe entre las estrellas del letrero
+    const ajusta = () => salida.forEach(s => {
+      s.style.fontSize = "";
+      const k = s.clientWidth / s.scrollWidth;
+      if (k < 1) s.style.fontSize = parseFloat(getComputedStyle(s).fontSize) * k * 0.97 + "px";
+    });
+    if ("ResizeObserver" in window) new ResizeObserver(ajusta).observe(salida[0].parentElement);
     const pinta = () => {
       const v = campo.value.trim().slice(0, 22);
       salida.forEach(s => { s.textContent = v || "Familia López"; });
+      ajusta();
       if (pedir) pedir.href = "navidad/" + (v ? "?letrero=" + encodeURIComponent(v) : "") + "#chimenea";
     };
     campo.addEventListener("input", pinta); pinta();
