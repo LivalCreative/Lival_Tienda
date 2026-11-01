@@ -10,6 +10,8 @@ Todo en español (México). La dueña es Lilian; los clientes compran desde el c
 - `navidad/index.html` — productos navideños en rejilla (3 por fila en computadora, 2 en celular); cada tarjeta se abre en vista completa.
 - `productos/index.html` — "Más productos" (muy pronto).
 - `assets/carrito.js` — carrito compartido (localStorage), precios y horas de los productos fuera del duende, productos personalizados (chimenea).
+- `assets/tienda.js` — detalles compartidos de la vista (número del carrito en la barra, animaciones, nieve, cuenta regresiva, fotos protegidas). No toca precios ni pedidos.
+- Estilo "Taller de regalos": `assets/lival.css` (lavanda y durazno, letra Bricolage Grotesque + Nunito en `fonts/`). El duende tiene su estilo propio en verde pino, rojo y oro.
 - `ocupacion.json` — fechas ocupadas, lo actualiza una tarea programada desde el tablero privado "Pedidos 3D". No contiene nombres ni montos; nunca agregues datos de clientes al repositorio.
 - `tools/` — `ocupacion.py`, `build_pedido.py`, `horas_duende.json`.
 - `img/` — fotos con marca de agua "LIVAL CREATIVE STUDIO". Toda foto nueva de producto lleva marca de agua.
@@ -24,5 +26,6 @@ Todo en español (México). La dueña es Lilian; los clientes compran desde el c
 - La dueña ya tiene las licencias comerciales de los diseños que pide subir.
 
 ## Al cambiar algo
+- Si cambias `assets/lival.css`, `assets/tienda.js` o `assets/carrito.js`, sube el número `?v=` con el que los cargan todas las páginas (y corre `build_pedido.py`); si no, los celulares mezclan archivos viejos del caché con los nuevos.
 - Probar en un celular de 390 px de ancho (Playwright) y que no haya errores en consola.
 - Mantener el carrito compartido funcionando entre Duende, Navidad y Pedido.
