@@ -34,8 +34,9 @@
   const campo = document.getElementById("apellido");
   if (campo) {
     const salida = document.querySelectorAll("[data-letrero]"), pedir = document.getElementById("pedirChimenea");
-    // Achica la letra si el texto no cabe entre las estrellas del letrero
-    const ajusta = () => salida.forEach(s => {
+    const botas = [...document.querySelectorAll("[data-bota-campo]")];
+    // Achica la letra si el texto no cabe en el letrero o en la etiqueta de la bota
+    const ajusta = () => document.querySelectorAll("[data-ajusta]").forEach(s => {
       s.style.fontSize = "";
       const k = s.clientWidth / s.scrollWidth;
       if (k < 1) s.style.fontSize = parseFloat(getComputedStyle(s).fontSize) * k * 0.97 + "px";
@@ -44,10 +45,15 @@
     const pinta = () => {
       const v = campo.value.trim().slice(0, 22);
       salida.forEach(s => { s.textContent = v || "Familia López"; });
+      const nombres = botas.map(b => b.value.trim().slice(0, 10));
+      nombres.forEach((n, i) => document.querySelectorAll(`[data-bota="${i}"]`).forEach(s => { s.textContent = n || s.dataset.defecto; }));
       ajusta();
-      if (pedir) pedir.href = "navidad/" + (v ? "?letrero=" + encodeURIComponent(v) : "") + "#chimenea";
+      const q = new URLSearchParams();
+      if (v) q.set("letrero", v);
+      if (nombres.some(Boolean)) q.set("botas", nombres.join("|"));
+      if (pedir) pedir.href = "navidad/" + (q.toString() ? "?" + q : "") + "#chimenea";
     };
-    campo.addEventListener("input", pinta); pinta();
+    [campo, ...botas].forEach(c => c.addEventListener("input", pinta)); pinta();
   }
 
   // En el inicio el logo de la barra aparece cuando el logo grande sale de la pantalla

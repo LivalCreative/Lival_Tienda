@@ -8,7 +8,7 @@
 <meta name="description" content="Travesuras del duende navideño, adornos de Navidad y más diseños impresos en 3D, hechos sobre pedido en Querétaro.">
 <link rel="icon" href="img/logo.png">
 <link rel="preload" href="fonts/bricolage-latin-800-normal.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="assets/lival.css?v=20261101c">
+<link rel="stylesheet" href="assets/lival.css?v=20261101d">
 </head>
 <body>
 <a class="saltar" href="#contenido">Saltar al contenido</a>
@@ -81,17 +81,28 @@
     <div class="caja">
       <div data-entra>
         <h2 class="titulo" id="t-letrero">Escríbelo y míralo</h2>
-        <p class="intro">Pon el apellido de tu familia y mira cómo queda el letrero de tu chimenea.</p>
+        <p class="intro">Pon el apellido de tu familia y un nombre en cada bota. Así se verá tu chimenea.</p>
         <label for="apellido">Texto del letrero</label>
         <input id="apellido" name="letrero" maxlength="22" autocomplete="off" placeholder="Ej. Familia López…">
+        <fieldset class="botas-campos">
+          <legend>Nombres en las botas</legend>
+          <input data-bota-campo="0" name="bota1" maxlength="10" autocomplete="off" aria-label="Bota 1, roja" placeholder="Bota roja…">
+          <input data-bota-campo="1" name="bota2" maxlength="10" autocomplete="off" aria-label="Bota 2, verde" placeholder="Bota verde…">
+          <input data-bota-campo="2" name="bota3" maxlength="10" autocomplete="off" aria-label="Bota 3, roja" placeholder="Bota roja…">
+          <input data-bota-campo="3" name="bota4" maxlength="10" autocomplete="off" aria-label="Bota 4, verde" placeholder="Bota verde…">
+        </fieldset>
         <a class="btn osc" id="pedirChimenea" href="navidad/#chimenea">Pedir mi chimenea · desde $349</a>
       </div>
       <figure class="vista">
         <div class="foto-letrero">
           <img class="foto" src="img/navidad/chimenea-letrero.jpg" width="900" height="675" loading="lazy" alt="Chimenea navideña con botas; el letrero muestra el texto que escribes">
-          <span class="texto-letrero" data-letrero aria-live="polite">Familia López</span>
+          <span class="texto-letrero" data-letrero data-ajusta aria-live="polite">Familia López</span>
+          <span class="texto-bota" data-bota="0" data-defecto="Mamá" data-ajusta style="left:31%;top:44.2%">Mamá</span>
+          <span class="texto-bota" data-bota="1" data-defecto="Papá" data-ajusta style="left:43.6%;top:44.1%">Papá</span>
+          <span class="texto-bota" data-bota="2" data-defecto="Sofía" data-ajusta style="left:56.1%;top:43.9%">Sofía</span>
+          <span class="texto-bota" data-bota="3" data-defecto="Leo" data-ajusta style="left:68.6%;top:43.5%">Leo</span>
         </div>
-        <figcaption>Hasta 22 letras · de 3 a 6 botas con nombre</figcaption>
+        <figcaption>Letrero de hasta 22 letras · de 3 a 6 botas con nombre, de hasta 10 letras</figcaption>
       </figure>
     </div>
   </section>
@@ -135,7 +146,7 @@
   <p>Querétaro · WhatsApp 442&nbsp;279&nbsp;1488</p>
 </footer>
 
-<script src="assets/carrito.js?v=20261101c"></script>
-<script src="assets/tienda.js?v=20261101c"></script>
+<script src="assets/carrito.js?v=20261101d"></script>
+<script src="assets/tienda.js?v=20261101d"></script>
 </body>
 </html>

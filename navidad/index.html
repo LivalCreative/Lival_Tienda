@@ -7,7 +7,7 @@
 <link rel="icon" href="../img/logo.png">
 <meta name="theme-color" content="#fff9f5">
 <link rel="preload" href="../fonts/bricolage-latin-800-normal.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="../assets/lival.css?v=20261101c">
+<link rel="stylesheet" href="../assets/lival.css?v=20261101d">
 </head>
 <body>
 <a class="saltar" href="#contenido">Saltar al contenido</a>
@@ -240,7 +240,7 @@ body.abierto .nbar { z-index:70; }
   <p>Querétaro · WhatsApp 442&nbsp;279&nbsp;1488</p>
 </footer>
 
-<script src="../assets/carrito.js?v=20261101c"></script>
+<script src="../assets/carrito.js?v=20261101d"></script>
 <script>
 const money = n => "$" + n.toLocaleString("es-MX");
 const E = LIVAL.EXTRA, COL = LIVAL.COLORES_FOCO;
@@ -329,6 +329,10 @@ body { padding-bottom: 90px; }
   });
   try { const q = new URLSearchParams(location.search).get("letrero"); if (q) document.getElementById("chLetrero").value = q.slice(0, 22); } catch (e) {}
   opciones(); campos(); lista();
+  try { // nombres de las botas que llegan desde el inicio (?botas=Ana|Beto|…)
+    const b = new URLSearchParams(location.search).get("botas");
+    if (b) { const ins = document.querySelectorAll("#chNombres input"); b.split("|").slice(0, ins.length).forEach((x, i) => { ins[i].value = x.slice(0, 10); }); }
+  } catch (e) {}
   window.addEventListener("pageshow", lista);
 })();
 </script>
@@ -405,6 +409,6 @@ body { padding-bottom: 90px; }
   if (location.hash && document.getElementById(location.hash.slice(1))) abrir(location.hash.slice(1));
 })();
 </script>
-<script src="../assets/tienda.js?v=20261101c"></script>
+<script src="../assets/tienda.js?v=20261101d"></script>
 </body>
 </html>
