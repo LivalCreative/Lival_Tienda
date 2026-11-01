@@ -84,7 +84,11 @@ section { scroll-margin-top: 16px; }
 .portada .in { display: grid; gap: 30px; padding: 28px 22px 30px; }
 .portada .sello { width: 104px; height: 104px; border-radius: 50%; background: var(--suelo); display: grid; place-items: center; padding: 12px; }
 .portada h1 { font-size: var(--t1); margin-top: 18px; }
-.portada .sub { max-width: 32ch; margin-top: 16px; font-weight: 800; }
+.portada .sub { max-width: 36ch; margin-top: 16px; font-weight: 800; }
+.ocasion { margin-top: 18px; font: 800 clamp(1.5rem, 5.4vw, 2.2rem)/1.2 var(--disp); letter-spacing: -.02em; }
+.giro { display: inline-block; background: var(--suelo); color: var(--rojo); border-radius: 999px; padding: 2px 18px 6px; transition: opacity .25s, transform .35s var(--rebote); }
+.giro.sale { opacity: 0; transform: translateY(-10px) scale(.92); }
+.giro.entra { opacity: 0; transform: translateY(12px) scale(.92); transition: none; }
 .collage { position: relative; height: 300px; }
 .collage div { position: absolute; border-radius: 22px; overflow: hidden; border: 6px solid var(--suelo); transition: transform .6s var(--rebote); }
 .collage img { width: 100%; height: 100%; object-fit: cover; }
@@ -97,6 +101,7 @@ section { scroll-margin-top: 16px; }
   .portada { margin: 0 18px; }
   .portada .in { grid-template-columns: 1.05fr 1fr; align-items: center; padding: 56px; gap: 40px; }
   .portada .sello { width: 150px; height: 150px; padding: 18px; }
+  .portada h1 { font-size: min(5.6rem, 5.9vw); }
   .collage { height: min(72vh, 600px); }
 }
 
@@ -168,7 +173,14 @@ section { scroll-margin-top: 16px; }
 .como { background: var(--tinta); color: #fff; margin: 0 8px; border-radius: 32px; padding: var(--gap) 22px; }
 .como h2 { color: #fff; }
 .como .pasos { list-style: none; margin: 30px 0 0; padding: 0; display: grid; gap: 24px; }
-.como .pasos li { display: grid; gap: 6px; }
+.como .pasos li { display: grid; gap: 6px; align-content: start; }
+.como .pasos .ico { width: 64px; height: 64px; color: var(--lav); margin-bottom: 8px; transition: transform .45s var(--rebote); }
+.como .pasos li:nth-child(even) .ico { color: var(--durazno); }
+@media (max-width: 899px) {
+  .como .pasos li { grid-template-columns: 52px 1fr; column-gap: 16px; }
+  .como .pasos .ico { grid-row: span 2; width: 52px; height: 52px; margin: 2px 0 0; }
+}
+@media (hover: hover) { .como .pasos li:hover .ico { transform: rotate(-8deg) scale(1.1); } }
 .como .pasos b { font: 800 clamp(2.3rem, 5vw, 3.4rem)/1 var(--disp); letter-spacing: -.03em; color: var(--lav); }
 .como .pasos li:nth-child(even) b { color: var(--durazno); }
 @media (min-width: 900px) { .como { margin: 0 18px; padding: var(--gap) 56px; } .como .pasos { grid-template-columns: repeat(4, 1fr); gap: 28px; } }

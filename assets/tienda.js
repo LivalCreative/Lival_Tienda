@@ -26,6 +26,20 @@
     el.textContent = d <= 0 ? "Ya empezaron las travesuras" : d === 1 ? "día para el 1 de diciembre" : "días para el 1 de diciembre";
   });
 
+  // Palabra que cambia sola en la portada (Navidad, cumpleaños, tu boda…)
+  document.querySelectorAll("[data-giro]").forEach(el => {
+    const ps = el.dataset.giro.split("|"); let i = 0;
+    if (quieto || ps.length < 2) return;
+    setInterval(() => {
+      el.classList.add("sale");
+      setTimeout(() => {
+        i = (i + 1) % ps.length; el.textContent = ps[i];
+        el.classList.remove("sale"); el.classList.add("entra");
+        requestAnimationFrame(() => requestAnimationFrame(() => el.classList.remove("entra")));
+      }, 260);
+    }, 2200);
+  });
+
   // Fotos: no se arrastran ni se guardan con clic derecho o pulsación larga
   document.addEventListener("contextmenu", e => { if (e.target.tagName === "IMG") e.preventDefault(); });
   document.addEventListener("dragstart", e => { if (e.target.tagName === "IMG") e.preventDefault(); });
