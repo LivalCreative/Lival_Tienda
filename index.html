@@ -3,111 +3,137 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#fff9f5">
 <title>Lival Creative Studio · Diseños impresos en 3D en Querétaro</title>
 <meta name="description" content="Travesuras del duende navideño, adornos de Navidad y más diseños impresos en 3D, hechos sobre pedido en Querétaro.">
 <link rel="icon" href="img/logo.png">
+<link rel="preload" href="fonts/bricolage-latin-800-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="assets/lival.css">
 </head>
 <body>
-<header class="top"><div class="in">
-  <a href="./"><img src="img/logo.png" alt="Lival Creative Studio"></a>
-  <nav>
-    <a href="duende/" class="duende">🎅 Duende</a>
-    <a href="navidad/">🎄 Navidad</a>
-    <a href="productos/">✨ Productos</a>
-    <a href="pedido/">🛒 Pedido</a>
+<a class="saltar" href="#contenido">Saltar al contenido</a>
+<header class="barra"><div class="marco">
+  <a class="logo-link" href="./" aria-label="Lival Creative Studio, inicio"><img data-logo-chico src="img/logo-t.png" width="360" height="267" alt=""></a>
+  <nav aria-label="Secciones">
+    <a class="link" href="duende/">Duende</a>
+    <a class="link" href="navidad/">Navidad</a>
+    <a class="link" href="productos/">Más productos</a>
+    <a class="bolsa" href="pedido/">Mi pedido (<span data-carrito-n>0</span>)</a>
   </nav>
 </div></header>
 
-<main class="wrap">
-  <div class="hero">
-    <div class="brand"><img src="img/logo.png" alt="Lival Creative Studio"></div>
-    <h1>Diseños impresos en 3D, hechos para ti</h1>
-    <p>Hacemos cada pieza sobre pedido en Querétaro. Elige tus productos, aparta con anticipo y te lo entregamos en persona.</p>
+<main id="contenido">
+<section class="portada" aria-label="Portada">
+  <div class="in">
+    <div data-entra>
+      <div class="sello" data-logo-grande><img class="foto" src="img/logo-t.png" width="360" height="267" alt="Lival Creative Studio" translate="no"></div>
+      <h1>Regalos con tu nombre</h1>
+      <p class="sub">Los diseñamos e imprimimos en 3D, uno por uno, en Querétaro. Te los entregamos en persona.</p>
+      <div class="acciones"><a class="btn osc" href="navidad/">Ver regalos de Navidad</a><a class="enlace" href="duende/">Travesuras del Duende →</a></div>
+    </div>
+    <div class="collage">
+      <div class="c1"><img class="foto" src="img/navidad/chimenea-6.jpg" width="900" height="675" fetchpriority="high" alt="Chimenea con seis botas, cada una con un nombre"></div>
+      <div class="c2"><img class="foto" src="img/navidad/foco-noche.jpg" width="800" height="600" alt="Focos navideños gigantes encendidos"></div>
+      <div class="c3"><img class="foto" src="img/navidad/casa-1.jpg" width="675" height="900" alt="Casita de jengibre con utensilios de cocina"></div>
+    </div>
   </div>
+</section>
 
-  <section id="duende">
-    <a class="duende-card" href="duende/">
-      <div class="snow" id="snow"></div>
-      <div style="position:relative;z-index:1">
-        <span class="tag">Sección especial · Diciembre</span>
-        <h2>Travesuras del Duende</h2>
-        <p>Escenas impresas en 3D para que tu duende navideño haga una travesura distinta cada día, del 1 al 24 de diciembre.</p>
-        <div class="count" id="count">🎄 Muy pronto empieza diciembre</div><br>
-        <span class="go">Ver todas las travesuras →</span>
+<div class="marco">
+  <section class="catalogo" aria-labelledby="t-pedido">
+    <div class="cab"><h2 class="titulo" id="t-pedido">Lo más pedido</h2><a class="enlace" href="navidad/">Ver todo Navidad →</a></div>
+    <div class="carril" data-entra>
+      <a class="tarjeta" href="navidad/#foco"><div class="img"><img class="foto" src="img/navidad/foco-noche.jpg" width="800" height="600" loading="lazy" alt="Focos navideños gigantes encendidos"></div>
+        <h3>Foco navideño gigante</h3><p class="det">Se ilumina · 14&nbsp;cm · 4 colores</p>
+        <div class="pie-t"><p class="precio"><small>desde</small>$79</p><span class="mas-btn" aria-hidden="true">+</span></div></a>
+      <a class="tarjeta" href="navidad/#chimenea"><div class="img"><img class="foto" src="img/navidad/chimenea-5.jpg" width="900" height="675" loading="lazy" alt="Chimenea con cinco botas personalizadas"></div>
+        <h3>Chimenea con botas</h3><p class="det">Una bota por cada integrante</p>
+        <div class="pie-t"><p class="precio"><small>desde</small>$349</p><span class="mas-btn" aria-hidden="true">+</span></div></a>
+      <a class="tarjeta" href="navidad/#casita"><div class="img"><img class="foto" src="img/navidad/casa-1.jpg" width="675" height="900" loading="lazy" alt="Casita de jengibre para utensilios"></div>
+        <h3>Casita de jengibre</h3><p class="det">Guarda tus utensilios de cocina</p>
+        <div class="pie-t"><p class="precio"><small>desde</small>$349</p><span class="mas-btn" aria-hidden="true">+</span></div></a>
+      <a class="tarjeta" href="navidad/#corona"><div class="img"><img class="foto" src="img/navidad/corona-foto.jpg" width="900" height="675" loading="lazy" alt="Adorno corona con foto familiar en el árbol"></div>
+        <h3>Corona con foto</h3><p class="det">Para colgar en el árbol</p>
+        <div class="pie-t"><p class="precio"><small>desde</small>$59</p><span class="mas-btn" aria-hidden="true">+</span></div></a>
+    </div>
+  </section>
+</div>
+
+<section class="banda-duende" id="duende" aria-labelledby="t-duende">
+  <div class="nieve" aria-hidden="true"></div>
+  <div class="in">
+    <div data-entra>
+      <h2 id="t-duende">Travesuras del Duende</h2>
+      <p class="intro">Una escena impresa en 3D para cada mañana del 1 al 24 de diciembre. Tu duende navideño nunca había sido tan travieso.</p>
+      <p class="cuenta"><b data-dias>30</b><span data-dias-txt>días para el 1 de diciembre</span></p>
+      <div class="acciones"><a class="btn oro" href="duende/">Ver todas las travesuras</a></div>
+    </div>
+    <div class="polas">
+      <div><img class="foto" src="img/t21.jpg" width="512" height="640" loading="lazy" alt="Travesura: desastre en la cocina"></div>
+      <div><img class="foto" src="img/t07.jpg" width="512" height="640" loading="lazy" alt="Travesura: regalo sorpresa"></div>
+      <div><img class="foto" src="img/t16.jpg" width="512" height="640" loading="lazy" alt="Travesura: tiro al blanco vikingo"></div>
+    </div>
+  </div>
+</section>
+
+<div class="marco">
+  <section class="letrero" aria-labelledby="t-letrero">
+    <div class="caja">
+      <div data-entra>
+        <h2 class="titulo" id="t-letrero">Escríbelo y míralo</h2>
+        <p class="intro">Pon el apellido de tu familia y mira cómo queda el letrero de tu chimenea.</p>
+        <label for="apellido">Texto del letrero</label>
+        <input id="apellido" name="letrero" maxlength="22" autocomplete="off" placeholder="Ej. Familia López…">
+        <a class="btn osc" id="pedirChimenea" href="navidad/#chimenea">Pedir mi chimenea · desde $349</a>
       </div>
-      <div class="polas" style="position:relative;z-index:1">
-        <div><img src="img/t21.jpg" alt="Desastre en la cocina" draggable="false"></div>
-        <div><img src="img/t07.jpg" alt="Regalo sorpresa" draggable="false"></div>
-        <div><img src="img/t12.jpg" alt="Accidente de tráfico" draggable="false"></div>
-      </div>
-    </a>
-  </section>
-
-  <section id="secciones">
-    <h2>Nuestras secciones</h2>
-    <p class="sub">Cada temporada agregamos diseños nuevos.</p>
-    <div class="cats">
-      <a class="cat navidad" href="navidad/">
-        <div class="ico">🎄</div>
-        <h3>Navidad</h3>
-        <p>Adornos, regalos y detalles navideños para tu casa y para regalar.</p>
-        <span class="soon" style="background:#fdeaea;color:#c4262e">✨ Nuevo: focos, chimenea, casita y adorno con foto</span>
-      </a>
-      <a class="cat mas" href="productos/">
-        <div class="ico">✨</div>
-        <h3>Más productos</h3>
-        <p>Clips, pines, decoración y piezas para todo el año.</p>
-        <span class="soon">Muy pronto</span>
-      </a>
+      <figure class="vista">
+        <div class="tabla"><span data-letrero aria-live="polite">Familia López</span></div>
+        <img class="foto" src="img/navidad/chimenea-4.jpg" width="900" height="675" loading="lazy" alt="Botas rojas y verdes con nombres colgadas de la chimenea">
+        <figcaption>Hasta 22 letras · de 3 a 6 botas con nombre</figcaption>
+      </figure>
     </div>
   </section>
 
-  <section id="comprar">
-    <h2>Cómo comprar</h2>
-    <p class="sub">Todo se hace sobre pedido.</p>
-    <div class="steps">
-      <div><b>1</b><br><strong>Elige tus productos</strong><br>Arma tu pedido en la sección que quieras y ve tu total.</div>
-      <div><b>2</b><br><strong>Aparta con anticipo</strong><br>Transfieres el anticipo y nos mandas tu comprobante por WhatsApp.</div>
-      <div><b>3</b><br><strong>Lo hacemos para ti</strong><br>Verificamos tu pago y te confirmamos fecha y hora de entrega.</div>
-      <div><b>4</b><br><strong>Recibe y liquida</strong><br>Te lo entregamos en persona y pagas el resto.</div>
+  <section class="secciones" aria-label="Secciones de la tienda">
+    <a class="sec nav" href="navidad/"><h3>Navidad</h3><div class="fila"><img class="foto" src="img/navidad/foco-colores.jpg" width="800" height="600" loading="lazy" alt=""><img class="foto" src="img/navidad/casa-frente.jpg" width="675" height="900" loading="lazy" alt=""><img class="foto" src="img/navidad/corona-foto.jpg" width="900" height="675" loading="lazy" alt=""></div><p>Focos gigantes, chimenea con botas, casita de jengibre y adorno con foto.</p><span class="enlace">Entrar a Navidad →</span></a>
+    <a class="sec mas" href="productos/"><h3>Más productos</h3><p>Clips, pines y decoración para todo el año. Estamos preparando la colección.</p><span class="enlace">Muy pronto · Ver más →</span></a>
+  </section>
+</div>
+
+<section class="como" aria-labelledby="t-como">
+  <h2 class="titulo" id="t-como">Pedir es facilísimo</h2>
+  <ol class="pasos" data-entra>
+    <li><b>Elige</b><span>Arma tu pedido en la sección que quieras y ve tu total.</span></li>
+    <li><b>Aparta</b><span>Transfiere el anticipo y mándanos tu comprobante por WhatsApp.</span></li>
+    <li><b>Creamos</b><span>Verificamos tu pago y te confirmamos fecha y hora de entrega.</span></li>
+    <li><b>Recibe</b><span>Te lo entregamos en persona y pagas el resto.</span></li>
+  </ol>
+</section>
+
+<div class="marco">
+  <section class="entregas" aria-labelledby="t-entregas">
+    <h2 class="titulo" id="t-entregas">¿Dónde te lo entregamos?</h2>
+    <p class="intro">La hora la confirmamos por WhatsApp. Los sábados no hay entregas.</p>
+    <div class="grupos">
+      <div><h3>Lunes a viernes y domingo</h3><ul class="chips"><li>Uptown Juriquilla</li><li>Urban Center Jurica</li><li>Portal Querétaro</li><li>UTEQ</li><li>Santander de 5 de Febrero</li><li>Walmart de Bernardo Quintana</li></ul></div>
+      <div><h3>Solo domingo</h3><ul class="chips dom"><li>Plaza Esfera (McDonald's Plaza de Toros)</li><li>Arcos (Editorial Trillas)</li></ul></div>
     </div>
   </section>
+</div>
 
-  <section id="entregas">
-    <h2>Puntos de entrega</h2>
-    <p class="sub">La hora la confirmamos por WhatsApp. Los sábados no hay entregas.</p>
-    <div class="puntos">
-      <div><h3>Lunes a viernes y domingo</h3><ul><li>Uptown Juriquilla</li><li>Urban Center Jurica</li><li>Portal Querétaro</li><li>UTEQ</li><li>Santander de 5 de Febrero</li><li>Walmart de Bernardo Quintana</li></ul></div>
-      <div><h3>Solo domingo</h3><ul><li>Plaza Esfera (McDonald's Plaza de Toros)</li><li>Arcos (Editorial Trillas)</li></ul></div>
-    </div>
-  </section>
-
-  <section class="center">
-    <h2>¿Buscas algo en especial?</h2>
-    <p class="sub">Escríbenos y lo diseñamos contigo.</p>
-    <a class="btn wa" href="https://wa.me/524422791488?text=%C2%A1Hola!%20Quiero%20informaci%C3%B3n%20de%20Lival%20Creative%20Studio" target="_blank" rel="noopener">💬 Escríbenos por WhatsApp</a>
-  </section>
+<section class="cierre" aria-labelledby="t-cierre">
+  <h2 id="t-cierre">¿Lo imaginas? Lo hacemos</h2>
+  <p class="intro">Escríbenos y diseñamos contigo algo único.</p>
+  <a class="btn wa" href="https://wa.me/524422791488?text=%C2%A1Hola!%20Quiero%20informaci%C3%B3n%20de%20Lival%20Creative%20Studio" target="_blank" rel="noopener">Escríbenos por WhatsApp</a>
+</section>
 </main>
 
-<footer>
-  <img src="img/logo.png" alt="">
-  Lival Creative Studio · Querétaro · WhatsApp 442 279 1488
+<footer class="pie">
+  <div class="sello"><img class="foto" src="img/logo-t.png" width="360" height="267" loading="lazy" alt="Lival Creative Studio" translate="no"></div>
+  <p>Querétaro · WhatsApp 442&nbsp;279&nbsp;1488</p>
 </footer>
 
-<script>
-(function () {
-  const hoy = new Date(); hoy.setHours(0, 0, 0, 0);
-  let meta = new Date(hoy.getFullYear(), 11, 1); if (hoy > new Date(hoy.getFullYear(), 11, 24)) meta = new Date(hoy.getFullYear() + 1, 11, 1);
-  const d = Math.round((meta - hoy) / 864e5);
-  document.getElementById("count").textContent = d <= 0 ? "🎄 ¡Ya empezaron las travesuras!" : `🎄 Faltan ${d} día${d === 1 ? "" : "s"} para el 1 de diciembre`;
-  if (!matchMedia("(prefers-reduced-motion: reduce)").matches) {
-    document.getElementById("snow").innerHTML = Array.from({ length: 26 }, () => {
-      const z = 3 + Math.random() * 4;
-      return `<i style="left:${Math.random() * 100}%;width:${z}px;height:${z}px;--dx:${(Math.random() * 40 - 20) | 0}px;animation-duration:${6 + Math.random() * 8}s;animation-delay:-${Math.random() * 12}s"></i>`;
-    }).join("");
-  }
-})();
-</script>
+<script src="assets/carrito.js"></script>
+<script src="assets/tienda.js"></script>
 </body>
 </html>

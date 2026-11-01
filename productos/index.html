@@ -3,31 +3,47 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#fff9f5">
 <title>Más productos · Lival Creative Studio</title>
 <link rel="icon" href="../img/logo.png">
+<link rel="preload" href="../fonts/bricolage-latin-800-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="../assets/lival.css">
 </head>
 <body>
-<header class="top"><div class="in">
-  <a href="../"><img src="../img/logo.png" alt="Lival Creative Studio"></a>
-  <nav>
-    <a href="../duende/" class="duende">🎅 Duende</a>
-    <a href="../navidad/">🎄 Navidad</a>
-    <a href="../productos/" aria-current="page">✨ Productos</a>
-    <a href="../pedido/">🛒 Pedido</a>
+<a class="saltar" href="#contenido">Saltar al contenido</a>
+<header class="barra"><div class="marco">
+  <a class="logo-link" href="../" aria-label="Lival Creative Studio, inicio"><img src="../img/logo-t.png" width="360" height="267" alt=""></a>
+  <nav aria-label="Secciones">
+    <a class="link" href="../duende/">Duende</a>
+    <a class="link" href="../navidad/">Navidad</a>
+    <a class="link" href="../productos/" aria-current="page">Más productos</a>
+    <a class="bolsa" href="../pedido/">Mi pedido (<span data-carrito-n>0</span>)</a>
   </nav>
 </div></header>
-<main class="wrap">
-  <section>
-    <div class="soon-box">
-      <div class="big">✨</div>
-      <h2>Más productos</h2>
-      <p>Estamos subiendo clips, pines, decoración y piezas para todo el año. Muy pronto los verás aquí.</p>
-      <a class="btn wa" href="https://wa.me/524422791488?text=%C2%A1Hola%21%20Quiero%20informaci%C3%B3n%20de%20la%20secci%C3%B3n%20M%C3%A1s%20productos%20de%20Lival%20Creative%20Studio" target="_blank" rel="noopener">💬 Pregúntanos por WhatsApp</a>
-      <p style="margin-top:18px"><a href="../duende/">Mientras, conoce las Travesuras del Duende →</a></p>
+
+<main id="contenido">
+  <section class="pronto" aria-labelledby="t-mas">
+    <div data-entra>
+      <h1 id="t-mas">Más productos</h1>
+      <p class="intro">Estamos subiendo piezas para todo el año. Muy pronto las verás aquí.</p>
+      <ul class="lista"><li>Clips</li><li>Pines</li><li>Decoración</li></ul>
+      <div class="acciones"><a class="btn osc" href="https://wa.me/524422791488?text=%C2%A1Hola%21%20Quiero%20informaci%C3%B3n%20de%20la%20secci%C3%B3n%20M%C3%A1s%20productos%20de%20Lival%20Creative%20Studio" target="_blank" rel="noopener">Pregúntanos por WhatsApp</a></div>
     </div>
   </section>
+
+  <div class="marco">
+    <section class="secciones pronto-mientras" aria-label="Mientras tanto">
+      <a class="sec nav" href="../navidad/"><h3>Navidad</h3><div class="fila"><img class="foto" src="../img/navidad/foco-colores.jpg" width="800" height="600" loading="lazy" alt=""><img class="foto" src="../img/navidad/casa-frente.jpg" width="675" height="900" loading="lazy" alt=""><img class="foto" src="../img/navidad/corona-foto.jpg" width="900" height="675" loading="lazy" alt=""></div><p>Mientras, conoce los regalos de Navidad.</p><span class="enlace">Entrar a Navidad →</span></a>
+      <a class="sec mas" href="../duende/"><h3>Travesuras del Duende</h3><div class="fila"><img class="foto" src="../img/t21.jpg" width="512" height="640" loading="lazy" alt=""><img class="foto" src="../img/t07.jpg" width="512" height="640" loading="lazy" alt=""><img class="foto" src="../img/t12.jpg" width="640" height="480" loading="lazy" alt=""></div><p>Una escena para cada mañana de diciembre.</p><span class="enlace">Ver las travesuras →</span></a>
+    </section>
+  </div>
 </main>
-<footer><img src="../img/logo.png" alt="">Lival Creative Studio · Querétaro · WhatsApp 442 279 1488</footer>
+
+<footer class="pie">
+  <div class="sello"><img class="foto" src="../img/logo-t.png" width="360" height="267" loading="lazy" alt="Lival Creative Studio" translate="no"></div>
+  <p>Querétaro · WhatsApp 442&nbsp;279&nbsp;1488</p>
+</footer>
+<script src="../assets/carrito.js"></script>
+<script src="../assets/tienda.js"></script>
 </body>
 </html>

@@ -5,34 +5,40 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Navidad · Lival Creative Studio</title>
 <link rel="icon" href="../img/logo.png">
+<meta name="theme-color" content="#fff9f5">
+<link rel="preload" href="../fonts/bricolage-latin-800-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="../assets/lival.css">
 </head>
 <body>
-<header class="top"><div class="in">
-  <a href="../"><img src="../img/logo.png" alt="Lival Creative Studio"></a>
-  <nav>
-    <a href="../duende/" class="duende">🎅 Duende</a>
-    <a href="../navidad/" aria-current="page">🎄 Navidad</a>
-    <a href="../productos/">✨ Productos</a>
-    <a href="../pedido/">🛒 Pedido</a>
+<a class="saltar" href="#contenido">Saltar al contenido</a>
+<header class="barra"><div class="marco">
+  <a class="logo-link" href="../" aria-label="Lival Creative Studio, inicio"><img src="../img/logo-t.png" width="360" height="267" alt=""></a>
+  <nav aria-label="Secciones">
+    <a class="link" href="../duende/">Duende</a>
+    <a class="link" href="../navidad/" aria-current="page">Navidad</a>
+    <a class="link" href="../productos/">Más productos</a>
+    <a class="bolsa" href="../pedido/">Mi pedido (<span data-carrito-n>0</span>)</a>
   </nav>
 </div></header>
-<main class="wrap">
-  <section>
-    <h2>🎄 Navidad</h2>
-    <p class="sub">Adornos y detalles navideños impresos en 3D.</p>
+<main id="contenido" class="marco">
+  <section aria-labelledby="t-navidad">
+    <div class="cabeza" data-entra>
+      <h1 id="t-navidad">Regalos de Navidad</h1>
+      <p class="intro">Adornos y detalles navideños impresos en 3D, hechos sobre pedido en Querétaro. Toca un producto para ver sus opciones.</p>
+    </div>
+    <h2 class="oculto-visual">Productos</h2>
     <div class="prods">
     <article class="prod" id="foco">
       <div class="gal">
-        <img src="../img/navidad/foco-noche.jpg" alt="Focos encendidos de noche" draggable="false">
-        <img src="../img/navidad/foco-colores.jpg" alt="Los 4 colores" draggable="false">
-        <img src="../img/navidad/foco-arbol.jpg" alt="Foco colgado en el árbol" draggable="false">
-        <img src="../img/navidad/foco-tamano.jpg" alt="Tamaño junto a un plumón" draggable="false">
+        <img class="foto" src="../img/navidad/foco-noche.jpg" width="800" height="600" alt="Focos encendidos de noche" draggable="false">
+        <img class="foto" src="../img/navidad/foco-colores.jpg" width="800" height="600" loading="lazy" alt="Los 4 colores" draggable="false">
+        <img class="foto" src="../img/navidad/foco-arbol.jpg" width="800" height="600" loading="lazy" alt="Foco colgado en el árbol" draggable="false">
+        <img class="foto" src="../img/navidad/foco-tamano.jpg" width="800" height="600" loading="lazy" alt="Tamaño junto a un plumón" draggable="false">
       </div>
       <div class="dots"><i class="on"></i><i></i><i></i><i></i></div>
       <div class="info">
-        <span class="badge">✨ Nuevo · Se ilumina</span>
-        <h3>Foco Navideño Gigante</h3>
+        <span class="badge">Nuevo · se ilumina</span>
+        <h3>Foco navideño gigante</h3>
         <p class="lead">El foquito clásico de las series navideñas… ¡en tamaño gigante y con luz! Ilumina tu casa con un brillo suave y acogedor.</p>
         <div class="mini"><span class="desde">Desde <b>$79</b></span><button type="button" class="btn ver" data-abrir="foco">Ver opciones</button></div>
         <div class="det">
@@ -45,19 +51,19 @@
         <div class="var" id="vFOCO"></div>
         <div class="sel" id="selFOCO"></div>
         </div>
-        <button type="button" class="cerrar" data-cerrar aria-label="Cerrar">✕</button>
+        <button type="button" class="cerrar" data-cerrar aria-label="Cerrar producto">✕</button>
       </div>
     </article>
     <article class="prod" id="chimenea">
       <div class="gal" id="galCh">
-        <img src="../img/navidad/chimenea-6.jpg" alt="Chimenea con 6 botas personalizadas" draggable="false">
-        <img src="../img/navidad/chimenea-5.jpg" alt="Chimenea con 5 botas" draggable="false">
-        <img src="../img/navidad/chimenea-4.jpg" alt="Chimenea con 4 botas" draggable="false">
+        <img class="foto" src="../img/navidad/chimenea-6.jpg" width="900" height="675" alt="Chimenea con 6 botas personalizadas" draggable="false">
+        <img class="foto" src="../img/navidad/chimenea-5.jpg" width="900" height="675" loading="lazy" alt="Chimenea con 5 botas" draggable="false">
+        <img class="foto" src="../img/navidad/chimenea-4.jpg" width="900" height="675" loading="lazy" alt="Chimenea con 4 botas" draggable="false">
       </div>
       <div class="dots" id="dotsCh"><i class="on"></i><i></i><i></i></div>
       <div class="info">
-        <span class="badge">🎁 Personalizada · Ideal para regalar</span>
-        <h3>Chimenea Navideña con Botas Personalizadas</h3>
+        <span class="badge">Personalizada · ideal para regalar</span>
+        <h3>Chimenea con botas</h3>
         <p class="lead">Una chimenea con una botita para cada integrante de la familia, con su nombre. El adorno que todos van a querer encontrar cada Navidad.</p>
         <div class="mini"><span class="desde">Desde <b>$349</b></span><button type="button" class="btn ver" data-abrir="chimenea">Ver opciones</button></div>
         <div class="det">
@@ -71,7 +77,7 @@
         <div class="lbl">¿Cuántas botas?</div>
         <div class="opts" id="nBotas"></div>
         <label class="lbl" for="chLetrero">Texto del letrero</label>
-        <input class="campo" id="chLetrero" maxlength="22" placeholder="Ej. Familia López">
+        <input class="campo" id="chLetrero" name="letrero" maxlength="22" autocomplete="off" placeholder="Ej. Familia López…">
         <div class="lbl">Nombres en las botas</div>
         <div id="chNombres" class="nombres"></div>
         <p class="hint">Máximo 10 letras por nombre. Los colores van en orden: rojo, verde, rojo, verde…</p>
@@ -79,19 +85,19 @@
         <p class="err" id="chErr"></p>
         <div class="sel" id="chLista" hidden></div>
         </div>
-        <button type="button" class="cerrar" data-cerrar aria-label="Cerrar">✕</button>
+        <button type="button" class="cerrar" data-cerrar aria-label="Cerrar producto">✕</button>
       </div>
     </article>
     <article class="prod" id="casita">
       <div class="gal">
-        <img src="../img/navidad/casa-1.jpg" alt="Casita de jengibre con utensilios" draggable="false">
-        <img src="../img/navidad/casa-frente.jpg" alt="Frente de la casita" draggable="false">
-        <img src="../img/navidad/casa-interior.jpg" alt="Interior de la casita" draggable="false">
+        <img class="foto" src="../img/navidad/casa-1.jpg" width="675" height="900" alt="Casita de jengibre con utensilios" draggable="false">
+        <img class="foto" src="../img/navidad/casa-frente.jpg" width="675" height="900" loading="lazy" alt="Frente de la casita" draggable="false">
+        <img class="foto" src="../img/navidad/casa-interior.jpg" width="675" height="900" loading="lazy" alt="Interior de la casita" draggable="false">
       </div>
       <div class="dots"><i class="on"></i><i></i><i></i></div>
       <div class="info">
-        <span class="badge">🍪 Para la cocina · Ideal para regalar</span>
-        <h3>Casita de Jengibre para Utensilios</h3>
+        <span class="badge">Para la cocina · ideal para regalar</span>
+        <h3>Casita de jengibre</h3>
         <p class="lead">Una casita de galleta de jengibre con techo nevado que guarda tus utensilios de cocina y llena de Navidad tu barra o tu mesa.</p>
         <div class="mini"><span class="desde">Desde <b>$349</b></span><button type="button" class="btn ver" data-abrir="casita">Ver opciones</button></div>
         <div class="det">
@@ -104,14 +110,14 @@
         <div class="var" id="vCASA"></div>
         <div class="sel" id="selCASA"></div>
         </div>
-        <button type="button" class="cerrar" data-cerrar aria-label="Cerrar">✕</button>
+        <button type="button" class="cerrar" data-cerrar aria-label="Cerrar producto">✕</button>
       </div>
     </article>
     <article class="prod" id="corona">
-      <div class="gal"><img src="../img/navidad/corona-foto.jpg" alt="Adorno de corona con foto familiar en el árbol" draggable="false"></div>
+      <div class="gal"><img class="foto" src="../img/navidad/corona-foto.jpg" width="900" height="675" alt="Adorno de corona con foto familiar en el árbol" draggable="false"></div>
       <div class="info">
-        <span class="badge">📸 Con tu foto · Recuerdo para siempre</span>
-        <h3>Adorno Corona con tu Foto</h3>
+        <span class="badge">Con tu foto · recuerdo para siempre</span>
+        <h3>Corona con tu foto</h3>
         <p class="lead">Una coronita navideña con brillo que enmarca tu foto favorita para colgar en el árbol. El regalo perfecto para abuelos, padrinos y maestras.</p>
         <div class="mini"><span class="desde">Desde <b>$59</b></span><button type="button" class="btn ver" data-abrir="corona">Ver opciones</button></div>
         <div class="det">
@@ -124,99 +130,115 @@
         <div class="var" id="vCOR"></div>
         <div class="sel" id="selCOR"></div>
         </div>
-        <button type="button" class="cerrar" data-cerrar aria-label="Cerrar">✕</button>
+        <button type="button" class="cerrar" data-cerrar aria-label="Cerrar producto">✕</button>
       </div>
     </article>
+    <aside class="especial" aria-labelledby="t-especial">
+      <h2 id="t-especial">¿Buscas algo en especial?</h2>
+      <p>Escríbenos y lo diseñamos contigo: nombres, colores, tamaños o una idea nueva.</p>
+      <a class="btn wa" href="https://wa.me/524422791488?text=%C2%A1Hola!%20Quiero%20un%20dise%C3%B1o%20navide%C3%B1o%20especial%20de%20Lival%20Creative%20Studio" target="_blank" rel="noopener">Escríbenos por WhatsApp</a>
+    </aside>
     </div>
   </section>
 </main>
-<div class="nbar" id="nbar"><div class="t" id="nbarT"></div><a href="../pedido/">Ver mi pedido →</a></div>
+<div class="nbar" id="nbar"><div class="t" id="nbarT" aria-live="polite"></div><a href="../pedido/">Ver mi pedido →</a></div>
 
 <style>
-.prod { background:#fff; border-radius:24px; overflow:hidden; box-shadow:0 12px 32px rgba(75,63,114,.12); max-width:560px; }
-.gal { display:flex; overflow-x:auto; scroll-snap-type:x mandatory; scrollbar-width:none; }
+/* Navidad: catálogo en rejilla (2 por fila en celular, 3 en computadora). "Ver opciones" abre el producto completo. */
+.cabeza { padding: 8px 0 28px; }
+.cabeza h1 { font-size: var(--t2); }
+.prods { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:12px; padding-bottom: 24px; }
+.especial { grid-column:1 / -1; background:var(--lav); border-radius:28px; padding:28px 22px; display:flex; flex-direction:column; align-items:flex-start; gap:14px; }
+.especial h2 { font-size:var(--t2); }
+.especial p { max-width:40ch; }
+@media (min-width:900px) { .especial { grid-column:span 2; justify-content:center; padding:40px; } }
+@media (min-width:900px) { .prods { grid-template-columns:repeat(3,minmax(0,1fr)); gap:20px; } }
+.prod { background:var(--durazno-l); border-radius:28px; overflow:hidden; display:flex; flex-direction:column; padding:8px; min-width:0; transition:transform .45s var(--rebote); }
+.prods .prod:nth-child(even) { background:var(--lav-l); }
+@media (hover:hover) { .prods .prod:not(.open):hover { transform:translateY(-6px) rotate(-.6deg); } }
+.gal { display:flex; overflow-x:auto; scroll-snap-type:x mandatory; scrollbar-width:none; border-radius:20px; flex:none; }
 .gal::-webkit-scrollbar { display:none; }
-.gal img { flex:none; width:100%; aspect-ratio:4/3; object-fit:cover; scroll-snap-align:center; pointer-events:none; -webkit-touch-callout:none; }
-.dots { display:flex; gap:6px; justify-content:center; margin-top:-22px; position:relative; }
-.dots i { width:7px; height:7px; border-radius:50%; background:rgba(255,255,255,.6); }
-.dots i.on { background:#fff; width:18px; border-radius:4px; }
-.info { padding:18px 20px 22px; }
-.badge { display:inline-block; background:#fdeaea; color:var(--red); font-weight:800; font-size:.8rem; padding:4px 10px; border-radius:999px; }
-.prod h3 { font-size:1.6rem; color:var(--lav-d); margin:8px 0 6px; }
-.lead { margin:0 0 10px; color:var(--ink); }
-.prod ul { margin:0 0 14px; padding-left:1.1rem; color:var(--ink); }
-.prod li { margin-bottom:4px; }
+.gal img { flex:none; width:100%; aspect-ratio:1; object-fit:cover; scroll-snap-align:center; pointer-events:none; -webkit-touch-callout:none; -webkit-user-select:none; user-select:none; }
+#casita .gal img { object-position:center 70%; }
+.dots { display:none; gap:6px; justify-content:center; margin-top:-22px; position:relative; }
+.dots i { width:8px; height:8px; border-radius:50%; background:rgba(255,255,255,.65); transition:width .3s; }
+.dots i.on { background:#fff; width:20px; border-radius:4px; }
+.info { padding:12px 6px 6px; display:flex; flex-direction:column; flex:1; }
+.prod h3 { order:1; font-size:1.25rem; line-height:1; margin:4px 0 0; }
+.badge { order:2; font-size:var(--t5); color:var(--gris); margin-top:6px; }
+.lead { order:3; margin:8px 0 0; font-size:var(--t5); display:-webkit-box; -webkit-line-clamp:3; -webkit-box-orient:vertical; overflow:hidden; }
+.mini { order:4; margin-top:auto; padding-top:12px; display:flex; flex-direction:column; gap:10px; }
+.det { order:5; }
+.desde { font-size:var(--t5); } .desde b { font:800 var(--t3) var(--disp); letter-spacing:-.03em; font-variant-numeric:tabular-nums; margin-left:4px; }
+.btn.ver { background:var(--tinta); color:#fff; width:100%; min-height:48px; padding:0 14px; }
+.btn.ver:hover { background:var(--lav-d); }
+@media (max-width:420px) { .lead { display:none; } }
+@media (min-width:900px) { .prod h3 { font-size:var(--t3); } .info { padding:16px 10px 10px; } .mini { flex-direction:row; align-items:center; justify-content:space-between; } .btn.ver { width:auto; } }
+.prod .det, .prod .cerrar { display:none; }
+
+/* Producto abierto a pantalla completa */
+.prod.open { position:fixed; inset:0; z-index:50; overflow-y:auto; overscroll-behavior:contain; border-radius:0; padding:0; background:var(--suelo); transform:none; }
+.prod.open .gal { border-radius:0; }
+.prod.open .gal img { aspect-ratio:4/3; max-height:62vh; }
+.prod.open .dots { display:flex; }
+.prod.open .info { max-width:640px; margin:0 auto; width:100%; padding:22px var(--m) 120px; }
+.prod.open h3 { font-size:clamp(2.2rem, 8vw, 3.2rem); }
+.prod.open .badge { font-size:var(--t4); color:var(--lav-d); font-weight:800; margin-top:10px; }
+.prod.open .lead { display:block; -webkit-line-clamp:unset; font-size:1.125rem; margin-top:14px; }
+.prod.open .mini { display:none; }
+.prod.open .det { display:block; margin-top:18px; }
+.prod.open .cerrar { display:grid; place-items:center; position:fixed; top:12px; right:12px; z-index:60; width:48px; height:48px; border-radius:50%; border:0; background:var(--suelo); box-shadow:0 4px 14px rgba(43,34,64,.25); font-size:1.15rem; font-weight:800; cursor:pointer; color:var(--tinta); transition:transform .35s var(--rebote); }
+.prod.open .cerrar:hover { transform:rotate(90deg); }
+.prods .prod.open { background:var(--suelo); }
+body.abierto { overflow:hidden; }
+body.abierto .nbar { z-index:70; }
+
+.prod ul { margin:0 0 18px; padding-left:1.2rem; }
+.prod li { margin-bottom:6px; }
 .sw { display:inline-block; width:12px; height:12px; border-radius:50%; vertical-align:-1px; margin-left:4px; }
 .sw.r{background:#e53935}.sw.g{background:#2ecc40}.sw.b{background:#1e6fd9}.sw.w{background:#f4efe6;border:1px solid #d8d2c4}
-.opts { display:flex; gap:8px; flex-wrap:wrap; margin-bottom:14px; }
-.opt { border:2px solid var(--line); background:#fff; border-radius:999px; padding:8px 14px; font:inherit; font-weight:800; color:var(--lav-d); }
-.opt.on { border-color:var(--lav-d); background:var(--lav-l); }
-.buy { display:flex; align-items:center; justify-content:space-between; gap:12px; }
-.price { font-family:var(--display); font-size:2rem; color:var(--red); font-weight:700; }
-#casita .gal img { object-position:center 70%; }
-.btn.add { background:var(--red); color:#fff; box-shadow:0 6px 16px rgba(196,38,46,.35); }
 
-.var { display:grid; gap:8px; margin-bottom:12px; }
-.vrow { display:flex; align-items:center; justify-content:space-between; gap:10px; padding:8px 10px; border:1px solid var(--line); border-radius:14px; }
-.vrow.set { border:2px solid var(--gold); background:#fff9ec; flex-wrap:wrap; }
+.var { display:grid; gap:8px; margin-bottom:14px; }
+.vrow { display:flex; align-items:center; justify-content:space-between; gap:10px; padding:10px 10px 10px 14px; background:#fff; border-radius:20px; }
+.vrow.set { background:var(--oro-l); flex-wrap:wrap; }
 .vrow.set .nm { flex:1 1 100%; }
 .vrow .qty { flex:none; }
-.vrow .nm { font-weight:800; color:var(--lav-d); display:flex; align-items:center; gap:8px; }
-.vrow .nm small { display:block; font-weight:600; color:var(--muted); font-size:.8rem; }
-.vrow .pr { font-weight:800; color:var(--ink); margin-left:auto; margin-right:6px; }
-.vrow .sw { width:18px; height:18px; margin:0; flex:none; }
+.vrow .nm { font-weight:800; display:flex; align-items:center; gap:10px; }
+.vrow .nm small { display:block; font-weight:400; font-size:var(--t5); }
+.vrow .pr { font-weight:800; margin-left:auto; margin-right:6px; font-variant-numeric:tabular-nums; }
+.vrow .sw { width:20px; height:20px; margin:0; flex:none; }
 .sws { display:flex; gap:3px; }
-.qty { display:inline-flex; align-items:center; border:1px solid var(--line); border-radius:999px; overflow:hidden; }
-.qty button { width:34px; height:34px; border:0; background:var(--lav-l); color:var(--lav-d); font-size:1.15rem; font-weight:800; cursor:pointer; }
-.qty button.mas { background:var(--lav-d); color:#fff; }
-.qty span { min-width:28px; text-align:center; font-weight:800; }
-.sel { background:var(--lav-l); border-radius:14px; padding:12px 14px; font-size:.92rem; }
-.sel b.tot { font-family:var(--display); font-size:1.4rem; color:var(--red); }
+.qty { display:inline-flex; align-items:center; background:var(--lav-l); border-radius:999px; }
+.qty button { width:44px; height:44px; border:0; border-radius:50%; background:transparent; color:var(--tinta); font-size:1.3rem; font-weight:800; cursor:pointer; transition:transform .3s var(--rebote), background-color .2s; }
+.qty button:active { transform:scale(.88); }
+.qty button.mas { background:var(--tinta); color:#fff; }
+.qty span { min-width:30px; text-align:center; font-weight:800; font-variant-numeric:tabular-nums; }
+.sel { background:var(--lav-l); border-radius:20px; padding:14px 16px; }
+.sel b.tot { font:800 var(--t3) var(--disp); letter-spacing:-.03em; }
 
-.lbl { display:block; font-weight:800; color:var(--lav-d); margin:12px 0 6px; }
-.campo { width:100%; padding:11px 12px; border:1px solid #d9d0e6; border-radius:10px; font:inherit; background:#fff; }
+.lbl { display:block; font-weight:800; margin:16px 0 8px; }
+.opts { display:flex; gap:8px; flex-wrap:wrap; margin-bottom:6px; }
+.opt { min-height:44px; border:2px solid var(--tinta); background:#fff; border-radius:999px; padding:0 16px; font:inherit; font-weight:800; color:var(--tinta); cursor:pointer; transition:background-color .2s; }
+.opt.on { background:var(--tinta); color:#fff; }
+.campo { width:100%; min-height:52px; padding:0 16px; border:2px solid #cfc4e4; border-radius:16px; font:inherit; background:#fff; color:var(--tinta); }
+.campo:focus-visible { border-color:var(--lav-d); outline-offset:1px; }
 .nombres { display:grid; gap:8px; }
 .nombres .n { display:flex; align-items:center; gap:10px; }
 .bota { width:26px; height:30px; flex:none; }
-.hint { font-size:.82rem; color:var(--muted); margin:6px 0 12px; }
-.err { color:var(--red); font-weight:800; font-size:.9rem; min-height:1em; margin:8px 0 0; }
-.ch-item { display:flex; justify-content:space-between; gap:10px; align-items:flex-start; padding:8px 0; border-top:1px dashed #d9d0e6; }
-.ch-item:first-of-type { border-top:0; }
-.ch-item button { border:0; background:none; color:var(--red); font-weight:800; cursor:pointer; font:inherit; }
-
-/* Rejilla: 3 por fila en computadora, 2 en celular. Al tocar "Ver opciones" el producto se abre completo. */
-.wrap { max-width: 1100px; }
-.prods { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:12px; }
-@media (min-width:900px) { .prods { grid-template-columns:repeat(3,minmax(0,1fr)); gap:18px; } }
-.prods .prod { max-width:none; display:flex; flex-direction:column; border-radius:18px; }
-.prods .prod .gal img { aspect-ratio:1/1; }
-.prods .prod .gal { flex:none; }
-.prods .prod .dots { display:none; }
-.prods .prod .info { padding:12px 12px 14px; display:flex; flex-direction:column; flex:1; }
-.prods .prod .badge { font-size:.68rem; align-self:flex-start; }
-.prods .prod h3 { font-size:1.05rem; line-height:1.2; margin:8px 0 4px; }
-.prods .prod .lead { font-size:.85rem; color:var(--muted); display:-webkit-box; -webkit-line-clamp:3; -webkit-box-orient:vertical; overflow:hidden; }
-.mini { margin-top:auto; padding-top:10px; display:flex; flex-direction:column; gap:8px; }
-.desde { font-size:.85rem; color:var(--muted); } .desde b { font-family:var(--display); font-size:1.35rem; color:var(--red); }
-.btn.ver { background:var(--lav-d); color:#fff; justify-content:center; padding:10px 14px; font-size:.92rem; width:100%; }
-@media (min-width:900px) { .mini { flex-direction:row; align-items:center; justify-content:space-between; } .btn.ver { width:auto; } }
-.prod .det, .prod .cerrar { display:none; }
-/* Producto abierto */
-.prod.open { position:fixed; inset:0; z-index:50; overflow-y:auto; border-radius:0; max-width:none; background:#fff; }
-.prod.open .gal img { aspect-ratio:4/3; max-height:60vh; }
-.prod.open .dots { display:flex; }
-.prod.open .info { max-width:640px; margin:0 auto; width:100%; padding:18px 20px 110px; }
-.prod.open .lead { -webkit-line-clamp:unset; color:var(--ink); font-size:1rem; }
-.prod.open h3 { font-size:1.6rem; }
-.prod.open .badge { font-size:.8rem; }
-.prod.open .mini { display:none; }
-.prod.open .det { display:block; }
-.prod.open .cerrar { display:grid; place-items:center; position:fixed; top:12px; right:12px; z-index:60; width:42px; height:42px; border-radius:50%; border:0; background:rgba(255,255,255,.92); box-shadow:0 4px 14px rgba(0,0,0,.2); font-size:1.1rem; font-weight:800; cursor:pointer; color:var(--lav-d); }
-body.abierto { overflow:hidden; }
-body.abierto .nbar { z-index:70; }
-@media (max-width:420px) { .prods .prod .badge { display:none; } }
+.hint { font-size:var(--t5); color:var(--gris); margin:8px 0 14px; }
+.buy { display:flex; align-items:center; justify-content:space-between; gap:12px; flex-wrap:wrap; }
+.price { font:800 var(--t2)/1 var(--disp); letter-spacing:-.03em; font-variant-numeric:tabular-nums; }
+.btn.add { background:var(--tinta); color:#fff; }
+.btn.add:hover { background:var(--lav-d); }
+.err { color:var(--rojo); font-weight:800; min-height:1em; margin:10px 0 0; }
+.ch-item { display:flex; justify-content:space-between; gap:10px; align-items:flex-start; padding:10px 0; }
+.ch-item + .ch-item { border-top:2px solid #fff; }
+.ch-item button { min-height:44px; border:0; background:none; color:var(--rojo); font-weight:800; cursor:pointer; font:inherit; }
 </style>
-<footer><img src="../img/logo.png" alt="">Lival Creative Studio · Querétaro · WhatsApp 442 279 1488</footer>
+<footer class="pie">
+  <div class="sello"><img class="foto" src="../img/logo-t.png" width="360" height="267" loading="lazy" alt="Lival Creative Studio" translate="no"></div>
+  <p>Querétaro · WhatsApp 442&nbsp;279&nbsp;1488</p>
+</footer>
 
 <script src="../assets/carrito.js"></script>
 <script>
@@ -225,7 +247,7 @@ const E = LIVAL.EXTRA, COL = LIVAL.COLORES_FOCO;
 let cart = LIVAL.leer();
 function fila(id, nm, sub, pr, sw, set) {
   return `<div class="vrow${set ? " set" : ""}"><div class="nm">${sw}<div>${nm}${sub ? `<small>${sub}</small>` : ""}</div></div><span class="pr">${money(pr)}</span>
-    <div class="qty"><button aria-label="Quitar" data-v="${id}" data-d="-1">−</button><span id="q-${id}">0</span><button class="mas" aria-label="Agregar" data-v="${id}" data-d="1">+</button></div></div>`;
+    <div class="qty"><button aria-label="Quitar ${nm}" data-v="${id}" data-d="-1">−</button><span id="q-${id}">0</span><button class="mas" aria-label="Agregar ${nm}" data-v="${id}" data-d="1">+</button></div></div>`;
 }
 const ahorro = E["FOCO-rojo"].price * 4 - E["FOCO-set4"].price;
 document.getElementById("vFOCO").innerHTML =
@@ -259,11 +281,12 @@ pintar();
 window.addEventListener("pageshow", () => { cart = LIVAL.leer(); pintar(); });
 </script>
 <style>
-.nbar { position:fixed; left:0; right:0; bottom:0; z-index:20; display:flex; justify-content:space-between; align-items:center; gap:12px; padding:10px 16px; background:var(--lav-d); color:#fff; border-top:3px solid var(--gold); box-shadow:0 -8px 24px rgba(0,0,0,.18); }
-.nbar .t { font-weight:800; } .nbar .t small { display:block; font-weight:600; opacity:.85; }
-.nbar a { background:var(--red); color:#fff; text-decoration:none; font-weight:800; padding:10px 16px; border-radius:999px; }
-.nbar.bump { animation: bump .45s; } @keyframes bump { 30% { transform: translateY(-6px); } }
-body { padding-bottom: 80px; }
+.nbar { position:fixed; left:0; right:0; bottom:0; z-index:40; display:flex; justify-content:space-between; align-items:center; gap:12px; padding:10px var(--m) max(10px, env(safe-area-inset-bottom)); background:var(--tinta); color:#fff; box-shadow:0 -6px 20px rgba(43,34,64,.18); }
+.nbar .t { font-weight:800; font-variant-numeric:tabular-nums; } .nbar .t small { display:block; font-weight:400; opacity:.9; }
+.nbar a { display:inline-flex; align-items:center; min-height:48px; background:var(--durazno); color:var(--tinta); text-decoration:none; font-weight:800; padding:0 20px; border-radius:999px; transition:transform .35s var(--rebote); }
+.nbar a:hover { transform:translateY(-2px); }
+.nbar.bump { animation: bump .45s var(--rebote); } @keyframes bump { 30% { transform: translateY(-6px); } }
+body { padding-bottom: 90px; }
 </style>
 
 <script>
@@ -278,7 +301,7 @@ body { padding-bottom: 80px; }
   }
   function campos() {
     const prev = [...document.querySelectorAll("#chNombres input")].map(i => i.value);
-    document.getElementById("chNombres").innerHTML = Array.from({ length: n }, (_, i) => `<div class="n">${bota(color(i).c)}<input class="campo" maxlength="10" data-i="${i}" placeholder="Bota ${i + 1} (${color(i).nm})" value="${(prev[i] || "").replace(/"/g, "&quot;")}"></div>`).join("");
+    document.getElementById("chNombres").innerHTML = Array.from({ length: n }, (_, i) => `<div class="n">${bota(color(i).c)}<input class="campo" maxlength="10" data-i="${i}" name="bota${i + 1}" autocomplete="off" aria-label="Nombre en la bota ${i + 1} (${color(i).nm})" placeholder="Bota ${i + 1} (${color(i).nm})…" value="${(prev[i] || "").replace(/"/g, "&quot;")}"></div>`).join("");
     document.getElementById("chPrecio").textContent = money(OPC[n].precio);
   }
   document.getElementById("nBotas").addEventListener("click", e => { const b = e.target.closest("[data-n]"); if (!b) return; n = +b.dataset.n; opciones(); campos(); });
@@ -304,6 +327,7 @@ body { padding-bottom: 80px; }
     lista();
     const bar = document.getElementById("nbar"); bar.classList.remove("bump"); void bar.offsetWidth; bar.classList.add("bump");
   });
+  try { const q = new URLSearchParams(location.search).get("letrero"); if (q) document.getElementById("chLetrero").value = q.slice(0, 22); } catch (e) {}
   opciones(); campos(); lista();
   window.addEventListener("pageshow", lista);
 })();
@@ -315,7 +339,7 @@ body { padding-bottom: 80px; }
   const OPS = [["CASA-abierta", "Interior abierto", "Un solo espacio para todos tus utensilios"], ["CASA-div", "Interior con divisiones", "Separa cada utensilio"]];
   const box = document.getElementById("vCASA");
   box.innerHTML = OPS.map(([k, nm, sub]) => `<div class="vrow"><div class="nm"><div>${nm}<small>${sub}</small></div></div><span class="pr">${money(E[k].price)}</span>
-    <div class="qty"><button aria-label="Quitar" data-c="${k}" data-d="-1">−</button><span id="q-${k}">0</span><button class="mas" aria-label="Agregar" data-c="${k}" data-d="1">+</button></div></div>`).join("");
+    <div class="qty"><button aria-label="Quitar casita, ${nm}" data-c="${k}" data-d="-1">−</button><span id="q-${k}">0</span><button class="mas" aria-label="Agregar casita, ${nm}" data-c="${k}" data-d="1">+</button></div></div>`).join("");
   function pintarCasa() {
     const c = LIVAL.leer(); let t = 0; const l = [];
     OPS.forEach(([k, nm]) => { const n = c[k] || 0; document.getElementById("q-" + k).textContent = n; if (n) { t += n * E[k].price; l.push(`${n} × ${nm.toLowerCase()}`); } });
@@ -338,7 +362,7 @@ body { padding-bottom: 80px; }
   const OPS = [["CORONA-1", "1 adorno", "Con 1 foto"], ["CORONA-3", "Paquete de 3", "Con 3 fotos distintas · ahorras " + money(E["CORONA-1"].price * 3 - E["CORONA-3"].price)]];
   const box = document.getElementById("vCOR");
   box.innerHTML = OPS.map(([k, nm, sub], i) => `<div class="vrow${i ? " set" : ""}"><div class="nm"><div>${nm}<small>${sub}</small></div></div><span class="pr">${money(E[k].price)}</span>
-    <div class="qty"><button aria-label="Quitar" data-k="${k}" data-d="-1">−</button><span id="q-${k}">0</span><button class="mas" aria-label="Agregar" data-k="${k}" data-d="1">+</button></div></div>`).join("");
+    <div class="qty"><button aria-label="Quitar corona, ${nm}" data-k="${k}" data-d="-1">−</button><span id="q-${k}">0</span><button class="mas" aria-label="Agregar corona, ${nm}" data-k="${k}" data-d="1">+</button></div></div>`).join("");
   function pintarCor() {
     const c = LIVAL.leer(); let t = 0, fotos = 0; const l = [];
     OPS.forEach(([k, nm]) => { const n = c[k] || 0; document.getElementById("q-" + k).textContent = n; if (n) { t += n * E[k].price; fotos += n * (k === "CORONA-3" ? 3 : 1); l.push(`${n} × ${nm.toLowerCase()}`); } });
@@ -381,5 +405,6 @@ body { padding-bottom: 80px; }
   if (location.hash && document.getElementById(location.hash.slice(1))) abrir(location.hash.slice(1));
 })();
 </script>
+<script src="../assets/tienda.js"></script>
 </body>
 </html>
