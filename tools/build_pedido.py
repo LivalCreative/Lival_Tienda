@@ -9,7 +9,9 @@ def rep(a, b):
 rep("<title>Travesuras del Duende · Lival Creative Studio</title>", "<title>Tu pedido · Lival Creative Studio</title>")
 # El Duende puede estar en pausa (redirige al inicio); el pedido no debe heredar esa redirección
 h = re.sub(r"<!-- DUENDE-PAUSA.*?<!-- /DUENDE-PAUSA -->\n?", "", h, flags=re.S)
-rep("<body>", '<body class="solo-pedido">')
+rep("<body>", '<body class="solo-pedido temporada-navidad">')
+# Tema de temporada (nieve); quítalo en enero junto con el de las demás páginas
+h = re.sub(r'(<link rel="stylesheet" href="\.\./assets/lival\.css\?v=([0-9a-z]+)">)', r'\1\n<link rel="stylesheet" href="../assets/temporada.css?v=\2">', h, count=1)
 # En la barra, "Mi pedido" es la página actual
 rep('<a class="bolsa" href="#pedido">', '<a class="bolsa" href="#pedido" aria-current="page">')
 rep("</style>", """

@@ -1,0 +1,53 @@
+/* Tema de temporada: Navidad de jengibre.
+   Se activa con la clase "temporada-navidad" en <body> y este archivo. Para quitarlo en enero:
+   quita la clase y el <link> de temporada.css en cada página (y corre tools/build_pedido.py). */
+:root {
+  --jengibre: #b8733f; --jengibre-d: #8a4f2a; --jengibre-l: #d79a63;
+  --glaseado: #fffaf2; --dulce-rojo: #d6313a; --dulce-verde: #2f8a4e; --luz: #ffd77a;
+}
+
+/* Nieve que cae sobre toda la página */
+.nieve-global { position: fixed; inset: 0; z-index: 25; pointer-events: none; overflow: hidden; }
+.nieve-global i { position: absolute; top: 0; left: 0; display: block; border-radius: 50%; background: #fff;
+  box-shadow: 0 0 3px rgba(80, 60, 120, .35); will-change: transform; animation: copo linear infinite; }
+.nieve-global i.copo { border-radius: 0; background: none; box-shadow: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cg stroke-linecap='round' fill='none'%3E%3Cg stroke='rgba(80,60,120,.35)' stroke-width='3.2'%3E%3Cpath d='M12 2v20M3.3 7l17.4 10M3.3 17L20.7 7M12 2l-2.5 2.5M12 2l2.5 2.5M12 22l-2.5-2.5M12 22l2.5-2.5'/%3E%3C/g%3E%3Cg stroke='%23fff' stroke-width='1.7'%3E%3Cpath d='M12 2v20M3.3 7l17.4 10M3.3 17L20.7 7M12 2l-2.5 2.5M12 2l2.5 2.5M12 22l-2.5-2.5M12 22l2.5-2.5'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  background-size: contain; background-repeat: no-repeat; }
+@keyframes copo {
+  from { transform: translate3d(var(--x), -6vh, 0) rotate(0deg); }
+  50% { transform: translate3d(calc(var(--x) + var(--dx)), 52vh, 0) rotate(180deg); }
+  to { transform: translate3d(var(--x), 106vh, 0) rotate(360deg); }
+}
+
+/* Glaseado que escurre por la orilla de arriba de la portada */
+.temporada-navidad .portada { position: relative; }
+.temporada-navidad .portada::before { content: ""; position: absolute; left: 0; right: 0; top: 0; height: 30px; z-index: 1; pointer-events: none;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 120 30'%3E%3Cpath fill='%23fffaf2' d='M0 0h120v8c-5 0-5 9-10 9s-5-9-10-9-4 15-9 15-5-15-10-15-5 6-10 6-5-6-10-6-4 19-9 19-5-19-10-19-5 9-10 9-5-9-10-9-4 12-9 12-5-12-10-12h-3z'/%3E%3C/svg%3E") repeat-x top / 120px 30px; }
+.temporada-navidad .portada .in { padding-top: 46px; }
+
+/* Aldea de casitas de jengibre */
+.aldea { display: block; width: 100%; height: clamp(96px, 13vw, 150px); }
+.aldea svg { display: block; width: 100%; height: 100%; }
+.portada .aldea { margin-top: -6px; }
+.aldea-pie { margin-top: clamp(40px, 6vw, 72px); width: auto; margin-left: 8px; margin-right: 8px; padding-top: 18px; background: var(--lav-l); border-radius: 32px 32px 0 0; overflow: hidden; }
+@media (min-width: 900px) { .aldea-pie { margin-left: 18px; margin-right: 18px; } }
+.aldea .casa { transform-box: fill-box; transform-origin: 50% 100%; }
+.aldea .ventana { animation: titila 3.2s ease-in-out infinite alternate; }
+.aldea .ventana:nth-of-type(2n) { animation-delay: -1.4s; }
+@keyframes titila { to { fill: #ffe9b0; } }
+
+/* Marcos de jengibre con puntadas de glaseado */
+.temporada-navidad .tarjeta .img,
+.temporada-navidad .prods .prod:not(.open) .gal,
+.temporada-navidad .vista .foto-letrero,
+.temporada-navidad .sec .fila img {
+  border: 8px solid var(--jengibre); border-radius: 22px; outline: 2.5px dashed var(--glaseado); outline-offset: -5.5px; }
+.temporada-navidad .sec .fila img { border-width: 5px; border-radius: 16px; outline-width: 2px; outline-offset: -3.5px; }
+.temporada-navidad .vista .foto-letrero { border-radius: 24px 24px 0 0; overflow: hidden; }
+.temporada-navidad .collage div { border-color: var(--jengibre); outline: 2.5px dashed var(--glaseado); outline-offset: -4.5px; }
+.temporada-navidad .letrero .caja { box-shadow: inset 0 0 0 10px var(--jengibre); outline: 3px dashed var(--glaseado); outline-offset: -7px; }
+
+@media (prefers-reduced-motion: reduce) {
+  .nieve-global { display: none; }
+  .aldea .ventana { animation: none; }
+}

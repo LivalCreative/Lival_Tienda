@@ -7,9 +7,10 @@
 <link rel="icon" href="../img/logo.png">
 <meta name="theme-color" content="#fff9f5">
 <link rel="preload" href="../fonts/bricolage-latin-800-normal.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="../assets/lival.css?v=20261101e">
+<link rel="stylesheet" href="../assets/lival.css?v=20261102c">
+<link rel="stylesheet" href="../assets/temporada.css?v=20261102c">
 </head>
-<body>
+<body class="temporada-navidad">
 <a class="saltar" href="#contenido">Saltar al contenido</a>
 <header class="barra"><div class="marco">
   <a class="logo-link" href="../" aria-label="Lival Creative Studio, inicio"><img src="../img/logo-t.png" width="360" height="267" alt=""></a>
@@ -235,12 +236,13 @@ body.abierto .nbar { z-index:70; }
 .ch-item + .ch-item { border-top:2px solid #fff; }
 .ch-item button { min-height:44px; border:0; background:none; color:var(--rojo); font-weight:800; cursor:pointer; font:inherit; }
 </style>
+<div class="aldea aldea-pie" data-aldea aria-hidden="true"></div>
 <footer class="pie">
   <div class="sello"><img class="foto" src="../img/logo-t.png" width="360" height="267" loading="lazy" alt="Lival Creative Studio" translate="no"></div>
   <p>Querétaro · WhatsApp 442&nbsp;279&nbsp;1488</p>
 </footer>
 
-<script src="../assets/carrito.js?v=20261101e"></script>
+<script src="../assets/carrito.js?v=20261102c"></script>
 <script>
 const money = n => "$" + n.toLocaleString("es-MX");
 const E = LIVAL.EXTRA, COL = LIVAL.COLORES_FOCO;
@@ -409,6 +411,6 @@ body { padding-bottom: 90px; }
   if (location.hash && document.getElementById(location.hash.slice(1))) abrir(location.hash.slice(1));
 })();
 </script>
-<script src="../assets/tienda.js?v=20261101e"></script>
+<script src="../assets/tienda.js?v=20261102c"></script>
 </body>
 </html>

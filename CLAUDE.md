@@ -13,6 +13,7 @@ Todo en español (México). La dueña es Lilian; los clientes compran desde el c
 - `assets/carrito.js` — carrito compartido (localStorage), precios y horas de los productos fuera del duende, productos personalizados (chimenea).
 - `assets/tienda.js` — detalles compartidos de la vista (número del carrito en la barra, animaciones, nieve, cuenta regresiva, fotos protegidas). No toca precios ni pedidos.
 - Estilo "Taller de regalos": `assets/lival.css` (lavanda y durazno, letra Bricolage Grotesque + Nunito en `fonts/`). El duende tiene su estilo propio en verde pino, rojo y oro.
+- Tema de temporada navideña: `assets/temporada.css` + clase `temporada-navidad` en `<body>` (nieve sobre la página, aldea de casitas de jengibre en los `data-aldea`, marcos de jengibre en las fotos). Para quitarlo: borra la clase, el `<link>` de `temporada.css` y los `<div data-aldea>` de cada página, ajusta `tools/build_pedido.py` y córrelo.
 - `ocupacion.json` — fechas ocupadas, lo actualiza una tarea programada desde el tablero privado "Pedidos 3D". No contiene nombres ni montos; nunca agregues datos de clientes al repositorio.
 - `tools/` — `ocupacion.py`, `build_pedido.py`, `horas_duende.json`.
 - `img/` — fotos con marca de agua "LIVAL CREATIVE STUDIO". Toda foto nueva de producto lleva marca de agua.
