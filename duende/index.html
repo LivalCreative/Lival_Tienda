@@ -4,6 +4,10 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Travesuras del Duende · Lival Creative Studio</title>
+<!-- DUENDE-PAUSA: la sección está en pausa y manda al inicio. Para volver a mostrarla, borra este bloque. -->
+<meta http-equiv="refresh" content="0; url=../">
+<script>location.replace("../");</script>
+<!-- /DUENDE-PAUSA -->
 <meta name="theme-color" content="#f8f2e4">
 <link rel="icon" href="../img/logo.png">
 <link rel="preload" href="../fonts/bricolage-latin-800-normal.woff2" as="font" type="font/woff2" crossorigin>
@@ -176,7 +180,7 @@ footer.creditos { margin: clamp(56px, 8vw, 96px) 0 24px; font-size: var(--t5); c
 <header class="barra"><div class="marco">
   <a class="logo-link" href="../" aria-label="Lival Creative Studio, inicio"><img src="../img/logo-t.png" width="360" height="267" alt=""></a>
   <nav aria-label="Secciones">
-    <a class="link" href="../duende/" aria-current="page">Duende</a>
+    <!-- Duende en pausa: <a class="link" href="../duende/">Duende</a> -->
     <a class="link" href="../navidad/">Navidad</a>
     <a class="link" href="../productos/">Más productos</a>
     <a class="bolsa" href="#pedido">Mi pedido (<span data-carrito-n>0</span>)</a>
@@ -278,7 +282,7 @@ footer.creditos { margin: clamp(56px, 8vw, 96px) 0 24px; font-size: var(--t5); c
     </form>
   </section>
 
-  <section>
+  <section id="como-duende">
     <h2>Cómo funciona</h2>
     <div class="steps">
       <div><b>Elige</b> Eliges tus travesuras y mandas tu pedido por WhatsApp.</div>
@@ -290,7 +294,7 @@ footer.creditos { margin: clamp(56px, 8vw, 96px) 0 24px; font-size: var(--t5); c
   <footer class="creditos">
     <img src="../img/logo-t.png" width="120" height="89" loading="lazy" alt="Lival Creative Studio" translate="no">
     <p>Lival Creative Studio · Querétaro · WhatsApp 442&nbsp;279&nbsp;1488</p>
-    <p>Diseños de O3ga_3dprinting, impresos con licencia comercial · Duende no incluido · Piezas compatibles con duendes navideños de tamaño estándar</p>
+    <p class="cred-duende">Diseños de O3ga_3dprinting, impresos con licencia comercial · Duende no incluido · Piezas compatibles con duendes navideños de tamaño estándar</p>
   </footer>
 </main>
 

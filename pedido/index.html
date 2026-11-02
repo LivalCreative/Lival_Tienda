@@ -170,7 +170,7 @@ footer.creditos { margin: clamp(56px, 8vw, 96px) 0 24px; font-size: var(--t5); c
 @keyframes bump { 30% { transform: translateY(-6px); } 60% { transform: translateY(2px); } }
 @media (prefers-reduced-motion: reduce) { .snow { display: none; } .bar.bump { animation: none; } }
 
-.solo-pedido .hero, .solo-pedido nav.pills, .solo-pedido #paquete, .solo-pedido #cats, .solo-pedido #bar { display: none !important; }
+.solo-pedido .hero, .solo-pedido nav.pills, .solo-pedido #paquete, .solo-pedido #cats, .solo-pedido #bar, .solo-pedido #como-duende, .solo-pedido .cred-duende { display: none !important; }
 .solo-pedido { padding-bottom: 24px; }
 .solo-pedido #pedido { margin-top: 8px; }
 #pedido > h1 { font-size: var(--t2); color: var(--pine); }
@@ -182,7 +182,7 @@ footer.creditos { margin: clamp(56px, 8vw, 96px) 0 24px; font-size: var(--t5); c
 <header class="barra"><div class="marco">
   <a class="logo-link" href="../" aria-label="Lival Creative Studio, inicio"><img src="../img/logo-t.png" width="360" height="267" alt=""></a>
   <nav aria-label="Secciones">
-    <a class="link" href="../duende/">Duende</a>
+    <!-- Duende en pausa: <a class="link" href="../duende/">Duende</a> -->
     <a class="link" href="../navidad/">Navidad</a>
     <a class="link" href="../productos/">Más productos</a>
     <a class="bolsa" href="#pedido" aria-current="page">Mi pedido (<span data-carrito-n>0</span>)</a>
@@ -284,7 +284,7 @@ footer.creditos { margin: clamp(56px, 8vw, 96px) 0 24px; font-size: var(--t5); c
     </form>
   </section>
 
-  <section>
+  <section id="como-duende">
     <h2>Cómo funciona</h2>
     <div class="steps">
       <div><b>Elige</b> Eliges tus travesuras y mandas tu pedido por WhatsApp.</div>
@@ -296,7 +296,7 @@ footer.creditos { margin: clamp(56px, 8vw, 96px) 0 24px; font-size: var(--t5); c
   <footer class="creditos">
     <img src="../img/logo-t.png" width="120" height="89" loading="lazy" alt="Lival Creative Studio" translate="no">
     <p>Lival Creative Studio · Querétaro · WhatsApp 442&nbsp;279&nbsp;1488</p>
-    <p>Diseños de O3ga_3dprinting, impresos con licencia comercial · Duende no incluido · Piezas compatibles con duendes navideños de tamaño estándar</p>
+    <p class="cred-duende">Diseños de O3ga_3dprinting, impresos con licencia comercial · Duende no incluido · Piezas compatibles con duendes navideños de tamaño estándar</p>
   </footer>
 </main>
 
@@ -423,7 +423,7 @@ function update() {
   });
   document.getElementById("summary").innerHTML = t.lines.length
     ? t.lines.map(l => `<div class="line"><span>${l.n} × ${l.name}</span><span>${money(l.sub)}</span></div>`).join("") + (rc ? `<div class="line" style="color:var(--muted)"><span>${rc}</span></div>` : "") + `<div class="line tot"><span>Total</span><span>${money(t.total)}</span></div>`
-    : `<div class="empty">Tu carrito está vacío. Elige en <a href="../duende/">Travesuras del Duende</a> o en <a href="../navidad/">Navidad</a>.</div>`;
+    : `<div class="empty">Tu carrito está vacío. Elige tus regalos en <a href="../navidad/">Navidad</a>.</div>`;
   document.getElementById("pTotal").textContent = money(t.total);
   document.getElementById("pAnt").textContent = money(t.ant);
   document.getElementById("pRest").textContent = money(t.rest);

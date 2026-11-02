@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="theme-color" content="#fff9f5">
 <title>Lival Creative Studio · Diseños impresos en 3D en Querétaro</title>
-<meta name="description" content="Travesuras del duende navideño, adornos de Navidad y más diseños impresos en 3D, hechos sobre pedido en Querétaro.">
+<meta name="description" content="Regalos y detalles impresos en 3D para toda ocasión, con tu nombre y a tu gusto. Hechos sobre pedido en Querétaro.">
 <link rel="icon" href="img/logo.png">
 <link rel="preload" href="fonts/bricolage-latin-800-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="assets/lival.css?v=20261101e">
@@ -15,7 +15,7 @@
 <header class="barra"><div class="marco">
   <a class="logo-link" href="./" aria-label="Lival Creative Studio, inicio"><img data-logo-chico src="img/logo-t.png" width="360" height="267" alt=""></a>
   <nav aria-label="Secciones">
-    <a class="link" href="duende/">Duende</a>
+    <!-- Duende en pausa: <a class="link" href="duende/">Duende</a> -->
     <a class="link" href="navidad/">Navidad</a>
     <a class="link" href="productos/">Más productos</a>
     <a class="bolsa" href="pedido/">Mi pedido (<span data-carrito-n>0</span>)</a>
@@ -30,7 +30,7 @@
       <h1>Lo imaginas,<br> lo imprimimos</h1>
       <p class="ocasion">Para <span class="giro" data-giro="Navidad|cumpleaños|tu boda|graduaciones|el Día de las Madres|regalar porque sí" aria-live="off">Navidad</span></p>
       <p class="sub">Regalos y detalles impresos en 3D para toda ocasión, con tu nombre y a tu gusto. Hechos en Querétaro y entregados en persona.</p>
-      <div class="acciones"><a class="btn osc" href="navidad/">Ver regalos de Navidad</a><a class="enlace" href="duende/">Travesuras del Duende →</a></div>
+      <div class="acciones"><a class="btn osc" href="navidad/">Ver regalos de Navidad</a><a class="enlace" href="https://wa.me/524422791488?text=%C2%A1Hola!%20Quiero%20un%20pedido%20especial%20de%20Lival%20Creative%20Studio" target="_blank" rel="noopener">Pedidos especiales por WhatsApp →</a></div>
     </div>
     <div class="collage">
       <div class="c1"><img class="foto" src="img/navidad/chimenea-6.jpg" width="900" height="675" fetchpriority="high" alt="Chimenea con seis botas, cada una con un nombre"></div>
@@ -60,6 +60,8 @@
   </section>
 </div>
 
+<!-- Duende en pausa: para volver a mostrar la banda, saca este bloque del <template>. -->
+<template id="duende-en-pausa">
 <section class="banda-duende" id="duende" aria-labelledby="t-duende">
   <div class="nieve" aria-hidden="true"></div>
   <div class="in">
@@ -76,6 +78,7 @@
     </div>
   </div>
 </section>
+</template>
 
 <div class="marco">
   <section class="letrero" aria-labelledby="t-letrero">

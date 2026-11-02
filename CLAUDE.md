@@ -6,6 +6,7 @@ Todo en español (México). La dueña es Lilian; los clientes compran desde el c
 ## Estructura
 - `index.html` — inicio con las secciones (estilo Lival: lavanda y durazno, `assets/lival.css`).
 - `duende/index.html` — sección especial Travesuras del Duende (verde pino y rojo). Contiene el catálogo, el carrito y el formulario de pedido.
+  **En pausa:** la página manda al inicio (bloque `DUENDE-PAUSA` en su `<head>`), su enlace está comentado en la barra de cada página y la banda del inicio está guardada en `<template id="duende-en-pausa">`. Para reactivarla: borra el bloque, descomenta los enlaces, saca la banda del `<template>` y corre `build_pedido.py`.
 - `pedido/index.html` — checkout compartido. **No se edita a mano**: se genera con `python3 tools/build_pedido.py` a partir de `duende/index.html`. Córrelo después de cada cambio al duende.
 - `navidad/index.html` — productos navideños en rejilla (3 por fila en computadora, 2 en celular); cada tarjeta se abre en vista completa.
 - `productos/index.html` — "Más productos" (muy pronto).
