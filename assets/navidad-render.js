@@ -39,6 +39,10 @@
     box.insertBefore(art, box.querySelector(":scope > aside"));
   });
 
+  function verFoto(art, o) {
+    if (!o || o.f == null) return;
+    const g = art.querySelector(".gal"); if (g) g.scrollTo({ left: o.f * g.clientWidth, behavior: "smooth" });
+  }
   function bump() { const bar = document.getElementById("nbar"); if (!bar) return; bar.classList.remove("bump"); void bar.offsetWidth; bar.classList.add("bump"); }
   function refrescarBarra() { if (typeof cart !== "undefined") cart = LIVAL.leer(); if (typeof pintar === "function") pintar(); }
 
@@ -60,9 +64,16 @@
 
   box.addEventListener("click", e => {
     const g = e.target.closest("button[data-g]");
-    if (g) { const c = LIVAL.leer(); c[g.dataset.g] = Math.max(0, (c[g.dataset.g] || 0) + (+g.dataset.d)); LIVAL.guardar(c); pintarGen(); refrescarBarra(); bump(); return; }
+    if (g) {
+      const c = LIVAL.leer(); c[g.dataset.g] = Math.max(0, (c[g.dataset.g] || 0) + (+g.dataset.d)); LIVAL.guardar(c);
+      const art = g.closest("article"), p = lista.find(x => x.id === art.id);
+      if (+g.dataset.d > 0) verFoto(art, p.opciones.find(o => key(p, o) === g.dataset.g));
+      pintarGen(); refrescarBarra(); bump(); return;
+    }
     const op = e.target.closest("button[data-op]");
-    if (op) { const art = op.closest("article"), p = lista.find(x => x.id === art.id); art.querySelectorAll("[data-op]").forEach(b => b.classList.toggle("on", b === op)); art.querySelector("[data-precio]").textContent = money(p.opciones.find(o => o.k === op.dataset.op).precio); return; }
+    if (op) { const art = op.closest("article"), p = lista.find(x => x.id === art.id); art.querySelectorAll("[data-op]").forEach(b => b.classList.toggle("on", b === op)); const o = p.opciones.find(x => x.k === op.dataset.op); art.querySelector("[data-precio]").textContent = money(o.precio); verFoto(art, o); return; }
+    const fila = e.target.closest(".vrow .nm");
+    if (fila) { const art = fila.closest("article"), p = lista.find(x => x.id === art.id), b = fila.closest(".vrow").querySelector("[data-g]"); verFoto(art, p.opciones.find(o => key(p, o) === b.dataset.g)); return; }
     const add = e.target.closest("button[data-addp]");
     if (add) {
       const art = add.closest("article"), p = lista.find(x => x.id === add.dataset.addp);

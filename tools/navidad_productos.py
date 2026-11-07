@@ -211,20 +211,89 @@ def sin_emoji(t):
     return "".join(ch for ch in t if ord(ch) < 0x2600).strip()
 
 
-out = []
+# ---------- Construcción: productos sueltos + grupos (cosas iguales = un producto con versiones) ----------
+SRC = {}
 for mid, nombre, badge, lead, bullets, fotos, ops, personal in P:
-    nombre, badge = oracion(nombre), sin_emoji(badge)
-    opciones = []
-    for k, label, sub, h, g, extra in ops:
-        opciones.append({"k": k, "label": label, "sub": sub, "precio": precio(h, g, extra),
-                         "costo": costo(h, g, extra), "horas": h, "gramos": g})
-    out.append({"id": "NV" + mid, "mw": mid, "nombre": nombre, "badge": badge, "lead": lead, "bullets": bullets,
-                "fotos": [CDN + f + "?x-oss-process=image/resize,w_900" for f in fotos],
-                "opciones": opciones, "personal": personal})
+    opciones = [{"k": k, "label": label, "sub": sub, "precio": precio(h, g, extra), "costo": costo(h, g, extra),
+                 "horas": h, "gramos": g, "mw": mid} for k, label, sub, h, g, extra in ops]
+    SRC[mid] = {"id": "NV" + mid, "mw": mid, "nombre": oracion(nombre), "badge": sin_emoji(badge), "lead": lead,
+                "bullets": bullets, "fotos": [CDN + f + "?x-oss-process=image/resize,w_900" for f in fotos],
+                "opciones": opciones, "personal": personal}
+
+# Adorno corona con foto (antes era un producto aparte en la página; foto propia de Lilian)
+CORONA = [{"k": "corona", "label": "Corona", "sub": "Con 1 foto", "precio": 59, "costo": costo(0.34, 7, FOTO), "horas": 0.34, "gramos": 7, "mw": "2128558"},
+          {"k": "corona3", "label": "Corona, paquete de 3", "sub": "Con 3 fotos distintas · ahorras $18", "precio": 159, "costo": costo(1.02, 21, 3 * FOTO), "horas": 1.02, "gramos": 21, "mw": "2128558"}]
+
+GRUPOS = [
+ ("bandeja-santa", "Bandeja para Santa", "Para Santa",
+  "La charolita para dejarle a Santa sus galletas y su leche en Nochebuena. Elige tu modelo.",
+  ["Dos modelos: botanas para Santa o \"Querido Santa\" con lugar para la zanahoria del reno.", "Espacios marcados para galletas y leche.", "Una tradición para repetir cada año."],
+  [("2073409", "Botanas para Santa"), ("3348753", "Querido Santa, con zanahoria para el reno")], None),
+ ("camara-santa", "Cámara de Santa", "Para la magia",
+  "Una cámara de vigilancia de mentira que \"transmite al Polo Norte\" para que los niños se porten bien. Elige tu modelo.",
+  ["Domo: 8 cm, se cuelga en la pared.", "Caseta: con gorro de Santa, se para sola.", "Adorno: con gorrito, para el árbol o una repisa."],
+  [("797351", "Domo de pared"), ("3420091", "Caseta con gorro"), ("2047031", "Adorno para el árbol")], None),
+ ("cuenta-regresiva", "Cuenta regresiva navideña", "Cuenta regresiva",
+  "Cuenten juntos los días que faltan para Navidad. Elige el modelo que más te guste.",
+  ["Estrellada: una estrellita avanza del 1 al 24.", "Casita de jengibre: números intercambiables.", "Reno: cubos de números con nariz roja."],
+  [("1993434", "Estrellada"), ("2000058", "Casita de jengibre"), ("3536610", "Reno con cubos")], None),
+ ("porta-paneton", "Porta panetón", "Para regalar",
+  "Convierte un panetón en un regalo encantador. Elige personaje y tamaño.",
+  ["Reno, duende o Santa.", "Para panetón tradicional (500 g) o mini.", "No incluye el panetón."],
+  [("3500990", "Reno · tradicional"), ("3531613", "Duende"), ("3523645", "Santa · mini")], None),
+ ("arbolitos", "Arbolitos de diseño", "Minimalista",
+  "Arbolitos modernos para una Navidad elegante: en repisa, mesa, chimenea o ventana. Elige tu estilo.",
+  ["Japandi: set de 2 tamaños con líneas suaves.", "Espiral: con estrella, uno o set de 3 tamaños.", "Cuerda trenzada: se ve hecho a mano."],
+  [("3176140", "Japandi"), ("3338545", "Espiral"), ("3371427", "Cuerda trenzada")], None),
+ ("adorno-foto", "Adorno con tu foto", "Con tu foto",
+  "Un adorno para el árbol que enmarca tu foto favorita. El regalo perfecto para abuelos, padrinos y maestras.",
+  ["Va con tu foto: mándanosla por WhatsApp después de tu pedido.", "Elige corona, estrella o reno de nariz roja.", "Incluye listón para colgar."],
+  [("CORONA", "Corona"), ("2128543", "Estrella"), ("3373774", "Reno de nariz roja")], None),
+ ("adorno-nombre", "Adorno con nombre", "Personalizado",
+  "Un adorno con el nombre que tú quieras: uno para cada integrante de la familia o como etiqueta de regalo.",
+  ["Elige el modelo: bota, esfera, galleta, suéter, foquito o reno.", "Nombre en relieve.", "Para el árbol, como etiqueta de regalo o llavero."],
+  [("3533521", "Bota"), ("3355184", "Esfera muñeco de nieve"), ("2109874", "Galleta de jengibre"), ("3394419", "Suéter navideño"), ("1996511", "Foquito"), ("2057491", "Reno con inicial")],
+  {"label": "Nombre", "ph": "Ej. Valentina", "max": 12}),
+ ("corona-texto", "Corona personalizada", "Personalizado",
+  "Una corona navideña para tu puerta o pared con el apellido de tu familia o el texto que quieras.",
+  ["Acebo: con moño, moritas y listón con tu apellido.", "Reno: con moño, piñas y letrero con tu texto.", "Para dar la bienvenida en tu puerta."],
+  [("3430824", "Acebo"), ("3412717", "Reno con letrero")],
+  {"label": "Apellido o texto del letrero", "ph": "Ej. Familia Pérez", "max": 20}),
+]
+
+usados = set()
+grupos = {}
+for gid, nombre, badge, lead, bullets, partes, personal in GRUPOS:
+    ops, fotos = [], []
+    for mid, etiqueta in partes:
+        if mid == "CORONA":
+            fotos.append("../img/navidad/corona-foto.jpg")
+            for o in CORONA:
+                ops.append(dict(o, k="corona" + o["k"][6:] if False else o["k"], f=len(fotos) - 1))
+            continue
+        src = SRC[mid]; usados.add(mid)
+        fotos.append(src["fotos"][0])
+        for o in src["opciones"]:
+            label = etiqueta if len(src["opciones"]) == 1 else f"{etiqueta} · {o['label'][0].lower() + o['label'][1:]}"
+            ops.append(dict(o, k=f"{mid}{o['k']}", label=label, f=len(fotos) - 1))
+    nota = "mándanos la foto por WhatsApp" if gid == "adorno-foto" else ""
+    grupos[gid] = {"nota": nota, "id": "NVG-" + gid, "mw": ",".join(m for m, _ in partes), "nombre": nombre, "badge": badge, "lead": lead,
+                   "bullets": bullets, "fotos": fotos, "opciones": ops, "personal": personal}
+
+# Orden de la rejilla
+ORDEN = ["G:adorno-nombre", "G:adorno-foto", "3485874", "G:corona-texto", "817845", "2083881",
+         "G:cuenta-regresiva", "G:bandeja-santa", "G:camara-santa", "G:porta-paneton", "G:arbolitos",
+         "14093", "2070704", "2087313", "2027611", "3175033", "3337730", "3397234", "3407142", "2101416",
+         "2052441", "1935739", "3471108", "2078410"]
+out = []
+for x in ORDEN:
+    out.append(grupos[x[2:]] if x.startswith("G:") else SRC[x])
+faltan = [m for m in SRC if m not in usados and m not in ORDEN]
+assert not faltan, faltan
 
 js = "// Generado con tools/navidad_productos.py — no editar a mano.\nwindow.NAVIDAD = " + json.dumps(out, ensure_ascii=False, indent=1) + ";\n"
 open("assets/navidad-productos.js", "w", encoding="utf-8").write(js)
 json.dump(out, open("tools/navidad_productos.json", "w", encoding="utf-8"), ensure_ascii=False, indent=1)
 print(len(out), "productos")
 for p in out:
-    print(p["mw"], p["nombre"], [(o["label"], o["precio"], o["costo"]) for o in p["opciones"]])
+    print(p["id"], p["nombre"], [(o["label"], o["precio"]) for o in p["opciones"]])

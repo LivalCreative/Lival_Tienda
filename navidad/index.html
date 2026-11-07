@@ -114,26 +114,6 @@
         <button type="button" class="cerrar" data-cerrar aria-label="Cerrar producto">✕</button>
       </div>
     </article>
-    <article class="prod" id="corona">
-      <div class="gal"><img class="foto" src="../img/navidad/corona-foto.jpg" width="900" height="675" alt="Adorno de corona con foto familiar en el árbol" draggable="false"></div>
-      <div class="info">
-        <span class="badge">Con tu foto · recuerdo para siempre</span>
-        <h3>Corona con tu foto</h3>
-        <p class="lead">Una coronita navideña con brillo que enmarca tu foto favorita para colgar en el árbol. El regalo perfecto para abuelos, padrinos y maestras.</p>
-        <div class="mini"><span class="desde">Desde <b>$59</b></span><button type="button" class="btn ver" data-abrir="corona">Ver opciones</button></div>
-        <div class="det">
-        <ul>
-          <li><b>Va con tu foto</b>: después de hacer tu pedido, mándanosla por WhatsApp.</li>
-          <li>Acabado <b>verde brillante</b> con moño, como una corona de pino.</li>
-          <li>Incluye <b>listón rojo</b> para colgarla.</li>
-          <li>Foto de ejemplo: la tuya va en su lugar.</li>
-        </ul>
-        <div class="var" id="vCOR"></div>
-        <div class="sel" id="selCOR"></div>
-        </div>
-        <button type="button" class="cerrar" data-cerrar aria-label="Cerrar producto">✕</button>
-      </div>
-    </article>
     <aside class="especial" aria-labelledby="t-especial">
       <h2 id="t-especial">¿Buscas algo en especial?</h2>
       <p>Escríbenos y lo diseñamos contigo: nombres, colores, tamaños o una idea nueva.</p>
@@ -247,8 +227,8 @@ body.abierto .nbar { z-index:70; }
   <p>Querétaro · WhatsApp 442&nbsp;279&nbsp;1488</p>
 </footer>
 
-<script src="../assets/navidad-productos.js?v=20261106a"></script>
-<script src="../assets/carrito.js?v=20261106a"></script>
+<script src="../assets/navidad-productos.js?v=20261106c"></script>
+<script src="../assets/carrito.js?v=20261106c"></script>
 <script>
 const money = n => "$" + n.toLocaleString("es-MX");
 const E = LIVAL.EXTRA, COL = LIVAL.COLORES_FOCO;
@@ -368,30 +348,8 @@ body { padding-bottom: 90px; }
 })();
 </script>
 
-<script>
-(function () {
-  const E = LIVAL.EXTRA, money = n => "$" + n.toLocaleString("es-MX");
-  const OPS = [["CORONA-1", "1 adorno", "Con 1 foto"], ["CORONA-3", "Paquete de 3", "Con 3 fotos distintas · ahorras " + money(E["CORONA-1"].price * 3 - E["CORONA-3"].price)]];
-  const box = document.getElementById("vCOR");
-  box.innerHTML = OPS.map(([k, nm, sub], i) => `<div class="vrow${i ? " set" : ""}"><div class="nm"><div>${nm}<small>${sub}</small></div></div><span class="pr">${money(E[k].price)}</span>
-    <div class="qty"><button aria-label="Quitar corona, ${nm}" data-k="${k}" data-d="-1">−</button><span id="q-${k}">0</span><button class="mas" aria-label="Agregar corona, ${nm}" data-k="${k}" data-d="1">+</button></div></div>`).join("");
-  function pintarCor() {
-    const c = LIVAL.leer(); let t = 0, fotos = 0; const l = [];
-    OPS.forEach(([k, nm]) => { const n = c[k] || 0; document.getElementById("q-" + k).textContent = n; if (n) { t += n * E[k].price; fotos += n * (k === "CORONA-3" ? 3 : 1); l.push(`${n} × ${nm.toLowerCase()}`); } });
-    document.getElementById("selCOR").innerHTML = l.length ? `<div><b>Tu selección</b></div>${l.map(x => `<div>• ${x}</div>`).join("")}<div style="margin-top:6px;color:var(--muted)">Al terminar tu pedido, mándanos ${fotos === 1 ? "1 foto" : fotos + " fotos"} por WhatsApp.</div><div style="margin-top:6px">Subtotal: <b class="tot">${money(t)}</b></div>` : `<span style="color:var(--muted)">Elige cuántos adornos quieres.</span>`;
-  }
-  box.addEventListener("click", e => {
-    const b = e.target.closest("button[data-k]"); if (!b) return;
-    const c = LIVAL.leer(); c[b.dataset.k] = Math.max(0, (c[b.dataset.k] || 0) + (+b.dataset.d)); LIVAL.guardar(c);
-    if (typeof cart !== "undefined") cart = LIVAL.leer();
-    pintarCor(); if (typeof pintar === "function") pintar();
-    const bar = document.getElementById("nbar"); bar.classList.remove("bump"); void bar.offsetWidth; bar.classList.add("bump");
-  });
-  pintarCor(); window.addEventListener("pageshow", pintarCor);
-})();
-</script>
 
-<script src="../assets/navidad-render.js?v=20261106b"></script>
+<script src="../assets/navidad-render.js?v=20261106c"></script>
 <script>
 (function () {
   function abrir(id) {

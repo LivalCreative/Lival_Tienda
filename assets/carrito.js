@@ -18,7 +18,7 @@
 
   // Productos de la colección Navidad 2026 (assets/navidad-productos.js, si la página lo carga antes que este archivo).
   (window.NAVIDAD || []).forEach(p => p.opciones.forEach(o => {
-    EXTRA[`${p.id}-${o.k}`] = { name: p.opciones.length > 1 ? `${p.nombre} (${o.label})` : p.nombre, price: o.precio, horas: o.horas };
+    EXTRA[`${p.id}-${o.k}`] = { name: (p.opciones.length > 1 ? `${p.nombre} (${o.label})` : p.nombre) + (p.nota ? ` — ${p.nota}` : ""), price: o.precio, horas: o.horas };
   }));
 
   const KEY = "lival_carrito_v1";
