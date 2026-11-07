@@ -25,6 +25,9 @@ rep('<p class="sub">Escribe tu nombre y mándanos tu pedido por WhatsApp. Ahí a
     '<p class="sub">Escribe tu nombre y mándanos tu pedido por WhatsApp. Ahí acordamos la entrega. <a class="seguir" href="../">← Seguir comprando</a></p>')
 rep("<h2>Tu pedido</h2>", "<h1>Tu pedido</h1>")
 rep("Todavía no eliges nada. Usa los botones + de arriba.", 'Tu carrito está vacío. Elige tus regalos en <a href="../navidad/">Navidad</a>.')
+# El pedido no muestra las fotos del duende: no las cargamos (la página pesaba 1.8 MB)
+h, n = re.subn(r"FOTOS = \{.*?\};", "FOTOS = {};", h, count=1, flags=re.S)
+assert n == 1, "no encontré FOTOS en duende/index.html"
 os.makedirs("pedido", exist_ok=True)
 open("pedido/index.html", "w", encoding="utf-8").write(h)
 print("pedido/index.html listo")

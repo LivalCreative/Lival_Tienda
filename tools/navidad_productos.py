@@ -1,24 +1,21 @@
 """Genera assets/navidad-productos.js con los productos de la colección Navidad 2026.
 
-Precio = (costo × 2) + $15 por hora + $30, redondeado a terminación 9, mínimo $49.
-Costo = gramos × $0.25 + horas × $0.75 (+ extras como foto impresa y listón).
+Los precios salen de tools/precios_lilian.json (la lista de precios de Lilian en Google Drive).
+Los costos y la regla de precio son privados: viven en Drive (Catalogo Lival / Precios), no aquí.
 Uso: python3 tools/navidad_productos.py
 """
 import json
 
-FIL, MAQ = 0.25, 0.75
-FOTO = 7  # foto impresa + listón (estimado)
+FOTO = 0  # el costo de la foto impresa vive en la lista de precios de Drive
 CDN = "https://makerworld.bblmw.com/makerworld/model/"
 
 
 def costo(h, g, extra=0):
-    return round(g * FIL + h * MAQ + extra, 2)
+    return 0  # privado: ver la lista de precios en Drive
 
 
 def precio(h, g, extra=0):
-    x = costo(h, g, extra) * 2 + 15 * h + 30
-    p = round((x - 9) / 10) * 10 + 9
-    return max(49, int(p))
+    return 0  # se llena con tools/precios_lilian.json
 
 
 # id, nombre, badge, lead, bullets, fotos (rutas CDN), opciones [(clave, etiqueta, sub, h, g, extra)], personal
@@ -311,7 +308,17 @@ print("Quitados:", quitados)
 faltan = [m for m in SRC if m not in usados and m not in ORDEN]
 assert not faltan, faltan
 
-js = "// Generado con tools/navidad_productos.py — no editar a mano.\nwindow.NAVIDAD = " + json.dumps(out, ensure_ascii=False, indent=1) + ";\n"
+# Lo público (la página) no lleva costos ni gramos; las horas sí, para el cupo de Navidad.
+import copy
+publico = copy.deepcopy(out)
+for d in publico:
+    for o in d["opciones"]:
+        for k in ("costo", "gramos", "sub"):
+            o.pop(k, None)
+for d in out:
+    for o in d["opciones"]:
+        o.pop("costo", None)
+js = "// Generado con tools/navidad_productos.py — no editar a mano.\nwindow.NAVIDAD = " + json.dumps(publico, ensure_ascii=False, indent=1) + ";\n"
 open("assets/navidad-productos.js", "w", encoding="utf-8").write(js)
 json.dump(out, open("tools/navidad_productos.json", "w", encoding="utf-8"), ensure_ascii=False, indent=1)
 print(len(out), "productos")

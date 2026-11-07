@@ -16,6 +16,7 @@ Todo en español (México). La dueña es Lilian; los clientes compran desde el c
 - Tema de temporada navideña: `assets/temporada.css` + clase `temporada-navidad` en `<body>` (nieve sobre la página, aldea de casitas de jengibre en los `data-aldea`, marcos de jengibre en las fotos). Para quitarlo: borra la clase, el `<link>` de `temporada.css` y los `<div data-aldea>` de cada página, ajusta `tools/build_pedido.py` y córrelo.
 - `ocupacion.json` — fechas ocupadas, lo actualiza una tarea programada desde el tablero privado "Pedidos 3D". No contiene nombres ni montos; nunca agregues datos de clientes al repositorio.
 - `tools/` — `ocupacion.py`, `build_pedido.py`, `horas_duende.json`.
+- Lo privado del negocio (licencias, costos y precios, archivos 3D, fotos originales) va en Google Drive, carpeta "Catalogo Lival"; este repositorio solo tiene lo que usa la tienda.
 - `img/` — fotos con marca de agua "LIVAL CREATIVE STUDIO". Toda foto nueva de producto lleva marca de agua.
 
 ## Reglas del negocio
@@ -24,7 +25,7 @@ Todo en español (México). La dueña es Lilian; los clientes compran desde el c
 - Entregas: lunes a viernes y domingo; sábados no hay. Puntos de entrega en `duende/index.html` (LUGARES). La hora se confirma por WhatsApp.
 - Fechas: máximo 4 entregas por día; 16 horas de impresión = 1 día de trabajo.
 - Cupo de Navidad: `tools/ocupacion.py` suma las horas reales de lo pendiente en el tablero y calcula las horas libres hasta el 23 de diciembre (sin sábados, reservando 25 % o mínimo 32 h para piezas chicas). Las piezas de 8 h o más que ya no caben se marcan "Agotado" en la tienda y se quitan de los carritos (`assets/carrito.js` → `LIVAL.cerrado`). Ajustes al inicio de `ocupacion.py`.
-- Regla de precio: (costo × 2) + $15 por hora + $30, redondeado a terminación 9, mínimo $49. Filamento $0.25/g, máquina $0.75/h.
+- Precios: los pone Lilian en su lista de Google Drive (Catalogo Lival / Precios) y se pasan a `tools/precios_lilian.json`. Costos, márgenes y regla de precio son privados: viven en Drive, nunca en este repositorio (es público).
 - Decir "duende navideño", nunca la marca registrada del muñeco.
 - La dueña ya tiene las licencias comerciales de los diseños que pide subir.
 

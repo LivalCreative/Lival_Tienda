@@ -25,66 +25,48 @@ window.NAVIDAD = [
    {
     "k": "3533521u",
     "label": "Bota",
-    "sub": "",
     "precio": 60,
-    "costo": 5.53,
     "horas": 0.71,
-    "gramos": 20,
     "mw": "3533521",
     "f": 0
    },
    {
     "k": "3355184u",
     "label": "Esfera muñeco de nieve",
-    "sub": "",
     "precio": 60,
-    "costo": 8.36,
     "horas": 1.14,
-    "gramos": 30,
     "mw": "3355184",
     "f": 1
    },
    {
     "k": "2109874u",
     "label": "Galleta de jengibre",
-    "sub": "",
     "precio": 80,
-    "costo": 15.24,
     "horas": 2.65,
-    "gramos": 53,
     "mw": "2109874",
     "f": 2
    },
    {
     "k": "3394419u",
     "label": "Suéter navideño",
-    "sub": "",
     "precio": 60,
-    "costo": 4.71,
     "horas": 0.94,
-    "gramos": 16,
     "mw": "3394419",
     "f": 3
    },
    {
     "k": "1996511a",
     "label": "Foquito",
-    "sub": "",
     "precio": 60,
-    "costo": 4.43,
     "horas": 0.58,
-    "gramos": 16,
     "mw": "1996511",
     "f": 4
    },
    {
     "k": "2057491u",
     "label": "Reno con inicial",
-    "sub": "",
     "precio": 80,
-    "costo": 12.21,
     "horas": 1.95,
-    "gramos": 43,
     "mw": "2057491",
     "f": 5
    }
@@ -121,33 +103,24 @@ window.NAVIDAD = [
    {
     "k": "corona",
     "label": "Corona",
-    "sub": "Con 1 foto",
     "precio": 60,
-    "costo": 9.0,
     "horas": 0.34,
-    "gramos": 7,
     "mw": "2128558",
     "f": 0
    },
    {
     "k": "2128543u",
     "label": "Estrella",
-    "sub": "Mándanos tu foto por WhatsApp",
     "precio": 60,
-    "costo": 8.99,
     "horas": 0.32,
-    "gramos": 7,
     "mw": "2128543",
     "f": 1
    },
    {
     "k": "3373774u",
     "label": "Reno de nariz roja",
-    "sub": "Mándanos tu foto por WhatsApp",
     "precio": 60,
-    "costo": 9.96,
     "horas": 0.62,
-    "gramos": 10,
     "mw": "3373774",
     "f": 2
    }
@@ -173,11 +146,8 @@ window.NAVIDAD = [
    {
     "k": "u",
     "label": "Casita familiar",
-    "sub": "",
     "precio": 350,
-    "costo": 148.88,
     "horas": 19.84,
-    "gramos": 536,
     "mw": "3485874"
    }
   ],
@@ -208,33 +178,24 @@ window.NAVIDAD = [
    {
     "k": "3430824a",
     "label": "Acebo · un solo color",
-    "sub": "",
     "precio": 90,
-    "costo": 11.56,
     "horas": 2.08,
-    "gramos": 40,
     "mw": "3430824",
     "f": 0
    },
    {
     "k": "3430824b",
     "label": "Acebo · 4 colores",
-    "sub": "",
     "precio": 110,
-    "costo": 20.25,
     "horas": 3.67,
-    "gramos": 70,
     "mw": "3430824",
     "f": 0
    },
    {
     "k": "3412717u",
     "label": "Reno con letrero",
-    "sub": "",
     "precio": 200,
-    "costo": 52.64,
     "horas": 9.86,
-    "gramos": 181,
     "mw": "3412717",
     "f": 1
    }
@@ -264,11 +225,8 @@ window.NAVIDAD = [
    {
     "k": "u",
     "label": "Árbol familiar",
-    "sub": "3 a 5 nombres",
     "precio": 70,
-    "costo": 5.11,
     "horas": 0.81,
-    "gramos": 18,
     "mw": "817845"
    }
   ],
@@ -297,11 +255,8 @@ window.NAVIDAD = [
    {
     "k": "u",
     "label": "Globo de nieve familiar",
-    "sub": "",
     "precio": 120,
-    "costo": 19.61,
     "horas": 3.14,
-    "gramos": 69,
     "mw": "2083881"
    }
   ],
@@ -333,33 +288,24 @@ window.NAVIDAD = [
    {
     "k": "1993434u",
     "label": "Estrellada",
-    "sub": "",
     "precio": 89,
-    "costo": 13.93,
     "horas": 1.9,
-    "gramos": 50,
     "mw": "1993434",
     "f": 0
    },
    {
     "k": "2000058a",
     "label": "Casita de jengibre",
-    "sub": "",
     "precio": 200,
-    "costo": 57.98,
     "horas": 6.64,
-    "gramos": 212,
     "mw": "2000058",
     "f": 1
    },
    {
     "k": "3536610u",
     "label": "Reno con cubos",
-    "sub": "",
     "precio": 300,
-    "costo": 100.77,
     "horas": 12.36,
-    "gramos": 366,
     "mw": "3536610",
     "f": 2
    }
@@ -387,22 +333,16 @@ window.NAVIDAD = [
    {
     "k": "2073409u",
     "label": "Botanas para Santa",
-    "sub": "",
     "precio": 160,
-    "costo": 31.81,
     "horas": 2.75,
-    "gramos": 119,
     "mw": "2073409",
     "f": 0
    },
    {
     "k": "3348753u",
     "label": "Querido Santa, con zanahoria para el reno",
-    "sub": "",
     "precio": 160,
-    "costo": 36.39,
     "horas": 3.85,
-    "gramos": 134,
     "mw": "3348753",
     "f": 1
    }
@@ -431,33 +371,24 @@ window.NAVIDAD = [
    {
     "k": "797351u",
     "label": "Domo de pared",
-    "sub": "",
     "precio": 150,
-    "costo": 22.79,
     "horas": 3.39,
-    "gramos": 81,
     "mw": "797351",
     "f": 0
    },
    {
     "k": "3420091u",
     "label": "Caseta con gorro",
-    "sub": "",
     "precio": 70,
-    "costo": 9.04,
     "horas": 1.06,
-    "gramos": 33,
     "mw": "3420091",
     "f": 1
    },
    {
     "k": "2047031u",
     "label": "Adorno para el árbol",
-    "sub": "",
     "precio": 130,
-    "costo": 29.11,
     "horas": 4.14,
-    "gramos": 104,
     "mw": "2047031",
     "f": 2
    }
@@ -485,22 +416,16 @@ window.NAVIDAD = [
    {
     "k": "3531613b",
     "label": "Duende",
-    "sub": "9 × 6 cm",
     "precio": 120,
-    "costo": 20.17,
     "horas": 2.89,
-    "gramos": 72,
     "mw": "3531613",
     "f": 0
    },
    {
     "k": "3523645u",
     "label": "Santa",
-    "sub": "",
     "precio": 120,
-    "costo": 30.82,
     "horas": 4.43,
-    "gramos": 110,
     "mw": "3523645",
     "f": 1
    }
@@ -529,44 +454,32 @@ window.NAVIDAD = [
    {
     "k": "3176140u",
     "label": "Japandi",
-    "sub": "",
     "precio": 100,
-    "costo": 18.01,
     "horas": 4.35,
-    "gramos": 59,
     "mw": "3176140",
     "f": 0
    },
    {
     "k": "3338545a",
     "label": "Espiral · un árbol",
-    "sub": "",
     "precio": 100,
-    "costo": 11.53,
     "horas": 2.04,
-    "gramos": 40,
     "mw": "3338545",
     "f": 1
    },
    {
     "k": "3338545b",
     "label": "Espiral · set de 2 tamaños",
-    "sub": "",
     "precio": 170,
-    "costo": 21.34,
     "horas": 4.45,
-    "gramos": 72,
     "mw": "3338545",
     "f": 1
    },
    {
     "k": "3371427u",
     "label": "Cuerda trenzada",
-    "sub": "",
     "precio": 120,
-    "costo": 16.22,
     "horas": 2.96,
-    "gramos": 56,
     "mw": "3371427",
     "f": 2
    }
@@ -592,21 +505,15 @@ window.NAVIDAD = [
    {
     "k": "a",
     "label": "Santa, muñeco de nieve y reno",
-    "sub": "",
     "precio": 200,
-    "costo": 48.27,
     "horas": 5.02,
-    "gramos": 178,
     "mw": "14093"
    },
    {
     "k": "b",
     "label": "Duende, esfera y muñeco de nieve",
-    "sub": "",
     "precio": 200,
-    "costo": 48.54,
     "horas": 5.05,
-    "gramos": 179,
     "mw": "14093"
    }
   ],
@@ -631,11 +538,8 @@ window.NAVIDAD = [
    {
     "k": "u",
     "label": "Set de 4 casitas",
-    "sub": "",
     "precio": 170,
-    "costo": 35.1,
     "horas": 6.13,
-    "gramos": 122,
     "mw": "2070704"
    }
   ],
@@ -660,11 +564,8 @@ window.NAVIDAD = [
    {
     "k": "a",
     "label": "Con marco",
-    "sub": "",
     "precio": 60,
-    "costo": 8.63,
     "horas": 1.51,
-    "gramos": 30,
     "mw": "2087313"
    }
   ],
@@ -689,11 +590,8 @@ window.NAVIDAD = [
    {
     "k": "u",
     "label": "Set de letreros",
-    "sub": "",
     "precio": 200,
-    "costo": 34.03,
     "horas": 3.71,
-    "gramos": 125,
     "mw": "2027611"
    }
   ],
@@ -718,11 +616,8 @@ window.NAVIDAD = [
    {
     "k": "u",
     "label": "Cascanueces",
-    "sub": "",
     "precio": 70,
-    "costo": 5.89,
     "horas": 1.52,
-    "gramos": 19,
     "mw": "3175033"
    }
   ],
@@ -747,31 +642,22 @@ window.NAVIDAD = [
    {
     "k": "a",
     "label": "Chico (11 cm)",
-    "sub": "",
     "precio": 80,
-    "costo": 12.05,
     "horas": 3.07,
-    "gramos": 39,
     "mw": "3337730"
    },
    {
     "k": "b",
     "label": "Grande (12.5 cm)",
-    "sub": "",
     "precio": 100,
-    "costo": 16.15,
     "horas": 3.87,
-    "gramos": 53,
     "mw": "3337730"
    },
    {
     "k": "c",
     "label": "Pareja (chico y grande)",
-    "sub": "",
     "precio": 160,
-    "costo": 30.6,
     "horas": 8.8,
-    "gramos": 96,
     "mw": "3337730"
    }
   ],
@@ -796,11 +682,8 @@ window.NAVIDAD = [
    {
     "k": "u",
     "label": "Set de bandejas",
-    "sub": "",
     "precio": 200,
-    "costo": 70.52,
     "horas": 5.69,
-    "gramos": 265,
     "mw": "3397234"
    }
   ],
@@ -825,11 +708,8 @@ window.NAVIDAD = [
    {
     "k": "u",
     "label": "Porta rollos",
-    "sub": "",
     "precio": 250,
-    "costo": 126.14,
     "horas": 8.19,
-    "gramos": 480,
     "mw": "3407142"
    }
   ],
@@ -854,31 +734,22 @@ window.NAVIDAD = [
    {
     "k": "a",
     "label": "1 nivel",
-    "sub": "HO",
     "precio": 220,
-    "costo": 69.71,
     "horas": 7.28,
-    "gramos": 257,
     "mw": "2101416"
    },
    {
     "k": "b",
     "label": "2 niveles",
-    "sub": "HO HO",
     "precio": 360,
-    "costo": 130.86,
     "horas": 13.48,
-    "gramos": 483,
     "mw": "2101416"
    },
    {
     "k": "c",
     "label": "3 niveles",
-    "sub": "HO HO HO",
     "precio": 480,
-    "costo": 192.71,
     "horas": 19.61,
-    "gramos": 712,
     "mw": "2101416"
    }
   ],
@@ -903,11 +774,8 @@ window.NAVIDAD = [
    {
     "k": "u",
     "label": "Juego completo",
-    "sub": "",
     "precio": 150,
-    "costo": 31.57,
     "horas": 4.09,
-    "gramos": 114,
     "mw": "2052441"
    }
   ],
@@ -932,11 +800,8 @@ window.NAVIDAD = [
    {
     "k": "u",
     "label": "Hombre de jengibre flexible",
-    "sub": "",
     "precio": 120,
-    "costo": 27.48,
     "horas": 6.64,
-    "gramos": 90,
     "mw": "1935739"
    }
   ],
@@ -961,11 +826,8 @@ window.NAVIDAD = [
    {
     "k": "u",
     "label": "Broche y palito",
-    "sub": "",
     "precio": 80,
-    "costo": 8.74,
     "horas": 2.32,
-    "gramos": 28,
     "mw": "3471108"
    }
   ],
