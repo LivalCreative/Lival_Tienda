@@ -16,6 +16,11 @@
   EXTRA["CORONA-3"] = { name: "3 adornos corona con foto (mándanos las 3 fotos por WhatsApp)", price: 159, horas: 1.02 };
   EXTRA["CASA-div"] = { name: "Casita de jengibre para utensilios (interior con divisiones)", price: 409, horas: 11.41 };
 
+  // Productos de la colección Navidad 2026 (assets/navidad-productos.js, si la página lo carga antes que este archivo).
+  (window.NAVIDAD || []).forEach(p => p.opciones.forEach(o => {
+    EXTRA[`${p.id}-${o.k}`] = { name: p.opciones.length > 1 ? `${p.nombre} (${o.label})` : p.nombre, price: o.precio, horas: o.horas };
+  }));
+
   const KEY = "lival_carrito_v1";
   function leer() { try { return JSON.parse(localStorage.getItem(KEY) || "{}") || {}; } catch (e) { return {}; } }
   function guardar(q) { try { const o = {}; Object.keys(q).forEach(k => { if (q[k] > 0) o[k] = q[k]; }); localStorage.setItem(KEY, JSON.stringify(o)); } catch (e) {} }
