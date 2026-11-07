@@ -202,6 +202,12 @@ body.abierto .nbar { z-index:70; }
 .opt { min-height:44px; border:2px solid var(--tinta); background:#fff; border-radius:999px; padding:0 16px; font:inherit; font-weight:800; color:var(--tinta); cursor:pointer; transition:background-color .2s; }
 .opt.on { background:var(--tinta); color:#fff; }
 .campo { width:100%; min-height:52px; padding:0 16px; border:2px solid #cfc4e4; border-radius:16px; font:inherit; background:#fff; color:var(--tinta); }
+.paq { margin-top:18px; padding:14px 16px 16px; border-radius:20px; background:#f3effa; }
+.paq .lbl { margin-top:0; }
+.paq-tx { margin:0 0 10px; color:var(--muted); font-size:.95rem; }
+.paq-f { display:flex; align-items:center; gap:10px; margin-bottom:8px; }
+.paq-f span { flex:none; width:28px; height:28px; border-radius:50%; display:grid; place-items:center; background:var(--lav-d, #6b5b95); color:#fff; font-weight:800; font-size:.9rem; }
+.paq select.campo { appearance:auto; }
 .campo:focus-visible { border-color:var(--lav-d); outline-offset:1px; }
 .nombres { display:grid; gap:8px; }
 .nombres .n { display:flex; align-items:center; gap:10px; }
@@ -227,8 +233,8 @@ body.abierto .nbar { z-index:70; }
   <p>Querétaro · WhatsApp 442&nbsp;279&nbsp;1488</p>
 </footer>
 
-<script src="../assets/navidad-productos.js?v=20261106c"></script>
-<script src="../assets/carrito.js?v=20261106c"></script>
+<script src="../assets/navidad-productos.js?v=20261106d"></script>
+<script src="../assets/carrito.js?v=20261106d"></script>
 <script>
 const money = n => "$" + n.toLocaleString("es-MX");
 const E = LIVAL.EXTRA, COL = LIVAL.COLORES_FOCO;
@@ -349,7 +355,7 @@ body { padding-bottom: 90px; }
 </script>
 
 
-<script src="../assets/navidad-render.js?v=20261106c"></script>
+<script src="../assets/navidad-render.js?v=20261106d"></script>
 <script>
 (function () {
   function abrir(id) {

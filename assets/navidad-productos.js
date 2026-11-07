@@ -1,6 +1,7 @@
 // Generado con tools/navidad_productos.py — no editar a mano.
 window.NAVIDAD = [
  {
+  "paquete": null,
   "nota": "",
   "id": "NVG-adorno-nombre",
   "mw": "3533521,3355184,2109874,3394419,1996511,2057491",
@@ -106,6 +107,10 @@ window.NAVIDAD = [
   }
  },
  {
+  "paquete": {
+   "n": 3,
+   "ahorro": 18
+  },
   "nota": "mándanos la foto por WhatsApp",
   "id": "NVG-adorno-foto",
   "mw": "CORONA,2128543,3373774",
@@ -115,6 +120,7 @@ window.NAVIDAD = [
   "bullets": [
    "Va con tu foto: mándanosla por WhatsApp después de tu pedido.",
    "Elige corona, estrella o reno de nariz roja.",
+   "Paquete de 3: combina los modelos que quieras y ahorra $18.",
    "Incluye listón para colgar."
   ],
   "fotos": [
@@ -131,17 +137,6 @@ window.NAVIDAD = [
     "costo": 9.0,
     "horas": 0.34,
     "gramos": 7,
-    "mw": "2128558",
-    "f": 0
-   },
-   {
-    "k": "corona3",
-    "label": "Corona, paquete de 3",
-    "sub": "Con 3 fotos distintas · ahorras $18",
-    "precio": 159,
-    "costo": 27.02,
-    "horas": 1.02,
-    "gramos": 21,
     "mw": "2128558",
     "f": 0
    },
@@ -204,6 +199,7 @@ window.NAVIDAD = [
   }
  },
  {
+  "paquete": null,
   "nota": "",
   "id": "NVG-corona-texto",
   "mw": "3430824,3412717",
@@ -327,6 +323,7 @@ window.NAVIDAD = [
   }
  },
  {
+  "paquete": null,
   "nota": "",
   "id": "NVG-cuenta-regresiva",
   "mw": "1993434,2000058,3536610",
@@ -392,6 +389,7 @@ window.NAVIDAD = [
   "personal": null
  },
  {
+  "paquete": null,
   "nota": "",
   "id": "NVG-bandeja-santa",
   "mw": "2073409,3348753",
@@ -434,6 +432,7 @@ window.NAVIDAD = [
   "personal": null
  },
  {
+  "paquete": null,
   "nota": "",
   "id": "NVG-camara-santa",
   "mw": "797351,3420091,2047031",
@@ -488,6 +487,7 @@ window.NAVIDAD = [
   "personal": null
  },
  {
+  "paquete": null,
   "nota": "",
   "id": "NVG-porta-paneton",
   "mw": "3500990,3531613,3523645",
@@ -553,6 +553,7 @@ window.NAVIDAD = [
   "personal": null
  },
  {
+  "paquete": null,
   "nota": "",
   "id": "NVG-arbolitos",
   "mw": "3176140,3338545,3371427",

@@ -25,6 +25,16 @@
       det = `<div class="var">${p.opciones.map(o => `<div class="vrow"><div class="nm"><div>${esc(o.label)}${o.sub ? `<small>${esc(o.sub)}</small>` : ""}</div></div><span class="pr">${money(o.precio)}</span>
           <div class="qty"><button aria-label="Quitar" data-g="${key(p, o)}" data-d="-1">−</button><span data-q="${key(p, o)}">0</span><button class="mas" aria-label="Agregar" data-g="${key(p, o)}" data-d="1">+</button></div></div>`).join("")}</div>
         <div class="sel" data-sel></div>`;
+      if (p.paquete) {
+        const pk = p.paquete, ops = p.opciones.map(o => `<option value="${o.k}">${esc(o.label)}</option>`).join("");
+        det += `<div class="paq">
+          <div class="lbl">Arma tu paquete de ${pk.n} · ahorras ${money(pk.ahorro)}</div>
+          <p class="paq-tx">Elige el modelo de cada uno; puedes repetir o combinar.</p>
+          ${Array.from({ length: pk.n }, (_, i) => `<label class="paq-f"><span>${i + 1}</span><select class="campo" data-paq>${ops}</select></label>`).join("")}
+          <div class="buy"><span class="price" data-paqprecio></span><button type="button" class="btn add" data-addpaq="${p.id}">Agregar paquete</button></div>
+          <div class="sel" data-lista hidden></div>
+        </div>`;
+      }
     }
     art.innerHTML = `<div class="galwrap"><div class="gal">${fotos}</div><span class="wm" aria-hidden="true"></span></div>
       <div class="dots">${dots}</div>
@@ -39,6 +49,10 @@
     box.insertBefore(art, box.querySelector(":scope > aside"));
   });
 
+  function paqSel(art, p) { return [...art.querySelectorAll("[data-paq]")].map(x => p.opciones.find(o => o.k === x.value)); }
+  function paqPrecio(art, p) { return paqSel(art, p).reduce((t, o) => t + o.precio, 0) - p.paquete.ahorro; }
+  function pintarPaq(art, p) { const e = art.querySelector("[data-paqprecio]"); if (e) e.textContent = money(paqPrecio(art, p)); }
+
   function verFoto(art, o) {
     if (!o || o.f == null) return;
     const g = art.querySelector(".gal"); if (g) g.scrollTo({ left: o.f * g.clientWidth, behavior: "smooth" });
@@ -50,11 +64,13 @@
     const c = LIVAL.leer(), per = LIVAL.personales();
     lista.forEach(p => {
       const art = document.getElementById(p.id); if (!art) return;
-      if (p.personal) {
+      if (p.paquete) pintarPaq(art, p);
+      if (p.personal || p.paquete) {
         const mios = per.filter(x => x.tipo === p.id), b = art.querySelector("[data-lista]");
         b.hidden = !mios.length;
         b.innerHTML = mios.length ? `<b>En tu pedido</b>` + mios.map(x => `<div class="ch-item"><div>${esc(x.resumen)}<br><b>${money(x.price)}</b></div><button type="button" data-qp="${x.id}">Quitar</button></div>`).join("") : "";
-      } else {
+      }
+      if (!p.personal) {
         let t = 0; const l = [];
         p.opciones.forEach(o => { const n = c[key(p, o)] || 0; const s = art.querySelector(`[data-q="${key(p, o)}"]`); if (s) s.textContent = n; if (n) { t += n * o.precio; l.push(`${n} × ${o.label}`); } });
         art.querySelector("[data-sel]").innerHTML = l.length ? `<div><b>Tu selección</b></div>${l.map(x => `<div>• ${esc(x)}</div>`).join("")}<div style="margin-top:6px">Subtotal: <b class="tot">${money(t)}</b></div>` : `<span style="color:var(--muted)">Elige cuántos quieres.</span>`;
@@ -85,8 +101,22 @@
       LIVAL.agregarPersonal({ id: p.id + "-" + Date.now().toString(36), tipo: p.id, name: `${p.nombre}${det} — ${p.personal.label.replace(/ \(.*/, "")}: "${txt}"`, resumen: `${o.label}: "${txt}"`, price: o.precio, horas: o.horas });
       inp.value = ""; pintarGen(); refrescarBarra(); bump(); return;
     }
+    const ap = e.target.closest("button[data-addpaq]");
+    if (ap) {
+      const art = ap.closest("article"), p = lista.find(x => x.id === ap.dataset.addpaq), sel = paqSel(art, p);
+      const cuenta = {}; sel.forEach(o => { cuenta[o.label] = (cuenta[o.label] || 0) + 1; });
+      const txt = Object.entries(cuenta).map(([l, n]) => n > 1 ? `${l} ×${n}` : l).join(" + ");
+      LIVAL.agregarPersonal({ id: p.id + "-paq-" + Date.now().toString(36), tipo: p.id, name: `${p.nombre} — paquete de ${p.paquete.n} (${txt})${p.nota ? " — " + p.nota.replace("la foto", "las fotos") : ""}`,
+        resumen: `Paquete de ${p.paquete.n}: ${txt}`, price: paqPrecio(art, p), horas: +sel.reduce((t, o) => t + o.horas, 0).toFixed(2) });
+      pintarGen(); refrescarBarra(); bump(); return;
+    }
     const q = e.target.closest("button[data-qp]");
     if (q) { LIVAL.quitarPersonal(q.dataset.qp); pintarGen(); refrescarBarra(); }
+  });
+  box.addEventListener("change", e => {
+    const s = e.target.closest("select[data-paq]"); if (!s) return;
+    const art = s.closest("article"), p = lista.find(x => x.id === art.id);
+    pintarPaq(art, p); verFoto(art, p.opciones.find(o => o.k === s.value));
   });
   pintarGen();
   window.addEventListener("pageshow", pintarGen);

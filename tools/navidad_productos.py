@@ -247,7 +247,7 @@ GRUPOS = [
   [("3176140", "Japandi"), ("3338545", "Espiral"), ("3371427", "Cuerda trenzada")], None),
  ("adorno-foto", "Adorno con tu foto", "Con tu foto",
   "Un adorno para el árbol que enmarca tu foto favorita. El regalo perfecto para abuelos, padrinos y maestras.",
-  ["Va con tu foto: mándanosla por WhatsApp después de tu pedido.", "Elige corona, estrella o reno de nariz roja.", "Incluye listón para colgar."],
+  ["Va con tu foto: mándanosla por WhatsApp después de tu pedido.", "Elige corona, estrella o reno de nariz roja.", "Paquete de 3: combina los modelos que quieras y ahorra $18.", "Incluye listón para colgar."],
   [("CORONA", "Corona"), ("2128543", "Estrella"), ("3373774", "Reno de nariz roja")], None),
  ("adorno-nombre", "Adorno con nombre", "Personalizado",
   "Un adorno con el nombre que tú quieras: uno para cada integrante de la familia o como etiqueta de regalo.",
@@ -268,7 +268,7 @@ for gid, nombre, badge, lead, bullets, partes, personal in GRUPOS:
     for mid, etiqueta in partes:
         if mid == "CORONA":
             fotos.append("../img/navidad/corona-foto.jpg")
-            for o in CORONA:
+            for o in CORONA[:1]:
                 ops.append(dict(o, k="corona" + o["k"][6:] if False else o["k"], f=len(fotos) - 1))
             continue
         src = SRC[mid]; usados.add(mid)
@@ -277,7 +277,8 @@ for gid, nombre, badge, lead, bullets, partes, personal in GRUPOS:
             label = etiqueta if len(src["opciones"]) == 1 else f"{etiqueta} · {o['label'][0].lower() + o['label'][1:]}"
             ops.append(dict(o, k=f"{mid}{o['k']}", label=label, f=len(fotos) - 1))
     nota = "mándanos la foto por WhatsApp" if gid == "adorno-foto" else ""
-    grupos[gid] = {"nota": nota, "id": "NVG-" + gid, "mw": ",".join(m for m, _ in partes), "nombre": nombre, "badge": badge, "lead": lead,
+    paquete = {"n": 3, "ahorro": 18} if gid == "adorno-foto" else None
+    grupos[gid] = {"paquete": paquete, "nota": nota, "id": "NVG-" + gid, "mw": ",".join(m for m, _ in partes), "nombre": nombre, "badge": badge, "lead": lead,
                    "bullets": bullets, "fotos": fotos, "opciones": ops, "personal": personal}
 
 # Orden de la rejilla
