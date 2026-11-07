@@ -9,12 +9,12 @@
   ];
   const H_FOCO = 1.42;
   const EXTRA = {};
-  COLORES_FOCO.forEach(c => { EXTRA["FOCO-" + c.id] = { name: `Foco navideño ${c.nombre.toLowerCase()}`, price: 79, horas: H_FOCO }; });
-  EXTRA["FOCO-set4"] = { name: "Set de 4 focos navideños (rojo, verde, azul, blanco)", price: 289, horas: H_FOCO * 4 };
-  EXTRA["CASA-abierta"] = { name: "Casita de jengibre para utensilios (interior abierto)", price: 349, horas: 9.67 };
+  COLORES_FOCO.forEach(c => { EXTRA["FOCO-" + c.id] = { name: `Foco navideño ${c.nombre.toLowerCase()}`, price: 70, horas: H_FOCO }; });
+  EXTRA["FOCO-set4"] = { name: "Set de 4 focos navideños (rojo, verde, azul, blanco)", price: 250, horas: H_FOCO * 4 };
+  EXTRA["CASA-abierta"] = { name: "Casita de jengibre para utensilios (interior abierto)", price: 270, horas: 9.67 };
   EXTRA["CORONA-1"] = { name: "Adorno corona con foto (mándanos la foto por WhatsApp)", price: 59, horas: 0.34 };
   EXTRA["CORONA-3"] = { name: "3 adornos corona con foto (mándanos las 3 fotos por WhatsApp)", price: 159, horas: 1.02 };
-  EXTRA["CASA-div"] = { name: "Casita de jengibre para utensilios (interior con divisiones)", price: 409, horas: 11.41 };
+  EXTRA["CASA-div"] = { name: "Casita de jengibre para utensilios (interior con divisiones)", price: 300, horas: 11.41 };
 
   // Productos de la colección Navidad 2026 (assets/navidad-productos.js, si la página lo carga antes que este archivo).
   (window.NAVIDAD || []).forEach(p => p.opciones.forEach(o => {

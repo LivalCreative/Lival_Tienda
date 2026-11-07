@@ -88,7 +88,7 @@ P = [
   [("u", "Globo de nieve familiar", "", 3.14, 69, 0)],
   {"label": "Apellido y nombres", "ph": "Ej. Familia López: Ana, Luis, Sofía", "max": 70}),
  ("2087313", "Pueblito de Jengibre para Armar", "✉️ Tarjeta", "Una tarjeta con las piezas de un pueblito de jengibre listas para desprender y armar. Un detalle original para regalar.",
-  ["Las piezas se desprenden y se arman.", "Con o sin marco.", "Perfecta como tarjeta de Navidad."],
+  ["Las piezas se desprenden y se arman.", "Con su marco para regalar.", "Perfecta como tarjeta de Navidad."],
   ["USf75902674a33b2/design/2025-12-07_1026252695f36.jpg", "USf75902674a33b2/design/2025-12-07_83216c0b0273f8.jpg"],
   [("a", "Con marco", "", 1.51, 30, 0), ("b", "Sin marco", "", 1.23, 25, 0)], None),
  ("2101416", "Porta Papel de Baño Ho-Ho-Ho", "🧻 Para el baño", "Un porta rollos navideño con las letras HO HO HO. Hasta el baño se pone en modo Navidad.",
@@ -117,9 +117,9 @@ P = [
   ["USb811a8f846c088/design/783c5450daf345dc.jpg", "USb811a8f846c088/design/5fea1ded5fb79145.jpg"],
   [("a", "Chico (11 cm)", "", 3.07, 39, 0), ("b", "Grande (12.5 cm)", "", 3.87, 53, 0), ("c", "Pareja (chico y grande)", "", 8.8, 96, 0)], None),
  ("3338545", "Árbol Espiral Minimalista", "🌲 Minimalista", "Un arbolito en espiral con textura que proyecta sombras preciosas. Moderno y elegante.",
-  ["Forma de espiral con estrella.", "Uno solo o set de 3 tamaños.", "Para decoración nórdica o minimalista."],
+  ["Forma de espiral con estrella.", "Uno solo o set de 2 tamaños.", "Para decoración nórdica o minimalista."],
   ["USe11a183eb1e66c/design/ecf8cf92cb6b63fa.png", "USe11a183eb1e66c/design/d2a419d12fba15e8.jpg"],
-  [("a", "Un árbol", "", 2.04, 40, 0), ("b", "Set de 3 tamaños", "", 4.45, 72, 0)], None),
+  [("a", "Un árbol", "", 2.04, 40, 0), ("b", "Set de 2 tamaños", "", 4.45, 72, 0)], None),
  ("3348753", "Bandeja de Galletas para Santa", "🥛 Para Santa", "\"Querido Santa\": la charola con lugar para la galleta, la leche y la zanahoria del reno.",
   ["Espacios para galleta, leche y zanahoria.", "Orilla ondulada y detalles en rojo.", "Para la noche del 24."],
   ["USc8d881c97f1b64/design/a866a6dab7b08bc6.png", "USc8d881c97f1b64/design/a3b4716c6dc30025.png"],
@@ -238,16 +238,16 @@ GRUPOS = [
   ["Estrellada: una estrellita avanza del 1 al 24.", "Casita de jengibre: números intercambiables.", "Reno: cubos de números con nariz roja."],
   [("1993434", "Estrellada"), ("2000058", "Casita de jengibre"), ("3536610", "Reno con cubos")], None),
  ("porta-paneton", "Porta panetón", "Para regalar",
-  "Convierte un panetón en un regalo encantador. Elige personaje y tamaño.",
-  ["Reno, duende o Santa.", "Para panetón tradicional (500 g) o mini.", "No incluye el panetón."],
-  [("3500990", "Reno · tradicional"), ("3531613", "Duende"), ("3523645", "Santa · mini")], None),
+  "Convierte un mini panetón en un regalo encantador. Elige tu personaje.",
+  ["Duende o Santa.", "Para mini panetón.", "No incluye el panetón."],
+  [("3500990", "Reno · tradicional"), ("3531613", "Duende"), ("3523645", "Santa")], None),
  ("arbolitos", "Arbolitos de diseño", "Minimalista",
   "Arbolitos modernos para una Navidad elegante: en repisa, mesa, chimenea o ventana. Elige tu estilo.",
-  ["Japandi: set de 2 tamaños con líneas suaves.", "Espiral: con estrella, uno o set de 3 tamaños.", "Cuerda trenzada: se ve hecho a mano."],
+  ["Japandi: set de 2 tamaños con líneas suaves.", "Espiral: con estrella, uno o set de 2 tamaños.", "Cuerda trenzada: se ve hecho a mano."],
   [("3176140", "Japandi"), ("3338545", "Espiral"), ("3371427", "Cuerda trenzada")], None),
  ("adorno-foto", "Adorno con tu foto", "Con tu foto",
   "Un adorno para el árbol que enmarca tu foto favorita. El regalo perfecto para abuelos, padrinos y maestras.",
-  ["Va con tu foto: mándanosla por WhatsApp después de tu pedido.", "Elige corona, estrella o reno de nariz roja.", "Paquete de 3: combina los modelos que quieras y ahorra $18.", "Incluye listón para colgar."],
+  ["Va con tu foto: mándanosla por WhatsApp después de tu pedido.", "Elige corona, estrella o reno de nariz roja.", "Paquete de 3: combina los modelos que quieras y ahorra $20.", "Incluye listón para colgar."],
   [("CORONA", "Corona"), ("2128543", "Estrella"), ("3373774", "Reno de nariz roja")], None),
  ("adorno-nombre", "Adorno con nombre", "Personalizado",
   "Un adorno con el nombre que tú quieras: uno para cada integrante de la familia o como etiqueta de regalo.",
@@ -277,7 +277,7 @@ for gid, nombre, badge, lead, bullets, partes, personal in GRUPOS:
             label = etiqueta if len(src["opciones"]) == 1 else f"{etiqueta} · {o['label'][0].lower() + o['label'][1:]}"
             ops.append(dict(o, k=f"{mid}{o['k']}", label=label, f=len(fotos) - 1))
     nota = "mándanos la foto por WhatsApp" if gid == "adorno-foto" else ""
-    paquete = {"n": 3, "ahorro": 18} if gid == "adorno-foto" else None
+    paquete = {"n": 3, "ahorro": 20} if gid == "adorno-foto" else None
     grupos[gid] = {"paquete": paquete, "nota": nota, "id": "NVG-" + gid, "mw": ",".join(m for m, _ in partes), "nombre": nombre, "badge": badge, "lead": lead,
                    "bullets": bullets, "fotos": fotos, "opciones": ops, "personal": personal}
 
@@ -286,25 +286,28 @@ ORDEN = ["G:adorno-nombre", "G:adorno-foto", "3485874", "G:corona-texto", "81784
          "G:cuenta-regresiva", "G:bandeja-santa", "G:camara-santa", "G:porta-paneton", "G:arbolitos",
          "14093", "2070704", "2087313", "2027611", "3175033", "3337730", "3397234", "3407142", "2101416",
          "2052441", "1935739", "3471108", "2078410"]
-# Mismo precio para variantes parecidas (Lilian: "cuando se pueda que todos tengan el mismo precio").
-# Se sube al más alto para no quedar abajo de la regla; tamaños, niveles y modelos muy distintos se quedan.
-IGUALAR = {
- "NVG-adorno-foto": {"Corona": 59, "Estrella": 59, "Reno de nariz roja": 59},
- "NVG-adorno-nombre": {"Bota": 59, "Esfera muñeco de nieve": 59, "Suéter navideño": 59, "Foquito · nombre sencillo": 59,
-                       "Foquito · nombre con efecto de sombra": 59, "Reno con inicial": 99, "Galleta de jengibre": 99},
- "NVG-bandeja-santa": {"Botanas para Santa": 159},
- "NVG-camara-santa": {"Domo de pared": 149},
- "NVG-porta-paneton": {"Duende · panetón tradicional (500 g)": 269},
- "NVG-arbolitos": {"Japandi": 139, "Cuerda trenzada": 139},
-}
-for d in list(grupos.values()) + list(SRC.values()):
+# Precios que puso Lilian en su lista (tools/precios_lilian.json). Precio 0 = se quita de la tienda.
+out = [grupos[x[2:]] if x.startswith("G:") else SRC[x] for x in ORDEN]
+LIL = json.load(open("tools/precios_lilian.json", encoding="utf-8"))["productos"]
+assert [n for n, _ in LIL] == [d["nombre"] for d in out], "la lista de Lilian no coincide con la tienda"
+quitados = []
+for d, (_, ops) in zip(out, LIL):
+    assert len(ops) == len(d["opciones"]), d["nombre"]
+    for o, (_, precio) in zip(d["opciones"], ops):
+        o["precio"] = precio
+    quitados += [f'{d["nombre"]} · {o["label"]}' for o in d["opciones"] if not o["precio"]]
+    d["opciones"] = [o for o in d["opciones"] if o["precio"]]
+    usadas = sorted({o["f"] for o in d["opciones"] if "f" in o})
+    if usadas and len(usadas) < len(d["fotos"]):   # quitar las fotos de las versiones que ya no están
+        d["fotos"] = [d["fotos"][k] for k in usadas]
+        for o in d["opciones"]: o["f"] = usadas.index(o["f"])
+out = [d for d in out if d["opciones"]]
+for d in out:   # si de un modelo quedó una sola versión, se nombra solo con el modelo
     for o in d["opciones"]:
-        nuevo = IGUALAR.get(d["id"], {}).get(o["label"])
-        if nuevo: assert nuevo >= o["precio"], (d["id"], o["label"]); o["precio"] = nuevo
-
-out = []
-for x in ORDEN:
-    out.append(grupos[x[2:]] if x.startswith("G:") else SRC[x])
+        base = o["label"].split(" · ")[0]
+        if " · " in o["label"] and sum(x["label"].startswith(base + " · ") for x in d["opciones"]) == 1:
+            o["label"] = base
+print("Quitados:", quitados)
 faltan = [m for m in SRC if m not in usados and m not in ORDEN]
 assert not faltan, faltan
 
