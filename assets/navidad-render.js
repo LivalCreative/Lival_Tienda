@@ -32,7 +32,7 @@
         <span class="badge">${esc(p.badge)}</span>
         <h3>${esc(p.nombre)}</h3>
         <p class="lead">${esc(p.lead)}</p>
-        <div class="mini"><span class="desde">${p.opciones.length > 1 ? "Desde " : ""}<b>${money(desde)}</b></span><button type="button" class="btn ver" data-abrir="${p.id}">Ver opciones</button></div>
+        <div class="mini"><span class="desde">${new Set(p.opciones.map(o => o.precio)).size > 1 ? "Desde " : ""}<b>${money(desde)}</b></span><button type="button" class="btn ver" data-abrir="${p.id}">Ver opciones</button></div>
         <div class="det"><ul>${p.bullets.map(b => `<li>${esc(b)}</li>`).join("")}</ul>${det}</div>
         <button type="button" class="cerrar" data-cerrar aria-label="Cerrar">✕</button>
       </div>`;
