@@ -15,14 +15,14 @@
     const dots = p.fotos.map((_, i) => `<i${i ? "" : ' class="on"'}></i>`).join("");
     let det;
     if (p.personal) {
-      det = `${p.opciones.length > 1 ? `<div class="lbl">Elige</div><div class="opts">${p.opciones.map((o, i) => `<button type="button" class="opt${i ? "" : " on"}" data-op="${o.k}">${esc(o.label)} · ${money(o.precio)}</button>`).join("")}</div>` : ""}
+      det = `${p.opciones.length > 1 ? `<div class="lbl">Elige</div><div class="opts">${p.opciones.map((o, i) => `<button type="button" class="opt${i ? "" : " on"}" data-op="${o.k}">${esc(o.label)}${new Set(p.opciones.map(x => x.precio)).size > 1 ? " · " + money(o.precio) : ""}</button>`).join("")}</div>` : ""}
         <label class="lbl" for="t-${p.id}">${esc(p.personal.label)}</label>
         <input class="campo" id="t-${p.id}" maxlength="${p.personal.max}" placeholder="${esc(p.personal.ph)}">
         <div class="buy"><span class="price" data-precio>${money(p.opciones[0].precio)}</span><button type="button" class="btn add" data-addp="${p.id}">Agregar al pedido</button></div>
         <p class="err" data-err></p>
         <div class="sel" data-lista hidden></div>`;
     } else {
-      det = `<div class="var">${p.opciones.map(o => `<div class="vrow"><div class="nm"><div>${esc(o.label)}${o.sub ? `<small>${esc(o.sub)}</small>` : ""}</div></div><span class="pr">${money(o.precio)}</span>
+      det = `<div class="var">${p.opciones.map(o => `<div class="vrow"><div class="nm"><div>${esc(o.label)}</div></div><span class="pr">${money(o.precio)}</span>
           <div class="qty"><button aria-label="Quitar" data-g="${key(p, o)}" data-d="-1">−</button><span data-q="${key(p, o)}">0</span><button class="mas" aria-label="Agregar" data-g="${key(p, o)}" data-d="1">+</button></div></div>`).join("")}</div>
         <div class="sel" data-sel></div>`;
       if (p.paquete) {

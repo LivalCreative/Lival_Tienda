@@ -286,6 +286,22 @@ ORDEN = ["G:adorno-nombre", "G:adorno-foto", "3485874", "G:corona-texto", "81784
          "G:cuenta-regresiva", "G:bandeja-santa", "G:camara-santa", "G:porta-paneton", "G:arbolitos",
          "14093", "2070704", "2087313", "2027611", "3175033", "3337730", "3397234", "3407142", "2101416",
          "2052441", "1935739", "3471108", "2078410"]
+# Mismo precio para variantes parecidas (Lilian: "cuando se pueda que todos tengan el mismo precio").
+# Se sube al más alto para no quedar abajo de la regla; tamaños, niveles y modelos muy distintos se quedan.
+IGUALAR = {
+ "NVG-adorno-foto": {"Corona": 59, "Estrella": 59, "Reno de nariz roja": 59},
+ "NVG-adorno-nombre": {"Bota": 59, "Esfera muñeco de nieve": 59, "Suéter navideño": 59, "Foquito · nombre sencillo": 59,
+                       "Foquito · nombre con efecto de sombra": 59, "Reno con inicial": 99, "Galleta de jengibre": 99},
+ "NVG-bandeja-santa": {"Botanas para Santa": 159},
+ "NVG-camara-santa": {"Domo de pared": 149},
+ "NVG-porta-paneton": {"Duende · panetón tradicional (500 g)": 269},
+ "NVG-arbolitos": {"Japandi": 139, "Cuerda trenzada": 139},
+}
+for d in list(grupos.values()) + list(SRC.values()):
+    for o in d["opciones"]:
+        nuevo = IGUALAR.get(d["id"], {}).get(o["label"])
+        if nuevo: assert nuevo >= o["precio"], (d["id"], o["label"]); o["precio"] = nuevo
+
 out = []
 for x in ORDEN:
     out.append(grupos[x[2:]] if x.startswith("G:") else SRC[x])
