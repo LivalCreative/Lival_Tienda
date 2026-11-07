@@ -170,6 +170,10 @@ footer.creditos { margin: clamp(56px, 8vw, 96px) 0 24px; font-size: var(--t5); c
 .bar.bump { animation: bump .45s var(--rebote); }
 @keyframes bump { 30% { transform: translateY(-6px); } 60% { transform: translateY(2px); } }
 @media (prefers-reduced-motion: reduce) { .snow { display: none; } .bar.bump { animation: none; } }
+details.opcional { border: 2px solid #e6dcc6; border-radius: 20px; padding: 0 16px; background: #fff; }
+details.opcional[open] { padding-bottom: 16px; display: grid; gap: 14px; }
+details.opcional summary { min-height: 52px; display: flex; align-items: center; font-weight: 800; cursor: pointer; color: var(--pine); }
+details.opcional summary span { font-weight: 400; color: var(--muted); margin-left: 6px; }
 
 .solo-pedido .hero, .solo-pedido nav.pills, .solo-pedido #paquete, .solo-pedido #cats, .solo-pedido #bar, .solo-pedido #como-duende, .solo-pedido .cred-duende { display: none !important; }
 .solo-pedido { padding-bottom: 24px; }
@@ -234,7 +238,7 @@ footer.creditos { margin: clamp(56px, 8vw, 96px) 0 24px; font-size: var(--t5); c
 
   <section id="pedido">
     <h1>Tu pedido</h1>
-    <p class="sub">Llena tus datos. Al final se arma un mensaje con todo para mandarlo por WhatsApp. <a class="seguir" href="../">← Seguir comprando</a></p>
+    <p class="sub">Escribe tu nombre y mándanos tu pedido por WhatsApp. Ahí acordamos la entrega. <a class="seguir" href="../">← Seguir comprando</a></p>
     <form class="order" id="orderForm" novalidate>
       <div>
         <label>Producto(s) y cantidad</label>
@@ -249,11 +253,8 @@ footer.creditos { margin: clamp(56px, 8vw, 96px) 0 24px; font-size: var(--t5); c
         <label for="fName">Nombre</label>
         <input type="text" id="fName" name="nombre" autocomplete="name" placeholder="Tu nombre completo, ej. Ana López…">
       </div>
-      <div>
-        <label>Anticipo</label>
-        <p class="hint" style="margin:0">Se paga por transferencia. Tu pedido empieza cuando lo recibimos.</p>
-      </div>
-      <div class="bank" id="bankBox"></div>
+      <details class="opcional">
+        <summary>¿Ya sabes cuándo y dónde lo quieres? <span>(opcional)</span></summary>
       <div>
         <label for="fDate">Fecha de entrega</label>
         <select id="fDate" name="fecha"><option value="">Calculando fechas…</option></select>
@@ -267,21 +268,22 @@ footer.creditos { margin: clamp(56px, 8vw, 96px) 0 24px; font-size: var(--t5); c
       </div>
 <input type="hidden" id="fTime" value="">
       <div>
-        <label for="fNote">Nota (opcional)</label>
-        <textarea id="fNote" name="nota" autocomplete="off" placeholder="Idioma de los letreros, colores, etc…"></textarea>
+        <label for="fNote">Nota</label>
+        <textarea id="fNote" name="nota" autocomplete="off" placeholder="Colores, idioma de los letreros, etc…"></textarea>
       </div>
-      <div>
-        <label>Comprobante de depósito</label>
-        <p class="msg" style="margin:0">Después de mandar tu pedido, adjunta la foto o captura de tu comprobante en el mismo chat de WhatsApp. Tu pedido entra a producción cuando confirmamos el anticipo.</p>
-      </div>
+      </details>
       <div id="err" class="error" role="alert"></div>
       <div class="btns">
-        <a class="btn wa" id="waBtn" href="#pedido" target="_blank" rel="noopener">Enviar pedido por WhatsApp</a>
+        <a class="btn wa" id="waBtn" href="#pedido" target="_blank" rel="noopener">Enviar mi pedido por WhatsApp</a>
         <button type="button" class="btn ghost" id="copyBtn">Copiar pedido</button>
       </div>
       <p class="msg" id="waInfo"></p>
-      <div class="aviso"><b>Después de enviar tu pedido</b>, verificamos tu pago y te confirmamos por WhatsApp la fecha, hora y lugar de entrega. Tu pedido queda apartado hasta que te confirmemos.</div>
-      <div class="gracias" id="gracias" hidden role="status"><b>¡Gracias! Recibimos tu pedido.</b><br>Ahora verificaremos tu pago y te confirmaremos la fecha, hora y lugar de entrega por WhatsApp. No olvides mandar tu comprobante en el chat.</div>
+      <div class="aviso"><b>¿Qué sigue?</b> Te contestamos por WhatsApp para acordar fecha, hora y lugar de entrega. Tu pedido entra a producción cuando recibimos el anticipo por transferencia.</div>
+      <details class="opcional" id="bankDet">
+        <summary>Datos para transferir el anticipo</summary>
+        <div class="bank" id="bankBox"></div>
+      </details>
+      <div class="gracias" id="gracias" hidden role="status"><b>¡Gracias por tu pedido!</b><br>Te contestamos por WhatsApp para acordar la entrega. Cuando transfieras el anticipo, manda tu comprobante en el mismo chat.</div>
     </form>
   </section>
 
@@ -471,14 +473,11 @@ function mensaje() {
     `*Precio total:* ${money(t.total)}`,
     `*Anticipo:* ${money(t.ant)} (${metodo().toLowerCase()})`,
     `*Segundo pago al entregar:* ${money(t.rest)}`,
-    `*Fecha de entrega:* ${fechaBonita(v("fDate"))}`,
-    `*Hora:* por confirmar por WhatsApp`,
-    `*Lugar:* ${v("fPlace")}`,
-    v("fNote") ? `*Nota:* ${v("fNote")}` : `*Nota:* —`,
+    `*Fecha de entrega:* ${v("fDate") ? fechaBonita(v("fDate")) : "la acordamos por aquí"}`,
+    ...(v("fDate") ? [`*Lugar:* ${v("fPlace") || "lo acordamos por aquí"}`] : []),
+    ...(v("fNote") ? [`*Nota:* ${v("fNote")}`] : []),
     ``,
-    `Te mando mi comprobante del anticipo en este chat.`,
-    ``,
-    `Entiendo que mi pedido queda confirmado cuando verifiquen mi pago y me confirmen la fecha y hora de entrega.`
+    `¿Me confirmas para mandarte el anticipo?`
   ].join("\n");
 }
 
@@ -486,9 +485,8 @@ function faltantes() {
   const f = [];
   if (!totals().count) f.push("elige al menos un producto");
   if (!document.getElementById("fName").value.trim()) f.push("tu nombre");
-  if (!document.getElementById("fDate").value) f.push("la fecha de entrega");
-  else if ((lugaresDe(document.getElementById("fDate").value) || []).length === 0) f.push("una fecha que no sea sábado");
-  if (!document.getElementById("fPlace").value.trim()) f.push("el lugar de entrega");
+  const fd = document.getElementById("fDate").value;
+  if (fd && (lugaresDe(fd) || []).length === 0) f.push("una fecha que no sea sábado");
   return f;
 }
 
@@ -506,7 +504,7 @@ function buildLink() {
 
 document.getElementById("waBtn").addEventListener("click", () => {
   if (document.getElementById("waBtn").getAttribute("aria-disabled") === "true") return;
-  const g = document.getElementById("gracias"); g.hidden = false;
+  const g = document.getElementById("gracias"); g.hidden = false; document.getElementById("bankDet").open = true;
   setTimeout(() => g.scrollIntoView({ behavior: "smooth", block: "center" }), 300);
 });
 document.getElementById("copyBtn").addEventListener("click", async () => {

@@ -21,8 +21,8 @@ rep("</style>", """
 #pedido > h1 { font-size: var(--t2); color: var(--pine); }
 .seguir { display: inline-flex; align-items: center; min-height: 44px; font-weight: 800; color: var(--pine); }
 </style>""")
-rep('<p class="sub">Llena tus datos. Al final se arma un mensaje con todo para mandarlo por WhatsApp.</p>',
-    '<p class="sub">Llena tus datos. Al final se arma un mensaje con todo para mandarlo por WhatsApp. <a class="seguir" href="../">← Seguir comprando</a></p>')
+rep('<p class="sub">Escribe tu nombre y mándanos tu pedido por WhatsApp. Ahí acordamos la entrega.</p>',
+    '<p class="sub">Escribe tu nombre y mándanos tu pedido por WhatsApp. Ahí acordamos la entrega. <a class="seguir" href="../">← Seguir comprando</a></p>')
 rep("<h2>Tu pedido</h2>", "<h1>Tu pedido</h1>")
 rep("Todavía no eliges nada. Usa los botones + de arriba.", 'Tu carrito está vacío. Elige tus regalos en <a href="../navidad/">Navidad</a>.')
 os.makedirs("pedido", exist_ok=True)
