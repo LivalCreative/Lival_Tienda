@@ -1,27 +1,342 @@
-{"_nota": "Precios que puso Lilian en su lista (Google Sheets, 6 nov 2026). 0 = quitar de la tienda. Mismo orden que la tienda.",
+{
+ "_nota": "Precios que puso Lilian en su lista (Google Sheets, 6 nov 2026). 0 = quitar de la tienda. Mismo orden que la tienda.",
  "productos": [
-  ["Adorno con nombre", [["Bota",60],["Esfera muñeco de nieve",60],["Galleta de jengibre",80],["Suéter navideño",60],["Foquito · nombre sencillo",60],["Foquito · nombre con efecto de sombra",0],["Reno con inicial",80]]],
-  ["Adorno con tu foto", [["Corona",60],["Estrella",60],["Reno de nariz roja",60]]],
-  ["Casita navideña con tu apellido", [["Casita familiar",350]]],
-  ["Corona personalizada", [["Acebo · un solo color",90],["Acebo · 4 colores",110],["Reno con letrero",200]]],
-  ["Árbol de la familia con nombres", [["Árbol familiar",70]]],
-  ["Globo de nieve de jengibre con nombres", [["Globo de nieve familiar",120]]],
-  ["Cuenta regresiva navideña", [["Estrellada",89],["Casita de jengibre · clásica",200],["Casita de jengibre · multicolor premium",0],["Reno con cubos",300]]],
-  ["Bandeja para Santa", [["Botanas para Santa",160],["Querido Santa, con zanahoria para el reno",160]]],
-  ["Cámara de Santa", [["Domo de pared",150],["Caseta con gorro",70],["Adorno para el árbol",130]]],
-  ["Porta panetón", [["Reno · tradicional",0],["Duende · panetón tradicional (500 g)",0],["Duende · mini panetón",120],["Santa · mini",120]]],
-  ["Arbolitos de diseño", [["Japandi",100],["Espiral · un árbol",100],["Espiral · set de 2 tamaños",170],["Cuerda trenzada",120]]],
-  ["Letrero ¡Jo, Jo, Jo!", [["Santa, muñeco de nieve y reno",200],["Duende, esfera y muñeco de nieve",200]]],
-  ["Pueblito navideño de jengibre", [["Set de 4 casitas",170]]],
-  ["Pueblito de jengibre para armar", [["Con marco",60],["Sin marco",0]]],
-  ["Letreros de calle navideños", [["Set de letreros",200]]],
-  ["Cascanueces decorativo", [["Cascanueces",70]]],
-  ["Reno estilo tejido", [["Chico (11 cm)",80],["Grande (12.5 cm)",100],["Pareja (chico y grande)",160]]],
-  ["Bandejas bastón de caramelo", [["Set de bandejas",200]]],
-  ["Porta rollos de cocina gorro de Santa", [["Porta rollos",250]]],
-  ["Porta papel de baño Ho-Ho-Ho", [["1 nivel",220],["2 niveles",360],["3 niveles",480]]],
-  ["Gato navideño de jengibre", [["Juego completo",150]]],
-  ["Hombre de jengibre flexible", [["Hombre de jengibre flexible (2 pzas)",120]]],
-  ["Broche de acebo para chongo", [["Broche y palito",80]]],
-  ["Esfera gigante iluminada", [["Esfera gigante (sin luz)",0]]]
- ]}
+  [
+   "Adorno con nombre",
+   [
+    [
+     "Bota",
+     60
+    ],
+    [
+     "Esfera muñeco de nieve",
+     60
+    ],
+    [
+     "Galleta de jengibre",
+     80
+    ],
+    [
+     "Suéter navideño",
+     60
+    ],
+    [
+     "Foquito · nombre sencillo",
+     60
+    ],
+    [
+     "Foquito · nombre con efecto de sombra",
+     0
+    ],
+    [
+     "Reno con inicial",
+     80
+    ]
+   ]
+  ],
+  [
+   "Adorno con tu foto",
+   [
+    [
+     "Corona",
+     60
+    ],
+    [
+     "Estrella",
+     60
+    ],
+    [
+     "Reno de nariz roja",
+     60
+    ]
+   ]
+  ],
+  [
+   "Casita navideña con tu apellido",
+   [
+    [
+     "Casita familiar",
+     350
+    ]
+   ]
+  ],
+  [
+   "Corona personalizada",
+   [
+    [
+     "Acebo · un solo color",
+     90
+    ],
+    [
+     "Acebo · 4 colores",
+     110
+    ],
+    [
+     "Reno con letrero",
+     200
+    ]
+   ]
+  ],
+  [
+   "Árbol de la familia con nombres",
+   [
+    [
+     "Árbol familiar",
+     70
+    ]
+   ]
+  ],
+  [
+   "Globo de nieve de jengibre con nombres",
+   [
+    [
+     "Globo de nieve familiar",
+     120
+    ]
+   ]
+  ],
+  [
+   "Cuenta regresiva navideña",
+   [
+    [
+     "Estrellada",
+     89
+    ],
+    [
+     "Casita de jengibre · clásica",
+     200
+    ],
+    [
+     "Casita de jengibre · multicolor premium",
+     0
+    ],
+    [
+     "Reno con cubos",
+     300
+    ]
+   ]
+  ],
+  [
+   "Bandeja para Santa",
+   [
+    [
+     "Botanas para Santa",
+     160
+    ],
+    [
+     "Querido Santa, con zanahoria para el reno",
+     160
+    ]
+   ]
+  ],
+  [
+   "Cámara de Santa",
+   [
+    [
+     "Domo de pared",
+     150
+    ],
+    [
+     "Caseta con gorro",
+     70
+    ],
+    [
+     "Adorno para el árbol",
+     130
+    ]
+   ]
+  ],
+  [
+   "Porta panetón",
+   [
+    [
+     "Reno · tradicional",
+     0
+    ],
+    [
+     "Duende · panetón tradicional (500 g)",
+     0
+    ],
+    [
+     "Duende · mini panetón",
+     120
+    ],
+    [
+     "Santa · mini",
+     120
+    ]
+   ]
+  ],
+  [
+   "Arbolitos de diseño",
+   [
+    [
+     "Japandi",
+     100
+    ],
+    [
+     "Espiral · un árbol",
+     100
+    ],
+    [
+     "Espiral · set de 2 tamaños",
+     170
+    ],
+    [
+     "Cuerda trenzada",
+     120
+    ]
+   ]
+  ],
+  [
+   "Letrero ¡Jo, Jo, Jo!",
+   [
+    [
+     "Santa, muñeco de nieve y reno",
+     200
+    ],
+    [
+     "Duende, esfera y muñeco de nieve",
+     200
+    ]
+   ]
+  ],
+  [
+   "Pueblito navideño de jengibre",
+   [
+    [
+     "Set de 4 casitas",
+     170
+    ]
+   ]
+  ],
+  [
+   "Pueblito de jengibre para armar",
+   [
+    [
+     "Con marco",
+     60
+    ],
+    [
+     "Sin marco",
+     0
+    ]
+   ]
+  ],
+  [
+   "Letreros de calle navideños",
+   [
+    [
+     "Set de letreros",
+     200
+    ]
+   ]
+  ],
+  [
+   "Cascanueces decorativo",
+   [
+    [
+     "Cascanueces",
+     70
+    ]
+   ]
+  ],
+  [
+   "Reno estilo tejido",
+   [
+    [
+     "Chico (11 cm)",
+     80
+    ],
+    [
+     "Grande (12.5 cm)",
+     100
+    ],
+    [
+     "Pareja (chico y grande)",
+     160
+    ]
+   ]
+  ],
+  [
+   "Bandejas bastón de caramelo",
+   [
+    [
+     "Set de bandejas",
+     200
+    ]
+   ]
+  ],
+  [
+   "Porta rollos de cocina gorro de Santa",
+   [
+    [
+     "Porta rollos",
+     250
+    ]
+   ]
+  ],
+  [
+   "Porta papel de baño Ho-Ho-Ho",
+   [
+    [
+     "1 nivel",
+     220
+    ],
+    [
+     "2 niveles",
+     360
+    ],
+    [
+     "3 niveles",
+     480
+    ]
+   ]
+  ],
+  [
+   "Gato navideño de jengibre",
+   [
+    [
+     "Juego completo",
+     150
+    ]
+   ]
+  ],
+  [
+   "Hombre de jengibre flexible",
+   [
+    [
+     "Hombre de jengibre flexible (2 pzas)",
+     120
+    ]
+   ]
+  ],
+  [
+   "Broche de acebo para chongo",
+   [
+    [
+     "Broche y palito",
+     80
+    ]
+   ]
+  ],
+  [
+   "Mano verde traviesa para pared",
+   [
+    [
+     "Mano verde",
+     220
+    ]
+   ]
+  ],
+  [
+   "Esfera gigante iluminada",
+   [
+    [
+     "Esfera gigante (sin luz)",
+     0
+    ]
+   ]
+  ]
+ ]
+}

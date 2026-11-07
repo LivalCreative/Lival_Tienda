@@ -832,5 +832,32 @@ window.NAVIDAD = [
    }
   ],
   "personal": null
+ },
+ {
+  "id": "NV1891706",
+  "mw": "1891706",
+  "nombre": "Mano verde traviesa para pared",
+  "badge": "Para la pared",
+  "lead": "Una mano verde y peluda que sale de tu pared para robarse una esfera del árbol. El detalle travieso que todos van a notar esta Navidad.",
+  "bullets": [
+   "Sostiene una esfera navideña con la punta del dedo.",
+   "Se cuelga en la pared con el ojal de atrás.",
+   "La esfera no está incluida."
+  ],
+  "fotos": [
+   "https://makerworld.bblmw.com/makerworld/model/USa2b87c0cd202c3/design/2025-10-15_ea3ece3855062.png?x-oss-process=image/resize,w_900",
+   "https://makerworld.bblmw.com/makerworld/model/USa2b87c0cd202c3/design/2025-10-15_cfd64d61f0712.png?x-oss-process=image/resize,w_900",
+   "https://makerworld.bblmw.com/makerworld/model/USa2b87c0cd202c3/467378643/instance/2025-10-17_b458c373b98dc8.png?x-oss-process=image/resize,w_900"
+  ],
+  "opciones": [
+   {
+    "k": "u",
+    "label": "Mano verde",
+    "precio": 220,
+    "horas": 10.75,
+    "mw": "1891706"
+   }
+  ],
+  "personal": null
  }
 ];
