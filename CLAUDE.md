@@ -23,6 +23,7 @@ Todo en español (México). La dueña es Lilian; los clientes compran desde el c
 - Anticipo: 50 % redondeado a decenas; paquete de 24: $750.
 - Entregas: lunes a viernes y domingo; sábados no hay. Puntos de entrega en `duende/index.html` (LUGARES). La hora se confirma por WhatsApp.
 - Fechas: máximo 4 entregas por día; 16 horas de impresión = 1 día de trabajo.
+- Cupo de Navidad: `tools/ocupacion.py` suma las horas reales de lo pendiente en el tablero y calcula las horas libres hasta el 23 de diciembre (sin sábados, reservando 25 % o mínimo 32 h para piezas chicas). Las piezas de 8 h o más que ya no caben se marcan "Agotado" en la tienda y se quitan de los carritos (`assets/carrito.js` → `LIVAL.cerrado`). Ajustes al inicio de `ocupacion.py`.
 - Regla de precio: (costo × 2) + $15 por hora + $30, redondeado a terminación 9, mínimo $49. Filamento $0.25/g, máquina $0.75/h.
 - Decir "duende navideño", nunca la marca registrada del muñeco.
 - La dueña ya tiene las licencias comerciales de los diseños que pide subir.

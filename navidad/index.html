@@ -82,7 +82,7 @@
         <div class="lbl">Nombres en las botas</div>
         <div id="chNombres" class="nombres"></div>
         <p class="hint">Máximo 10 letras por nombre. Los colores van en orden: rojo, verde, rojo, verde…</p>
-        <div class="buy"><span class="price" id="chPrecio">$260</span><button class="btn add" id="chAdd">Agregar al pedido</button></div>
+        <div class="buy"><span class="price" id="chPrecio">$260</span><button class="btn add" id="chAdd" data-horas-min="10.23">Agregar al pedido</button></div>
         <p class="err" id="chErr"></p>
         <div class="sel" id="chLista" hidden></div>
         </div>
@@ -228,6 +228,9 @@ body.abierto .nbar { z-index:70; }
 .paq-f { display:flex; align-items:center; gap:10px; margin-bottom:8px; }
 .paq-f span { flex:none; width:28px; height:28px; border-radius:50%; display:grid; place-items:center; background:var(--lav-d, #6b5b95); color:#fff; font-weight:800; font-size:.9rem; }
 .paq select.campo { appearance:auto; }
+.vrow.agot { opacity:.55; } .vrow.agot .pr { font-size:.85rem; }
+.agot-msg { margin:14px 0 0; padding:12px 14px; border-radius:16px; background:#fde7e4; color:#8a2b1f; font-weight:700; }
+.prod.agotado .desde { color:#8a2b1f; font-weight:800; }
 .campo:focus-visible { border-color:var(--lav-d); outline-offset:1px; }
 .nombres { display:grid; gap:8px; }
 .nombres .n { display:flex; align-items:center; gap:10px; }
@@ -253,8 +256,8 @@ body.abierto .nbar { z-index:70; }
   <p>Querétaro · WhatsApp 442&nbsp;279&nbsp;1488</p>
 </footer>
 
-<script src="../assets/navidad-productos.js?v=20261106f"></script>
-<script src="../assets/carrito.js?v=20261106f"></script>
+<script src="../assets/navidad-productos.js?v=20261106g"></script>
+<script src="../assets/carrito.js?v=20261106g"></script>
 <script>
 const money = n => "$" + n.toLocaleString("es-MX");
 const E = LIVAL.EXTRA, COL = LIVAL.COLORES_FOCO;
@@ -375,7 +378,7 @@ body { padding-bottom: 90px; }
 </script>
 
 
-<script src="../assets/navidad-render.js?v=20261106f"></script>
+<script src="../assets/navidad-render.js?v=20261106g"></script>
 <script>
 (function () {
   function abrir(id) {

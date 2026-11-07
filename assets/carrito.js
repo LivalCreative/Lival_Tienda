@@ -39,5 +39,35 @@
   function agregarPersonal(item) { const l = personales(); l.push(item); guardarPersonales(l); const c = leer(); c[item.id] = 1; guardar(c); }
   function quitarPersonal(id) { guardarPersonales(personales().filter(p => p.id !== id)); const c = leer(); delete c[id]; guardar(c); }
 
-  window.LIVAL = { EXTRA, COLORES_FOCO, leer, guardar, resumenColores, KEY, personales, agregarPersonal, quitarPersonal };
+  // Cupo de Navidad (ocupacion.json, lo actualiza el tablero Pedidos 3D): cuando ya no caben más horas de impresión
+  // antes del corte, las piezas grandes se marcan como agotadas, empezando por las de más horas.
+  let cupo = null;
+  function cerrado(horas) { return !!cupo && horas >= cupo.pieza_grande_horas && horas > cupo.horas_libres; }
+  function aviso(txt) {
+    const d = document.createElement("div"); d.className = "lival-aviso"; d.setAttribute("role", "status");
+    d.style.cssText = "position:fixed;left:12px;right:12px;top:12px;z-index:200;max-width:520px;margin:0 auto;background:#2b2240;color:#fff;padding:14px 44px 14px 16px;border-radius:16px;box-shadow:0 8px 24px rgba(0,0,0,.25);font:inherit;line-height:1.4";
+    d.innerHTML = txt + '<button type="button" aria-label="Cerrar" style="position:absolute;top:8px;right:8px;width:32px;height:32px;border:0;border-radius:50%;background:rgba(255,255,255,.15);color:#fff;font-weight:800;cursor:pointer">✕</button>';
+    d.querySelector("button").onclick = () => d.remove();
+    (document.body || document.documentElement).appendChild(d); setTimeout(() => d.remove(), 15000);
+  }
+  try { const m = sessionStorage.getItem("lival_aviso"); if (m) { sessionStorage.removeItem("lival_aviso"); document.addEventListener("DOMContentLoaded", () => aviso(m)); } } catch (e) {}
+  const yo = document.currentScript && document.currentScript.src;
+  if (yo && window.fetch) {
+    fetch(new URL("../ocupacion.json", yo).href + "?t=" + Date.now()).then(r => r.ok ? r.json() : null).then(j => {
+      if (!j || !j.navidad) return;
+      cupo = { horas_libres: +j.navidad.horas_libres || 0, pieza_grande_horas: +j.navidad.pieza_grande_horas || 8 };
+      // Quitar del carrito lo que ya no alcanzamos a hacer antes de Navidad
+      const c = leer(), quitados = [];
+      Object.keys(c).forEach(k => { if (EXTRA[k] && cerrado(EXTRA[k].horas)) { quitados.push(EXTRA[k].name); delete c[k]; } });
+      const per = personales(), quedan = per.filter(x => { if (cerrado(+x.horas || 0)) { quitados.push(x.name); delete c[x.id]; return false; } return true; });
+      if (quitados.length) {
+        guardar(c); guardarPersonales(quedan);
+        try { sessionStorage.setItem("lival_aviso", "Quitamos de tu pedido " + quitados.map(n => "<b>" + n.replace(/[<>&]/g, "") + "</b>").join(", ") + ": ya no alcanzamos a imprimirlo antes de Navidad. Escríbenos por WhatsApp si lo quieres para después."); } catch (e) {}
+        const r = leer(); if (Object.keys(c).length === Object.keys(r).length && !quitados.some(n => Object.keys(r).some(k => EXTRA[k] && EXTRA[k].name === n))) { location.reload(); return; }
+      }
+      document.dispatchEvent(new CustomEvent("lival:cupo"));
+    }).catch(() => {});
+  }
+
+  window.LIVAL = { EXTRA, COLORES_FOCO, leer, guardar, resumenColores, KEY, personales, agregarPersonal, quitarPersonal, cerrado, get cupo() { return cupo; } };
 })();

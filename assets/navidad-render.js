@@ -120,4 +120,30 @@
   });
   pintarGen();
   window.addEventListener("pageshow", pintarGen);
+
+  // Cupo de Navidad: piezas grandes que ya no alcanzamos a imprimir antes de Navidad (lo decide LIVAL.cerrado)
+  function marcarAgotados() {
+    const E = LIVAL.EXTRA, msg = "Esta pieza ya no alcanza a imprimirse antes de Navidad. Escríbenos por WhatsApp si la quieres para después.";
+    document.querySelectorAll(".prods .prod").forEach(art => {
+      let total = 0, cerr = 0;
+      art.querySelectorAll("button.mas[data-g], button.mas[data-v], button.mas[data-c]").forEach(b => {
+        const k = b.dataset.g || b.dataset.v || b.dataset.c, h = E[k] ? E[k].horas : 0; total++;
+        if (LIVAL.cerrado(h)) { cerr++; b.disabled = true; const row = b.closest(".vrow"); row.classList.add("agot"); row.querySelector(".pr").textContent = "Agotado"; }
+      });
+      const p = lista.find(x => x.id === art.id);
+      if (p && p.personal) {
+        const chips = [...art.querySelectorAll("[data-op]")];
+        p.opciones.forEach(o => { total++; if (LIVAL.cerrado(o.horas)) { cerr++; const c = chips.find(x => x.dataset.op === o.k); if (c) { c.disabled = true; c.classList.remove("on"); c.style.opacity = ".45"; } } });
+        if (chips.length && !art.querySelector("[data-op].on")) { const lib = chips.find(c => !c.disabled); if (lib) lib.click(); }
+        if (cerr === total) art.querySelector("[data-addp]").disabled = true;
+      }
+      art.querySelectorAll("[data-horas-min]").forEach(b => { total++; if (LIVAL.cerrado(+b.dataset.horasMin)) { cerr++; b.disabled = true; } });
+      if (!cerr) return;
+      const det = art.querySelector(".det");
+      if (det && !det.querySelector(".agot-msg")) det.insertAdjacentHTML("afterbegin", `<p class="agot-msg">${cerr === total ? msg : "Algunas versiones ya no alcanzan a imprimirse antes de Navidad."}</p>`);
+      if (cerr === total) { art.classList.add("agotado"); const d = art.querySelector(".desde"); if (d) d.textContent = "Agotado para Navidad"; }
+    });
+  }
+  document.addEventListener("lival:cupo", marcarAgotados);
+  if (LIVAL.cupo) document.addEventListener("DOMContentLoaded", marcarAgotados);
 })();
