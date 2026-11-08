@@ -8,12 +8,13 @@
   const key = (p, o) => `${p.id}-${o.k}`;
 
   const regla = `<svg class="med-ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 15.5 15.5 3 21 8.5 8.5 21z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="m7 12 2 2m1-5 2 2m1-5 2 2" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>`;
+  const NOTA = "Medidas aproximadas: cada pieza se imprime al momento y puede variar un poco.";
   function medidas(p) {
     const con = p.opciones.filter(o => o.medida); if (!con.length) return "";
     const una = p.opciones.length === 1 || (con.length === p.opciones.length && new Set(con.map(o => o.medida)).size === 1);
     const cuerpo = una ? `<p class="med-uno">${esc(con[0].medida)}</p>`
       : `<dl>${con.map(o => `<div><dt>${esc(o.label)}</dt><dd>${esc(o.medida)}</dd></div>`).join("")}</dl>`;
-    return `<div class="med"><div class="med-t">${regla}Medidas</div>${cuerpo}</div>`;
+    return `<div class="med"><div class="med-t">${regla}Medidas</div>${cuerpo}<p class="med-nota">${NOTA}</p></div>`;
   }
 
   lista.forEach(p => {

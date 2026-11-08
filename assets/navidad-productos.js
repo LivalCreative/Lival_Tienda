@@ -316,7 +316,7 @@ window.NAVIDAD = [
     "horas": 6.64,
     "mw": "2000058",
     "f": 1,
-    "medida": "Casa de 11.3 × 13.9 cm, más techo y cubos"
+    "medida": "Aprox. 14 cm de ancho"
    },
    {
     "k": "3536610u",
@@ -325,7 +325,7 @@ window.NAVIDAD = [
     "horas": 12.36,
     "mw": "3536610",
     "f": 2,
-    "medida": "Reno de 14.5 × 10.7 cm, más los cubos"
+    "medida": "Aprox. 15 cm de ancho"
    }
   ],
   "personal": null
@@ -404,7 +404,7 @@ window.NAVIDAD = [
     "horas": 1.06,
     "mw": "3420091",
     "f": 1,
-    "medida": "Caseta de 5.9 × 6.5 cm, más el gorro"
+    "medida": "Aprox. 6.5 cm"
    },
    {
     "k": "2047031u",
@@ -443,7 +443,7 @@ window.NAVIDAD = [
     "horas": 2.89,
     "mw": "3531613",
     "f": 0,
-    "medida": "Base de 10.4 cm de diámetro"
+    "medida": "Aprox. 10.5 cm de diámetro y 7 cm de alto"
    },
    {
     "k": "3523645u",
@@ -481,7 +481,7 @@ window.NAVIDAD = [
     "horas": 4.35,
     "mw": "3176140",
     "f": 0,
-    "medida": "Árbol de 10.6 cm de alto, más base y estrella"
+    "medida": "Aprox. 15 cm de alto armado"
    },
    {
     "k": "3338545a",
@@ -490,7 +490,7 @@ window.NAVIDAD = [
     "horas": 2.04,
     "mw": "3338545",
     "f": 1,
-    "medida": "12.8 cm de alto, más la estrella"
+    "medida": "Aprox. 15 cm de alto con estrella"
    },
    {
     "k": "3338545b",
@@ -499,7 +499,7 @@ window.NAVIDAD = [
     "horas": 4.45,
     "mw": "3338545",
     "f": 1,
-    "medida": "12.8 y 10.9 cm de alto, más las estrellas"
+    "medida": "Aprox. 15 y 13 cm de alto con estrella"
    }
   ],
   "personal": null
