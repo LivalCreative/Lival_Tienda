@@ -34,9 +34,9 @@ P = [
   [("u", "Árbol familiar", "3 a 5 nombres", 0.81, 18, 0)],
   {"label": "Nombres (de 3 a 5, separados por coma)", "ph": "Ej. Ana, Luis, Sofía, Mateo", "max": 60}),
  ("1935739", "Hombre de Jengibre Flexible", "🍪 Para jugar", "Un hombrecito de jengibre articulado que se mueve y se dobla. Divertido para los niños y para decorar.",
-  ["Articulado: brazos y piernas que se mueven.", "Con gorrito navideño.", "Ideal para detalles y bolsitas de regalo."],
+  ["Articulado: brazos y piernas que se mueven.", "Sin gorro o con gorro de Santa, o el paquete con uno de cada uno.", "Ideal para detalles y bolsitas de regalo."],
   ["USc6cf2d8e796cb6/design/2025-10-28_5eeb9e2ed79818.jpeg", "USc6cf2d8e796cb6/design/2025-10-28_1368592091f4b.png"],
-  [("u", "Hombre de jengibre flexible", "", 6.64, 90, 0)], None),
+  [("s", "Sin gorro", "", 3.62, 43.9, 0), ("g", "Con gorro de Santa", "", 6.22, 70.5, 0), ("p", "Paquete: 1 sin gorro y 1 con gorro", "", 9.84, 114.4, 0)], None),
  ("1993434", "Cuenta Regresiva Estrellada", "⭐ Cuenta regresiva", "Una tira con los números del 1 al 24 y una estrellita que avanza cada día hasta Navidad.",
   ["Mueve la estrella un lugar cada día de diciembre.", "Con arbolito al final del camino.", "Diseño sencillo y elegante."],
   ["USd05b0f73f61365/design/2025-11-13_7fe437d7d8f91.jpeg", "USd05b0f73f61365/design/2025-11-13_74eb9e56280ad.jpeg"],
@@ -331,6 +331,7 @@ MEDIDAS = {
  "Porta papel de baño Ho-Ho-Ho": {"*": "Cada letra H: 15.8 × 12.4 cm, 9.5 cm de fondo"},
  "Gato navideño de jengibre": {"*": "Tablero de 11.1 × 16.4 cm · fichas de 3 cm"},
  "Broche de acebo para chongo": {"*": "Corona de 6.3 × 7 cm · palito de 9.6 cm"},
+ "Hombre de jengibre flexible": {"Sin gorro": "3.1 × 5.5 cm", "Con gorro de Santa": "3.6 × 6.5 cm", "Paquete: 1 sin gorro y 1 con gorro": "3.1 × 5.5 cm y 3.6 × 6.5 cm"},
  "Mano del Grinch para pared": {"*": "Aprox. 28-30 cm de alto × 15 cm de ancho × 13 cm de fondo"},
 }
 for d in out:

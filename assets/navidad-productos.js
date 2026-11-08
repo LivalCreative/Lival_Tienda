@@ -812,7 +812,7 @@ window.NAVIDAD = [
   "lead": "Un hombrecito de jengibre articulado que se mueve y se dobla. Divertido para los niños y para decorar.",
   "bullets": [
    "Articulado: brazos y piernas que se mueven.",
-   "Con gorrito navideño.",
+   "Sin gorro o con gorro de Santa, o el paquete con uno de cada uno.",
    "Ideal para detalles y bolsitas de regalo."
   ],
   "fotos": [
@@ -821,11 +821,28 @@ window.NAVIDAD = [
   ],
   "opciones": [
    {
-    "k": "u",
-    "label": "Hombre de jengibre flexible",
+    "k": "s",
+    "label": "Sin gorro",
+    "precio": 80,
+    "horas": 3.62,
+    "mw": "1935739",
+    "medida": "3.1 × 5.5 cm"
+   },
+   {
+    "k": "g",
+    "label": "Con gorro de Santa",
     "precio": 120,
-    "horas": 6.64,
-    "mw": "1935739"
+    "horas": 6.22,
+    "mw": "1935739",
+    "medida": "3.6 × 6.5 cm"
+   },
+   {
+    "k": "p",
+    "label": "Paquete: 1 sin gorro y 1 con gorro",
+    "precio": 180,
+    "horas": 9.84,
+    "mw": "1935739",
+    "medida": "3.1 × 5.5 cm y 3.6 × 6.5 cm"
    }
   ],
   "personal": null
