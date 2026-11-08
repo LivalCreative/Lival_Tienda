@@ -195,9 +195,60 @@ P = [
   ["Cubos de números intercambiables.", "Reno con nariz roja.", "Para repisa o mesa."],
   ["USac916bd566b7dc/design/f56fc8a56e67cdfe.jfif", "USac916bd566b7dc/design/893c17366dc08733.jfif"],
   [("u", "Cuenta regresiva", "", 12.36, 366, 0)], None),
+
+ # ---- Nuevos de la colección Xmas 2026 (precio 0 en precios_lilian.json = oculto hasta que Lilian ponga precio) ----
+ ("3517846", "Portarrollos de cocina del Grinch", "🎄 Para la cocina", "Un portarrollos de cocina con la cabeza del Grinch arriba. Navidad traviesa en tu cocina.",
+  ["Base de 17.7 cm y poste de 24.9 cm de alto.", "Para rollos de papel de cocina.", "El rollo no está incluido."],
+  ["US8aadb2c0f72328/design/a951e85a4cbef96a.png"], [("u", "Portarrollos", "", 10.31, 335, 0)], None),
+ ("807759", "Cuenta regresiva navideña del Grinch", "⭐ Cuenta regresiva", "Las manos del Grinch en forma de corazón marcan cuántos días faltan para Navidad.",
+  ["Aro con los números del 1 al 25.", "3 piezas que se arman en capas.", "Mide 20.3 × 23.1 cm."],
+  ["USc5bc7a602178e6/design/2024-11-20_c05921ee24b08.jpeg"], [("u", "Cuenta regresiva", "", 6.6, 238, 0)], None),
+ ("3289273", "Portavelas del Grinch", "🕯️ Decoración", "Las manos y pies del Grinch sostienen tu vela. Un centro de mesa travieso para Navidad.",
+  ["Para vela en vaso.", "La vela no está incluida.", "Va en piezas que se arman."],
+  ["USe0e48f5996894d/design/7d9d4cc80c9ad81f.png"], [("u", "Portavelas", "", 10.7, 205, 0)], None),
+ ("2030448", "Tarro de galletas del Grinch con gorro de Santa", "🍪 Para la cocina", "Un tarro grande para galletas con la cara del Grinch y su gorro de Santa como tapa.",
+  ["Tarro de 21.3 cm de ancho y 16 cm de alto.", "El gorro de Santa es la tapa.", "Las galletas no están incluidas."],
+  ["US55c2a005b32b43/design/2025-11-23_6d717df3dccde.jpg"], [("u", "Tarro con gorro", "", 13.53, 520.37, 0)], None),
+ ("2001561", "Rompecabezas familiar del Grinch", "🧩 Para jugar", "Una familia del Grinch en piezas que encajan: papá, mamá e hijos.",
+  ["Papá de 15.5 cm, mamá de 14.6 cm e hijos de 8.1 y 5.8 cm.", "Piezas de 1 cm de grosor.", "Para decorar o jugar en familia."],
+  ["US2cb92b4c537bc3/design/2025-11-15_a44ccec0cb05b.jpg"], [("u", "Familia completa", "", 4.01, 108, 0)], None),
+ ("1970765", "Adornos navideños de Mickey", "🎄 Para el árbol", "Un set de adornos de Mickey para tu árbol de Navidad.",
+  ["Set de 5 adornos.", "Cada uno de aprox. 10 × 8.6 cm.", "Para colgar en el árbol."],
+  ["US336cc67510e4e6/design/2025-11-08_89de0d990f983.jpg"], [("u", "Set de 5", "", 9.01, 208, 0)], None),
+ ("3479232", "Portavelas de Mickey de jengibre", "🕯️ Decoración", "Un portavelas de Mickey estilo galleta de jengibre.",
+  ["Mide 17.5 × 15.9 cm.", "La vela no está incluida.", "Ideal como centro de mesa."],
+  ["UScbd1a86fd006dc/design/49ea5a93791bef88.png"], [("u", "Portavelas", "", 7.93, 289, 0)], None),
+ ("3489920", "Porta desinfectante de Mickey de menta", "🎁 Detalle", "Un porta gel antibacterial de Mickey con estilo de dulce de menta.",
+  ["Mide 8.8 × 7.8 cm.", "El gel no está incluido.", "Detalle ideal para intercambio."],
+  ["US5de14eedf3f038/design/bb391cb3a0d18ac4.png"], [("u", "Porta desinfectante", "", 1.3, 25, 0)], None),
+ ("3381067", "Esferas de Pokémon colección 1", "🎄 Para el árbol", "Esferas navideñas de Pokémon.", ["Set de 5 esferas."], 
+  ["US9052d806d0f496/design/61426a3a372efb8b.jfif"], [("u", "Colección 1", "", 7.67, 110, 0)], None),
+ ("3411187", "Esferas de Pokémon colección 2", "🎄 Para el árbol", "Esferas navideñas de Pokémon.", ["Set de 5 esferas."],
+  ["USc3c2204a65b981/design/57ea3ec7c7770887.jfif"], [("u", "Colección 2", "", 8.8, 150, 0)], None),
+ ("1887801", "Árbol navideño antiestrés", "🎄 Para jugar", "Un arbolito antiestrés de 2 piezas para tener en las manos o en el escritorio.",
+  ["2 piezas.", "Mide 4.7 × 7.4 cm.", "Para niños y grandes."],
+  ["US4fcdc97a20c080/design/ce15bfa8aa9ae507.png"], [("u", "Árbol Fidget", "", 4.63, 52, 0)], None),
+ ("3450520", "Cámara del duende navideño", "✨ Para la magia", "Una cámara para que el duende navideño vigile si los niños se portan bien.",
+  ["Cámara de 11.8 × 14.1 cm.", "Con soporte de 9.6 cm."],
+  ["USfa1bfe2feecdb3/design/bbf3817d1e775f4c.png"], [("u", "Cámara", "", 2.25, 63, 0)], None),
+ ("57353", "Plato de galletas para Santa", "🎅 Para Santa", "Un plato para dejarle a Santa sus galletas en Nochebuena.",
+  ["Mide 24.4 × 24.4 cm.", "Una tradición para cada año."],
+  ["USb94e4225e4976e/design/2023-11-10_4553c5f299f98.jpg"], [("u", "Plato", "", 5.5, 165.5, 0)], None),
+ ("798364", "Lámpara de muñeco de nieve", "🕯️ Decoración", "Un muñeco de nieve sonriente que sirve de portavelas para una velita.",
+  ["Cuerpo de 7.9 cm y 10.6 cm de alto, con sombrero.", "Para velita tipo tealight.", "La velita no está incluida."],
+  ["US11277a8935812f/design/2024-11-17_88020acc5b9bb.jpg"], [("u", "Lámpara", "", 2.06, 31.3, 0)], None),
+ ("804252", "Adorno de huellita con el nombre de tu perro", "🐾 Personalizado", "Una huellita para el árbol con el nombre de tu perrito.",
+  ["Mide 10 × 9.5 cm.", "Nombre en relieve.", "Para colgar en el árbol."],
+  ["US4df69ee1264db9/design/2024-11-19_8de17f85e9e2.png"], [("u", "Huellita con nombre", "", 0.72, 22.1, 0)],
+  {"label": "Nombre de tu perrito", "ph": "Ej. Firulais", "max": 12}),
+ ("808697", "Corona articulada", "", "", [], ["US9caacd8aef78e4/design/1b0f3672cf651906.png"], [("u", "Corona", "", 1.67, 28.33, 0)], None),
+ ("798887", "Copo de nieve articulado", "", "", [], ["USe0020303d983a/design/2024-11-18_dfc3de863ee0a.jpg"], [("u", "Copo", "", 1.37, 25.8, 0)], None),
+ ("762992", "Esferas articuladas", "", "", [], ["US9d76b4fdfe9309/design/2024-11-06_b7a6ca089f3d5.jpeg"], [("u", "Esferas", "", 0.85, 13.7, 0)], None),
+ ("774384", "Regalo articulado", "", "", [], ["US17b718713f37ee/design/2024-11-10_9a2c5340a7cde.jpg"], [("u", "Regalo", "", 3.13, 89.9, 0)], None),
+ ("779430", "Árbol con manos y piernas", "", "", [], ["USa0cb396809e894/design/423d55fc2dfb9c4f.png"], [("u", "Árbol", "", 1.53, 26.74, 0)], None),
 ]
 
-PROPIOS = ["Santa", "Grinch", "Ho-Ho-Ho", "Japandi", "Polo Norte", "Jo, Jo, Jo"]
+PROPIOS = ["Santa", "Grinch", "Mickey", "Pokémon", "Ho-Ho-Ho", "Japandi", "Polo Norte", "Jo, Jo, Jo"]
 
 
 def oracion(t):
@@ -255,6 +306,10 @@ GRUPOS = [
   ["Elige el modelo: bota, esfera, galleta, suéter, foquito o reno.", "Nombre en relieve.", "Para el árbol, como etiqueta de regalo o llavero."],
   [("3533521", "Bota"), ("3355184", "Esfera muñeco de nieve"), ("2109874", "Galleta de jengibre"), ("3394419", "Suéter navideño"), ("1996511", "Foquito"), ("2057491", "Reno con inicial")],
   {"label": "Nombre", "ph": "Ej. Valentina", "max": 12}),
+ ("articulados", "Figuritas articuladas", "Para jugar",
+  "Figuritas navideñas articuladas que se mueven. Para decorar el árbol, el escritorio o regalar.",
+  ["Elige: corona, copo de nieve, esferas, regalo o arbolito.", "Tienen partes que se mueven.", "Medidas en cada modelo."],
+  [("808697", "Corona con manos y pies"), ("798887", "Copo de nieve"), ("762992", "Esferas"), ("774384", "Regalo"), ("779430", "Arbolito con manos y piernas")], None),
  ("corona-texto", "Corona personalizada", "Personalizado",
   "Una corona navideña para tu puerta o pared con el apellido de tu familia o el texto que quieras.",
   ["Acebo: con moño, moritas y listón con tu apellido.", "Reno: con moño, piñas y letrero con tu texto.", "Para dar la bienvenida en tu puerta."],
@@ -286,11 +341,13 @@ for gid, nombre, badge, lead, bullets, partes, personal in GRUPOS:
 ORDEN = ["G:adorno-nombre", "G:adorno-foto", "3485874", "G:corona-texto", "817845", "2083881",
          "G:cuenta-regresiva", "G:bandeja-santa", "G:camara-santa", "G:porta-paneton", "G:arbolitos",
          "14093", "2070704", "2087313", "2027611", "3175033", "3337730", "3397234", "3407142", "2101416",
-         "2052441", "1935739", "3471108", "1891706", "2078410"]
+         "2052441", "1935739", "3471108", "1891706", "2078410",
+         "2030448", "807759", "3517846", "3289273", "2001561", "1970765", "3479232", "3489920", "3381067", "3411187",
+         "3450520", "57353", "798364", "804252", "1887801", "G:articulados"]
 # Precios que puso Lilian en su lista (tools/precios_lilian.json). Precio 0 = se quita de la tienda.
 out = [grupos[x[2:]] if x.startswith("G:") else SRC[x] for x in ORDEN]
 LIL = json.load(open("tools/precios_lilian.json", encoding="utf-8"))["productos"]
-assert [n for n, _ in LIL] == [d["nombre"] for d in out], "la lista de Lilian no coincide con la tienda"
+_a=[n for n, _ in LIL]; _b=[d["nombre"] for d in out]; assert _a == _b, [x for x in zip(_a,_b) if x[0]!=x[1]]
 quitados = []
 for d, (_, ops) in zip(out, LIL):
     assert len(ops) == len(d["opciones"]), d["nombre"]
@@ -334,6 +391,21 @@ MEDIDAS = {
  "Gato navideño de jengibre": {"*": "Tablero de 11.1 × 16.4 cm · fichas de 3 cm"},
  "Broche de acebo para chongo": {"*": "Corona de 6.3 × 7 cm · palito de 9.6 cm"},
  "Hombre de jengibre flexible": {"Sin gorro": "3.1 × 5.5 cm", "Con gorro de Santa": "3.6 × 6.5 cm", "Paquete: 1 sin gorro y 1 con gorro": "3.1 × 5.5 cm y 3.6 × 6.5 cm"},
+ "Portarrollos de cocina del Grinch": {"*": "Base de 17.7 cm, 24.9 cm de alto"},
+ "Cuenta regresiva navideña del Grinch": {"*": "20.3 × 23.1 cm"},
+ "Tarro de galletas del Grinch con gorro de Santa": {"*": "Tarro de 21.3 cm de ancho y 16 cm de alto, más el gorro"},
+ "Rompecabezas familiar del Grinch": {"*": "Papá 15.5 cm, mamá 14.6 cm, hijos 8.1 y 5.8 cm de alto"},
+ "Adornos navideños de Mickey": {"*": "5 adornos de aprox. 10 × 8.6 cm"},
+ "Portavelas de Mickey de jengibre": {"*": "17.5 × 15.9 cm"},
+ "Porta desinfectante de Mickey de menta": {"*": "8.8 × 7.8 cm"},
+ "Esferas de Pokémon colección 1": {"*": "5 esferas de 7 cm (una de 9.3 cm)"},
+ "Esferas de Pokémon colección 2": {"*": "5 esferas de 7 cm"},
+ "Árbol navideño antiestrés": {"*": "4.7 × 7.4 cm"},
+ "Cámara del duende navideño": {"*": "11.8 × 14.1 cm"},
+ "Plato de galletas para Santa": {"*": "24.4 × 24.4 cm"},
+ "Lámpara de muñeco de nieve": {"*": "7.9 cm de ancho, 10.6 cm de alto"},
+ "Adorno de huellita con el nombre de tu perro": {"*": "10 × 9.5 cm"},
+ "Figuritas articuladas": {"Corona con manos y pies": "7.6 × 6.5 cm", "Copo de nieve": "8.1 × 6.2 cm", "Esferas": "6.2 × 7 cm", "Regalo": "Caja de 14.3 × 10.5 cm", "Arbolito con manos y piernas": "7 cm de alto"},
  "Mano del Grinch para pared": {"*": "Aprox. 28-30 cm de alto × 15 cm de ancho × 13 cm de fondo"},
 }
 for d in out:
