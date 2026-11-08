@@ -725,28 +725,28 @@
     "label": "Chico (11 cm)",
     "sub": "",
     "precio": 80,
-    "horas": 3.07,
-    "gramos": 39,
+    "horas": 4.48,
+    "gramos": 40.02,
     "mw": "3337730",
-    "medida": "11 cm de alto"
+    "medida": "11 cm de alto · 4.9 × 7.2 cm"
    },
    {
     "k": "b",
     "label": "Grande (12.5 cm)",
     "sub": "",
     "precio": 100,
-    "horas": 3.87,
-    "gramos": 53,
+    "horas": 5.73,
+    "gramos": 53.99,
     "mw": "3337730",
-    "medida": "12.5 cm de alto"
+    "medida": "12.5 cm de alto · 5.6 × 8.2 cm"
    },
    {
     "k": "c",
     "label": "Pareja (chico y grande)",
     "sub": "",
     "precio": 160,
-    "horas": 8.8,
-    "gramos": 96,
+    "horas": 10.2,
+    "gramos": 94.01,
     "mw": "3337730",
     "medida": "11 y 12.5 cm de alto"
    }

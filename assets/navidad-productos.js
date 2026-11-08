@@ -657,23 +657,23 @@ window.NAVIDAD = [
     "k": "a",
     "label": "Chico (11 cm)",
     "precio": 80,
-    "horas": 3.07,
+    "horas": 4.48,
     "mw": "3337730",
-    "medida": "11 cm de alto"
+    "medida": "11 cm de alto · 4.9 × 7.2 cm"
    },
    {
     "k": "b",
     "label": "Grande (12.5 cm)",
     "precio": 100,
-    "horas": 3.87,
+    "horas": 5.73,
     "mw": "3337730",
-    "medida": "12.5 cm de alto"
+    "medida": "12.5 cm de alto · 5.6 × 8.2 cm"
    },
    {
     "k": "c",
     "label": "Pareja (chico y grande)",
     "precio": 160,
-    "horas": 8.8,
+    "horas": 10.2,
     "mw": "3337730",
     "medida": "11 y 12.5 cm de alto"
    }
