@@ -493,7 +493,8 @@ window.NAVIDAD = [
     "precio": 170,
     "horas": 4.45,
     "mw": "3338545",
-    "f": 1
+    "f": 1,
+    "medida": "12.8 y 10.9 cm de alto, más las estrellas"
    }
   ],
   "personal": null

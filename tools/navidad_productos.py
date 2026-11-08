@@ -321,7 +321,7 @@ MEDIDAS = {
  "Cuenta regresiva navideña": {"Estrellada": "23.1 × 23.1 cm"},
  "Bandeja para Santa": {"*": "24 × 24 cm"},
  "Cámara de Santa": {"Domo de pared": "8 × 8.1 cm, 5 cm de fondo", "Adorno para el árbol": "9.5 × 15.1 cm"},
- "Arbolitos de diseño": {"Espiral · un árbol": "12.8 cm de alto, más la estrella"},
+ "Arbolitos de diseño": {"Espiral · un árbol": "12.8 cm de alto, más la estrella", "Espiral · set de 2 tamaños": "12.8 y 10.9 cm de alto, más las estrellas"},
  "Cascanueces decorativo": {"*": "10 cm de alto · 3.5 × 3.2 cm"},
  "Porta panetón": {"Santa": "Bote de 9.2 × 9.2 cm, 8.4 cm de alto"},
  "Letrero ¡Jo, Jo, Jo!": {"Santa, muñeco de nieve y reno": "Base de 15.4 × 14.7 cm", "Duende, esfera y muñeco de nieve": "Base de 20.5 × 19.6 cm"},
