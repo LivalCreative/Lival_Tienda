@@ -315,7 +315,8 @@ window.NAVIDAD = [
     "precio": 200,
     "horas": 6.64,
     "mw": "2000058",
-    "f": 1
+    "f": 1,
+    "medida": "Casa de 11.3 × 13.9 cm, más techo y cubos"
    },
    {
     "k": "3536610u",
@@ -323,7 +324,8 @@ window.NAVIDAD = [
     "precio": 300,
     "horas": 12.36,
     "mw": "3536610",
-    "f": 2
+    "f": 2,
+    "medida": "Reno de 14.5 × 10.7 cm, más los cubos"
    }
   ],
   "personal": null
@@ -401,7 +403,8 @@ window.NAVIDAD = [
     "precio": 70,
     "horas": 1.06,
     "mw": "3420091",
-    "f": 1
+    "f": 1,
+    "medida": "Caseta de 5.9 × 6.5 cm, más el gorro"
    },
    {
     "k": "2047031u",
@@ -439,7 +442,8 @@ window.NAVIDAD = [
     "precio": 120,
     "horas": 2.89,
     "mw": "3531613",
-    "f": 0
+    "f": 0,
+    "medida": "Base de 10.4 cm de diámetro"
    },
    {
     "k": "3523645u",
@@ -476,7 +480,8 @@ window.NAVIDAD = [
     "precio": 100,
     "horas": 4.35,
     "mw": "3176140",
-    "f": 0
+    "f": 0,
+    "medida": "Árbol de 10.6 cm de alto, más base y estrella"
    },
    {
     "k": "3338545a",
@@ -555,7 +560,8 @@ window.NAVIDAD = [
     "label": "Set de 4 casitas",
     "precio": 170,
     "horas": 6.13,
-    "mw": "2070704"
+    "mw": "2070704",
+    "medida": "Se arma de tarjetas de hasta 10 × 21.5 cm"
    }
   ],
   "personal": null
