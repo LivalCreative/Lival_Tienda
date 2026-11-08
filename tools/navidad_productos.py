@@ -308,6 +308,38 @@ for d in out:   # si de un modelo quedó una sola versión, se nombra solo con e
         base = o["label"].split(" · ")[0]
         if " · " in o["label"] and sum(x["label"].startswith(base + " · ") for x in d["opciones"]) == 1:
             o["label"] = base
+
+# Medidas para el cliente (salen de los archivos 3MF / lista "Lival imágenes y descripciones"; solo las confirmadas).
+MEDIDAS = {
+ "Adorno con nombre": {"Bota": "8.1 × 12 cm", "Esfera muñeco de nieve": "8 × 8.7 cm", "Galleta de jengibre": "13 × 8.3 cm",
+                       "Suéter navideño": "10.3 × 8 cm", "Foquito": "4.7 × 10.1 cm", "Reno con inicial": "Aprox. 6.1 × 9.3 cm"},
+ "Adorno con tu foto": {"Corona": "6.7 × 7.4 cm · foto de 5.5 cm", "Estrella": "7 × 7.4 cm", "Reno de nariz roja": "7.2 × 7.7 cm · foto de 5.5 cm"},
+ "Casita navideña con tu apellido": {"*": "20.2 × 23.3 cm"},
+ "Corona personalizada": {"Acebo · un solo color": "21.9 × 21.7 cm", "Acebo · 4 colores": "21.9 × 21.7 cm", "Reno con letrero": "22 × 19.2 cm"},
+ "Árbol de la familia con nombres": {"*": "9.7 × 12.4 cm"},
+ "Globo de nieve de jengibre con nombres": {"*": "13.1 × 16 cm"},
+ "Cuenta regresiva navideña": {"Estrellada": "23.1 × 23.1 cm"},
+ "Bandeja para Santa": {"*": "24 × 24 cm"},
+ "Cámara de Santa": {"Domo de pared": "8 × 8.1 cm, 5 cm de fondo"},
+ "Porta panetón": {"Santa": "Bote de 9.2 × 9.2 cm, 8.4 cm de alto"},
+ "Letrero ¡Jo, Jo, Jo!": {"Santa, muñeco de nieve y reno": "Base de 15.4 × 14.7 cm", "Duende, esfera y muñeco de nieve": "Base de 20.5 × 19.6 cm"},
+ "Pueblito de jengibre para armar": {"*": "Tarjeta de 14 × 13.5 cm"},
+ "Letreros de calle navideños": {"*": "3 letreros de 22.5 × 9.8 cm"},
+ "Reno estilo tejido": {"Chico (11 cm)": "11 cm de alto", "Grande (12.5 cm)": "12.5 cm de alto", "Pareja (chico y grande)": "11 y 12.5 cm de alto"},
+ "Bandejas bastón de caramelo": {"*": "Base de 16.3 × 28.8 cm"},
+ "Porta rollos de cocina gorro de Santa": {"*": "Base de 17.7 cm, 24.9 cm de alto"},
+ "Porta papel de baño Ho-Ho-Ho": {"*": "Cada letra H: 15.8 × 12.4 cm, 9.5 cm de fondo"},
+ "Gato navideño de jengibre": {"*": "Tablero de 11.1 × 16.4 cm · fichas de 3 cm"},
+ "Broche de acebo para chongo": {"*": "Corona de 6.3 × 7 cm · palito de 9.6 cm"},
+ "Mano del Grinch para pared": {"*": "Aprox. 28-30 cm de alto × 15 cm de ancho × 13 cm de fondo"},
+}
+for d in out:
+    m = MEDIDAS.get(d["nombre"], {})
+    for o in d["opciones"]:
+        v = m.get(o["label"]) or m.get("*")
+        if v: o["medida"] = v
+sin = [d["nombre"] for d in out if not any("medida" in o for o in d["opciones"])]
+print("Sin medidas:", sin)
 print("Quitados:", quitados)
 faltan = [m for m in SRC if m not in usados and m not in ORDEN]
 assert not faltan, faltan

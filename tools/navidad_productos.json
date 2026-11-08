@@ -29,7 +29,8 @@
     "horas": 0.71,
     "gramos": 20,
     "mw": "3533521",
-    "f": 0
+    "f": 0,
+    "medida": "8.1 × 12 cm"
    },
    {
     "k": "3355184u",
@@ -39,7 +40,8 @@
     "horas": 1.14,
     "gramos": 30,
     "mw": "3355184",
-    "f": 1
+    "f": 1,
+    "medida": "8 × 8.7 cm"
    },
    {
     "k": "2109874u",
@@ -49,7 +51,8 @@
     "horas": 2.65,
     "gramos": 53,
     "mw": "2109874",
-    "f": 2
+    "f": 2,
+    "medida": "13 × 8.3 cm"
    },
    {
     "k": "3394419u",
@@ -59,7 +62,8 @@
     "horas": 0.94,
     "gramos": 16,
     "mw": "3394419",
-    "f": 3
+    "f": 3,
+    "medida": "10.3 × 8 cm"
    },
    {
     "k": "1996511a",
@@ -69,7 +73,8 @@
     "horas": 0.58,
     "gramos": 16,
     "mw": "1996511",
-    "f": 4
+    "f": 4,
+    "medida": "4.7 × 10.1 cm"
    },
    {
     "k": "2057491u",
@@ -79,7 +84,8 @@
     "horas": 1.95,
     "gramos": 43,
     "mw": "2057491",
-    "f": 5
+    "f": 5,
+    "medida": "Aprox. 6.1 × 9.3 cm"
    }
   ],
   "personal": {
@@ -119,7 +125,8 @@
     "horas": 0.34,
     "gramos": 7,
     "mw": "2128558",
-    "f": 0
+    "f": 0,
+    "medida": "6.7 × 7.4 cm · foto de 5.5 cm"
    },
    {
     "k": "2128543u",
@@ -129,7 +136,8 @@
     "horas": 0.32,
     "gramos": 7,
     "mw": "2128543",
-    "f": 1
+    "f": 1,
+    "medida": "7 × 7.4 cm"
    },
    {
     "k": "3373774u",
@@ -139,7 +147,8 @@
     "horas": 0.62,
     "gramos": 10,
     "mw": "3373774",
-    "f": 2
+    "f": 2,
+    "medida": "7.2 × 7.7 cm · foto de 5.5 cm"
    }
   ],
   "personal": null
@@ -167,7 +176,8 @@
     "precio": 350,
     "horas": 19.84,
     "gramos": 536,
-    "mw": "3485874"
+    "mw": "3485874",
+    "medida": "20.2 × 23.3 cm"
    }
   ],
   "personal": {
@@ -202,7 +212,8 @@
     "horas": 2.08,
     "gramos": 40,
     "mw": "3430824",
-    "f": 0
+    "f": 0,
+    "medida": "21.9 × 21.7 cm"
    },
    {
     "k": "3430824b",
@@ -212,7 +223,8 @@
     "horas": 3.67,
     "gramos": 70,
     "mw": "3430824",
-    "f": 0
+    "f": 0,
+    "medida": "21.9 × 21.7 cm"
    },
    {
     "k": "3412717u",
@@ -222,7 +234,8 @@
     "horas": 9.86,
     "gramos": 181,
     "mw": "3412717",
-    "f": 1
+    "f": 1,
+    "medida": "22 × 19.2 cm"
    }
   ],
   "personal": {
@@ -254,7 +267,8 @@
     "precio": 70,
     "horas": 0.81,
     "gramos": 18,
-    "mw": "817845"
+    "mw": "817845",
+    "medida": "9.7 × 12.4 cm"
    }
   ],
   "personal": {
@@ -286,7 +300,8 @@
     "precio": 120,
     "horas": 3.14,
     "gramos": 69,
-    "mw": "2083881"
+    "mw": "2083881",
+    "medida": "13.1 × 16 cm"
    }
   ],
   "personal": {
@@ -322,7 +337,8 @@
     "horas": 1.9,
     "gramos": 50,
     "mw": "1993434",
-    "f": 0
+    "f": 0,
+    "medida": "23.1 × 23.1 cm"
    },
    {
     "k": "2000058a",
@@ -373,7 +389,8 @@
     "horas": 2.75,
     "gramos": 119,
     "mw": "2073409",
-    "f": 0
+    "f": 0,
+    "medida": "24 × 24 cm"
    },
    {
     "k": "3348753u",
@@ -383,7 +400,8 @@
     "horas": 3.85,
     "gramos": 134,
     "mw": "3348753",
-    "f": 1
+    "f": 1,
+    "medida": "24 × 24 cm"
    }
   ],
   "personal": null
@@ -415,7 +433,8 @@
     "horas": 3.39,
     "gramos": 81,
     "mw": "797351",
-    "f": 0
+    "f": 0,
+    "medida": "8 × 8.1 cm, 5 cm de fondo"
    },
    {
     "k": "3420091u",
@@ -476,7 +495,8 @@
     "horas": 4.43,
     "gramos": 110,
     "mw": "3523645",
-    "f": 1
+    "f": 1,
+    "medida": "Bote de 9.2 × 9.2 cm, 8.4 cm de alto"
    }
   ],
   "personal": null
@@ -566,7 +586,8 @@
     "precio": 200,
     "horas": 5.02,
     "gramos": 178,
-    "mw": "14093"
+    "mw": "14093",
+    "medida": "Base de 15.4 × 14.7 cm"
    },
    {
     "k": "b",
@@ -575,7 +596,8 @@
     "precio": 200,
     "horas": 5.05,
     "gramos": 179,
-    "mw": "14093"
+    "mw": "14093",
+    "medida": "Base de 20.5 × 19.6 cm"
    }
   ],
   "personal": null
@@ -631,7 +653,8 @@
     "precio": 60,
     "horas": 1.51,
     "gramos": 30,
-    "mw": "2087313"
+    "mw": "2087313",
+    "medida": "Tarjeta de 14 × 13.5 cm"
    }
   ],
   "personal": null
@@ -659,7 +682,8 @@
     "precio": 200,
     "horas": 3.71,
     "gramos": 125,
-    "mw": "2027611"
+    "mw": "2027611",
+    "medida": "3 letreros de 22.5 × 9.8 cm"
    }
   ],
   "personal": null
@@ -715,7 +739,8 @@
     "precio": 80,
     "horas": 3.07,
     "gramos": 39,
-    "mw": "3337730"
+    "mw": "3337730",
+    "medida": "11 cm de alto"
    },
    {
     "k": "b",
@@ -724,7 +749,8 @@
     "precio": 100,
     "horas": 3.87,
     "gramos": 53,
-    "mw": "3337730"
+    "mw": "3337730",
+    "medida": "12.5 cm de alto"
    },
    {
     "k": "c",
@@ -733,7 +759,8 @@
     "precio": 160,
     "horas": 8.8,
     "gramos": 96,
-    "mw": "3337730"
+    "mw": "3337730",
+    "medida": "11 y 12.5 cm de alto"
    }
   ],
   "personal": null
@@ -761,7 +788,8 @@
     "precio": 200,
     "horas": 5.69,
     "gramos": 265,
-    "mw": "3397234"
+    "mw": "3397234",
+    "medida": "Base de 16.3 × 28.8 cm"
    }
   ],
   "personal": null
@@ -789,7 +817,8 @@
     "precio": 250,
     "horas": 8.19,
     "gramos": 480,
-    "mw": "3407142"
+    "mw": "3407142",
+    "medida": "Base de 17.7 cm, 24.9 cm de alto"
    }
   ],
   "personal": null
@@ -817,7 +846,8 @@
     "precio": 220,
     "horas": 7.28,
     "gramos": 257,
-    "mw": "2101416"
+    "mw": "2101416",
+    "medida": "Cada letra H: 15.8 × 12.4 cm, 9.5 cm de fondo"
    },
    {
     "k": "b",
@@ -826,7 +856,8 @@
     "precio": 360,
     "horas": 13.48,
     "gramos": 483,
-    "mw": "2101416"
+    "mw": "2101416",
+    "medida": "Cada letra H: 15.8 × 12.4 cm, 9.5 cm de fondo"
    },
    {
     "k": "c",
@@ -835,7 +866,8 @@
     "precio": 480,
     "horas": 19.61,
     "gramos": 712,
-    "mw": "2101416"
+    "mw": "2101416",
+    "medida": "Cada letra H: 15.8 × 12.4 cm, 9.5 cm de fondo"
    }
   ],
   "personal": null
@@ -863,7 +895,8 @@
     "precio": 150,
     "horas": 4.09,
     "gramos": 114,
-    "mw": "2052441"
+    "mw": "2052441",
+    "medida": "Tablero de 11.1 × 16.4 cm · fichas de 3 cm"
    }
   ],
   "personal": null
@@ -919,7 +952,8 @@
     "precio": 80,
     "horas": 2.32,
     "gramos": 28,
-    "mw": "3471108"
+    "mw": "3471108",
+    "medida": "Corona de 6.3 × 7 cm · palito de 9.6 cm"
    }
   ],
   "personal": null
@@ -948,7 +982,8 @@
     "precio": 220,
     "horas": 10.75,
     "gramos": 308,
-    "mw": "1891706"
+    "mw": "1891706",
+    "medida": "Aprox. 28-30 cm de alto × 15 cm de ancho × 13 cm de fondo"
    }
   ],
   "personal": null

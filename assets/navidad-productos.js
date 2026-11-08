@@ -28,7 +28,8 @@ window.NAVIDAD = [
     "precio": 60,
     "horas": 0.71,
     "mw": "3533521",
-    "f": 0
+    "f": 0,
+    "medida": "8.1 × 12 cm"
    },
    {
     "k": "3355184u",
@@ -36,7 +37,8 @@ window.NAVIDAD = [
     "precio": 60,
     "horas": 1.14,
     "mw": "3355184",
-    "f": 1
+    "f": 1,
+    "medida": "8 × 8.7 cm"
    },
    {
     "k": "2109874u",
@@ -44,7 +46,8 @@ window.NAVIDAD = [
     "precio": 80,
     "horas": 2.65,
     "mw": "2109874",
-    "f": 2
+    "f": 2,
+    "medida": "13 × 8.3 cm"
    },
    {
     "k": "3394419u",
@@ -52,7 +55,8 @@ window.NAVIDAD = [
     "precio": 60,
     "horas": 0.94,
     "mw": "3394419",
-    "f": 3
+    "f": 3,
+    "medida": "10.3 × 8 cm"
    },
    {
     "k": "1996511a",
@@ -60,7 +64,8 @@ window.NAVIDAD = [
     "precio": 60,
     "horas": 0.58,
     "mw": "1996511",
-    "f": 4
+    "f": 4,
+    "medida": "4.7 × 10.1 cm"
    },
    {
     "k": "2057491u",
@@ -68,7 +73,8 @@ window.NAVIDAD = [
     "precio": 80,
     "horas": 1.95,
     "mw": "2057491",
-    "f": 5
+    "f": 5,
+    "medida": "Aprox. 6.1 × 9.3 cm"
    }
   ],
   "personal": {
@@ -106,7 +112,8 @@ window.NAVIDAD = [
     "precio": 60,
     "horas": 0.34,
     "mw": "2128558",
-    "f": 0
+    "f": 0,
+    "medida": "6.7 × 7.4 cm · foto de 5.5 cm"
    },
    {
     "k": "2128543u",
@@ -114,7 +121,8 @@ window.NAVIDAD = [
     "precio": 60,
     "horas": 0.32,
     "mw": "2128543",
-    "f": 1
+    "f": 1,
+    "medida": "7 × 7.4 cm"
    },
    {
     "k": "3373774u",
@@ -122,7 +130,8 @@ window.NAVIDAD = [
     "precio": 60,
     "horas": 0.62,
     "mw": "3373774",
-    "f": 2
+    "f": 2,
+    "medida": "7.2 × 7.7 cm · foto de 5.5 cm"
    }
   ],
   "personal": null
@@ -148,7 +157,8 @@ window.NAVIDAD = [
     "label": "Casita familiar",
     "precio": 350,
     "horas": 19.84,
-    "mw": "3485874"
+    "mw": "3485874",
+    "medida": "20.2 × 23.3 cm"
    }
   ],
   "personal": {
@@ -181,7 +191,8 @@ window.NAVIDAD = [
     "precio": 90,
     "horas": 2.08,
     "mw": "3430824",
-    "f": 0
+    "f": 0,
+    "medida": "21.9 × 21.7 cm"
    },
    {
     "k": "3430824b",
@@ -189,7 +200,8 @@ window.NAVIDAD = [
     "precio": 110,
     "horas": 3.67,
     "mw": "3430824",
-    "f": 0
+    "f": 0,
+    "medida": "21.9 × 21.7 cm"
    },
    {
     "k": "3412717u",
@@ -197,7 +209,8 @@ window.NAVIDAD = [
     "precio": 200,
     "horas": 9.86,
     "mw": "3412717",
-    "f": 1
+    "f": 1,
+    "medida": "22 × 19.2 cm"
    }
   ],
   "personal": {
@@ -227,7 +240,8 @@ window.NAVIDAD = [
     "label": "Árbol familiar",
     "precio": 70,
     "horas": 0.81,
-    "mw": "817845"
+    "mw": "817845",
+    "medida": "9.7 × 12.4 cm"
    }
   ],
   "personal": {
@@ -257,7 +271,8 @@ window.NAVIDAD = [
     "label": "Globo de nieve familiar",
     "precio": 120,
     "horas": 3.14,
-    "mw": "2083881"
+    "mw": "2083881",
+    "medida": "13.1 × 16 cm"
    }
   ],
   "personal": {
@@ -291,7 +306,8 @@ window.NAVIDAD = [
     "precio": 89,
     "horas": 1.9,
     "mw": "1993434",
-    "f": 0
+    "f": 0,
+    "medida": "23.1 × 23.1 cm"
    },
    {
     "k": "2000058a",
@@ -336,7 +352,8 @@ window.NAVIDAD = [
     "precio": 160,
     "horas": 2.75,
     "mw": "2073409",
-    "f": 0
+    "f": 0,
+    "medida": "24 × 24 cm"
    },
    {
     "k": "3348753u",
@@ -344,7 +361,8 @@ window.NAVIDAD = [
     "precio": 160,
     "horas": 3.85,
     "mw": "3348753",
-    "f": 1
+    "f": 1,
+    "medida": "24 × 24 cm"
    }
   ],
   "personal": null
@@ -374,7 +392,8 @@ window.NAVIDAD = [
     "precio": 150,
     "horas": 3.39,
     "mw": "797351",
-    "f": 0
+    "f": 0,
+    "medida": "8 × 8.1 cm, 5 cm de fondo"
    },
    {
     "k": "3420091u",
@@ -427,7 +446,8 @@ window.NAVIDAD = [
     "precio": 120,
     "horas": 4.43,
     "mw": "3523645",
-    "f": 1
+    "f": 1,
+    "medida": "Bote de 9.2 × 9.2 cm, 8.4 cm de alto"
    }
   ],
   "personal": null
@@ -507,14 +527,16 @@ window.NAVIDAD = [
     "label": "Santa, muñeco de nieve y reno",
     "precio": 200,
     "horas": 5.02,
-    "mw": "14093"
+    "mw": "14093",
+    "medida": "Base de 15.4 × 14.7 cm"
    },
    {
     "k": "b",
     "label": "Duende, esfera y muñeco de nieve",
     "precio": 200,
     "horas": 5.05,
-    "mw": "14093"
+    "mw": "14093",
+    "medida": "Base de 20.5 × 19.6 cm"
    }
   ],
   "personal": null
@@ -566,7 +588,8 @@ window.NAVIDAD = [
     "label": "Con marco",
     "precio": 60,
     "horas": 1.51,
-    "mw": "2087313"
+    "mw": "2087313",
+    "medida": "Tarjeta de 14 × 13.5 cm"
    }
   ],
   "personal": null
@@ -592,7 +615,8 @@ window.NAVIDAD = [
     "label": "Set de letreros",
     "precio": 200,
     "horas": 3.71,
-    "mw": "2027611"
+    "mw": "2027611",
+    "medida": "3 letreros de 22.5 × 9.8 cm"
    }
   ],
   "personal": null
@@ -644,21 +668,24 @@ window.NAVIDAD = [
     "label": "Chico (11 cm)",
     "precio": 80,
     "horas": 3.07,
-    "mw": "3337730"
+    "mw": "3337730",
+    "medida": "11 cm de alto"
    },
    {
     "k": "b",
     "label": "Grande (12.5 cm)",
     "precio": 100,
     "horas": 3.87,
-    "mw": "3337730"
+    "mw": "3337730",
+    "medida": "12.5 cm de alto"
    },
    {
     "k": "c",
     "label": "Pareja (chico y grande)",
     "precio": 160,
     "horas": 8.8,
-    "mw": "3337730"
+    "mw": "3337730",
+    "medida": "11 y 12.5 cm de alto"
    }
   ],
   "personal": null
@@ -684,7 +711,8 @@ window.NAVIDAD = [
     "label": "Set de bandejas",
     "precio": 200,
     "horas": 5.69,
-    "mw": "3397234"
+    "mw": "3397234",
+    "medida": "Base de 16.3 × 28.8 cm"
    }
   ],
   "personal": null
@@ -710,7 +738,8 @@ window.NAVIDAD = [
     "label": "Porta rollos",
     "precio": 250,
     "horas": 8.19,
-    "mw": "3407142"
+    "mw": "3407142",
+    "medida": "Base de 17.7 cm, 24.9 cm de alto"
    }
   ],
   "personal": null
@@ -736,21 +765,24 @@ window.NAVIDAD = [
     "label": "1 nivel",
     "precio": 220,
     "horas": 7.28,
-    "mw": "2101416"
+    "mw": "2101416",
+    "medida": "Cada letra H: 15.8 × 12.4 cm, 9.5 cm de fondo"
    },
    {
     "k": "b",
     "label": "2 niveles",
     "precio": 360,
     "horas": 13.48,
-    "mw": "2101416"
+    "mw": "2101416",
+    "medida": "Cada letra H: 15.8 × 12.4 cm, 9.5 cm de fondo"
    },
    {
     "k": "c",
     "label": "3 niveles",
     "precio": 480,
     "horas": 19.61,
-    "mw": "2101416"
+    "mw": "2101416",
+    "medida": "Cada letra H: 15.8 × 12.4 cm, 9.5 cm de fondo"
    }
   ],
   "personal": null
@@ -776,7 +808,8 @@ window.NAVIDAD = [
     "label": "Juego completo",
     "precio": 150,
     "horas": 4.09,
-    "mw": "2052441"
+    "mw": "2052441",
+    "medida": "Tablero de 11.1 × 16.4 cm · fichas de 3 cm"
    }
   ],
   "personal": null
@@ -828,7 +861,8 @@ window.NAVIDAD = [
     "label": "Broche y palito",
     "precio": 80,
     "horas": 2.32,
-    "mw": "3471108"
+    "mw": "3471108",
+    "medida": "Corona de 6.3 × 7 cm · palito de 9.6 cm"
    }
   ],
   "personal": null
@@ -855,7 +889,8 @@ window.NAVIDAD = [
     "label": "Mano del Grinch",
     "precio": 220,
     "horas": 10.75,
-    "mw": "1891706"
+    "mw": "1891706",
+    "medida": "Aprox. 28-30 cm de alto × 15 cm de ancho × 13 cm de fondo"
    }
   ],
   "personal": null
