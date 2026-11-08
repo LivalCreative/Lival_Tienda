@@ -165,10 +165,10 @@ P = [
   ["Corona de acebo con moritas.", "Palito con estrella.", "Para posadas y fiestas."],
   ["USb7e20bd848011e/design/b92e7113617a4e4c.png", "USb7e20bd848011e/design/5bc5758394cdaa04.jpeg"],
   [("u", "Broche y palito", "", 2.32, 28, 0)], None),
- ("1891706", "Mano Verde Traviesa para Pared", "🖐️ Para la pared", "Una mano verde y peluda que sale de tu pared para robarse una esfera del árbol. El detalle travieso que todos van a notar esta Navidad.",
+ ("1891706", "Mano del Grinch para Pared", "🖐️ Para la pared", "La mano verde y peluda del Grinch que sale de tu pared para robarse una esfera del árbol. El detalle travieso que todos van a notar esta Navidad.",
   ["Sostiene una esfera navideña con la punta del dedo.", "Se cuelga en la pared con el ojal de atrás.", "La esfera no está incluida."],
   ["USa2b87c0cd202c3/design/2025-10-15_ea3ece3855062.png", "USa2b87c0cd202c3/design/2025-10-15_cfd64d61f0712.png", "USa2b87c0cd202c3/467378643/instance/2025-10-17_b458c373b98dc8.png"],
-  [("u", "Mano verde", "", 10.75, 308, 0)], None),
+  [("u", "Mano del Grinch", "", 10.75, 308, 0)], None),
  ("3485874", "Casita Navideña con tu Apellido", "🎁 Personalizado", "Una casita navideña con techo nevado, coronita, puerta roja, arbolitos y el apellido de tu familia.",
   ["Lleva el apellido de tu familia.", "Se para sola: para repisa o mesa.", "Detalles de nieve, ventanas y arbolitos."],
   ["USa6c3046be13b15/design/1281c9e18ecff55d.jfif", "USa6c3046be13b15/design/9ba98520e5713930.jfif"],
@@ -197,7 +197,7 @@ P = [
   [("u", "Cuenta regresiva", "", 12.36, 366, 0)], None),
 ]
 
-PROPIOS = ["Santa", "Ho-Ho-Ho", "Japandi", "Polo Norte", "Jo, Jo, Jo"]
+PROPIOS = ["Santa", "Grinch", "Ho-Ho-Ho", "Japandi", "Polo Norte", "Jo, Jo, Jo"]
 
 
 def oracion(t):

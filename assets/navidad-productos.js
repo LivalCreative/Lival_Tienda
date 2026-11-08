@@ -836,9 +836,9 @@ window.NAVIDAD = [
  {
   "id": "NV1891706",
   "mw": "1891706",
-  "nombre": "Mano verde traviesa para pared",
+  "nombre": "Mano del Grinch para pared",
   "badge": "Para la pared",
-  "lead": "Una mano verde y peluda que sale de tu pared para robarse una esfera del árbol. El detalle travieso que todos van a notar esta Navidad.",
+  "lead": "La mano verde y peluda del Grinch que sale de tu pared para robarse una esfera del árbol. El detalle travieso que todos van a notar esta Navidad.",
   "bullets": [
    "Sostiene una esfera navideña con la punta del dedo.",
    "Se cuelga en la pared con el ojal de atrás.",
@@ -852,7 +852,7 @@ window.NAVIDAD = [
   "opciones": [
    {
     "k": "u",
-    "label": "Mano verde",
+    "label": "Mano del Grinch",
     "precio": 220,
     "horas": 10.75,
     "mw": "1891706"
