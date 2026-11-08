@@ -244,7 +244,7 @@ GRUPOS = [
   [("3500990", "Reno · tradicional"), ("3531613", "Duende"), ("3523645", "Santa")], None),
  ("arbolitos", "Arbolitos de diseño", "Minimalista",
   "Arbolitos modernos para una Navidad elegante: en repisa, mesa, chimenea o ventana. Elige tu estilo.",
-  ["Japandi: set de 2 tamaños con líneas suaves.", "Espiral: con estrella, uno o set de 2 tamaños.", "Cuerda trenzada: se ve hecho a mano."],
+  ["Japandi: set de 2 tamaños con líneas suaves.", "Espiral: con estrella, uno o set de 2 tamaños."],
   [("3176140", "Japandi"), ("3338545", "Espiral"), ("3371427", "Cuerda trenzada")], None),
  ("adorno-foto", "Adorno con tu foto", "Con tu foto",
   "Un adorno para el árbol que enmarca tu foto favorita. El regalo perfecto para abuelos, padrinos y maestras.",

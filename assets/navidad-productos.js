@@ -462,13 +462,11 @@ window.NAVIDAD = [
   "lead": "Arbolitos modernos para una Navidad elegante: en repisa, mesa, chimenea o ventana. Elige tu estilo.",
   "bullets": [
    "Japandi: set de 2 tamaños con líneas suaves.",
-   "Espiral: con estrella, uno o set de 2 tamaños.",
-   "Cuerda trenzada: se ve hecho a mano."
+   "Espiral: con estrella, uno o set de 2 tamaños."
   ],
   "fotos": [
    "https://makerworld.bblmw.com/makerworld/model/USe2c2ad920a85f/design/82598bd2d40761ba.png?x-oss-process=image/resize,w_900",
-   "https://makerworld.bblmw.com/makerworld/model/USe11a183eb1e66c/design/ecf8cf92cb6b63fa.png?x-oss-process=image/resize,w_900",
-   "https://makerworld.bblmw.com/makerworld/model/US5b4a0cf914e933/design/5118d05dd1556803.jpg?x-oss-process=image/resize,w_900"
+   "https://makerworld.bblmw.com/makerworld/model/USe11a183eb1e66c/design/ecf8cf92cb6b63fa.png?x-oss-process=image/resize,w_900"
   ],
   "opciones": [
    {
@@ -494,14 +492,6 @@ window.NAVIDAD = [
     "horas": 4.45,
     "mw": "3338545",
     "f": 1
-   },
-   {
-    "k": "3371427u",
-    "label": "Cuerda trenzada",
-    "precio": 120,
-    "horas": 2.96,
-    "mw": "3371427",
-    "f": 2
    }
   ],
   "personal": null
