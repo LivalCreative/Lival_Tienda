@@ -409,7 +409,8 @@ window.NAVIDAD = [
     "precio": 130,
     "horas": 4.14,
     "mw": "2047031",
-    "f": 2
+    "f": 2,
+    "medida": "9.5 × 15.1 cm"
    }
   ],
   "personal": null
@@ -483,7 +484,8 @@ window.NAVIDAD = [
     "precio": 100,
     "horas": 2.04,
     "mw": "3338545",
-    "f": 1
+    "f": 1,
+    "medida": "12.8 cm de alto, más la estrella"
    },
    {
     "k": "3338545b",
@@ -632,7 +634,8 @@ window.NAVIDAD = [
     "label": "Cascanueces",
     "precio": 70,
     "horas": 1.52,
-    "mw": "3175033"
+    "mw": "3175033",
+    "medida": "10 cm de alto · 3.5 × 3.2 cm"
    }
   ],
   "personal": null

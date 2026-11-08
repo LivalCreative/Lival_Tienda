@@ -454,7 +454,8 @@
     "horas": 4.14,
     "gramos": 104,
     "mw": "2047031",
-    "f": 2
+    "f": 2,
+    "medida": "9.5 × 15.1 cm"
    }
   ],
   "personal": null
@@ -536,7 +537,8 @@
     "horas": 2.04,
     "gramos": 40,
     "mw": "3338545",
-    "f": 1
+    "f": 1,
+    "medida": "12.8 cm de alto, más la estrella"
    },
    {
     "k": "3338545b",
@@ -699,7 +701,8 @@
     "precio": 70,
     "horas": 1.52,
     "gramos": 19,
-    "mw": "3175033"
+    "mw": "3175033",
+    "medida": "10 cm de alto · 3.5 × 3.2 cm"
    }
   ],
   "personal": null
