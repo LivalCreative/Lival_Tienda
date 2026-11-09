@@ -434,7 +434,7 @@ for d, (_, ops) in zip(out, LIL):
 out = [d for d in out if d["opciones"]]
 
 # Categorías de la tienda (filtros arriba de la rejilla). Un producto puede estar en varias.
-# nombre = Con nombre · arbol = Esferas y adornos · deco = Decoración · cocina = Cocina y baño · ninos = Para niños
+# nombre = Personalizables · arbol = Esferas y adornos · deco = Decoración · cocina = Cocina y baño · ninos = Para niños
 CAT = {
  "NVG-adorno-nombre": "nombre arbol", "NVG-adorno-foto": "nombre arbol", "NV3485874": "nombre deco", "NVG-corona-texto": "nombre deco",
  "NV817845": "nombre arbol", "NV2083881": "nombre arbol", "NVG-cuenta-regresiva": "deco ninos", "NVG-bandeja-santa": "cocina ninos",

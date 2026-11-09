@@ -164,7 +164,7 @@
   }
   document.addEventListener("lival:cupo", marcarAgotados);
   if (LIVAL.cupo) document.addEventListener("DOMContentLoaded", marcarAgotados);
-  // Filtros por categoría (Con nombre, Esferas y adornos, Decoración, Cocina y baño, Para niños, Hasta $100).
+  // Filtros por categoría (Personalizables, Esferas y adornos, Decoración, Cocina y baño, Para niños, Hasta $100).
   // Se puede abrir directo una categoría con ?cat=cocina (útil para anuncios de WhatsApp).
   const filtros = document.querySelector(".filtros");
   if (filtros) {
