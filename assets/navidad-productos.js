@@ -87,7 +87,8 @@ window.NAVIDAD = [
    "label": "Nombre",
    "ph": "Ej. Valentina",
    "max": 12
-  }
+  },
+  "cat": "nombre arbol"
  },
  {
   "paquete": {
@@ -144,7 +145,8 @@ window.NAVIDAD = [
     "medida": "7.2 × 7.7 cm · foto de 5.5 cm"
    }
   ],
-  "personal": null
+  "personal": null,
+  "cat": "nombre arbol"
  },
  {
   "id": "NV3485874",
@@ -178,7 +180,8 @@ window.NAVIDAD = [
    "label": "Apellido de la familia",
    "ph": "Ej. Familia Hernández",
    "max": 22
-  }
+  },
+  "cat": "nombre deco"
  },
  {
   "paquete": null,
@@ -234,7 +237,8 @@ window.NAVIDAD = [
    "label": "Apellido o texto del letrero",
    "ph": "Ej. Familia Pérez",
    "max": 20
-  }
+  },
+  "cat": "nombre deco"
  },
  {
   "id": "NV817845",
@@ -268,7 +272,8 @@ window.NAVIDAD = [
    "label": "Nombres (de 3 a 5, separados por coma)",
    "ph": "Ej. Ana, Luis, Sofía, Mateo",
    "max": 60
-  }
+  },
+  "cat": "nombre arbol"
  },
  {
   "id": "NV2083881",
@@ -302,7 +307,8 @@ window.NAVIDAD = [
    "label": "Apellido y nombres",
    "ph": "Ej. Familia López: Ana, Luis, Sofía",
    "max": 70
-  }
+  },
+  "cat": "nombre arbol"
  },
  {
   "paquete": null,
@@ -354,7 +360,8 @@ window.NAVIDAD = [
     "medida": "Aprox. 15 cm de ancho"
    }
   ],
-  "personal": null
+  "personal": null,
+  "cat": "deco ninos"
  },
  {
   "paquete": null,
@@ -395,7 +402,8 @@ window.NAVIDAD = [
     "medida": "24 × 24 cm"
    }
   ],
-  "personal": null
+  "personal": null,
+  "cat": "cocina ninos"
  },
  {
   "paquete": null,
@@ -447,7 +455,8 @@ window.NAVIDAD = [
     "medida": "9.5 × 15.1 cm"
    }
   ],
-  "personal": null
+  "personal": null,
+  "cat": "ninos arbol deco"
  },
  {
   "paquete": null,
@@ -488,7 +497,8 @@ window.NAVIDAD = [
     "medida": "Bote de 9.2 × 9.2 cm, 8.4 cm de alto"
    }
   ],
-  "personal": null
+  "personal": null,
+  "cat": "cocina"
  },
  {
   "paquete": null,
@@ -539,7 +549,8 @@ window.NAVIDAD = [
     "medida": "Aprox. 15 y 13 cm de alto con estrella"
    }
   ],
-  "personal": null
+  "personal": null,
+  "cat": "deco"
  },
  {
   "id": "NV14093",
@@ -580,7 +591,8 @@ window.NAVIDAD = [
     "medida": "Base de 20.5 × 19.6 cm"
    }
   ],
-  "personal": null
+  "personal": null,
+  "cat": "deco"
  },
  {
   "id": "NV2070704",
@@ -610,7 +622,8 @@ window.NAVIDAD = [
     "medida": "Se arma de tarjetas de hasta 10 × 21.5 cm"
    }
   ],
-  "personal": null
+  "personal": null,
+  "cat": "deco"
  },
  {
   "id": "NV2087313",
@@ -640,7 +653,8 @@ window.NAVIDAD = [
     "medida": "Tarjeta de 14 × 13.5 cm"
    }
   ],
-  "personal": null
+  "personal": null,
+  "cat": "deco ninos"
  },
  {
   "id": "NV2027611",
@@ -670,7 +684,8 @@ window.NAVIDAD = [
     "medida": "3 letreros de 22.5 × 9.8 cm"
    }
   ],
-  "personal": null
+  "personal": null,
+  "cat": "deco"
  },
  {
   "id": "NV3175033",
@@ -701,7 +716,8 @@ window.NAVIDAD = [
     "medida": "10 cm de alto · 3.5 × 3.2 cm"
    }
   ],
-  "personal": null
+  "personal": null,
+  "cat": "deco"
  },
  {
   "id": "NV3337730",
@@ -753,7 +769,8 @@ window.NAVIDAD = [
     "medida": "11 y 12.5 cm de alto"
    }
   ],
-  "personal": null
+  "personal": null,
+  "cat": "deco"
  },
  {
   "id": "NV3397234",
@@ -783,7 +800,8 @@ window.NAVIDAD = [
     "medida": "Base de 16.3 × 28.8 cm"
    }
   ],
-  "personal": null
+  "personal": null,
+  "cat": "cocina"
  },
  {
   "id": "NV3407142",
@@ -813,7 +831,8 @@ window.NAVIDAD = [
     "medida": "Base de 17.7 cm, 24.9 cm de alto"
    }
   ],
-  "personal": null
+  "personal": null,
+  "cat": "cocina"
  },
  {
   "id": "NV2101416",
@@ -865,7 +884,8 @@ window.NAVIDAD = [
     "medida": "Cada letra H: 15.8 × 12.4 cm, 9.5 cm de fondo"
    }
   ],
-  "personal": null
+  "personal": null,
+  "cat": "cocina"
  },
  {
   "id": "NV2052441",
@@ -895,7 +915,8 @@ window.NAVIDAD = [
     "medida": "Tablero de 11.1 × 16.4 cm · fichas de 3 cm"
    }
   ],
-  "personal": null
+  "personal": null,
+  "cat": "ninos"
  },
  {
   "id": "NV1935739",
@@ -943,7 +964,8 @@ window.NAVIDAD = [
     "medida": "3.1 × 5.5 cm y 3.6 × 6.5 cm"
    }
   ],
-  "personal": null
+  "personal": null,
+  "cat": "ninos"
  },
  {
   "id": "NV3471108",
@@ -973,7 +995,8 @@ window.NAVIDAD = [
     "medida": "Corona de 6.3 × 7 cm · palito de 9.6 cm"
    }
   ],
-  "personal": null
+  "personal": null,
+  "cat": "ninos"
  },
  {
   "id": "NV1891706",
@@ -1001,6 +1024,7 @@ window.NAVIDAD = [
     "medida": "Aprox. 28-30 cm de alto × 15 cm de ancho × 13 cm de fondo"
    }
   ],
-  "personal": null
+  "personal": null,
+  "cat": "deco"
  }
 ];

@@ -21,6 +21,7 @@
     const desde = Math.min(...p.opciones.map(o => o.precio));
     const art = document.createElement("article");
     art.className = "prod gen"; art.id = p.id;
+    art.dataset.cat = p.cat || ""; art.dataset.precio = desde;
     const fotos = p.fotos.map(f => `<img class="foto" src="${esc(f)}" width="900" height="900" alt="${esc(p.nombre)}" loading="lazy" draggable="false">`).join("");
     const dots = p.fotos.map((_, i) => `<i${i ? "" : ' class="on"'}></i>`).join("");
     let det;
@@ -163,4 +164,23 @@
   }
   document.addEventListener("lival:cupo", marcarAgotados);
   if (LIVAL.cupo) document.addEventListener("DOMContentLoaded", marcarAgotados);
+  // Filtros por categoría (Con nombre, Esferas y adornos, Decoración, Cocina y baño, Para niños, Hasta $100).
+  // Se puede abrir directo una categoría con ?cat=cocina (útil para anuncios de WhatsApp).
+  const filtros = document.querySelector(".filtros");
+  if (filtros) {
+    const prods = [...box.querySelectorAll(":scope > .prod")];
+    prods.forEach(a => { if (!a.dataset.precio) { const b = a.querySelector(".desde b"); a.dataset.precio = b ? b.textContent.replace(/\D/g, "") : ""; } });
+    const entra = (a, c) => !c || (c === "100" ? +a.dataset.precio > 0 && +a.dataset.precio <= 100 : (a.dataset.cat || "").split(" ").includes(c));
+    const botones = [...filtros.querySelectorAll("[data-filtro]")];
+    botones.forEach(b => { if (b.dataset.filtro && !prods.some(a => entra(a, b.dataset.filtro))) b.hidden = true; });
+    const filtra = (c, mover) => {
+      botones.forEach(b => { const on = b.dataset.filtro === c; b.classList.toggle("on", on); b.setAttribute("aria-pressed", on); });
+      prods.forEach(a => a.classList.toggle("fuera", !entra(a, c)));
+      try { const u = new URL(location.href); c ? u.searchParams.set("cat", c) : u.searchParams.delete("cat"); history.replaceState(null, "", u); } catch (e) {}
+      if (mover) filtros.scrollIntoView({ behavior: "smooth", block: "start" });
+    };
+    filtros.addEventListener("click", e => { const b = e.target.closest("[data-filtro]"); if (b) filtra(b.dataset.filtro, true); });
+    let ini = ""; try { ini = new URLSearchParams(location.search).get("cat") || ""; } catch (e) {}
+    if (ini && botones.some(b => b.dataset.filtro === ini && !b.hidden)) filtra(ini, false);
+  }
 })();

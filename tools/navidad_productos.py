@@ -431,6 +431,22 @@ for d, (_, ops) in zip(out, LIL):
         d["fotos"] = [d["fotos"][k] for k in quedan]
         for o in d["opciones"]: o["f"] = quedan.index(o["f"])
 out = [d for d in out if d["opciones"]]
+
+# Categorías de la tienda (filtros arriba de la rejilla). Un producto puede estar en varias.
+# nombre = Con nombre · arbol = Esferas y adornos · deco = Decoración · cocina = Cocina y baño · ninos = Para niños
+CAT = {
+ "NVG-adorno-nombre": "nombre arbol", "NVG-adorno-foto": "nombre arbol", "NV3485874": "nombre deco", "NVG-corona-texto": "nombre deco",
+ "NV817845": "nombre arbol", "NV2083881": "nombre arbol", "NVG-cuenta-regresiva": "deco ninos", "NVG-bandeja-santa": "cocina ninos",
+ "NVG-camara-santa": "ninos arbol deco", "NVG-porta-paneton": "cocina", "NVG-arbolitos": "deco", "NV14093": "deco", "NV2070704": "deco",
+ "NV2087313": "deco ninos", "NV2027611": "deco", "NV3175033": "deco", "NV3337730": "deco", "NV3397234": "cocina", "NV3407142": "cocina",
+ "NV2101416": "cocina", "NV2052441": "ninos", "NV1935739": "ninos", "NV3471108": "ninos", "NV1891706": "deco", "NV2078410": "deco",
+ "NV2030448": "cocina", "NV807759": "deco ninos", "NV3517846": "cocina", "NV3289273": "deco", "NV2001561": "ninos", "NV1970765": "arbol",
+ "NV3479232": "deco", "NV3489920": "cocina", "NV3381067": "arbol ninos", "NV3411187": "arbol ninos", "NV3450520": "ninos",
+ "NV57353": "cocina ninos", "NV798364": "deco", "NV804252": "nombre arbol", "NV1887801": "ninos", "NVG-articulados": "ninos arbol",
+}
+for d in out:
+    assert d["id"] in CAT, "Falta categoría: " + d["id"]
+    d["cat"] = CAT[d["id"]]
 for d in out:   # si de un modelo quedó una sola versión, se nombra solo con el modelo
     for o in d["opciones"]:
         base = o["label"].split(" · ")[0]

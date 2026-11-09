@@ -28,8 +28,17 @@
       <p class="intro">Adornos y detalles navideños impresos en 3D, hechos sobre pedido en Querétaro. Toca un producto para ver sus opciones.</p>
     </div>
     <h2 class="oculto-visual">Productos</h2>
+    <div class="filtros" role="group" aria-label="Categorías">
+      <button type="button" class="filtro on" data-filtro="" aria-pressed="true">Todo</button>
+      <button type="button" class="filtro" data-filtro="nombre" aria-pressed="false">Con nombre</button>
+      <button type="button" class="filtro" data-filtro="arbol" aria-pressed="false">Esferas y adornos</button>
+      <button type="button" class="filtro" data-filtro="deco" aria-pressed="false">Decoración</button>
+      <button type="button" class="filtro" data-filtro="cocina" aria-pressed="false">Cocina y baño</button>
+      <button type="button" class="filtro" data-filtro="ninos" aria-pressed="false">Para niños</button>
+      <button type="button" class="filtro" data-filtro="100" aria-pressed="false">Hasta $100</button>
+    </div>
     <div class="prods">
-    <article class="prod" id="foco">
+    <article class="prod" id="foco" data-cat="deco">
       <div class="gal">
         <img class="foto" src="../img/navidad/foco-1.jpg" width="900" height="1125" alt="Foco navideño gigante" draggable="false">
         <img class="foto" src="../img/navidad/foco-1-medidas.jpg" width="900" height="1125" loading="lazy" alt="Medidas de un foco" draggable="false">
@@ -61,7 +70,7 @@
         <button type="button" class="cerrar" data-cerrar aria-label="Cerrar producto">✕</button>
       </div>
     </article>
-    <article class="prod" id="chimenea">
+    <article class="prod" id="chimenea" data-cat="nombre deco">
       <div class="gal" id="galCh">
         <img class="foto" src="../img/navidad/chimenea-6b.jpg" width="900" height="1125" alt="Chimenea con 6 botas" draggable="false">
         <img class="foto" src="../img/navidad/chimenea-6b-medidas.jpg" width="900" height="1125" loading="lazy" alt="Medidas de la chimenea con 6 botas" draggable="false">
@@ -104,7 +113,7 @@
         <button type="button" class="cerrar" data-cerrar aria-label="Cerrar producto">✕</button>
       </div>
     </article>
-    <article class="prod" id="casita">
+    <article class="prod" id="casita" data-cat="cocina">
       <div class="gal">
         <img class="foto" src="../img/navidad/casita-abierta.jpg" width="900" height="1125" alt="Casita de jengibre, interior abierto" draggable="false">
         <img class="foto" src="../img/navidad/casita-abierta-medidas.jpg" width="900" height="1125" loading="lazy" alt="Medidas de la casita, interior abierto" draggable="false">
@@ -279,6 +288,13 @@ body.abierto .nbar { z-index:70; }
 .galwrap { position:relative; flex:none; }
 .galwrap .wm { position:absolute; inset:0; pointer-events:none; z-index:1; background-image:url("data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20width%3D%27260%27%20height%3D%27150%27%3E%3Ctext%20x%3D%270%27%20y%3D%2790%27%20transform%3D%27rotate%28-28%20130%2075%29%27%20font-family%3D%27Arial%2Csans-serif%27%20font-weight%3D%27700%27%20font-size%3D%2717%27%20fill%3D%27white%27%20fill-opacity%3D%27.30%27%20stroke%3D%27black%27%20stroke-opacity%3D%27.12%27%20stroke-width%3D%27.6%27%3ELIVAL%20CREATIVE%20STUDIO%3C/text%3E%3C/svg%3E"); background-size:220px auto; }
 .galwrap .wm::after { content:"© Lival Creative Studio"; position:absolute; right:8px; bottom:8px; background:rgba(0,0,0,.45); color:#fff; font:700 11px/1 Arial,sans-serif; padding:5px 7px; border-radius:6px; }
+/* Filtros por categoría: en el celular se deslizan de lado */
+.filtros { display:flex; gap:8px; overflow-x:auto; scrollbar-width:none; padding:2px 2px 14px; margin:0 0 4px; -webkit-overflow-scrolling:touch; }
+.filtros::-webkit-scrollbar { display:none; }
+.filtro { flex:none; min-height:44px; border:2px solid var(--tinta); background:#fff; border-radius:999px; padding:0 16px; font:inherit; font-weight:800; color:var(--tinta); cursor:pointer; white-space:nowrap; transition:background-color .2s; }
+.filtro.on { background:var(--tinta); color:#fff; }
+@media (min-width:900px) { .filtros { flex-wrap:wrap; overflow:visible; } }
+.prod.fuera { display:none !important; }
 </style>
 <div class="aldea aldea-pie" data-aldea aria-hidden="true"></div>
 <footer class="pie">
@@ -286,7 +302,7 @@ body.abierto .nbar { z-index:70; }
   <p>Querétaro · WhatsApp 442&nbsp;279&nbsp;1488</p>
 </footer>
 
-<script src="../assets/navidad-productos.js?v=20261108n"></script>
+<script src="../assets/navidad-productos.js?v=20261108o"></script>
 <script src="../assets/carrito.js?v=20261107a"></script>
 <script>
 const money = n => "$" + n.toLocaleString("es-MX");
@@ -408,7 +424,7 @@ body { padding-bottom: 90px; }
 </script>
 
 
-<script src="../assets/navidad-render.js?v=20261108c"></script>
+<script src="../assets/navidad-render.js?v=20261108d"></script>
 <script>
 (function () {
   function abrir(id) {
