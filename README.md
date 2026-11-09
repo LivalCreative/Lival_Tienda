@@ -1,6 +1,6 @@
 # Lival Creative Studio · Tienda
 
-Sitio público: https://villamichel.github.io/Lival_Tienda/
+Sitio público: https://livalcreative.github.io/Lival_Tienda/
 
 Este repositorio es público y solo tiene lo que usa la tienda. Lo privado del negocio
 (licencias, costos y precios con márgenes, archivos 3D, fotos originales) está en Google Drive,

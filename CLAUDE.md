@@ -1,6 +1,6 @@
 # Tienda Lival Creative Studio
 
-Sitio estático publicado con GitHub Pages: https://villamichel.github.io/Lival_Tienda/
+Sitio estático publicado con GitHub Pages: https://livalcreative.github.io/Lival_Tienda/
 Todo en español (México). La dueña es Lilian; los clientes compran desde el celular.
 
 ## Estructura
