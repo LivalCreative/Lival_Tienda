@@ -682,7 +682,7 @@ window.NAVIDAD = [
    {
     "k": "c",
     "label": "Pareja (chico y grande)",
-    "precio": 160,
+    "precio": 180,
     "horas": 10.2,
     "mw": "3337730",
     "medida": "11 y 12.5 cm de alto"
@@ -736,7 +736,7 @@ window.NAVIDAD = [
    {
     "k": "u",
     "label": "Porta rollos",
-    "precio": 250,
+    "precio": 280,
     "horas": 8.19,
     "mw": "3407142",
     "medida": "Base de 17.7 cm, 24.9 cm de alto"
