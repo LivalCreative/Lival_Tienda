@@ -477,7 +477,7 @@ window.NAVIDAD = [
    {
     "k": "3176140u",
     "label": "Japandi",
-    "precio": 100,
+    "precio": 120,
     "horas": 4.35,
     "mw": "3176140",
     "f": 0,
