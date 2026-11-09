@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#123a2c">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Lival Creative Studio">
+<meta property="og:title" content="Disfraces para tu duende · Lival Creative Studio">
+<meta property="og:description" content="¡Dale un nuevo nivel a tu duende! Disfraces impresos en 3D: escoge 3, 6, 9 o la colección completa. Hechos en Querétaro.">
+<meta property="og:url" content="https://livalcreative.github.io/Lival_Tienda/disfraces/">
+<meta property="og:image" content="https://livalcreative.github.io/Lival_Tienda/img/compartir.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="es_MX">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="description" content="Disfraces impresos en 3D para tu duende navideño. Escoge 3, 6, 9 o la colección completa. Hechos en Querétaro.">
+<title>Disfraces para tu duende · Lival Creative Studio</title>
+<link rel="icon" href="../img/logo.png">
+<link rel="preload" href="../fonts/bricolage-latin-800-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="../assets/lival.css?v=20261102c">
+<link rel="stylesheet" href="../assets/temporada.css?v=20261102c">
+<style>
+/* Disfraces para tu duende: verde pino, rojo y oro como la sección del duende */
+.dz-hero { background: var(--pino); color: #fff; text-align: center; padding: 34px var(--m) 30px; border-radius: 0 0 32px 32px; }
+.dz-hero .tag { display: inline-block; background: var(--oro); color: var(--pino); font-weight: 800; border-radius: 999px; padding: 6px 14px; font-size: .9rem; }
+.dz-hero h1 { font-family: var(--disp); font-size: clamp(2.2rem, 10vw, 4rem); line-height: 1; margin: 14px 0 8px; }
+.dz-hero h1 span { color: #ff6b6b; display: block; }
+.dz-hero p { max-width: 560px; margin: 0 auto; font-size: 1.08rem; opacity: .95; }
+.dz { max-width: 1100px; margin: 0 auto; padding: 24px var(--m) 140px; }
+.dz h2 { font-family: var(--disp); font-size: 1.6rem; margin: 26px 0 6px; color: var(--pino); }
+.dz .sub { color: var(--gris); margin: 0 0 14px; }
+.paqs { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; }
+@media (min-width: 760px) { .paqs { grid-template-columns: repeat(4, 1fr); } }
+.paq { border: 3px solid var(--pino); background: #fff; border-radius: 18px; padding: 12px 10px; text-align: center; cursor: pointer; font: inherit; color: var(--tinta); min-height: 92px; transition: transform .15s, background-color .15s; }
+.paq b { display: block; font-family: var(--disp); font-size: 1.25rem; }
+.paq .pr { display: block; font-weight: 800; font-size: 1.35rem; color: var(--rojo); margin-top: 2px; }
+.paq small { display: block; color: var(--gris); font-weight: 700; }
+.paq[aria-pressed="true"] { background: var(--pino); color: #fff; transform: translateY(-2px); }
+.paq[aria-pressed="true"] .pr { color: var(--oro); }
+.paq[aria-pressed="true"] small { color: #d7e6dc; }
+.disfs { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; }
+@media (min-width: 760px) { .disfs { grid-template-columns: repeat(4, 1fr); } }
+.disf { position: relative; border: 3px solid #e3dccb; background: #fff; border-radius: 18px; padding: 0 0 10px; cursor: pointer; font: inherit; color: var(--tinta); text-align: center; overflow: hidden; transition: border-color .15s, transform .15s; }
+.disf img { width: 100%; aspect-ratio: 1; object-fit: cover; display: block; background: #f3efe6; }
+.disf b { display: block; padding: 8px 6px 0; font-weight: 800; line-height: 1.2; }
+.disf .chk { position: absolute; top: 8px; right: 8px; width: 34px; height: 34px; border-radius: 50%; background: rgba(255,255,255,.92); border: 3px solid var(--pino); display: grid; place-items: center; font-weight: 900; color: transparent; }
+.disf[aria-pressed="true"] { border-color: var(--rojo); transform: translateY(-2px); }
+.disf[aria-pressed="true"] .chk { background: var(--rojo); border-color: var(--rojo); color: #fff; }
+.disf:disabled { cursor: default; }
+.frosty { display: grid; grid-template-columns: 120px 1fr; gap: 14px; align-items: center; background: linear-gradient(135deg, #e8f3ff, #fff); border: 3px solid #b9d7f2; border-radius: 22px; padding: 12px; margin-top: 8px; }
+.frosty img { width: 120px; height: 120px; object-fit: cover; border-radius: 14px; }
+.frosty h3 { font-family: var(--disp); margin: 0; font-size: 1.35rem; color: #1e4f86; }
+.frosty p { margin: 4px 0 10px; color: var(--gris); }
+.btn-dz { min-height: 48px; border: 0; border-radius: 999px; padding: 0 20px; font: inherit; font-weight: 800; cursor: pointer; background: var(--rojo); color: #fff; }
+.btn-dz:disabled { background: #b9b2a4; cursor: not-allowed; }
+.btn-dz.azul { background: #1e4f86; }
+.barra-dz { position: fixed; left: 0; right: 0; bottom: 0; z-index: 60; background: var(--pino); color: #fff; padding: 12px var(--m) calc(12px + env(safe-area-inset-bottom)); box-shadow: 0 -6px 20px rgba(0,0,0,.2); }
+.barra-dz .in { max-width: 1100px; margin: 0 auto; display: flex; align-items: center; gap: 12px; justify-content: space-between; }
+.barra-dz .dz-cuenta { font-weight: 800; line-height: 1.25; }
+.barra-dz .dz-cuenta small { display: block; font-weight: 700; opacity: .85; }
+.ok-dz { background: #e9f6ee; border: 2px solid var(--wa); color: var(--pino); border-radius: 16px; padding: 12px 14px; margin: 14px 0 0; font-weight: 700; }
+.ok-dz a { color: var(--wa); font-weight: 800; }
+.nota-dz { color: var(--gris); font-size: .95rem; margin-top: 18px; }
+</style>
+<!-- Visitas (GoatCounter: sin cookies, no guarda quién es cada persona) -->
+<script data-goatcounter="https://livalcreative.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+<script>document.addEventListener("click",function(e){var gc=window.goatcounter;if(!gc||!gc.count||!e.target.closest)return;var a=e.target.closest('a[href*="wa.me"],[data-abrir],[data-filtro],[data-paq]');if(!a)return;var p,t="";if(a.dataset.abrir){p="producto/"+a.dataset.abrir;var pr=document.getElementById(a.dataset.abrir),h=pr&&pr.querySelector("h3");t=h?h.textContent:"";}else if(a.dataset.paq!==undefined){p="disfraces/paquete-"+a.dataset.paq;t=a.textContent;}else if(a.dataset.filtro!==undefined){p="categoria/"+(a.dataset.filtro||"todo");t=a.textContent;}else{p="whatsapp"+location.pathname;t="Clic en WhatsApp";}gc.count({path:p,title:t.trim().slice(0,80),event:true});},true);</script>
+</head>
+<body class="temporada-navidad">
+<a class="saltar" href="#contenido">Saltar al contenido</a>
+<header class="barra"><div class="marco">
+  <a class="logo-link" href="../" aria-label="Lival Creative Studio, inicio"><img src="../img/logo-t.png" width="360" height="267" alt=""></a>
+  <nav aria-label="Secciones">
+    <!-- Duende en pausa: <a class="link" href="../duende/">Duende</a> -->
+    <a class="link" href="../disfraces/" aria-current="page">Disfraces de duende</a>
+    <a class="link" href="../navidad/">Navidad</a>
+    <a class="link" href="../productos/">Más productos</a>
+    <a class="bolsa" href="../pedido/">Mi pedido (<span data-carrito-n>0</span>)</a>
+  </nav>
+</div></header>
+
+<main id="contenido">
+  <section class="dz-hero">
+    <span class="tag">Nuevo · Disfraces 3D</span>
+    <h1>¡Dale un nuevo nivel <span>a tu duende!</span></h1>
+    <p>Disfraces impresos en 3D para tu duende navideño. Escoge tu paquete y los disfraces que más te gusten.</p>
+  </section>
+
+  <div class="dz">
+    <h2>1. Escoge tu paquete</h2>
+    <p class="sub">Los disfraces se venden en paquetes. Tú eliges cuáles van.</p>
+    <div class="paqs" role="group" aria-label="Paquetes">
+      <button type="button" class="paq" data-paq="3" aria-pressed="true"><b>3 disfraces</b><span class="pr">$180</span><small>$60 c/u</small></button>
+      <button type="button" class="paq" data-paq="6" aria-pressed="false"><b>6 disfraces</b><span class="pr">$330</span><small>$55 c/u</small></button>
+      <button type="button" class="paq" data-paq="9" aria-pressed="false"><b>9 disfraces</b><span class="pr">$465</span><small>$51.67 c/u</small></button>
+      <button type="button" class="paq" data-paq="13" aria-pressed="false"><b>Colección completa</b><span class="pr">$580</span><small>Los 13, con Frosty</small></button>
+    </div>
+
+    <h2 id="t-elige">2. Elige tus disfraces</h2>
+    <p class="sub" id="instr">Toca los 3 disfraces que quieres.</p>
+    <div class="disfs" id="disfs"></div>
+
+    <h2>Frosty, edición especial</h2>
+    <div class="frosty">
+      <img id="imgFrosty" alt="Duende con disfraz de muñeco de nieve" loading="lazy">
+      <div>
+        <h3>Frosty · $130</h3>
+        <p>Muñeco de nieve con sombrero de copa. Viene incluido en la colección completa o se vende aparte.</p>
+        <button type="button" class="btn-dz azul" id="addFrosty">Agregar Frosty</button>
+      </div>
+    </div>
+    <div id="okFrosty"></div>
+
+    <p class="nota-dz">El duende no está incluido, solo los disfraces. Los colores pueden variar un poco de las fotos. El anticipo y la entrega se confirman por WhatsApp.</p>
+  </div>
+</main>
+
+<div class="barra-dz" role="region" aria-label="Tu paquete">
+  <div class="in">
+    <div class="dz-cuenta" id="cuenta" aria-live="polite">Llevas 0 de 3<small>Paquete de 3 · $180</small></div>
+    <button type="button" class="btn-dz" id="addPaq" disabled>Agregar al pedido</button>
+  </div>
+</div>
+
+<footer class="pie" style="padding-bottom:110px">
+  <p>Lival Creative Studio · Querétaro</p>
+</footer>
+<script src="../assets/carrito.js?v=20261107a"></script>
+<script src="../assets/tienda.js?v=20261102c"></script>
+<script>
+(function () {
+  // Fotos temporales de MakerWorld: se cambian por las que elija Lilian (Drive: Catalogo Lival / Productos / Imagenes / elf).
+  const MW = "https://makerworld.bblmw.com/makerworld/model/", R = "?x-oss-process=image/resize,w_600";
+  const DISFRACES = [
+    { id: "dumpling", nombre: "Dumpling", horas: 6.5, foto: MW + "US9e72c5270e44cc/design/3cc9fe75d81fe08d.jpeg" + R },
+    { id: "casco", nombre: "Casco espacial", horas: 2.0, foto: MW + "USf7b7cdc9c053e8/design/2025-09-14_3c9757ccc38a9.jpeg" + R },
+    { id: "arbolito", nombre: "Arbolito pastelito", horas: 2.2, foto: MW + "USda2d4e765c7e22/design/3974a0e67d1589c0.webp" + R },
+    { id: "osito", nombre: "Osito de gomita", horas: 1.5, foto: MW + "USf94eace39267d0/design/f3e9398d518d87b5.jpg" + R },
+    { id: "abejita", nombre: "Abejita", horas: 1.9, foto: MW + "US868c35338bb1f3/design/1a61d1b1d2cfc187.jpg" + R },
+    { id: "bota", nombre: "Bota y muleta", horas: 1.7, foto: MW + "US81582d14733e1/design/a7e6bc5bd2fb8dc4.jpg" + R },
+    { id: "mantequilla", nombre: "Mantequilla", horas: 0.8, foto: MW + "US940606e813c64c/design/136726414f190fd8.jpg" + R },
+    { id: "caja", nombre: "Caja de envío", horas: 1.1, foto: MW + "US30d3993b890fed/design/b089c9a8dab2102f.jpg" + R },
+    { id: "buzon", nombre: "Buzón de cartas", horas: 2.1, foto: MW + "US2aa46fe18058b3/design/dfba9484dc7f4527.jpg" + R },
+    { id: "pelota", nombre: "Pelota antiestrés", horas: 1.8, foto: MW + "USa3a82982bd1580/design/076a5fa6b3114765.jpg" + R },
+    { id: "soldadito", nombre: "Soldadito cascanueces", horas: 2.9, foto: MW + "US56ce03c37ac136/design/146d4e4311282dc1.jpg" + R },
+    { id: "cadena", nombre: "Cadena «6-7»", horas: 1.2, foto: MW + "USa3071af51ab29e/design/2025-11-12_b1e0756b6368e8.jpeg" + R }
+  ];
+  const FROSTY = { id: "frosty", nombre: "Frosty, muñeco de nieve", horas: 4.5, precio: 130, foto: MW + "US9651b2a5ab7b4e/design/49a975bbbea5ecf7.png" + R };
+  const PAQ = { 3: 180, 6: 330, 9: 465, 13: 580 };
+
+  let n = 3; const sel = new Set();
+  const box = document.getElementById("disfs"), cuenta = document.getElementById("cuenta"), btn = document.getElementById("addPaq"), instr = document.getElementById("instr");
+  document.getElementById("imgFrosty").src = FROSTY.foto;
+
+  DISFRACES.forEach(d => {
+    const b = document.createElement("button");
+    b.type = "button"; b.className = "disf"; b.dataset.id = d.id; b.setAttribute("aria-pressed", "false");
+    b.innerHTML = `<img src="${d.foto}" alt="Duende con disfraz de ${d.nombre.toLowerCase()}" loading="lazy" width="600" height="600"><span class="chk" aria-hidden="true">✓</span><b>${d.nombre}</b>`;
+    b.addEventListener("click", () => {
+      if (n === 13) return;
+      if (sel.has(d.id)) sel.delete(d.id);
+      else if (sel.size >= n) { aviso(`Ya elegiste ${n}. Quita uno o cambia a un paquete más grande.`); return; }
+      else sel.add(d.id);
+      pinta();
+    });
+    box.appendChild(b);
+  });
+
+  document.querySelectorAll("[data-paq]").forEach(p => p.addEventListener("click", () => {
+    n = +p.dataset.paq;
+    document.querySelectorAll("[data-paq]").forEach(x => x.setAttribute("aria-pressed", x === p));
+    if (n === 13) DISFRACES.forEach(d => sel.add(d.id));
+    else if (sel.size > n || sel.size === DISFRACES.length) { [...sel].slice(n).forEach(id => sel.delete(id)); }
+    pinta();
+    document.getElementById("t-elige").scrollIntoView({ behavior: "smooth", block: "start" });
+  }));
+
+  function pinta() {
+    box.querySelectorAll(".disf").forEach(b => { b.setAttribute("aria-pressed", sel.has(b.dataset.id)); b.disabled = n === 13; });
+    if (n === 13) {
+      instr.textContent = "La colección completa trae los 12 disfraces y además a Frosty.";
+      cuenta.innerHTML = `Colección completa (13)<small>Incluye a Frosty · $${PAQ[13]}</small>`;
+      btn.disabled = false;
+    } else {
+      instr.textContent = `Toca los ${n} disfraces que quieres.`;
+      const falta = n - sel.size;
+      cuenta.innerHTML = `Llevas ${sel.size} de ${n}<small>${falta ? `Te ${falta === 1 ? "falta 1" : "faltan " + falta} · ` : "¡Listo! · "}Paquete de ${n} · $${PAQ[n]}</small>`;
+      btn.disabled = falta !== 0;
+    }
+    btn.textContent = btn.disabled ? "Agregar al pedido" : `Agregar · $${PAQ[n]}`;
+  }
+
+  function aviso(t) {
+    let a = document.getElementById("avisoDz");
+    if (!a) { a = document.createElement("div"); a.id = "avisoDz"; a.setAttribute("role", "status"); a.style.cssText = "position:fixed;left:12px;right:12px;bottom:96px;z-index:70;max-width:480px;margin:0 auto;background:#2b2240;color:#fff;padding:12px 16px;border-radius:14px;font-weight:700;box-shadow:0 8px 24px rgba(0,0,0,.25)"; document.body.appendChild(a); }
+    a.textContent = t; clearTimeout(a._t); a._t = setTimeout(() => a.remove(), 3500);
+  }
+
+  function listo(dest, txt) {
+    document.getElementById(dest).innerHTML = `<p class="ok-dz">✓ ${txt} <a href="../pedido/">Ver mi pedido</a></p>`;
+    const c = document.querySelector("[data-carrito-n]"); if (c) c.textContent = Object.keys(LIVAL.leer()).length;
+  }
+
+  btn.addEventListener("click", () => {
+    const lista = n === 13 ? DISFRACES.concat(FROSTY) : DISFRACES.filter(d => sel.has(d.id));
+    const nombres = lista.map(d => d.nombre).join(", ");
+    const horas = Math.round(lista.reduce((s, d) => s + d.horas, 0) * 100) / 100;
+    const titulo = n === 13 ? "Colección completa de disfraces para duende (13, con Frosty)" : `Paquete de ${n} disfraces para duende`;
+    LIVAL.agregarPersonal({ id: "DISF-" + n + "-" + Date.now().toString(36), tipo: "disfraces", name: `${titulo}: ${nombres}`, resumen: nombres, price: PAQ[n], horas });
+    if (window.goatcounter && goatcounter.count) goatcounter.count({ path: "disfraces/agregado-" + n, title: titulo, event: true });
+    let ok = document.getElementById("okPaq");
+    if (!ok) { ok = document.createElement("div"); ok.id = "okPaq"; box.after(ok); }
+    listo("okPaq", `Agregamos tu ${n === 13 ? "colección completa" : "paquete de " + n} al pedido.`);
+    sel.clear(); if (n === 13) DISFRACES.forEach(d => sel.add(d.id)); pinta();
+    ok.scrollIntoView({ behavior: "smooth", block: "center" });
+  });
+
+  document.getElementById("addFrosty").addEventListener("click", () => {
+    LIVAL.agregarPersonal({ id: "DISF-frosty-" + Date.now().toString(36), tipo: "disfraces", name: "Disfraz de duende: " + FROSTY.nombre, resumen: FROSTY.nombre, price: FROSTY.precio, horas: FROSTY.horas });
+    if (window.goatcounter && goatcounter.count) goatcounter.count({ path: "disfraces/agregado-frosty", title: "Frosty", event: true });
+    listo("okFrosty", "Agregamos a Frosty a tu pedido.");
+  });
+
+  pinta();
+})();
+</script>
+</body>
+</html>

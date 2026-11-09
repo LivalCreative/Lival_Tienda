@@ -30,6 +30,7 @@
   <a class="logo-link" href="../" aria-label="Lival Creative Studio, inicio"><img src="../img/logo-t.png" width="360" height="267" alt=""></a>
   <nav aria-label="Secciones">
     <!-- Duende en pausa: <a class="link" href="../duende/">Duende</a> -->
+    <a class="link" href="../disfraces/">Disfraces de duende</a>
     <a class="link" href="../navidad/" aria-current="page">Navidad</a>
     <a class="link" href="../productos/">Más productos</a>
     <a class="bolsa" href="../pedido/">Mi pedido (<span data-carrito-n>0</span>)</a>
@@ -41,6 +42,7 @@
       <h1 id="t-navidad">Regalos de Navidad</h1>
       <p class="intro">Adornos y detalles navideños impresos en 3D, hechos sobre pedido en Querétaro. Toca un producto para ver sus opciones.</p>
     </div>
+    <a class="promo-dz" href="../disfraces/"><span class="t">Nuevo · ¡Disfraces para tu duende!</span><span class="s">Paquetes desde $180 · tú escoges los disfraces</span><span class="f" aria-hidden="true">›</span></a>
     <h2 class="oculto-visual">Productos</h2>
     <div class="filtros" role="group" aria-label="Categorías">
       <button type="button" class="filtro on" data-filtro="" aria-pressed="true">Todo</button>
@@ -299,6 +301,10 @@ body.abierto .nbar { z-index:70; }
 .filtro.on { background:var(--tinta); color:#fff; }
 @media (min-width:900px) { .filtros { flex-wrap:wrap; overflow:visible; } }
 .prod.fuera { display:none !important; }
+.promo-dz { display:grid; grid-template-columns:1fr auto; align-items:center; gap:2px 12px; background:var(--pino); color:#fff; text-decoration:none; border-radius:18px; padding:14px 18px; margin:0 0 16px; box-shadow:0 6px 18px rgba(18,58,44,.25); }
+.promo-dz .t { font-family:var(--disp); font-size:1.2rem; line-height:1.15; }
+.promo-dz .s { grid-column:1; color:#f7ebcc; font-weight:700; font-size:.95rem; }
+.promo-dz .f { grid-row:1 / span 2; grid-column:2; width:40px; height:40px; border-radius:50%; background:var(--oro); color:var(--pino); display:grid; place-items:center; font-size:1.6rem; font-weight:900; }
 </style>
 <div class="aldea aldea-pie" data-aldea aria-hidden="true"></div>
 <footer class="pie">
