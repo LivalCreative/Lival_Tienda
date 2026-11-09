@@ -10,19 +10,65 @@ FOTO = 0  # el costo de la foto impresa vive en la lista de precios de Drive
 CDN = "https://makerworld.bblmw.com/makerworld/model/"
 
 # Fotos propias de Lilian (con marca de agua, tools/marca_agua.py): van primero, la del producto y luego la de medidas.
+# Lista = fotos de todo el producto; dict {número de opción: fotos} = cada versión con sus fotos (al elegirla, la galería salta a ellas).
 def _p(*n): return ["../img/navidad/" + x + ".jpg" for x in n]
 PROPIAS = {
  "3533521": _p("adorno-bota", "adorno-bota-medidas"),
  "3355184": _p("adorno-esfera", "adorno-esfera-medidas"),
- "2109874": _p("adorno-galleta", "adorno-galleta-medidas"),
- "3394419": _p("adorno-sueter", "adorno-sueter-medidas"),
  "1996511": _p("adorno-foquito", "adorno-foquito-medidas"),
+ "2109874": _p("adorno-galleta", "adorno-galleta-medidas"),
  "2057491": _p("adorno-reno-inicial", "adorno-reno-inicial-medidas"),
- "3412717": _p("corona-reno-letrero"),
- "3397234": _p("bandejas-baston"),
- "1935739": _p("hombre-jengibre-2"),
- "3175033": _p("cascanueces", "cascanueces-medidas"),
+ "3394419": _p("adorno-sueter", "adorno-sueter-medidas"),
+ "2128543": _p("adorno-estrella", "adorno-estrella-medidas"),
+ "3373774": _p("adorno-reno-nariz", "adorno-reno-nariz-medidas"),
+ "3338545": {0: _p("arbol-espiral-uno", "arbol-espiral-uno-medidas"), 1: _p("arbol-espiral-set", "arbol-espiral-set-medidas")},
+ "3176140": _p("arbol-japandi", "arbol-japandi-medidas"),
+ "2073409": _p("bandeja-botanas", "bandeja-botanas-medidas"),
+ "3348753": _p("bandeja-querido-santa", "bandeja-querido-santa-medidas"),
+ "3397234": _p("bandejas-baston", "bandejas-baston-medidas"),
+ "3471108": _p("broche-acebo", "broche-acebo-medidas"),
+ "3175033": _p("cascanueces", "cascanueces-medidas", "cascanueces-medidas-alt"),
+ "3485874": _p("casita-familiar", "casita-familiar-medidas"),
+ "3430824": {0: _p("corona-acebo-uno", "corona-acebo-uno-medidas"), 1: _p("corona-acebo-colores", "corona-acebo-colores-medidas")},
+ "3412717": _p("corona-reno-letrero", "corona-reno-letrero-medidas"),
+ "2000058": {0: _p("cuenta-casita", "cuenta-casita-medidas")},
+ "1993434": _p("cuenta-estrellada", "cuenta-estrellada-medidas"),
+ "3536610": _p("cuenta-reno", "cuenta-reno-medidas"),
+ "807759": _p("cuenta-grinch", "cuenta-grinch-medidas"),
+ "2047031": _p("camara-adorno", "camara-adorno-medidas"),
+ "3420091": _p("camara-caseta", "camara-caseta-medidas"),
+ "797351": _p("camara-domo", "camara-domo-medidas"),
+ "2052441": _p("gato-jengibre", "gato-jengibre-medidas"),
+ "2083881": _p("globo-nieve", "globo-nieve-medidas"),
+ "1935739": _p("hombre-jengibre-2", "hombre-jengibre-2-medidas"),
+ "2087313": {0: _p("kit-pueblito-marco", "kit-pueblito-marco-medidas")},
+ "14093": {0: _p("jojojo-santa", "jojojo-santa-medidas"), 1: _p("jojojo-duende", "jojojo-duende-medidas")},
+ "2027611": _p("letreros-calle", "letreros-calle-medidas"),
+ "3489920": _p("mickey-desinfectante"),
+ "3531613": {1: _p("paneton-duende-mini", "paneton-duende-mini-medidas")},
+ "3523645": _p("paneton-santa", "paneton-santa-medidas"),
+ "2101416": {0: _p("porta-papel-1", "porta-papel-1-medidas"), 1: _p("porta-papel-2", "porta-papel-2-medidas"), 2: _p("porta-papel-3", "porta-papel-3-medidas")},
+ "3407142": _p("porta-rollos-gorro", "porta-rollos-gorro-medidas"),
+ "3517846": _p("grinch-portarrollos", "grinch-portarrollos-medidas"),
+ "3289273": _p("grinch-portavelas", "grinch-portavelas-medidas"),
+ "2070704": _p("pueblito-4", "pueblito-4-medidas"),
+ "3337730": {0: _p("reno-tejido-chico", "reno-tejido-chico-medidas"), 1: _p("reno-tejido-grande", "reno-tejido-grande-medidas"), 2: _p("reno-tejido-pareja", "reno-tejido-pareja-medidas")},
+ "2001561": _p("grinch-rompecabezas", "grinch-rompecabezas-medidas"),
+ "2030448": _p("grinch-tarro", "grinch-tarro-medidas"),
+ "1887801": _p("arbol-fidget", "arbol-fidget-medidas"),
+ "817845": _p("arbol-familia", "arbol-familia-medidas"),
 }
+
+
+def propias(mid, n):
+    """Fotos propias de un modelo: (fotos, primera foto de cada opción, dueño de cada foto)."""
+    v = PROPIAS.get(mid)
+    if v is None: return [], None, []
+    if isinstance(v, list): return list(v), [0] * n, [0] * len(v)
+    fotos, ini, dueno = [], {}, []
+    for i in sorted(v):
+        ini[i] = len(fotos); fotos += v[i]; dueno += [ini[i]] * len(v[i])
+    return fotos, [ini.get(i, 0) for i in range(n)], dueno
 
 
 def costo(h, g, extra=0):
@@ -283,8 +329,12 @@ SRC = {}
 for mid, nombre, badge, lead, bullets, fotos, ops, personal in P:
     opciones = [{"k": k, "label": label, "sub": sub, "precio": precio(h, g, extra), "costo": costo(h, g, extra),
                  "horas": h, "gramos": g, "mw": mid} for k, label, sub, h, g, extra in ops]
+    own, ini, dueno = propias(mid, len(opciones))
+    if ini:
+        for o, i in zip(opciones, ini): o["f"] = i
+    cdn = [CDN + f + "?x-oss-process=image/resize,w_900" for f in fotos]
     SRC[mid] = {"id": "NV" + mid, "mw": mid, "nombre": oracion(nombre), "badge": sin_emoji(badge), "lead": lead,
-                "bullets": bullets, "fotos": PROPIAS.get(mid, []) + [CDN + f + "?x-oss-process=image/resize,w_900" for f in fotos],
+                "bullets": bullets, "fotos": own + cdn, "_dueno": dueno + [-1] * len(cdn),   # -1 = foto de todo el producto
                 "opciones": opciones, "personal": personal}
 
 # Adorno corona con foto (antes era un producto aparte en la página; foto propia de Lilian)
@@ -345,10 +395,12 @@ for gid, nombre, badge, lead, bullets, partes, personal in GRUPOS:
             continue
         src = SRC[mid]; usados.add(mid)
         i0 = len(fotos)
-        fotos.extend(PROPIAS[mid] if mid in PROPIAS else src["fotos"][:1]); dueno += [i0] * (len(fotos) - i0)
-        for o in src["opciones"]:
+        own, ini, du = propias(mid, len(src["opciones"]))
+        if not own: own, ini, du = src["fotos"][:1], [0] * len(src["opciones"]), [0]
+        fotos.extend(own); dueno += [i0 + x for x in du]
+        for o, i in zip(src["opciones"], ini):
             label = etiqueta if len(src["opciones"]) == 1 else f"{etiqueta} · {o['label'][0].lower() + o['label'][1:]}"
-            ops.append(dict(o, k=f"{mid}{o['k']}", label=label, f=i0))
+            ops.append(dict(o, k=f"{mid}{o['k']}", label=label, f=i0 + i))
     nota = "mándanos la foto por WhatsApp" if gid == "adorno-foto" else ""
     paquete = {"n": 3, "ahorro": 20} if gid == "adorno-foto" else None
     grupos[gid] = {"paquete": paquete, "nota": nota, "id": "NVG-" + gid, "mw": ",".join(m for m, _ in partes), "nombre": nombre, "badge": badge, "lead": lead,
@@ -375,7 +427,7 @@ for d, (_, ops) in zip(out, LIL):
     usadas = sorted({o["f"] for o in d["opciones"] if "f" in o})
     dueno = d.pop("_dueno", None) or list(range(len(d["fotos"])))
     if usadas:   # quitar las fotos de las versiones que ya no están
-        quedan = [k for k in range(len(d["fotos"])) if dueno[k] in usadas]
+        quedan = [k for k in range(len(d["fotos"])) if dueno[k] in usadas or dueno[k] < 0]
         d["fotos"] = [d["fotos"][k] for k in quedan]
         for o in d["opciones"]: o["f"] = quedan.index(o["f"])
 out = [d for d in out if d["opciones"]]

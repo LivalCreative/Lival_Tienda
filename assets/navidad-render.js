@@ -57,6 +57,13 @@
         <button type="button" class="cerrar" data-cerrar aria-label="Cerrar">✕</button>
       </div>`;
     box.insertBefore(art, box.querySelector(":scope > aside"));
+    // Las fotos propias ya traen la marca de agua; la de encima solo va sobre las fotos de MakerWorld.
+    const gal = art.querySelector(".gal"), wm = art.querySelector(".wm");
+    const marca = () => {
+      const im = gal.children[Math.round(gal.scrollLeft / (gal.clientWidth || 1))];
+      wm.hidden = !!im && im.getAttribute("src").indexOf("img/navidad/") >= 0;
+    };
+    gal.addEventListener("scroll", marca, { passive: true }); marca();
   });
 
   function paqSel(art, p) { return [...art.querySelectorAll("[data-paq]")].map(x => p.opciones.find(o => o.k === x.value)); }

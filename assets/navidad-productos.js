@@ -110,8 +110,10 @@ window.NAVIDAD = [
    "../img/navidad/adorno-corona.jpg",
    "../img/navidad/adorno-corona-medidas.jpg",
    "../img/navidad/corona-foto.jpg",
-   "https://makerworld.bblmw.com/makerworld/model/US5cf8191d8344f3/design/2025-12-17_a276a4543318c8.png?x-oss-process=image/resize,w_900",
-   "https://makerworld.bblmw.com/makerworld/model/US57c20a2b0c71c/design/75969e0a59301fc7.jpg?x-oss-process=image/resize,w_900"
+   "../img/navidad/adorno-estrella.jpg",
+   "../img/navidad/adorno-estrella-medidas.jpg",
+   "../img/navidad/adorno-reno-nariz.jpg",
+   "../img/navidad/adorno-reno-nariz-medidas.jpg"
   ],
   "opciones": [
    {
@@ -138,7 +140,7 @@ window.NAVIDAD = [
     "precio": 60,
     "horas": 0.62,
     "mw": "3373774",
-    "f": 4,
+    "f": 5,
     "medida": "7.2 × 7.7 cm · foto de 5.5 cm"
    }
   ],
@@ -156,6 +158,8 @@ window.NAVIDAD = [
    "Detalles de nieve, ventanas y arbolitos."
   ],
   "fotos": [
+   "../img/navidad/casita-familiar.jpg",
+   "../img/navidad/casita-familiar-medidas.jpg",
    "https://makerworld.bblmw.com/makerworld/model/USa6c3046be13b15/design/1281c9e18ecff55d.jfif?x-oss-process=image/resize,w_900",
    "https://makerworld.bblmw.com/makerworld/model/USa6c3046be13b15/design/9ba98520e5713930.jfif?x-oss-process=image/resize,w_900"
   ],
@@ -166,6 +170,7 @@ window.NAVIDAD = [
     "precio": 350,
     "horas": 19.84,
     "mw": "3485874",
+    "f": 0,
     "medida": "20.2 × 23.3 cm"
    }
   ],
@@ -189,8 +194,12 @@ window.NAVIDAD = [
    "Para dar la bienvenida en tu puerta."
   ],
   "fotos": [
-   "https://makerworld.bblmw.com/makerworld/model/US35e54453a34f1b/design/b1bbae716ac2de91.png?x-oss-process=image/resize,w_900",
-   "../img/navidad/corona-reno-letrero.jpg"
+   "../img/navidad/corona-acebo-uno.jpg",
+   "../img/navidad/corona-acebo-uno-medidas.jpg",
+   "../img/navidad/corona-acebo-colores.jpg",
+   "../img/navidad/corona-acebo-colores-medidas.jpg",
+   "../img/navidad/corona-reno-letrero.jpg",
+   "../img/navidad/corona-reno-letrero-medidas.jpg"
   ],
   "opciones": [
    {
@@ -208,7 +217,7 @@ window.NAVIDAD = [
     "precio": 110,
     "horas": 3.67,
     "mw": "3430824",
-    "f": 0,
+    "f": 2,
     "medida": "21.9 × 21.7 cm"
    },
    {
@@ -217,7 +226,7 @@ window.NAVIDAD = [
     "precio": 200,
     "horas": 9.86,
     "mw": "3412717",
-    "f": 1,
+    "f": 4,
     "medida": "22 × 19.2 cm"
    }
   ],
@@ -239,6 +248,8 @@ window.NAVIDAD = [
    "Ligero, perfecto para el árbol."
   ],
   "fotos": [
+   "../img/navidad/arbol-familia.jpg",
+   "../img/navidad/arbol-familia-medidas.jpg",
    "https://makerworld.bblmw.com/makerworld/model/US8dd726cfee8dad/design/2024-11-24_1f0761859207.jpg?x-oss-process=image/resize,w_900",
    "https://makerworld.bblmw.com/makerworld/model/US8dd726cfee8dad/design/2024-11-24_dcf1e45992b03.jpg?x-oss-process=image/resize,w_900"
   ],
@@ -249,6 +260,7 @@ window.NAVIDAD = [
     "precio": 70,
     "horas": 0.81,
     "mw": "817845",
+    "f": 0,
     "medida": "9.7 × 12.4 cm"
    }
   ],
@@ -270,6 +282,8 @@ window.NAVIDAD = [
    "Un recuerdo para cada Navidad."
   ],
   "fotos": [
+   "../img/navidad/globo-nieve.jpg",
+   "../img/navidad/globo-nieve-medidas.jpg",
    "https://makerworld.bblmw.com/makerworld/model/USd0533a5916ad32/design/2025-12-07_e6ec323ac5a3c.jpg?x-oss-process=image/resize,w_900",
    "https://makerworld.bblmw.com/makerworld/model/USd0533a5916ad32/design/2025-12-06_bc6bc41eb1ad2.jpg?x-oss-process=image/resize,w_900"
   ],
@@ -280,6 +294,7 @@ window.NAVIDAD = [
     "precio": 120,
     "horas": 3.14,
     "mw": "2083881",
+    "f": 0,
     "medida": "13.1 × 16 cm"
    }
   ],
@@ -303,9 +318,12 @@ window.NAVIDAD = [
    "Reno: cubos de números con nariz roja."
   ],
   "fotos": [
-   "https://makerworld.bblmw.com/makerworld/model/USd05b0f73f61365/design/2025-11-13_7fe437d7d8f91.jpeg?x-oss-process=image/resize,w_900",
-   "https://makerworld.bblmw.com/makerworld/model/US840511436be8d9/design/2025-11-15_aef822da13a27.jpeg?x-oss-process=image/resize,w_900",
-   "https://makerworld.bblmw.com/makerworld/model/USac916bd566b7dc/design/f56fc8a56e67cdfe.jfif?x-oss-process=image/resize,w_900"
+   "../img/navidad/cuenta-estrellada.jpg",
+   "../img/navidad/cuenta-estrellada-medidas.jpg",
+   "../img/navidad/cuenta-casita.jpg",
+   "../img/navidad/cuenta-casita-medidas.jpg",
+   "../img/navidad/cuenta-reno.jpg",
+   "../img/navidad/cuenta-reno-medidas.jpg"
   ],
   "opciones": [
    {
@@ -323,7 +341,7 @@ window.NAVIDAD = [
     "precio": 200,
     "horas": 6.64,
     "mw": "2000058",
-    "f": 1,
+    "f": 2,
     "medida": "Aprox. 14 cm de ancho"
    },
    {
@@ -332,7 +350,7 @@ window.NAVIDAD = [
     "precio": 300,
     "horas": 12.36,
     "mw": "3536610",
-    "f": 2,
+    "f": 4,
     "medida": "Aprox. 15 cm de ancho"
    }
   ],
@@ -352,8 +370,10 @@ window.NAVIDAD = [
    "Una tradición para repetir cada año."
   ],
   "fotos": [
-   "https://makerworld.bblmw.com/makerworld/model/US3fe224c6f79bac/design/2025-12-03_450a1e89021698.jpg?x-oss-process=image/resize,w_900",
-   "https://makerworld.bblmw.com/makerworld/model/USc8d881c97f1b64/design/a866a6dab7b08bc6.png?x-oss-process=image/resize,w_900"
+   "../img/navidad/bandeja-botanas.jpg",
+   "../img/navidad/bandeja-botanas-medidas.jpg",
+   "../img/navidad/bandeja-querido-santa.jpg",
+   "../img/navidad/bandeja-querido-santa-medidas.jpg"
   ],
   "opciones": [
    {
@@ -371,7 +391,7 @@ window.NAVIDAD = [
     "precio": 160,
     "horas": 3.85,
     "mw": "3348753",
-    "f": 1,
+    "f": 2,
     "medida": "24 × 24 cm"
    }
   ],
@@ -391,9 +411,12 @@ window.NAVIDAD = [
    "Adorno: con gorrito, para el árbol o una repisa."
   ],
   "fotos": [
-   "https://makerworld.bblmw.com/makerworld/model/US4a91d42924f20f/design/2024-11-17_97caa375d97958.jpg?x-oss-process=image/resize,w_900",
-   "https://makerworld.bblmw.com/makerworld/model/USce19a6c44403ff/design/ff4c786ec057ba3e.png?x-oss-process=image/resize,w_900",
-   "https://makerworld.bblmw.com/makerworld/model/USb0158389fa401d/design/2025-11-26_c6bfc0933b7348.jpeg?x-oss-process=image/resize,w_900"
+   "../img/navidad/camara-domo.jpg",
+   "../img/navidad/camara-domo-medidas.jpg",
+   "../img/navidad/camara-caseta.jpg",
+   "../img/navidad/camara-caseta-medidas.jpg",
+   "../img/navidad/camara-adorno.jpg",
+   "../img/navidad/camara-adorno-medidas.jpg"
   ],
   "opciones": [
    {
@@ -411,7 +434,7 @@ window.NAVIDAD = [
     "precio": 70,
     "horas": 1.06,
     "mw": "3420091",
-    "f": 1,
+    "f": 2,
     "medida": "Aprox. 6.5 cm"
    },
    {
@@ -420,7 +443,7 @@ window.NAVIDAD = [
     "precio": 130,
     "horas": 4.14,
     "mw": "2047031",
-    "f": 2,
+    "f": 4,
     "medida": "9.5 × 15.1 cm"
    }
   ],
@@ -440,8 +463,10 @@ window.NAVIDAD = [
    "No incluye el panetón."
   ],
   "fotos": [
-   "https://makerworld.bblmw.com/makerworld/model/US6653332aef5ed9/design/1e6c1a412779c5c9.png?x-oss-process=image/resize,w_900",
-   "https://makerworld.bblmw.com/makerworld/model/US7fbdc0502b85a4/design/456ee765ed7e39aa.jpeg?x-oss-process=image/resize,w_900"
+   "../img/navidad/paneton-duende-mini.jpg",
+   "../img/navidad/paneton-duende-mini-medidas.jpg",
+   "../img/navidad/paneton-santa.jpg",
+   "../img/navidad/paneton-santa-medidas.jpg"
   ],
   "opciones": [
    {
@@ -459,7 +484,7 @@ window.NAVIDAD = [
     "precio": 120,
     "horas": 4.43,
     "mw": "3523645",
-    "f": 1,
+    "f": 2,
     "medida": "Bote de 9.2 × 9.2 cm, 8.4 cm de alto"
    }
   ],
@@ -478,8 +503,12 @@ window.NAVIDAD = [
    "Espiral: con estrella, uno o set de 2 tamaños."
   ],
   "fotos": [
-   "https://makerworld.bblmw.com/makerworld/model/USe2c2ad920a85f/design/82598bd2d40761ba.png?x-oss-process=image/resize,w_900",
-   "https://makerworld.bblmw.com/makerworld/model/USe11a183eb1e66c/design/ecf8cf92cb6b63fa.png?x-oss-process=image/resize,w_900"
+   "../img/navidad/arbol-japandi.jpg",
+   "../img/navidad/arbol-japandi-medidas.jpg",
+   "../img/navidad/arbol-espiral-uno.jpg",
+   "../img/navidad/arbol-espiral-uno-medidas.jpg",
+   "../img/navidad/arbol-espiral-set.jpg",
+   "../img/navidad/arbol-espiral-set-medidas.jpg"
   ],
   "opciones": [
    {
@@ -497,7 +526,7 @@ window.NAVIDAD = [
     "precio": 100,
     "horas": 2.04,
     "mw": "3338545",
-    "f": 1,
+    "f": 2,
     "medida": "Aprox. 15 cm de alto con estrella"
    },
    {
@@ -506,7 +535,7 @@ window.NAVIDAD = [
     "precio": 170,
     "horas": 4.45,
     "mw": "3338545",
-    "f": 1,
+    "f": 4,
     "medida": "Aprox. 15 y 13 cm de alto con estrella"
    }
   ],
@@ -524,6 +553,10 @@ window.NAVIDAD = [
    "Colores vivos y alegres."
   ],
   "fotos": [
+   "../img/navidad/jojojo-santa.jpg",
+   "../img/navidad/jojojo-santa-medidas.jpg",
+   "../img/navidad/jojojo-duende.jpg",
+   "../img/navidad/jojojo-duende-medidas.jpg",
    "https://makerworld.bblmw.com/makerworld/model/US17955e7a9c0e2f/design/2023-09-02_79xbtwml7vhs.jpeg?x-oss-process=image/resize,w_900",
    "https://makerworld.bblmw.com/makerworld/model/US17955e7a9c0e2f/design/2023-09-02_9431aur72zuy.jpeg?x-oss-process=image/resize,w_900"
   ],
@@ -534,6 +567,7 @@ window.NAVIDAD = [
     "precio": 200,
     "horas": 5.02,
     "mw": "14093",
+    "f": 0,
     "medida": "Base de 15.4 × 14.7 cm"
    },
    {
@@ -542,6 +576,7 @@ window.NAVIDAD = [
     "precio": 200,
     "horas": 5.05,
     "mw": "14093",
+    "f": 2,
     "medida": "Base de 20.5 × 19.6 cm"
    }
   ],
@@ -559,6 +594,8 @@ window.NAVIDAD = [
    "Se ve precioso con luz detrás."
   ],
   "fotos": [
+   "../img/navidad/pueblito-4.jpg",
+   "../img/navidad/pueblito-4-medidas.jpg",
    "https://makerworld.bblmw.com/makerworld/model/UScdb32891953d6b/design/2025-12-02_482c8d43b7c94.jpg?x-oss-process=image/resize,w_900",
    "https://makerworld.bblmw.com/makerworld/model/UScdb32891953d6b/design/2025-12-02_3ee904bf042fe8.jpg?x-oss-process=image/resize,w_900"
   ],
@@ -569,6 +606,7 @@ window.NAVIDAD = [
     "precio": 170,
     "horas": 6.13,
     "mw": "2070704",
+    "f": 0,
     "medida": "Se arma de tarjetas de hasta 10 × 21.5 cm"
    }
   ],
@@ -586,6 +624,8 @@ window.NAVIDAD = [
    "Perfecta como tarjeta de Navidad."
   ],
   "fotos": [
+   "../img/navidad/kit-pueblito-marco.jpg",
+   "../img/navidad/kit-pueblito-marco-medidas.jpg",
    "https://makerworld.bblmw.com/makerworld/model/USf75902674a33b2/design/2025-12-07_1026252695f36.jpg?x-oss-process=image/resize,w_900",
    "https://makerworld.bblmw.com/makerworld/model/USf75902674a33b2/design/2025-12-07_83216c0b0273f8.jpg?x-oss-process=image/resize,w_900"
   ],
@@ -596,6 +636,7 @@ window.NAVIDAD = [
     "precio": 60,
     "horas": 1.51,
     "mw": "2087313",
+    "f": 0,
     "medida": "Tarjeta de 14 × 13.5 cm"
    }
   ],
@@ -613,6 +654,8 @@ window.NAVIDAD = [
    "Para casa o jardín."
   ],
   "fotos": [
+   "../img/navidad/letreros-calle.jpg",
+   "../img/navidad/letreros-calle-medidas.jpg",
    "https://makerworld.bblmw.com/makerworld/model/US8398591f161690/design/2025-11-22_29651ff52d6b88.jpg?x-oss-process=image/resize,w_900",
    "https://makerworld.bblmw.com/makerworld/model/US8398591f161690/design/2025-11-22_197c31e86b96b8.jpg?x-oss-process=image/resize,w_900"
   ],
@@ -623,6 +666,7 @@ window.NAVIDAD = [
     "precio": 200,
     "horas": 3.71,
     "mw": "2027611",
+    "f": 0,
     "medida": "3 letreros de 22.5 × 9.8 cm"
    }
   ],
@@ -642,6 +686,7 @@ window.NAVIDAD = [
   "fotos": [
    "../img/navidad/cascanueces.jpg",
    "../img/navidad/cascanueces-medidas.jpg",
+   "../img/navidad/cascanueces-medidas-alt.jpg",
    "https://makerworld.bblmw.com/makerworld/model/US5a9c8ec5102a4a/design/a39f594ee5ccd690.png?x-oss-process=image/resize,w_900",
    "https://makerworld.bblmw.com/makerworld/model/US5a9c8ec5102a4a/design/ccab4d303478ac29.jpg?x-oss-process=image/resize,w_900"
   ],
@@ -652,6 +697,7 @@ window.NAVIDAD = [
     "precio": 70,
     "horas": 1.52,
     "mw": "3175033",
+    "f": 0,
     "medida": "10 cm de alto · 3.5 × 3.2 cm"
    }
   ],
@@ -669,6 +715,12 @@ window.NAVIDAD = [
    "Para repisa, mesa o centro de mesa."
   ],
   "fotos": [
+   "../img/navidad/reno-tejido-chico.jpg",
+   "../img/navidad/reno-tejido-chico-medidas.jpg",
+   "../img/navidad/reno-tejido-grande.jpg",
+   "../img/navidad/reno-tejido-grande-medidas.jpg",
+   "../img/navidad/reno-tejido-pareja.jpg",
+   "../img/navidad/reno-tejido-pareja-medidas.jpg",
    "https://makerworld.bblmw.com/makerworld/model/USb811a8f846c088/design/783c5450daf345dc.jpg?x-oss-process=image/resize,w_900",
    "https://makerworld.bblmw.com/makerworld/model/USb811a8f846c088/design/5fea1ded5fb79145.jpg?x-oss-process=image/resize,w_900"
   ],
@@ -679,6 +731,7 @@ window.NAVIDAD = [
     "precio": 80,
     "horas": 4.48,
     "mw": "3337730",
+    "f": 0,
     "medida": "11 cm de alto · 4.9 × 7.2 cm"
    },
    {
@@ -687,6 +740,7 @@ window.NAVIDAD = [
     "precio": 100,
     "horas": 5.73,
     "mw": "3337730",
+    "f": 2,
     "medida": "12.5 cm de alto · 5.6 × 8.2 cm"
    },
    {
@@ -695,6 +749,7 @@ window.NAVIDAD = [
     "precio": 180,
     "horas": 10.2,
     "mw": "3337730",
+    "f": 4,
     "medida": "11 y 12.5 cm de alto"
    }
   ],
@@ -713,6 +768,7 @@ window.NAVIDAD = [
   ],
   "fotos": [
    "../img/navidad/bandejas-baston.jpg",
+   "../img/navidad/bandejas-baston-medidas.jpg",
    "https://makerworld.bblmw.com/makerworld/model/US4dd15aa2752a26/design/e047c3c8c7aafa15.jpeg?x-oss-process=image/resize,w_900",
    "https://makerworld.bblmw.com/makerworld/model/US4dd15aa2752a26/design/5d892dfb561a4d78.jpeg?x-oss-process=image/resize,w_900"
   ],
@@ -723,6 +779,7 @@ window.NAVIDAD = [
     "precio": 200,
     "horas": 5.69,
     "mw": "3397234",
+    "f": 0,
     "medida": "Base de 16.3 × 28.8 cm"
    }
   ],
@@ -740,6 +797,8 @@ window.NAVIDAD = [
    "Firme y estable sobre la barra."
   ],
   "fotos": [
+   "../img/navidad/porta-rollos-gorro.jpg",
+   "../img/navidad/porta-rollos-gorro-medidas.jpg",
    "https://makerworld.bblmw.com/makerworld/model/US38908b1488b29c/design/7b8f7032a54d8e5d.png?x-oss-process=image/resize,w_900",
    "https://makerworld.bblmw.com/makerworld/model/US38908b1488b29c/design/d4cd2d3b42539374.png?x-oss-process=image/resize,w_900"
   ],
@@ -750,6 +809,7 @@ window.NAVIDAD = [
     "precio": 280,
     "horas": 8.19,
     "mw": "3407142",
+    "f": 0,
     "medida": "Base de 17.7 cm, 24.9 cm de alto"
    }
   ],
@@ -767,6 +827,12 @@ window.NAVIDAD = [
    "Firme y fácil de limpiar."
   ],
   "fotos": [
+   "../img/navidad/porta-papel-1.jpg",
+   "../img/navidad/porta-papel-1-medidas.jpg",
+   "../img/navidad/porta-papel-2.jpg",
+   "../img/navidad/porta-papel-2-medidas.jpg",
+   "../img/navidad/porta-papel-3.jpg",
+   "../img/navidad/porta-papel-3-medidas.jpg",
    "https://makerworld.bblmw.com/makerworld/model/USbf9b5aa3d0fd0d/design/2025-12-10_a494d86d1dd2e8.png?x-oss-process=image/resize,w_900",
    "https://makerworld.bblmw.com/makerworld/model/USbf9b5aa3d0fd0d/design/2025-12-10_6baf72a097c8e8.jpg?x-oss-process=image/resize,w_900"
   ],
@@ -777,6 +843,7 @@ window.NAVIDAD = [
     "precio": 220,
     "horas": 7.28,
     "mw": "2101416",
+    "f": 0,
     "medida": "Cada letra H: 15.8 × 12.4 cm, 9.5 cm de fondo"
    },
    {
@@ -785,6 +852,7 @@ window.NAVIDAD = [
     "precio": 360,
     "horas": 13.48,
     "mw": "2101416",
+    "f": 2,
     "medida": "Cada letra H: 15.8 × 12.4 cm, 9.5 cm de fondo"
    },
    {
@@ -793,6 +861,7 @@ window.NAVIDAD = [
     "precio": 480,
     "horas": 19.61,
     "mw": "2101416",
+    "f": 4,
     "medida": "Cada letra H: 15.8 × 12.4 cm, 9.5 cm de fondo"
    }
   ],
@@ -810,6 +879,8 @@ window.NAVIDAD = [
    "Para jugar en familia en las posadas."
   ],
   "fotos": [
+   "../img/navidad/gato-jengibre.jpg",
+   "../img/navidad/gato-jengibre-medidas.jpg",
    "https://makerworld.bblmw.com/makerworld/model/US29a4c6f9b1a2d/design/2025-11-28_f1e1c3075d08c.jpg?x-oss-process=image/resize,w_900",
    "https://makerworld.bblmw.com/makerworld/model/US29a4c6f9b1a2d/design/2025-11-28_8651009527b5b8.jpg?x-oss-process=image/resize,w_900"
   ],
@@ -820,6 +891,7 @@ window.NAVIDAD = [
     "precio": 150,
     "horas": 4.09,
     "mw": "2052441",
+    "f": 0,
     "medida": "Tablero de 11.1 × 16.4 cm · fichas de 3 cm"
    }
   ],
@@ -838,6 +910,7 @@ window.NAVIDAD = [
   ],
   "fotos": [
    "../img/navidad/hombre-jengibre-2.jpg",
+   "../img/navidad/hombre-jengibre-2-medidas.jpg",
    "https://makerworld.bblmw.com/makerworld/model/USc6cf2d8e796cb6/design/2025-10-28_5eeb9e2ed79818.jpeg?x-oss-process=image/resize,w_900",
    "https://makerworld.bblmw.com/makerworld/model/USc6cf2d8e796cb6/design/2025-10-28_1368592091f4b.png?x-oss-process=image/resize,w_900"
   ],
@@ -848,6 +921,7 @@ window.NAVIDAD = [
     "precio": 80,
     "horas": 3.62,
     "mw": "1935739",
+    "f": 0,
     "medida": "3.1 × 5.5 cm"
    },
    {
@@ -856,6 +930,7 @@ window.NAVIDAD = [
     "precio": 120,
     "horas": 6.22,
     "mw": "1935739",
+    "f": 0,
     "medida": "3.6 × 6.5 cm"
    },
    {
@@ -864,6 +939,7 @@ window.NAVIDAD = [
     "precio": 180,
     "horas": 9.84,
     "mw": "1935739",
+    "f": 0,
     "medida": "3.1 × 5.5 cm y 3.6 × 6.5 cm"
    }
   ],
@@ -881,6 +957,8 @@ window.NAVIDAD = [
    "Para posadas y fiestas."
   ],
   "fotos": [
+   "../img/navidad/broche-acebo.jpg",
+   "../img/navidad/broche-acebo-medidas.jpg",
    "https://makerworld.bblmw.com/makerworld/model/USb7e20bd848011e/design/b92e7113617a4e4c.png?x-oss-process=image/resize,w_900",
    "https://makerworld.bblmw.com/makerworld/model/USb7e20bd848011e/design/5bc5758394cdaa04.jpeg?x-oss-process=image/resize,w_900"
   ],
@@ -891,6 +969,7 @@ window.NAVIDAD = [
     "precio": 80,
     "horas": 2.32,
     "mw": "3471108",
+    "f": 0,
     "medida": "Corona de 6.3 × 7 cm · palito de 9.6 cm"
    }
   ],
