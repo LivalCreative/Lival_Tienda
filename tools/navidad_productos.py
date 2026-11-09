@@ -13,6 +13,7 @@ CDN = "https://makerworld.bblmw.com/makerworld/model/"
 # Lista = fotos de todo el producto; dict {número de opción: fotos} = cada versión con sus fotos (al elegirla, la galería salta a ellas).
 def _p(*n): return ["../img/navidad/" + x + ".jpg" for x in n]
 PROPIAS = {
+ "1891706": _p("grinch-mano", "grinch-mano-medidas"),
  "3533521": _p("adorno-bota", "adorno-bota-medidas"),
  "3355184": _p("adorno-esfera", "adorno-esfera-medidas"),
  "1996511": _p("adorno-foquito", "adorno-foquito-medidas"),

@@ -979,9 +979,8 @@ window.NAVIDAD = [
    "La esfera no está incluida."
   ],
   "fotos": [
-   "https://makerworld.bblmw.com/makerworld/model/USa2b87c0cd202c3/design/2025-10-15_ea3ece3855062.png?x-oss-process=image/resize,w_900",
-   "https://makerworld.bblmw.com/makerworld/model/USa2b87c0cd202c3/design/2025-10-15_cfd64d61f0712.png?x-oss-process=image/resize,w_900",
-   "https://makerworld.bblmw.com/makerworld/model/USa2b87c0cd202c3/467378643/instance/2025-10-17_b458c373b98dc8.png?x-oss-process=image/resize,w_900"
+   "../img/navidad/grinch-mano.jpg",
+   "../img/navidad/grinch-mano-medidas.jpg"
   ],
   "opciones": [
    {
@@ -990,6 +989,7 @@ window.NAVIDAD = [
     "precio": 220,
     "horas": 10.75,
     "mw": "1891706",
+    "f": 0,
     "medida": "Aprox. 28-30 cm de alto × 15 cm de ancho × 13 cm de fondo"
    }
   ],
