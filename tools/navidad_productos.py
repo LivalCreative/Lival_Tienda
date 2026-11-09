@@ -334,7 +334,7 @@ for mid, nombre, badge, lead, bullets, fotos, ops, personal in P:
         for o, i in zip(opciones, ini): o["f"] = i
     cdn = [CDN + f + "?x-oss-process=image/resize,w_900" for f in fotos]
     SRC[mid] = {"id": "NV" + mid, "mw": mid, "nombre": oracion(nombre), "badge": sin_emoji(badge), "lead": lead,
-                "bullets": bullets, "fotos": own + cdn, "_dueno": dueno + [-1] * len(cdn),   # -1 = foto de todo el producto
+                "bullets": bullets, "fotos": own or cdn, "_dueno": dueno if own else [-1] * len(cdn),   # con fotos propias ya no van las de MakerWorld; -1 = foto de todo el producto
                 "opciones": opciones, "personal": personal}
 
 # Adorno corona con foto (antes era un producto aparte en la página; foto propia de Lilian)
@@ -389,7 +389,7 @@ for gid, nombre, badge, lead, bullets, partes, personal in GRUPOS:
     for mid, etiqueta in partes:
         if mid == "CORONA":
             i0 = len(fotos)
-            fotos.extend(_p("adorno-corona", "adorno-corona-medidas", "corona-foto")); dueno += [i0] * (len(fotos) - i0)
+            fotos.extend(_p("adorno-corona", "adorno-corona-medidas")); dueno += [i0] * (len(fotos) - i0)
             for o in CORONA[:1]:
                 ops.append(dict(o, f=i0))
             continue
