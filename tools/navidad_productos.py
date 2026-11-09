@@ -9,6 +9,21 @@ import json
 FOTO = 0  # el costo de la foto impresa vive en la lista de precios de Drive
 CDN = "https://makerworld.bblmw.com/makerworld/model/"
 
+# Fotos propias de Lilian (con marca de agua, tools/marca_agua.py): van primero, la del producto y luego la de medidas.
+def _p(*n): return ["../img/navidad/" + x + ".jpg" for x in n]
+PROPIAS = {
+ "3533521": _p("adorno-bota", "adorno-bota-medidas"),
+ "3355184": _p("adorno-esfera", "adorno-esfera-medidas"),
+ "2109874": _p("adorno-galleta", "adorno-galleta-medidas"),
+ "3394419": _p("adorno-sueter", "adorno-sueter-medidas"),
+ "1996511": _p("adorno-foquito", "adorno-foquito-medidas"),
+ "2057491": _p("adorno-reno-inicial", "adorno-reno-inicial-medidas"),
+ "3412717": _p("corona-reno-letrero"),
+ "3397234": _p("bandejas-baston"),
+ "1935739": _p("hombre-jengibre-2"),
+ "3175033": _p("cascanueces", "cascanueces-medidas"),
+}
+
 
 def costo(h, g, extra=0):
     return 0  # privado: ver la lista de precios en Drive
@@ -269,7 +284,7 @@ for mid, nombre, badge, lead, bullets, fotos, ops, personal in P:
     opciones = [{"k": k, "label": label, "sub": sub, "precio": precio(h, g, extra), "costo": costo(h, g, extra),
                  "horas": h, "gramos": g, "mw": mid} for k, label, sub, h, g, extra in ops]
     SRC[mid] = {"id": "NV" + mid, "mw": mid, "nombre": oracion(nombre), "badge": sin_emoji(badge), "lead": lead,
-                "bullets": bullets, "fotos": [CDN + f + "?x-oss-process=image/resize,w_900" for f in fotos],
+                "bullets": bullets, "fotos": PROPIAS.get(mid, []) + [CDN + f + "?x-oss-process=image/resize,w_900" for f in fotos],
                 "opciones": opciones, "personal": personal}
 
 # Adorno corona con foto (antes era un producto aparte en la página; foto propia de Lilian)
@@ -320,22 +335,24 @@ GRUPOS = [
 usados = set()
 grupos = {}
 for gid, nombre, badge, lead, bullets, partes, personal in GRUPOS:
-    ops, fotos = [], []
+    ops, fotos, dueno = [], [], []   # dueno: a qué versión pertenece cada foto (índice de su primera foto)
     for mid, etiqueta in partes:
         if mid == "CORONA":
-            fotos.append("../img/navidad/corona-foto.jpg")
+            i0 = len(fotos)
+            fotos.extend(_p("adorno-corona", "adorno-corona-medidas", "corona-foto")); dueno += [i0] * (len(fotos) - i0)
             for o in CORONA[:1]:
-                ops.append(dict(o, k="corona" + o["k"][6:] if False else o["k"], f=len(fotos) - 1))
+                ops.append(dict(o, f=i0))
             continue
         src = SRC[mid]; usados.add(mid)
-        fotos.append(src["fotos"][0])
+        i0 = len(fotos)
+        fotos.extend(PROPIAS[mid] if mid in PROPIAS else src["fotos"][:1]); dueno += [i0] * (len(fotos) - i0)
         for o in src["opciones"]:
             label = etiqueta if len(src["opciones"]) == 1 else f"{etiqueta} · {o['label'][0].lower() + o['label'][1:]}"
-            ops.append(dict(o, k=f"{mid}{o['k']}", label=label, f=len(fotos) - 1))
+            ops.append(dict(o, k=f"{mid}{o['k']}", label=label, f=i0))
     nota = "mándanos la foto por WhatsApp" if gid == "adorno-foto" else ""
     paquete = {"n": 3, "ahorro": 20} if gid == "adorno-foto" else None
     grupos[gid] = {"paquete": paquete, "nota": nota, "id": "NVG-" + gid, "mw": ",".join(m for m, _ in partes), "nombre": nombre, "badge": badge, "lead": lead,
-                   "bullets": bullets, "fotos": fotos, "opciones": ops, "personal": personal}
+                   "bullets": bullets, "fotos": fotos, "_dueno": dueno, "opciones": ops, "personal": personal}
 
 # Orden de la rejilla
 ORDEN = ["G:adorno-nombre", "G:adorno-foto", "3485874", "G:corona-texto", "817845", "2083881",
@@ -356,9 +373,11 @@ for d, (_, ops) in zip(out, LIL):
     quitados += [f'{d["nombre"]} · {o["label"]}' for o in d["opciones"] if not o["precio"]]
     d["opciones"] = [o for o in d["opciones"] if o["precio"]]
     usadas = sorted({o["f"] for o in d["opciones"] if "f" in o})
-    if usadas and len(usadas) < len(d["fotos"]):   # quitar las fotos de las versiones que ya no están
-        d["fotos"] = [d["fotos"][k] for k in usadas]
-        for o in d["opciones"]: o["f"] = usadas.index(o["f"])
+    dueno = d.pop("_dueno", None) or list(range(len(d["fotos"])))
+    if usadas:   # quitar las fotos de las versiones que ya no están
+        quedan = [k for k in range(len(d["fotos"])) if dueno[k] in usadas]
+        d["fotos"] = [d["fotos"][k] for k in quedan]
+        for o in d["opciones"]: o["f"] = quedan.index(o["f"])
 out = [d for d in out if d["opciones"]]
 for d in out:   # si de un modelo quedó una sola versión, se nombra solo con el modelo
     for o in d["opciones"]:

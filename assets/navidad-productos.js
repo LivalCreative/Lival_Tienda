@@ -14,12 +14,18 @@ window.NAVIDAD = [
    "Para el árbol, como etiqueta de regalo o llavero."
   ],
   "fotos": [
-   "https://makerworld.bblmw.com/makerworld/model/USe32837fe204709/design/a8ba757367d594a7.png?x-oss-process=image/resize,w_900",
-   "https://makerworld.bblmw.com/makerworld/model/US48fa87708a0023/design/90bd0438157c84df.jpg?x-oss-process=image/resize,w_900",
-   "https://makerworld.bblmw.com/makerworld/model/USf3320125cc8cf5/design/2025-12-13_5bd7669a3150e.jpg?x-oss-process=image/resize,w_900",
-   "https://makerworld.bblmw.com/makerworld/model/USf1b71cb7199f2c/design/791deb16919bcfc0.jpeg?x-oss-process=image/resize,w_900",
-   "https://makerworld.bblmw.com/makerworld/model/US24c696b4e6dc33/design/2025-11-14_ce398ee5bddbe8.png?x-oss-process=image/resize,w_900",
-   "https://makerworld.bblmw.com/makerworld/model/US7e51b3ea62710a/design/2025-11-29_59f16cf901dda8.jpg?x-oss-process=image/resize,w_900"
+   "../img/navidad/adorno-bota.jpg",
+   "../img/navidad/adorno-bota-medidas.jpg",
+   "../img/navidad/adorno-esfera.jpg",
+   "../img/navidad/adorno-esfera-medidas.jpg",
+   "../img/navidad/adorno-galleta.jpg",
+   "../img/navidad/adorno-galleta-medidas.jpg",
+   "../img/navidad/adorno-sueter.jpg",
+   "../img/navidad/adorno-sueter-medidas.jpg",
+   "../img/navidad/adorno-foquito.jpg",
+   "../img/navidad/adorno-foquito-medidas.jpg",
+   "../img/navidad/adorno-reno-inicial.jpg",
+   "../img/navidad/adorno-reno-inicial-medidas.jpg"
   ],
   "opciones": [
    {
@@ -37,7 +43,7 @@ window.NAVIDAD = [
     "precio": 60,
     "horas": 1.14,
     "mw": "3355184",
-    "f": 1,
+    "f": 2,
     "medida": "8 × 8.7 cm"
    },
    {
@@ -46,7 +52,7 @@ window.NAVIDAD = [
     "precio": 80,
     "horas": 2.65,
     "mw": "2109874",
-    "f": 2,
+    "f": 4,
     "medida": "13 × 8.3 cm"
    },
    {
@@ -55,7 +61,7 @@ window.NAVIDAD = [
     "precio": 60,
     "horas": 0.94,
     "mw": "3394419",
-    "f": 3,
+    "f": 6,
     "medida": "10.3 × 8 cm"
    },
    {
@@ -64,7 +70,7 @@ window.NAVIDAD = [
     "precio": 60,
     "horas": 0.58,
     "mw": "1996511",
-    "f": 4,
+    "f": 8,
     "medida": "4.7 × 10.1 cm"
    },
    {
@@ -73,7 +79,7 @@ window.NAVIDAD = [
     "precio": 80,
     "horas": 1.95,
     "mw": "2057491",
-    "f": 5,
+    "f": 10,
     "medida": "Aprox. 6.1 × 9.3 cm"
    }
   ],
@@ -101,6 +107,8 @@ window.NAVIDAD = [
    "Incluye listón para colgar."
   ],
   "fotos": [
+   "../img/navidad/adorno-corona.jpg",
+   "../img/navidad/adorno-corona-medidas.jpg",
    "../img/navidad/corona-foto.jpg",
    "https://makerworld.bblmw.com/makerworld/model/US5cf8191d8344f3/design/2025-12-17_a276a4543318c8.png?x-oss-process=image/resize,w_900",
    "https://makerworld.bblmw.com/makerworld/model/US57c20a2b0c71c/design/75969e0a59301fc7.jpg?x-oss-process=image/resize,w_900"
@@ -121,7 +129,7 @@ window.NAVIDAD = [
     "precio": 60,
     "horas": 0.32,
     "mw": "2128543",
-    "f": 1,
+    "f": 3,
     "medida": "7 × 7.4 cm"
    },
    {
@@ -130,7 +138,7 @@ window.NAVIDAD = [
     "precio": 60,
     "horas": 0.62,
     "mw": "3373774",
-    "f": 2,
+    "f": 4,
     "medida": "7.2 × 7.7 cm · foto de 5.5 cm"
    }
   ],
@@ -182,7 +190,7 @@ window.NAVIDAD = [
   ],
   "fotos": [
    "https://makerworld.bblmw.com/makerworld/model/US35e54453a34f1b/design/b1bbae716ac2de91.png?x-oss-process=image/resize,w_900",
-   "https://makerworld.bblmw.com/makerworld/model/US95b1cf38e7a98/design/e3d2864b746f126d.png?x-oss-process=image/resize,w_900"
+   "../img/navidad/corona-reno-letrero.jpg"
   ],
   "opciones": [
    {
@@ -632,6 +640,8 @@ window.NAVIDAD = [
    "Ligero y resistente."
   ],
   "fotos": [
+   "../img/navidad/cascanueces.jpg",
+   "../img/navidad/cascanueces-medidas.jpg",
    "https://makerworld.bblmw.com/makerworld/model/US5a9c8ec5102a4a/design/a39f594ee5ccd690.png?x-oss-process=image/resize,w_900",
    "https://makerworld.bblmw.com/makerworld/model/US5a9c8ec5102a4a/design/ccab4d303478ac29.jpg?x-oss-process=image/resize,w_900"
   ],
@@ -702,6 +712,7 @@ window.NAVIDAD = [
    "Para tus posadas y cenas."
   ],
   "fotos": [
+   "../img/navidad/bandejas-baston.jpg",
    "https://makerworld.bblmw.com/makerworld/model/US4dd15aa2752a26/design/e047c3c8c7aafa15.jpeg?x-oss-process=image/resize,w_900",
    "https://makerworld.bblmw.com/makerworld/model/US4dd15aa2752a26/design/5d892dfb561a4d78.jpeg?x-oss-process=image/resize,w_900"
   ],
@@ -826,6 +837,7 @@ window.NAVIDAD = [
    "Ideal para detalles y bolsitas de regalo."
   ],
   "fotos": [
+   "../img/navidad/hombre-jengibre-2.jpg",
    "https://makerworld.bblmw.com/makerworld/model/USc6cf2d8e796cb6/design/2025-10-28_5eeb9e2ed79818.jpeg?x-oss-process=image/resize,w_900",
    "https://makerworld.bblmw.com/makerworld/model/USc6cf2d8e796cb6/design/2025-10-28_1368592091f4b.png?x-oss-process=image/resize,w_900"
   ],
