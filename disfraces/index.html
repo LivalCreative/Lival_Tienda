@@ -62,6 +62,15 @@
 .ok-dz { background: #e9f6ee; border: 2px solid var(--wa); color: var(--pino); border-radius: 16px; padding: 12px 14px; margin: 14px 0 0; font-weight: 700; }
 .ok-dz a { color: var(--wa); font-weight: 800; }
 .nota-dz { color: var(--gris); font-size: .95rem; margin-top: 18px; }
+.disf-w { position: relative; }
+.disf-w .disf { width: 100%; height: 100%; }
+.ver { position: absolute; top: 8px; left: 8px; z-index: 2; min-height: 34px; border: 0; border-radius: 999px; padding: 0 12px; background: rgba(18,58,44,.88); color: #fff; font: inherit; font-weight: 800; font-size: .9rem; cursor: pointer; }
+.ver-dz { border: 0; border-radius: 22px; padding: 14px; width: min(94vw, 560px); max-height: 92vh; background: #fff9f5; box-shadow: 0 20px 60px rgba(0,0,0,.35); text-align: center; }
+.ver-dz::backdrop { background: rgba(18,30,24,.7); }
+.ver-dz img { width: 100%; max-height: 64vh; object-fit: contain; border-radius: 14px; background: #f3efe6; display: block; }
+.ver-dz h3 { font-family: var(--disp); color: var(--pino); font-size: 1.4rem; margin: 12px 0; }
+.ver-dz .btn-dz { width: 100%; }
+.ver-dz .cerrar { position: absolute; top: 20px; right: 20px; width: 40px; height: 40px; border: 0; border-radius: 50%; background: rgba(255,255,255,.92); font-size: 1.1rem; font-weight: 900; cursor: pointer; box-shadow: 0 2px 8px rgba(0,0,0,.2); }
 </style>
 <!-- Visitas (GoatCounter: sin cookies, no guarda quién es cada persona) -->
 <script data-goatcounter="https://livalcreative.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
@@ -103,7 +112,7 @@
 
     <h2>Frosty, edición especial</h2>
     <div class="frosty">
-      <img id="imgFrosty" alt="Duende con disfraz de muñeco de nieve" loading="lazy">
+      <img id="imgFrosty" alt="Duende con disfraz de muñeco de nieve" loading="lazy" style="cursor:zoom-in" title="Ver foto grande">
       <div>
         <h3>Frosty · $130</h3>
         <p>Muñeco de nieve con sombrero de copa. Viene incluido en la colección completa o se vende aparte.</p>
@@ -115,6 +124,13 @@
     <p class="nota-dz">El duende no está incluido, solo los disfraces. Los colores pueden variar un poco de las fotos. El anticipo y la entrega se confirman por WhatsApp.</p>
   </div>
 </main>
+
+<dialog id="verDz" class="ver-dz" aria-labelledby="verNom">
+  <button type="button" class="cerrar" id="verCerrar" aria-label="Cerrar">✕</button>
+  <img id="verImg" alt="">
+  <h3 id="verNom"></h3>
+  <button type="button" class="btn-dz" id="verElegir">Elegir este disfraz</button>
+</dialog>
 
 <div class="barra-dz" role="region" aria-label="Tu paquete">
   <div class="in">
@@ -153,19 +169,45 @@
   const box = document.getElementById("disfs"), cuenta = document.getElementById("cuenta"), btn = document.getElementById("addPaq"), instr = document.getElementById("instr");
   document.getElementById("imgFrosty").src = FROSTY.foto;
 
+  function elegir(id) {
+    if (n === 13) return false;
+    if (sel.has(id)) sel.delete(id);
+    else if (sel.size >= n) { aviso(`Ya elegiste ${n}. Quita uno o cambia a un paquete más grande.`); return false; }
+    else sel.add(id);
+    pinta(); return true;
+  }
+
   DISFRACES.forEach(d => {
+    const w = document.createElement("div"); w.className = "disf-w";
     const b = document.createElement("button");
     b.type = "button"; b.className = "disf"; b.dataset.id = d.id; b.setAttribute("aria-pressed", "false");
     b.innerHTML = `<img src="${d.foto}" alt="Duende con disfraz de ${d.nombre.toLowerCase()}" loading="lazy" width="600" height="600"><span class="chk" aria-hidden="true">✓</span><b>${d.nombre}</b>`;
-    b.addEventListener("click", () => {
-      if (n === 13) return;
-      if (sel.has(d.id)) sel.delete(d.id);
-      else if (sel.size >= n) { aviso(`Ya elegiste ${n}. Quita uno o cambia a un paquete más grande.`); return; }
-      else sel.add(d.id);
-      pinta();
-    });
-    box.appendChild(b);
+    b.addEventListener("click", () => elegir(d.id));
+    const v = document.createElement("button");
+    v.type = "button"; v.className = "ver"; v.setAttribute("aria-label", "Ver foto grande: " + d.nombre); v.innerHTML = "<span aria-hidden=\"true\">⤢</span> Ver";
+    v.addEventListener("click", () => abrir(d));
+    w.append(b, v); box.appendChild(w);
   });
+
+  // Foto grande para ver bien cada disfraz
+  const dlg = document.getElementById("verDz"), dImg = document.getElementById("verImg"), dNom = document.getElementById("verNom"), dBtn = document.getElementById("verElegir");
+  let actual = null;
+  function abrir(d) {
+    actual = d; dImg.src = d.foto; dImg.alt = "Duende con disfraz de " + d.nombre.toLowerCase(); dNom.textContent = d.nombre;
+    pintaVer();
+    if (dlg.showModal) dlg.showModal(); else dlg.setAttribute("open", "");
+  }
+  function pintaVer() {
+    if (!actual) return;
+    if (actual.id === "frosty") { dBtn.hidden = true; return; }
+    dBtn.hidden = false;
+    if (n === 13) { dBtn.textContent = "Incluido en la colección completa"; dBtn.disabled = true; }
+    else { dBtn.disabled = false; dBtn.textContent = sel.has(actual.id) ? "Quitar de mi paquete" : "Elegir este disfraz"; }
+  }
+  dBtn.addEventListener("click", () => { if (elegir(actual.id)) dlg.close(); });
+  document.getElementById("verCerrar").addEventListener("click", () => dlg.close());
+  dlg.addEventListener("click", e => { if (e.target === dlg) dlg.close(); });
+  document.getElementById("imgFrosty").addEventListener("click", () => abrir(FROSTY));
 
   document.querySelectorAll("[data-paq]").forEach(p => p.addEventListener("click", () => {
     n = +p.dataset.paq;
@@ -189,6 +231,7 @@
       btn.disabled = falta !== 0;
     }
     btn.textContent = btn.disabled ? "Agregar al pedido" : `Agregar · $${PAQ[n]}`;
+    if (typeof pintaVer === "function") pintaVer();
   }
 
   function aviso(t) {
