@@ -130,23 +130,23 @@
 <script src="../assets/tienda.js?v=20261102c"></script>
 <script>
 (function () {
-  // Fotos temporales de MakerWorld: se cambian por las que elija Lilian (Drive: Catalogo Lival / Productos / Imagenes / elf).
-  const MW = "https://makerworld.bblmw.com/makerworld/model/", R = "?x-oss-process=image/resize,w_600";
+  // Fotos propias con marca de agua (img/disfraces). Casco y soldadito siguen con la de MakerWorld hasta tener foto propia.
+  const MW = "https://makerworld.bblmw.com/makerworld/model/", R = "?x-oss-process=image/resize,w_600", P = "../img/disfraces/";
   const DISFRACES = [
-    { id: "dumpling", nombre: "Dumpling", horas: 6.5, foto: MW + "US9e72c5270e44cc/design/3cc9fe75d81fe08d.jpeg" + R },
+    { id: "dumpling", nombre: "Dumpling", horas: 6.5, foto: P + "dumpling.jpg" },
     { id: "casco", nombre: "Casco espacial", horas: 2.0, foto: MW + "USf7b7cdc9c053e8/design/2025-09-14_3c9757ccc38a9.jpeg" + R },
-    { id: "arbolito", nombre: "Arbolito pastelito", horas: 2.2, foto: MW + "USda2d4e765c7e22/design/3974a0e67d1589c0.webp" + R },
-    { id: "osito", nombre: "Osito de gomita", horas: 1.5, foto: MW + "USf94eace39267d0/design/f3e9398d518d87b5.jpg" + R },
-    { id: "abejita", nombre: "Abejita", horas: 1.9, foto: MW + "US868c35338bb1f3/design/1a61d1b1d2cfc187.jpg" + R },
-    { id: "bota", nombre: "Bota y muleta", horas: 1.7, foto: MW + "US81582d14733e1/design/a7e6bc5bd2fb8dc4.jpg" + R },
-    { id: "mantequilla", nombre: "Mantequilla", horas: 0.8, foto: MW + "US940606e813c64c/design/136726414f190fd8.jpg" + R },
-    { id: "caja", nombre: "Caja de envío", horas: 1.1, foto: MW + "US30d3993b890fed/design/b089c9a8dab2102f.jpg" + R },
-    { id: "buzon", nombre: "Buzón de cartas", horas: 2.1, foto: MW + "US2aa46fe18058b3/design/dfba9484dc7f4527.jpg" + R },
-    { id: "pelota", nombre: "Pelota antiestrés", horas: 1.8, foto: MW + "USa3a82982bd1580/design/076a5fa6b3114765.jpg" + R },
+    { id: "arbolito", nombre: "Arbolito pastelito", horas: 2.2, foto: P + "arbolito.jpg" },
+    { id: "osito", nombre: "Osito de gomita", horas: 1.5, foto: P + "osito.jpg" },
+    { id: "abejita", nombre: "Abejita", horas: 1.9, foto: P + "abejita.jpg" },
+    { id: "bota", nombre: "Bota y muleta", horas: 1.7, foto: P + "bota.jpg" },
+    { id: "mantequilla", nombre: "Mantequilla", horas: 0.8, foto: P + "mantequilla.jpg" },
+    { id: "caja", nombre: "Caja de envío", horas: 1.1, foto: P + "caja.jpg" },
+    { id: "buzon", nombre: "Buzón de cartas", horas: 2.1, foto: P + "buzon.jpg" },
+    { id: "pelota", nombre: "Pelota antiestrés", horas: 1.8, foto: P + "pelota.jpg" },
     { id: "soldadito", nombre: "Soldadito cascanueces", horas: 2.9, foto: MW + "US56ce03c37ac136/design/146d4e4311282dc1.jpg" + R },
-    { id: "cadena", nombre: "Cadena «6-7»", horas: 1.2, foto: MW + "USa3071af51ab29e/design/2025-11-12_b1e0756b6368e8.jpeg" + R }
+    { id: "cadena", nombre: "Cadena «6-7»", horas: 1.2, foto: P + "cadena.jpg" }
   ];
-  const FROSTY = { id: "frosty", nombre: "Frosty, muñeco de nieve", horas: 4.5, precio: 130, foto: MW + "US9651b2a5ab7b4e/design/49a975bbbea5ecf7.png" + R };
+  const FROSTY = { id: "frosty", nombre: "Frosty, muñeco de nieve", horas: 4.5, precio: 130, foto: P + "frosty.jpg" };
   const PAQ = { 3: 180, 6: 330, 9: 465, 13: 580 };
 
   let n = 3; const sel = new Set();
