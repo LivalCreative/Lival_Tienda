@@ -20,6 +20,15 @@ Todo en español (México). La dueña es Lilian; los clientes compran desde el c
 - Lo privado del negocio (licencias, costos y precios, archivos 3D, fotos originales) va en Google Drive, carpeta "Catalogo Lival"; este repositorio solo tiene lo que usa la tienda.
 - `img/` — fotos con marca de agua "LIVAL CREATIVE STUDIO". Toda foto nueva de producto lleva marca de agua.
 
+## Productos nuevos (proceso de Lilian)
+1. **Mientras se preparan**, todo lo de un producto nuevo vive aparte, sin mezclarse con lo que ya está en la tienda:
+   - Fotos de MakerWorld: Drive `Catalogo Lival / Productos / Imagenes / Nuevos` (función `organizarNuevos` del Apps Script "Fotos Catalogo Lival": mueve y baja fotos).
+   - Precio: pestaña **Nuevos** de `Lival_lista_de_precios` (mismas columnas; costo = gramos × Supuestos!B2 + horas × Supuestos!B3; la ganancia la pone Lilian).
+   - Descripción, medidas y texto para la foto realista: pestaña **Nuevos** de `Lival_imagenes_y_descripciones`.
+   - Las fotos propias de Lilian se quedan en "Fotos propias" (no se mueven).
+2. **Cuando Lilian confirme que están listos**: tomar sus fotos de "Fotos propias", ponerles marca de agua y subirlos a la tienda; luego pasar las filas de las pestañas Nuevos a la pestaña general de cada documento y las fotos de `Imagenes/Nuevos` a `Imagenes`, y dejar Nuevos vacío.
+3. Grupos actuales en Nuevos: A (listos, ya con precio y fotos propias), B (nuevos de la colección Xmas 2026, falta precio y fotos), C (ya en la tienda pero ocultos con precio 0).
+
 ## Reglas del negocio
 - Pedidos por WhatsApp 442 279 1488; anticipo siempre por transferencia (BBVA, CLABE 012680004682074457, a nombre de Lilian Valladares López).
 - Anticipo: 50 % redondeado a decenas; paquete de 24: $750.
