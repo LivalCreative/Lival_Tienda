@@ -213,3 +213,10 @@ section { scroll-margin-top: 16px; }
   .js [data-entra] > * { opacity: 1; transform: none; }
   .nieve { display: none; }
 }
+
+/* Aviso de lanzamiento arriba de todo: Disfraces para tu duende */
+.aviso-dz { display: flex; align-items: center; justify-content: center; gap: 10px 14px; flex-wrap: wrap; background: var(--pino); color: #fff; text-decoration: none; padding: 10px var(--m); text-align: center; font-weight: 800; line-height: 1.25; }
+.aviso-dz .n { background: var(--oro); color: var(--pino); border-radius: 999px; padding: 3px 10px; font-size: .85rem; }
+.aviso-dz .t { font-family: var(--disp); font-size: 1.08rem; }
+.aviso-dz .b { background: var(--rojo); color: #fff; border-radius: 999px; padding: 7px 14px; font-size: .95rem; white-space: nowrap; }
+.aviso-dz:hover .b, .aviso-dz:focus-visible .b { background: var(--rojo-f); }
