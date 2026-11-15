@@ -28,7 +28,8 @@
     if (p.personal) {
       det = `${p.opciones.length > 1 ? `<div class="lbl">Elige</div><div class="opts">${p.opciones.map((o, i) => `<button type="button" class="opt${i ? "" : " on"}" data-op="${o.k}">${esc(o.label)}${new Set(p.opciones.map(x => x.precio)).size > 1 ? " · " + money(o.precio) : ""}</button>`).join("")}</div>` : ""}
         <label class="lbl" for="t-${p.id}">${esc(p.personal.label)}</label>
-        <input class="campo" id="t-${p.id}" maxlength="${p.personal.max}" placeholder="${esc(p.personal.ph)}">
+        <input class="campo" id="t-${p.id}" maxlength="${p.personal.max}" placeholder="${esc(p.personal.ph)}" autocomplete="off">
+        ${p.opciones.some(o => o.prev) ? `<div class="prevmini" data-hintprev${p.opciones[0].prev ? "" : " hidden"}><img alt="Así queda tu nombre" hidden><p class="hint">Escribe el nombre y aquí ves cómo queda.</p></div>` : ""}
         <div class="buy"><span class="price" data-precio>${money(p.opciones[0].precio)}</span><button type="button" class="btn add" data-addp="${p.id}">Agregar al pedido</button></div>
         <p class="err" data-err></p>
         <div class="sel" data-lista hidden></div>`;
@@ -62,7 +63,7 @@
     const gal = art.querySelector(".gal"), wm = art.querySelector(".wm");
     const marca = () => {
       const im = gal.children[Math.round(gal.scrollLeft / (gal.clientWidth || 1))];
-      wm.hidden = !!im && im.getAttribute("src").indexOf("img/navidad/") >= 0;
+      wm.hidden = !!im && (im.dataset.orig || im.getAttribute("src")).indexOf("img/navidad/") >= 0;
     };
     gal.addEventListener("scroll", marca, { passive: true }); marca();
   });
@@ -74,6 +75,43 @@
   function verFoto(art, o) {
     if (!o || o.f == null) return;
     const g = art.querySelector(".gal"); if (g) g.scrollTo({ left: o.f * g.clientWidth, behavior: "smooth" });
+  }
+  // Vista previa: dibuja el nombre sobre la foto propia sin nombre (opción con "prev").
+  const fotosPrev = {};
+  const cargar = src => fotosPrev[src] || (fotosPrev[src] = new Promise((ok, mal) => { const im = new Image(); im.onload = () => ok(im); im.onerror = mal; im.src = src; }));
+  function opcionSel(art, p) { const sel = art.querySelector("[data-op].on"); return sel ? p.opciones.find(x => x.k === sel.dataset.op) : p.opciones[0]; }
+  function regresar(im) { if (im.dataset.orig) { im.src = im.dataset.orig; im.removeAttribute("data-orig"); } }
+  function vistaPrevia(art, p) {
+    const o = opcionSel(art, p), fotos = art.querySelectorAll(".gal img"), img = o && o.prev ? fotos[o.f] : null;
+    fotos.forEach(im => { if (im !== img) regresar(im); });
+    const h = art.querySelector("[data-hintprev]"); if (h) h.hidden = !img;
+    if (!img) return;
+    const txt = art.querySelector(".campo").value.trim();
+    const mini = h && h.querySelector("img");
+    if (!txt) { regresar(img); if (mini) mini.hidden = true; return; }
+    const v = o.prev;
+    cargar(v.src).then(base => {
+      if (art.querySelector(".campo").value.trim() !== txt) return;
+      const c = document.createElement("canvas"); c.width = base.naturalWidth; c.height = base.naturalHeight;
+      const x = c.getContext("2d"); x.drawImage(base, 0, 0);
+      let fs = c.height * v.h / 0.69;
+      const fuente = n => `bold ${n}px Georgia, "Times New Roman", serif`;
+      x.font = fuente(fs); const ancho = x.measureText(txt).width, max = c.width * v.w;
+      if (ancho > max) { fs *= max / ancho; x.font = fuente(fs); }
+      x.textAlign = "center"; x.textBaseline = "middle";
+      const cx = c.width * v.x, cy = c.height * v.y;
+      x.fillStyle = "rgba(90,0,0,.55)"; x.fillText(txt, cx + fs * .025, cy + fs * .045);
+      x.fillStyle = "#fbfaf7"; x.fillText(txt, cx, cy);
+      if (!img.dataset.orig) img.dataset.orig = img.getAttribute("src");
+      img.src = c.toDataURL("image/jpeg", 0.86);
+      if (mini) {
+        const r = v.rec || [0, 0, 1, 1], m = document.createElement("canvas");
+        m.width = c.width * (r[2] - r[0]); m.height = c.height * (r[3] - r[1]);
+        m.getContext("2d").drawImage(c, c.width * r[0], c.height * r[1], m.width, m.height, 0, 0, m.width, m.height);
+        mini.src = m.toDataURL("image/jpeg", 0.86); mini.hidden = false;
+      }
+      verFoto(art, o);
+    }).catch(() => {});
   }
   function bump() { const bar = document.getElementById("nbar"); if (!bar) return; bar.classList.remove("bump"); void bar.offsetWidth; bar.classList.add("bump"); }
   function refrescarBarra() { if (typeof cart !== "undefined") cart = LIVAL.leer(); if (typeof pintar === "function") pintar(); }
@@ -105,7 +143,7 @@
       pintarGen(); refrescarBarra(); bump(); return;
     }
     const op = e.target.closest("button[data-op]");
-    if (op) { const art = op.closest("article"), p = lista.find(x => x.id === art.id); art.querySelectorAll("[data-op]").forEach(b => b.classList.toggle("on", b === op)); const o = p.opciones.find(x => x.k === op.dataset.op); art.querySelector("[data-precio]").textContent = money(o.precio); verFoto(art, o); return; }
+    if (op) { const art = op.closest("article"), p = lista.find(x => x.id === art.id); art.querySelectorAll("[data-op]").forEach(b => b.classList.toggle("on", b === op)); const o = p.opciones.find(x => x.k === op.dataset.op); art.querySelector("[data-precio]").textContent = money(o.precio); verFoto(art, o); if (p.personal) vistaPrevia(art, p); return; }
     const fila = e.target.closest(".vrow .nm");
     if (fila) { const art = fila.closest("article"), p = lista.find(x => x.id === art.id), b = fila.closest(".vrow").querySelector("[data-g]"); verFoto(art, p.opciones.find(o => key(p, o) === b.dataset.g)); return; }
     const add = e.target.closest("button[data-addp]");
@@ -117,7 +155,7 @@
       const sel = art.querySelector("[data-op].on"), o = sel ? p.opciones.find(x => x.k === sel.dataset.op) : p.opciones[0];
       const det = p.opciones.length > 1 ? ` (${o.label})` : "";
       LIVAL.agregarPersonal({ id: p.id + "-" + Date.now().toString(36), tipo: p.id, name: `${p.nombre}${det} — ${p.personal.label.replace(/ \(.*/, "")}: "${txt}"`, resumen: `${o.label}: "${txt}"`, price: o.precio, horas: o.horas });
-      inp.value = ""; pintarGen(); refrescarBarra(); bump(); return;
+      inp.value = ""; vistaPrevia(art, p); pintarGen(); refrescarBarra(); bump(); return;
     }
     const ap = e.target.closest("button[data-addpaq]");
     if (ap) {
@@ -130,6 +168,10 @@
     }
     const q = e.target.closest("button[data-qp]");
     if (q) { LIVAL.quitarPersonal(q.dataset.qp); pintarGen(); refrescarBarra(); }
+  });
+  box.addEventListener("input", e => {
+    const inp = e.target.closest("input.campo"), art = inp && inp.closest("article.gen"); if (!art) return;
+    const p = lista.find(x => x.id === art.id); if (p && p.personal && p.opciones.some(o => o.prev)) vistaPrevia(art, p);
   });
   box.addEventListener("change", e => {
     const s = e.target.closest("select[data-paq]"); if (!s) return;

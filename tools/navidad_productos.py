@@ -58,6 +58,9 @@ PROPIAS = {
  "2030448": _p("grinch-tarro", "grinch-tarro-medidas"),
  "1887801": _p("arbol-fidget", "arbol-fidget-medidas"),
  "817845": _p("arbol-familia", "arbol-familia-medidas"),
+ "3500858": _p("sueter-reno-nombre", "adorno-sueter-reno", "adorno-sueter-reno-medidas"),
+ "3542565": _p("adorno-regalo", "adorno-regalo-familia", "adorno-regalo-vacio", "adorno-regalo-medidas"),
+ "3488535": _p("portarretratos-arbol", "portarretratos-arbol-medidas"),
 }
 
 
@@ -253,6 +256,16 @@ P = [
   ["USe32837fe204709/design/a8ba757367d594a7.png", "USe32837fe204709/design/b4db5a5c3000e4ed.png"],
   [("u", "Bota con nombre", "", 0.71, 20, 0)],
   {"label": "Nombre", "ph": "Ej. Emma", "max": 10}),
+ ("3500858", "Suéter de Reno con Nombre", "🎁 Personalizado", "Un adorno con forma de suéter navideño con renos y copos, y el nombre que tú quieras al centro.",
+  ["Nombre en relieve.", "Para el árbol o como etiqueta de regalo."],
+  [], [("u", "Suéter de reno", "", 2.1, 0, 0)],
+  {"label": "Nombre", "ph": "Ej. Alex", "max": 10}),
+ ("3542565", "Adorno Regalo con Moño con tu Foto", "📸 Con tu foto", "Un marco en forma de regalo con moño que enmarca tu foto para colgar en el árbol.",
+  ["Va con tu foto: mándanosla por WhatsApp después de tu pedido."],
+  [], [("u", "Regalo con moño", "Mándanos tu foto por WhatsApp", 0.7, 0, FOTO)], None),
+ ("3488535", "Portarretratos Árbol de los Recuerdos", "📸 Con tu foto", "Un portarretratos en forma de árbol de Navidad con estrella y guirnaldas, con tu foto favorita.",
+  ["Árbol con estrella y guirnaldas.", "Va con tu foto: mándanosla por WhatsApp después de tu pedido."],
+  [], [("u", "Árbol de los recuerdos", "Mándanos tu foto por WhatsApp", 0.9, 0, FOTO)], None),
  ("3536610", "Cuenta Regresiva del Reno", "⭐ Cuenta regresiva", "Un renito asomado sobre un letrero con cubos de números para contar los días que faltan para Navidad.",
   ["Cubos de números intercambiables.", "Reno con nariz roja.", "Para repisa o mesa."],
   ["USac916bd566b7dc/design/f56fc8a56e67cdfe.jfif", "USac916bd566b7dc/design/893c17366dc08733.jfif"],
@@ -365,12 +378,12 @@ GRUPOS = [
   [("3176140", "Japandi"), ("3338545", "Espiral"), ("3371427", "Cuerda trenzada")], None),
  ("adorno-foto", "Adorno con tu foto", "Con tu foto",
   "Un adorno para el árbol que enmarca tu foto favorita. El regalo perfecto para abuelos, padrinos y maestras.",
-  ["Va con tu foto: mándanosla por WhatsApp después de tu pedido.", "Elige corona, estrella o reno de nariz roja.", "Paquete de 3: combina los modelos que quieras y ahorra $20.", "Incluye listón para colgar."],
-  [("CORONA", "Corona"), ("2128543", "Estrella"), ("3373774", "Reno de nariz roja")], None),
+  ["Va con tu foto: mándanosla por WhatsApp después de tu pedido.", "Elige corona, estrella, reno de nariz roja o regalo con moño.", "Paquete de 3: combina los modelos que quieras y ahorra $20.", "Incluye listón para colgar."],
+  [("CORONA", "Corona"), ("2128543", "Estrella"), ("3373774", "Reno de nariz roja"), ("3542565", "Regalo con moño")], None),
  ("adorno-nombre", "Adorno con nombre", "Personalizado",
   "Un adorno con el nombre que tú quieras: uno para cada integrante de la familia o como etiqueta de regalo.",
-  ["Elige el modelo: bota, esfera, galleta, suéter, foquito o reno.", "Nombre en relieve.", "Para el árbol, como etiqueta de regalo o llavero."],
-  [("3533521", "Bota"), ("3355184", "Esfera muñeco de nieve"), ("2109874", "Galleta de jengibre"), ("3394419", "Suéter navideño"), ("1996511", "Foquito"), ("2057491", "Reno con inicial")],
+  ["Elige el modelo: bota, esfera, galleta, suéter, suéter de reno, foquito o reno.", "Nombre en relieve.", "Para el árbol, como etiqueta de regalo o llavero."],
+  [("3533521", "Bota"), ("3355184", "Esfera muñeco de nieve"), ("2109874", "Galleta de jengibre"), ("3394419", "Suéter navideño"), ("1996511", "Foquito"), ("2057491", "Reno con inicial"), ("3500858", "Suéter de reno")],
   {"label": "Nombre", "ph": "Ej. Valentina", "max": 12}),
  ("articulados", "Figuritas articuladas", "Para jugar",
   "Figuritas navideñas articuladas que se mueven. Para decorar el árbol, el escritorio o regalar.",
@@ -408,7 +421,7 @@ for gid, nombre, badge, lead, bullets, partes, personal in GRUPOS:
                    "bullets": bullets, "fotos": fotos, "_dueno": dueno, "opciones": ops, "personal": personal}
 
 # Orden de la rejilla
-ORDEN = ["G:adorno-nombre", "G:adorno-foto", "3485874", "G:corona-texto", "817845", "2083881",
+ORDEN = ["G:adorno-nombre", "G:adorno-foto", "3485874", "G:corona-texto", "817845", "2083881", "3488535",
          "G:cuenta-regresiva", "G:bandeja-santa", "G:camara-santa", "G:porta-paneton", "G:arbolitos",
          "14093", "2070704", "2087313", "2027611", "3175033", "3337730", "3397234", "3407142", "2101416",
          "2052441", "1935739", "3471108", "1891706", "2078410",
@@ -437,7 +450,7 @@ out = [d for d in out if d["opciones"]]
 # nombre = Personalizables · arbol = Esferas y adornos · deco = Decoración · cocina = Cocina y baño · ninos = Para niños
 CAT = {
  "NVG-adorno-nombre": "nombre arbol", "NVG-adorno-foto": "nombre arbol", "NV3485874": "nombre deco", "NVG-corona-texto": "nombre deco",
- "NV817845": "nombre arbol", "NV2083881": "nombre arbol", "NVG-cuenta-regresiva": "deco ninos", "NVG-bandeja-santa": "cocina ninos",
+ "NV817845": "nombre arbol", "NV3488535": "nombre deco", "NV2083881": "nombre arbol", "NVG-cuenta-regresiva": "deco ninos", "NVG-bandeja-santa": "cocina ninos",
  "NVG-camara-santa": "ninos arbol deco", "NVG-porta-paneton": "cocina", "NVG-arbolitos": "deco", "NV14093": "deco", "NV2070704": "deco",
  "NV2087313": "deco ninos", "NV2027611": "deco", "NV3175033": "deco", "NV3337730": "deco", "NV3397234": "cocina", "NV3407142": "cocina",
  "NV2101416": "cocina", "NV2052441": "ninos", "NV1935739": "ninos", "NV3471108": "ninos", "NV1891706": "deco", "NV2078410": "deco",
@@ -457,8 +470,9 @@ for d in out:   # si de un modelo quedó una sola versión, se nombra solo con e
 # Medidas para el cliente (salen de los archivos 3MF / lista "Lival imágenes y descripciones"; solo las confirmadas).
 MEDIDAS = {
  "Adorno con nombre": {"Bota": "8.1 × 12 cm", "Esfera muñeco de nieve": "8 × 8.7 cm", "Galleta de jengibre": "13 × 8.3 cm",
-                       "Suéter navideño": "10.3 × 8 cm", "Foquito": "4.7 × 10.1 cm", "Reno con inicial": "Aprox. 6.1 × 9.3 cm"},
- "Adorno con tu foto": {"Corona": "6.7 × 7.4 cm · foto de 5.5 cm", "Estrella": "7 × 7.4 cm", "Reno de nariz roja": "7.2 × 7.7 cm · foto de 5.5 cm"},
+                       "Suéter navideño": "10.3 × 8 cm", "Foquito": "4.7 × 10.1 cm", "Reno con inicial": "Aprox. 6.1 × 9.3 cm", "Suéter de reno": "6.6 × 6.4 cm"},
+ "Adorno con tu foto": {"Corona": "6.7 × 7.4 cm · foto de 5.5 cm", "Estrella": "7 × 7.4 cm", "Reno de nariz roja": "7.2 × 7.7 cm · foto de 5.5 cm", "Regalo con moño": "10 × 10.9 cm"},
+ "Portarretratos árbol de los recuerdos": {"*": "10.3 × 15.4 cm"},
  "Casita navideña con tu apellido": {"*": "20.2 × 23.3 cm"},
  "Corona personalizada": {"Acebo · un solo color": "21.9 × 21.7 cm", "Acebo · 4 colores": "21.9 × 21.7 cm", "Reno con letrero": "22 × 19.2 cm"},
  "Árbol de la familia con nombres": {"*": "9.7 × 12.4 cm"},
@@ -502,6 +516,12 @@ for d in out:
     for o in d["opciones"]:
         v = m.get(o["label"]) or m.get("*")
         if v: o["medida"] = v
+# Vista previa del nombre sobre la foto (foto propia sin nombre; x, y = centro del texto; w = ancho máximo; h = alto de las mayúsculas; rec = recorte para la vista chica junto al campo; todo en fracción de la foto)
+VISTA = {("Adorno con nombre", "Suéter de reno"): {"src": "../img/navidad/sueter-reno-vacio.jpg", "x": 0.499, "y": 0.491, "w": 0.40, "h": 0.081, "rec": [0.12, 0.15, 0.88, 0.77]}}
+for d in out:
+    for o in d["opciones"]:
+        v = VISTA.get((d["nombre"], o["label"]))
+        if v: o["prev"] = v
 sin = [d["nombre"] for d in out if not any("medida" in o for o in d["opciones"])]
 print("Sin medidas:", sin)
 print("Quitados:", quitados)

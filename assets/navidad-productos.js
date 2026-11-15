@@ -4,12 +4,12 @@ window.NAVIDAD = [
   "paquete": null,
   "nota": "",
   "id": "NVG-adorno-nombre",
-  "mw": "3533521,3355184,2109874,3394419,1996511,2057491",
+  "mw": "3533521,3355184,2109874,3394419,1996511,2057491,3500858",
   "nombre": "Adorno con nombre",
   "badge": "Personalizado",
   "lead": "Un adorno con el nombre que tú quieras: uno para cada integrante de la familia o como etiqueta de regalo.",
   "bullets": [
-   "Elige el modelo: bota, esfera, galleta, suéter, foquito o reno.",
+   "Elige el modelo: bota, esfera, galleta, suéter, suéter de reno, foquito o reno.",
    "Nombre en relieve.",
    "Para el árbol, como etiqueta de regalo o llavero."
   ],
@@ -25,7 +25,10 @@ window.NAVIDAD = [
    "../img/navidad/adorno-foquito.jpg",
    "../img/navidad/adorno-foquito-medidas.jpg",
    "../img/navidad/adorno-reno-inicial.jpg",
-   "../img/navidad/adorno-reno-inicial-medidas.jpg"
+   "../img/navidad/adorno-reno-inicial-medidas.jpg",
+   "../img/navidad/sueter-reno-nombre.jpg",
+   "../img/navidad/adorno-sueter-reno.jpg",
+   "../img/navidad/adorno-sueter-reno-medidas.jpg"
   ],
   "opciones": [
    {
@@ -81,6 +84,28 @@ window.NAVIDAD = [
     "mw": "2057491",
     "f": 10,
     "medida": "Aprox. 6.1 × 9.3 cm"
+   },
+   {
+    "k": "3500858u",
+    "label": "Suéter de reno",
+    "precio": 80,
+    "horas": 2.1,
+    "mw": "3500858",
+    "f": 12,
+    "medida": "6.6 × 6.4 cm",
+    "prev": {
+     "src": "../img/navidad/sueter-reno-vacio.jpg",
+     "x": 0.499,
+     "y": 0.491,
+     "w": 0.4,
+     "h": 0.081,
+     "rec": [
+      0.12,
+      0.15,
+      0.88,
+      0.77
+     ]
+    }
    }
   ],
   "personal": {
@@ -97,13 +122,13 @@ window.NAVIDAD = [
   },
   "nota": "mándanos la foto por WhatsApp",
   "id": "NVG-adorno-foto",
-  "mw": "CORONA,2128543,3373774",
+  "mw": "CORONA,2128543,3373774,3542565",
   "nombre": "Adorno con tu foto",
   "badge": "Con tu foto",
   "lead": "Un adorno para el árbol que enmarca tu foto favorita. El regalo perfecto para abuelos, padrinos y maestras.",
   "bullets": [
    "Va con tu foto: mándanosla por WhatsApp después de tu pedido.",
-   "Elige corona, estrella o reno de nariz roja.",
+   "Elige corona, estrella, reno de nariz roja o regalo con moño.",
    "Paquete de 3: combina los modelos que quieras y ahorra $20.",
    "Incluye listón para colgar."
   ],
@@ -113,7 +138,11 @@ window.NAVIDAD = [
    "../img/navidad/adorno-estrella.jpg",
    "../img/navidad/adorno-estrella-medidas.jpg",
    "../img/navidad/adorno-reno-nariz.jpg",
-   "../img/navidad/adorno-reno-nariz-medidas.jpg"
+   "../img/navidad/adorno-reno-nariz-medidas.jpg",
+   "../img/navidad/adorno-regalo.jpg",
+   "../img/navidad/adorno-regalo-familia.jpg",
+   "../img/navidad/adorno-regalo-vacio.jpg",
+   "../img/navidad/adorno-regalo-medidas.jpg"
   ],
   "opciones": [
    {
@@ -142,6 +171,15 @@ window.NAVIDAD = [
     "mw": "3373774",
     "f": 4,
     "medida": "7.2 × 7.7 cm · foto de 5.5 cm"
+   },
+   {
+    "k": "3542565u",
+    "label": "Regalo con moño",
+    "precio": 60,
+    "horas": 0.7,
+    "mw": "3542565",
+    "f": 6,
+    "medida": "10 × 10.9 cm"
    }
   ],
   "personal": null,
@@ -302,6 +340,34 @@ window.NAVIDAD = [
    "max": 70
   },
   "cat": "nombre arbol"
+ },
+ {
+  "id": "NV3488535",
+  "mw": "3488535",
+  "nombre": "Portarretratos árbol de los recuerdos",
+  "badge": "Con tu foto",
+  "lead": "Un portarretratos en forma de árbol de Navidad con estrella y guirnaldas, con tu foto favorita.",
+  "bullets": [
+   "Árbol con estrella y guirnaldas.",
+   "Va con tu foto: mándanosla por WhatsApp después de tu pedido."
+  ],
+  "fotos": [
+   "../img/navidad/portarretratos-arbol.jpg",
+   "../img/navidad/portarretratos-arbol-medidas.jpg"
+  ],
+  "opciones": [
+   {
+    "k": "u",
+    "label": "Árbol de los recuerdos",
+    "precio": 70,
+    "horas": 0.9,
+    "mw": "3488535",
+    "f": 0,
+    "medida": "10.3 × 15.4 cm"
+   }
+  ],
+  "personal": null,
+  "cat": "nombre deco"
  },
  {
   "paquete": null,
