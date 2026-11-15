@@ -89,19 +89,19 @@
     const txt = art.querySelector(".campo").value.trim();
     const mini = h && h.querySelector("img");
     if (!txt) { regresar(img); if (mini) mini.hidden = true; return; }
-    const v = o.prev;
+    const v = o.prev, letras = v.may ? txt.toLocaleUpperCase("es-MX") : txt;
     cargar(v.src).then(base => {
       if (art.querySelector(".campo").value.trim() !== txt) return;
       const c = document.createElement("canvas"); c.width = base.naturalWidth; c.height = base.naturalHeight;
       const x = c.getContext("2d"); x.drawImage(base, 0, 0);
       let fs = c.height * v.h / 0.69;
       const fuente = n => `bold ${n}px Georgia, "Times New Roman", serif`;
-      x.font = fuente(fs); const ancho = x.measureText(txt).width, max = c.width * v.w;
+      x.font = fuente(fs); const ancho = x.measureText(letras).width, max = c.width * v.w;
       if (ancho > max) { fs *= max / ancho; x.font = fuente(fs); }
       x.textAlign = "center"; x.textBaseline = "middle";
       const cx = c.width * v.x, cy = c.height * v.y;
-      x.fillStyle = "rgba(90,0,0,.55)"; x.fillText(txt, cx + fs * .025, cy + fs * .045);
-      x.fillStyle = "#fbfaf7"; x.fillText(txt, cx, cy);
+      x.fillStyle = "rgba(90,0,0,.55)"; x.fillText(letras, cx + fs * .025, cy + fs * .045);
+      x.fillStyle = "#fbfaf7"; x.fillText(letras, cx, cy);
       if (!img.dataset.orig) img.dataset.orig = img.getAttribute("src");
       img.src = c.toDataURL("image/jpeg", 0.86);
       if (mini) {
@@ -149,11 +149,13 @@
     const add = e.target.closest("button[data-addp]");
     if (add) {
       const art = add.closest("article"), p = lista.find(x => x.id === add.dataset.addp);
-      const inp = art.querySelector(".campo"), txt = inp.value.trim(), err = art.querySelector("[data-err]");
+      const inp = art.querySelector(".campo"), err = art.querySelector("[data-err]");
+      let txt = inp.value.trim();
       if (!txt) { err.textContent = "Escribe " + p.personal.label.toLowerCase().replace(/ \(.*/, "") + "."; inp.focus(); return; }
       err.textContent = "";
       const sel = art.querySelector("[data-op].on"), o = sel ? p.opciones.find(x => x.k === sel.dataset.op) : p.opciones[0];
       const det = p.opciones.length > 1 ? ` (${o.label})` : "";
+      if (o.prev && o.prev.may) txt = txt.toLocaleUpperCase("es-MX");
       LIVAL.agregarPersonal({ id: p.id + "-" + Date.now().toString(36), tipo: p.id, name: `${p.nombre}${det} — ${p.personal.label.replace(/ \(.*/, "")}: "${txt}"`, resumen: `${o.label}: "${txt}"`, price: o.precio, horas: o.horas });
       inp.value = ""; vistaPrevia(art, p); pintarGen(); refrescarBarra(); bump(); return;
     }
