@@ -251,7 +251,8 @@ window.NAVIDAD = [
     "precio": 50,
     "horas": 0.57,
     "mw": "3541306",
-    "f": 4
+    "f": 4,
+    "medida": "6 × 7.1 cm"
    },
    {
     "k": "a2",
@@ -259,7 +260,8 @@ window.NAVIDAD = [
     "precio": 50,
     "horas": 0.57,
     "mw": "3541306",
-    "f": 5
+    "f": 5,
+    "medida": "6 × 7 cm"
    },
    {
     "k": "a3",
@@ -267,7 +269,8 @@ window.NAVIDAD = [
     "precio": 50,
     "horas": 0.57,
     "mw": "3541306",
-    "f": 6
+    "f": 6,
+    "medida": "6 × 6.8 cm"
    },
    {
     "k": "a4",
@@ -275,7 +278,8 @@ window.NAVIDAD = [
     "precio": 50,
     "horas": 0.57,
     "mw": "3541306",
-    "f": 7
+    "f": 7,
+    "medida": "6 × 7 cm"
    },
    {
     "k": "a5",
@@ -283,7 +287,8 @@ window.NAVIDAD = [
     "precio": 50,
     "horas": 0.57,
     "mw": "3541306",
-    "f": 8
+    "f": 8,
+    "medida": "6 × 7.1 cm"
    },
    {
     "k": "a6",
@@ -291,7 +296,8 @@ window.NAVIDAD = [
     "precio": 50,
     "horas": 0.57,
     "mw": "3541306",
-    "f": 9
+    "f": 9,
+    "medida": "6 × 6.8 cm"
    }
   ],
   "lote": {
