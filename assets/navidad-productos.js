@@ -187,6 +187,129 @@ window.NAVIDAD = [
   "cat": "nombre arbol"
  },
  {
+  "id": "NVG-mascota",
+  "mw": "793255,3541306",
+  "nombre": "Adornos para tu mascota",
+  "badge": "Personalizado",
+  "lead": "Que tu perrito o tu gatito también tenga su adorno esta Navidad, con su nombre.",
+  "bullets": [
+   "1 adorno por $50 o 3 por $120: combina los diseños que quieras.",
+   "Cada uno lleva el nombre de tu mascota.",
+   "Para colgar en el árbol."
+  ],
+  "fotos": [
+   "../img/navidad/mascota-esfera-1.jpg",
+   "../img/navidad/mascota-esfera-2.jpg",
+   "../img/navidad/mascota-esfera-3.jpg",
+   "../img/navidad/mascota-esfera-4.jpg",
+   "../img/navidad/mascota-adorno-1.jpg",
+   "../img/navidad/mascota-adorno-2.jpg",
+   "../img/navidad/mascota-adorno-3.jpg",
+   "../img/navidad/mascota-adorno-4.jpg",
+   "../img/navidad/mascota-adorno-5.jpg",
+   "../img/navidad/mascota-adorno-6.jpg"
+  ],
+  "opciones": [
+   {
+    "k": "e1",
+    "label": "Esfera huella con hueso",
+    "precio": 50,
+    "horas": 0.8,
+    "mw": "793255",
+    "f": 0
+   },
+   {
+    "k": "e2",
+    "label": "Esfera huella",
+    "precio": 50,
+    "horas": 0.8,
+    "mw": "793255",
+    "f": 1
+   },
+   {
+    "k": "e3",
+    "label": "Esfera copo con hueso",
+    "precio": 50,
+    "horas": 0.8,
+    "mw": "793255",
+    "f": 2
+   },
+   {
+    "k": "e4",
+    "label": "Esfera hueso con copos",
+    "precio": 50,
+    "horas": 0.8,
+    "mw": "793255",
+    "f": 3
+   },
+   {
+    "k": "a1",
+    "label": "Esfera con gato",
+    "precio": 50,
+    "horas": 0.57,
+    "mw": "3541306",
+    "f": 4
+   },
+   {
+    "k": "a2",
+    "label": "Árbol con gato",
+    "precio": 50,
+    "horas": 0.57,
+    "mw": "3541306",
+    "f": 5
+   },
+   {
+    "k": "a3",
+    "label": "Campana con perro",
+    "precio": 50,
+    "horas": 0.57,
+    "mw": "3541306",
+    "f": 6
+   },
+   {
+    "k": "a4",
+    "label": "Árbol con perro",
+    "precio": 50,
+    "horas": 0.57,
+    "mw": "3541306",
+    "f": 7
+   },
+   {
+    "k": "a5",
+    "label": "Esfera con perro",
+    "precio": 50,
+    "horas": 0.57,
+    "mw": "3541306",
+    "f": 8
+   },
+   {
+    "k": "a6",
+    "label": "Campana con gato",
+    "precio": 50,
+    "horas": 0.57,
+    "mw": "3541306",
+    "f": 9
+   }
+  ],
+  "lote": {
+   "tam": [
+    [
+     1,
+     50
+    ],
+    [
+     3,
+     120
+    ]
+   ],
+   "label": "Nombre",
+   "ph": "Ej. Firulais",
+   "max": 12
+  },
+  "personal": null,
+  "cat": "nombre arbol"
+ },
+ {
   "id": "NV3485874",
   "mw": "3485874",
   "nombre": "Casita navideña con tu apellido",

@@ -446,11 +446,27 @@ for d, (_, ops) in zip(out, LIL):
         for o in d["opciones"]: o["f"] = quedan.index(o["f"])
 out = [d for d in out if d["opciones"]]
 
+# Adornos para tu mascota: el cliente escoge 1 o 3 adornos, el diseño de cada uno y el nombre de cada mascota.
+# Precios de Lilian (lista de precios, pestaña Nuevos): 1 × $50 o 3 × $120. Horas = una pieza (la placa rinde 4 esferas o 6 adornos).
+_M = "../img/navidad/mascota-"
+MASCOTA_OPS = [("e1", "Esfera huella con hueso", "esfera-1", 0.8, "793255"), ("e2", "Esfera huella", "esfera-2", 0.8, "793255"),
+               ("e3", "Esfera copo con hueso", "esfera-3", 0.8, "793255"), ("e4", "Esfera hueso con copos", "esfera-4", 0.8, "793255"),
+               ("a1", "Esfera con gato", "adorno-1", 0.57, "3541306"), ("a2", "Árbol con gato", "adorno-2", 0.57, "3541306"),
+               ("a3", "Campana con perro", "adorno-3", 0.57, "3541306"), ("a4", "Árbol con perro", "adorno-4", 0.57, "3541306"),
+               ("a5", "Esfera con perro", "adorno-5", 0.57, "3541306"), ("a6", "Campana con gato", "adorno-6", 0.57, "3541306")]
+MASCOTA = {"id": "NVG-mascota", "mw": "793255,3541306", "nombre": "Adornos para tu mascota", "badge": "Personalizado",
+           "lead": "Que tu perrito o tu gatito también tenga su adorno esta Navidad, con su nombre.",
+           "bullets": ["1 adorno por $50 o 3 por $120: combina los diseños que quieras.", "Cada uno lleva el nombre de tu mascota.", "Para colgar en el árbol."],
+           "fotos": [_M + f + ".jpg" for _, _, f, _, _ in MASCOTA_OPS],
+           "opciones": [{"k": k, "label": l, "precio": 50, "horas": h, "gramos": 0, "mw": mw, "f": i} for i, (k, l, _, h, mw) in enumerate(MASCOTA_OPS)],
+           "lote": {"tam": [[1, 50], [3, 120]], "label": "Nombre", "ph": "Ej. Firulais", "max": 12}, "personal": None}
+out.insert([d["id"] for d in out].index("NVG-adorno-foto") + 1, MASCOTA)
+
 # Categorías de la tienda (filtros arriba de la rejilla). Un producto puede estar en varias.
 # nombre = Personalizables · arbol = Esferas y adornos · deco = Decoración · cocina = Cocina y baño · ninos = Para niños
 CAT = {
  "NVG-adorno-nombre": "nombre arbol", "NVG-adorno-foto": "nombre arbol", "NV3485874": "nombre deco", "NVG-corona-texto": "nombre deco",
- "NV817845": "nombre arbol", "NV3488535": "nombre deco", "NV2083881": "nombre arbol", "NVG-cuenta-regresiva": "deco ninos", "NVG-bandeja-santa": "cocina ninos",
+ "NVG-mascota": "nombre arbol", "NV817845": "nombre arbol", "NV3488535": "nombre deco", "NV2083881": "nombre arbol", "NVG-cuenta-regresiva": "deco ninos", "NVG-bandeja-santa": "cocina ninos",
  "NVG-camara-santa": "ninos arbol deco", "NVG-porta-paneton": "cocina", "NVG-arbolitos": "deco", "NV14093": "deco", "NV2070704": "deco",
  "NV2087313": "deco ninos", "NV2027611": "deco", "NV3175033": "deco", "NV3337730": "deco", "NV3397234": "cocina", "NV3407142": "cocina",
  "NV2101416": "cocina", "NV2052441": "ninos", "NV1935739": "ninos", "NV3471108": "ninos", "NV1891706": "deco", "NV2078410": "deco",
