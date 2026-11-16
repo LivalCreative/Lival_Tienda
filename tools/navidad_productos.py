@@ -489,6 +489,7 @@ MEDIDAS = {
                        "Suéter navideño": "10.3 × 8 cm", "Foquito": "4.7 × 10.1 cm", "Reno con inicial": "Aprox. 6.1 × 9.3 cm", "Suéter de reno": "6.6 × 6.4 cm"},
  "Adorno con tu foto": {"Corona": "6.7 × 7.4 cm · foto de 5.5 cm", "Estrella": "7 × 7.4 cm", "Reno de nariz roja": "7.2 × 7.7 cm · foto de 5.5 cm", "Regalo con moño": "10 × 10.9 cm"},
  "Portarretratos árbol de los recuerdos": {"*": "10.3 × 15.4 cm"},
+ "Adornos para tu mascota": {"Esfera huella con hueso": "10 × 7.6 cm", "Esfera huella": "8.2 × 9 cm", "Esfera copo con hueso": "11 × 7.8 cm", "Esfera hueso con copos": "8.2 × 9 cm"},
  "Casita navideña con tu apellido": {"*": "20.2 × 23.3 cm"},
  "Corona personalizada": {"Acebo · un solo color": "21.9 × 21.7 cm", "Acebo · 4 colores": "21.9 × 21.7 cm", "Reno con letrero": "22 × 19.2 cm"},
  "Árbol de la familia con nombres": {"*": "9.7 × 12.4 cm"},
@@ -532,8 +533,8 @@ for d in out:
     for o in d["opciones"]:
         v = m.get(o["label"]) or m.get("*")
         if v: o["medida"] = v
-# Vista previa del nombre sobre la foto (foto propia sin nombre; x, y = centro del texto; w = ancho máximo; h = alto de las mayúsculas; rec = recorte para la vista chica junto al campo; may = el nombre se imprime en mayúsculas; todo en fracción de la foto)
-VISTA = {("Adorno con nombre", "Suéter de reno"): {"src": "../img/navidad/sueter-reno-vacio.jpg", "x": 0.499, "y": 0.491, "w": 0.40, "h": 0.081, "may": True, "rec": [0.12, 0.15, 0.88, 0.77]}}
+# Vista previa del nombre sobre la foto (foto propia sin nombre; x, y = centro del texto; w = ancho máximo; h = alto de las mayúsculas; rec = recorte para la vista chica junto al campo; todo en fracción de la foto)
+VISTA = {("Adorno con nombre", "Suéter de reno"): {"src": "../img/navidad/sueter-reno-vacio.jpg", "x": 0.499, "y": 0.491, "w": 0.40, "h": 0.081, "rec": [0.12, 0.15, 0.88, 0.77]}}
 for d in out:
     for o in d["opciones"]:
         v = VISTA.get((d["nombre"], o["label"]))

@@ -99,7 +99,6 @@ window.NAVIDAD = [
      "y": 0.491,
      "w": 0.4,
      "h": 0.081,
-     "may": true,
      "rec": [
       0.12,
       0.15,
@@ -216,7 +215,8 @@ window.NAVIDAD = [
     "precio": 50,
     "horas": 0.8,
     "mw": "793255",
-    "f": 0
+    "f": 0,
+    "medida": "10 × 7.6 cm"
    },
    {
     "k": "e2",
@@ -224,7 +224,8 @@ window.NAVIDAD = [
     "precio": 50,
     "horas": 0.8,
     "mw": "793255",
-    "f": 1
+    "f": 1,
+    "medida": "8.2 × 9 cm"
    },
    {
     "k": "e3",
@@ -232,7 +233,8 @@ window.NAVIDAD = [
     "precio": 50,
     "horas": 0.8,
     "mw": "793255",
-    "f": 2
+    "f": 2,
+    "medida": "11 × 7.8 cm"
    },
    {
     "k": "e4",
@@ -240,7 +242,8 @@ window.NAVIDAD = [
     "precio": 50,
     "horas": 0.8,
     "mw": "793255",
-    "f": 3
+    "f": 3,
+    "medida": "8.2 × 9 cm"
    },
    {
     "k": "a1",

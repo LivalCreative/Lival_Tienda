@@ -36,7 +36,7 @@
     } else if (p.personal) {
       det = `${p.opciones.length > 1 ? `<div class="lbl">Elige</div><div class="opts">${p.opciones.map((o, i) => `<button type="button" class="opt${i ? "" : " on"}" data-op="${o.k}">${esc(o.label)}${new Set(p.opciones.map(x => x.precio)).size > 1 ? " · " + money(o.precio) : ""}</button>`).join("")}</div>` : ""}
         <label class="lbl" for="t-${p.id}">${esc(p.personal.label)}</label>
-        <input class="campo" id="t-${p.id}" maxlength="${p.personal.max}" placeholder="${esc(p.personal.ph)}" autocomplete="off">
+        <input class="campo may" id="t-${p.id}" maxlength="${p.personal.max}" placeholder="${esc(p.personal.ph)}" autocomplete="off">
         ${p.opciones.some(o => o.prev) ? `<div class="prevmini" data-hintprev${p.opciones[0].prev ? "" : " hidden"}><img alt="Así queda tu nombre" hidden><p class="hint">Escribe el nombre y aquí ves cómo queda.</p></div>` : ""}
         <div class="buy"><span class="price" data-precio>${money(p.opciones[0].precio)}</span><button type="button" class="btn add" data-addp="${p.id}">Agregar al pedido</button></div>
         <p class="err" data-err></p>
@@ -84,7 +84,7 @@
     const ops = p.opciones.map(o => `<option value="${o.k}">${esc(o.label)}</option>`).join("");
     box.innerHTML = Array.from({ length: n }, (_, i) => `<div class="lote-f">${n > 1 ? `<div class="lbl">Adorno ${i + 1}</div>` : `<div class="lbl">Diseño</div>`}
       <select class="campo" data-lotesel>${ops}</select>
-      <input class="campo" maxlength="${L.max}" placeholder="${esc(L.ph)}" aria-label="${esc(L.label)} ${i + 1}" autocomplete="off"></div>`).join("");
+      <input class="campo may" maxlength="${L.max}" placeholder="${esc(L.ph)}" aria-label="${esc(L.label)} ${i + 1}" autocomplete="off"></div>`).join("");
     box.querySelectorAll(".lote-f").forEach((f, i) => { if (prev[i]) { f.querySelector("select").value = prev[i][0]; f.querySelector("input").value = prev[i][1]; } });
     const pr = L.tam.find(t => t[0] === n); art.querySelector("[data-precio]").textContent = money(pr[1]);
   }
@@ -109,7 +109,7 @@
     const txt = art.querySelector(".campo").value.trim();
     const mini = h && h.querySelector("img");
     if (!txt) { regresar(img); if (mini) mini.hidden = true; return; }
-    const v = o.prev, letras = v.may ? txt.toLocaleUpperCase("es-MX") : txt;
+    const v = o.prev, letras = txt.toLocaleUpperCase("es-MX");
     cargar(v.src).then(base => {
       if (art.querySelector(".campo").value.trim() !== txt) return;
       const c = document.createElement("canvas"); c.width = base.naturalWidth; c.height = base.naturalHeight;
@@ -172,7 +172,7 @@
       if (falta) { err.textContent = filas.length > 1 ? "Escribe el nombre de cada adorno." : "Escribe el nombre de tu mascota."; falta.inp.focus(); return; }
       err.textContent = "";
       const n = filas.length, precio = p.lote.tam.find(t => t[0] === n)[1];
-      const txt = filas.map(f => `${f.o.label}: "${f.inp.value.trim()}"`).join(" · ");
+      const txt = filas.map(f => `${f.o.label}: "${f.inp.value.trim().toLocaleUpperCase("es-MX")}"`).join(" · ");
       LIVAL.agregarPersonal({ id: p.id + "-" + Date.now().toString(36), tipo: p.id, name: `${p.nombre} — ${n} ${n > 1 ? "adornos" : "adorno"}: ${txt}`, resumen: txt, price: precio, horas: +filas.reduce((t, f) => t + f.o.horas, 0).toFixed(2) });
       filas.forEach(f => { f.inp.value = ""; }); pintarGen(); refrescarBarra(); bump(); return;
     }
@@ -189,7 +189,7 @@
       err.textContent = "";
       const sel = art.querySelector("[data-op].on"), o = sel ? p.opciones.find(x => x.k === sel.dataset.op) : p.opciones[0];
       const det = p.opciones.length > 1 ? ` (${o.label})` : "";
-      if (o.prev && o.prev.may) txt = txt.toLocaleUpperCase("es-MX");
+      txt = txt.toLocaleUpperCase("es-MX");   // los nombres se imprimen siempre en mayúsculas
       LIVAL.agregarPersonal({ id: p.id + "-" + Date.now().toString(36), tipo: p.id, name: `${p.nombre}${det} — ${p.personal.label.replace(/ \(.*/, "")}: "${txt}"`, resumen: `${o.label}: "${txt}"`, price: o.precio, horas: o.horas });
       inp.value = ""; vistaPrevia(art, p); pintarGen(); refrescarBarra(); bump(); return;
     }

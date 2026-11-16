@@ -276,6 +276,8 @@ body.abierto .nbar { z-index:70; }
 .vrow.agot { opacity:.55; } .vrow.agot .pr { font-size:.85rem; }
 .agot-msg { margin:14px 0 0; padding:12px 14px; border-radius:16px; background:#fde7e4; color:#8a2b1f; font-weight:700; }
 .prod.agotado .desde { color:#8a2b1f; font-weight:800; }
+.campo.may, #chLetrero, #chNombres input { text-transform:uppercase; }
+.campo.may::placeholder, #chLetrero::placeholder, #chNombres input::placeholder { text-transform:none; }
 .campo:focus-visible { border-color:var(--lav-d); outline-offset:1px; }
 .nombres { display:grid; gap:8px; }
 .nombres .n { display:flex; align-items:center; gap:10px; }
@@ -317,7 +319,7 @@ body.abierto .nbar { z-index:70; }
   <p>Querétaro · WhatsApp 442&nbsp;279&nbsp;1488</p>
 </footer>
 
-<script src="../assets/navidad-productos.js?v=20261115c"></script>
+<script src="../assets/navidad-productos.js?v=20261115d"></script>
 <script src="../assets/carrito.js?v=20261107a"></script>
 <script>
 const money = n => "$" + n.toLocaleString("es-MX");
@@ -391,8 +393,8 @@ body { padding-bottom: 90px; }
   }
   document.getElementById("chLista").addEventListener("click", e => { const b = e.target.closest("[data-q]"); if (!b) return; LIVAL.quitarPersonal(b.dataset.q); if (typeof cart !== "undefined") cart = LIVAL.leer(); lista(); });
   document.getElementById("chAdd").addEventListener("click", () => {
-    const letrero = document.getElementById("chLetrero").value.trim();
-    const nombres = [...document.querySelectorAll("#chNombres input")].map(i => i.value.trim());
+    const letrero = document.getElementById("chLetrero").value.trim().toLocaleUpperCase("es-MX");   // los nombres van siempre en mayúsculas
+    const nombres = [...document.querySelectorAll("#chNombres input")].map(i => i.value.trim().toLocaleUpperCase("es-MX"));
     const err = document.getElementById("chErr");
     if (!letrero) { err.textContent = "Escribe el texto del letrero."; return; }
     if (nombres.some(x => !x)) { err.textContent = "Llena el nombre de todas las botas."; return; }
@@ -439,7 +441,7 @@ body { padding-bottom: 90px; }
 </script>
 
 
-<script src="../assets/navidad-render.js?v=20261115c"></script>
+<script src="../assets/navidad-render.js?v=20261115d"></script>
 <script>
 (function () {
   function abrir(id) {
