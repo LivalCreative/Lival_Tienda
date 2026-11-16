@@ -10,7 +10,8 @@
   const regla = `<svg class="med-ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 15.5 15.5 3 21 8.5 8.5 21z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="m7 12 2 2m1-5 2 2m1-5 2 2" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>`;
   const NOTA = "Medidas aproximadas: cada pieza se imprime al momento y puede variar un poco.";
   function medidas(p) {
-    const con = p.opciones.filter(o => o.medida); if (!con.length) return "";
+    let con = p.opciones.filter(o => o.medida); if (!con.length) return "";
+    if (p.lote && p.lote.dis) con = p.lote.dis.map(([d, dn]) => ({ label: dn, medida: (con.find(o => o.d === d) || {}).medida })).filter(o => o.medida);
     const una = p.opciones.length === 1 || (con.length === p.opciones.length && new Set(con.map(o => o.medida)).size === 1);
     const cuerpo = una ? `<p class="med-uno">${esc(con[0].medida)}</p>`
       : `<dl>${con.map(o => `<div><dt>${esc(o.label)}</dt><dd>${esc(o.medida)}</dd></div>`).join("")}</dl>`;
@@ -28,7 +29,7 @@
     if (p.lote) {
       const L = p.lote, ops = p.opciones.map(o => `<option value="${o.k}">${esc(o.label)}</option>`).join("");
       det = `<div class="lbl">¿Cuántos?</div>
-        <div class="opts">${L.tam.map(([n, pr], i) => `<button type="button" class="opt${i ? "" : " on"}" data-lote="${n}">${n} ${n > 1 ? "adornos" : "adorno"} · ${money(pr)}</button>`).join("")}</div>
+        <div class="opts">${L.tam.map(([n, pr], i) => `<button type="button" class="opt${i ? "" : " on"}" data-lote="${n}">${n} ${pieza(p, n)} · ${money(pr)}</button>`).join("")}</div>
         <div data-filas></div>
         <div class="buy"><span class="price" data-precio>${money(L.tam[0][1])}</span><button type="button" class="btn add" data-addlote="${p.id}">Agregar al pedido</button></div>
         <p class="err" data-err></p>
@@ -77,15 +78,21 @@
     gal.addEventListener("scroll", marca, { passive: true }); marca();
   });
 
-  // Lote (mascotas): una fila por adorno con su diseño y el nombre.
+  // Lote (mascotas, aldea): una fila por pieza con su diseño (y color) y, si lleva, el nombre.
+  function pieza(p, n) { const w = (p.lote && p.lote.pieza) || ["adorno", "adornos"]; return n > 1 ? w[1] : w[0]; }
+  function opcionFila(p, f) {
+    const sel = f.querySelectorAll("select");
+    return p.lote.dis ? p.opciones.find(o => o.d === sel[0].value && o.c === sel[1].value) : p.opciones.find(o => o.k === sel[0].value);
+  }
   function pintarFilas(art, p, n) {
-    const box = art.querySelector("[data-filas]"), L = p.lote;
-    const prev = [...box.querySelectorAll(".lote-f")].map(f => [f.querySelector("select").value, f.querySelector("input").value]);
-    const ops = p.opciones.map(o => `<option value="${o.k}">${esc(o.label)}</option>`).join("");
-    box.innerHTML = Array.from({ length: n }, (_, i) => `<div class="lote-f">${n > 1 ? `<div class="lbl">Adorno ${i + 1}</div>` : `<div class="lbl">Diseño</div>`}
-      <select class="campo" data-lotesel>${ops}</select>
-      <input class="campo may" maxlength="${L.max}" placeholder="${esc(L.ph)}" aria-label="${esc(L.label)} ${i + 1}" autocomplete="off"></div>`).join("");
-    box.querySelectorAll(".lote-f").forEach((f, i) => { if (prev[i]) { f.querySelector("select").value = prev[i][0]; f.querySelector("input").value = prev[i][1]; } });
+    const box = art.querySelector("[data-filas]"), L = p.lote, W = pieza(p, 1);
+    const prev = [...box.querySelectorAll(".lote-f")].map(f => [...f.querySelectorAll("select, input")].map(x => x.value));
+    const sel = L.dis ? `<select class="campo" data-lotesel aria-label="Diseño">${L.dis.map(([d, dn]) => `<option value="${d}">${esc(dn)}</option>`).join("")}</select>
+      <select class="campo" data-lotesel aria-label="Color">${L.col.map(([c, cn]) => `<option value="${c}">${esc(cn)}</option>`).join("")}</select>`
+      : `<select class="campo" data-lotesel>${p.opciones.map(o => `<option value="${o.k}">${esc(o.label)}</option>`).join("")}</select>`;
+    box.innerHTML = Array.from({ length: n }, (_, i) => `<div class="lote-f">${n > 1 ? `<div class="lbl">${W[0].toUpperCase() + W.slice(1)} ${i + 1}</div>` : `<div class="lbl">Diseño</div>`}
+      ${sel}${L.sinNombre ? "" : `<input class="campo may" maxlength="${L.max}" placeholder="${esc(L.ph)}" aria-label="${esc(L.label)} ${i + 1}" autocomplete="off">`}</div>`).join("");
+    box.querySelectorAll(".lote-f").forEach((f, i) => { if (prev[i]) [...f.querySelectorAll("select, input")].forEach((x, j) => { if (prev[i][j] != null) x.value = prev[i][j]; }); });
     const pr = L.tam.find(t => t[0] === n); art.querySelector("[data-precio]").textContent = money(pr[1]);
   }
   function paqSel(art, p) { return [...art.querySelectorAll("[data-paq]")].map(x => p.opciones.find(o => o.k === x.value)); }
@@ -167,14 +174,14 @@
     const al = e.target.closest("button[data-addlote]");
     if (al) {
       const art = al.closest("article"), p = lista.find(x => x.id === al.dataset.addlote), err = art.querySelector("[data-err]");
-      const filas = [...art.querySelectorAll(".lote-f")].map(f => ({ o: p.opciones.find(o => o.k === f.querySelector("select").value), inp: f.querySelector("input") }));
-      const falta = filas.find(f => !f.inp.value.trim());
+      const filas = [...art.querySelectorAll(".lote-f")].map(f => ({ o: opcionFila(p, f), inp: f.querySelector("input") }));
+      const falta = filas.find(f => f.inp && !f.inp.value.trim());
       if (falta) { err.textContent = filas.length > 1 ? "Escribe el nombre de cada adorno." : "Escribe el nombre de tu mascota."; falta.inp.focus(); return; }
       err.textContent = "";
       const n = filas.length, precio = p.lote.tam.find(t => t[0] === n)[1];
-      const txt = filas.map(f => `${f.o.label}: "${f.inp.value.trim().toLocaleUpperCase("es-MX")}"`).join(" · ");
-      LIVAL.agregarPersonal({ id: p.id + "-" + Date.now().toString(36), tipo: p.id, name: `${p.nombre} — ${n} ${n > 1 ? "adornos" : "adorno"}: ${txt}`, resumen: txt, price: precio, horas: +filas.reduce((t, f) => t + f.o.horas, 0).toFixed(2) });
-      filas.forEach(f => { f.inp.value = ""; }); pintarGen(); refrescarBarra(); bump(); return;
+      const txt = filas.map(f => f.inp ? `${f.o.label}: "${f.inp.value.trim().toLocaleUpperCase("es-MX")}"` : f.o.label).join(" · ");
+      LIVAL.agregarPersonal({ id: p.id + "-" + Date.now().toString(36), tipo: p.id, name: `${p.nombre} — ${n} ${pieza(p, n)}: ${txt}`, resumen: txt, price: precio, horas: +filas.reduce((t, f) => t + f.o.horas, 0).toFixed(2) });
+      filas.forEach(f => { if (f.inp) f.inp.value = ""; }); pintarGen(); refrescarBarra(); bump(); return;
     }
     const op = e.target.closest("button[data-op]");
     if (op) { const art = op.closest("article"), p = lista.find(x => x.id === art.id); art.querySelectorAll("[data-op]").forEach(b => b.classList.toggle("on", b === op)); const o = p.opciones.find(x => x.k === op.dataset.op); art.querySelector("[data-precio]").textContent = money(o.precio); verFoto(art, o); if (p.personal) vistaPrevia(art, p); return; }
@@ -211,7 +218,7 @@
   });
   box.addEventListener("change", e => {
     const ls = e.target.closest("select[data-lotesel]");
-    if (ls) { const art = ls.closest("article"), p = lista.find(x => x.id === art.id); verFoto(art, p.opciones.find(o => o.k === ls.value)); return; }
+    if (ls) { const art = ls.closest("article"), p = lista.find(x => x.id === art.id); verFoto(art, opcionFila(p, ls.closest(".lote-f"))); return; }
     const s = e.target.closest("select[data-paq]"); if (!s) return;
     const art = s.closest("article"), p = lista.find(x => x.id === art.id);
     pintarPaq(art, p); verFoto(art, p.opciones.find(o => o.k === s.value));

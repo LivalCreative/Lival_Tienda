@@ -462,11 +462,31 @@ MASCOTA = {"id": "NVG-mascota", "mw": "793255,3541306", "nombre": "Adornos para 
            "lote": {"tam": [[1, 50], [3, 120]], "label": "Nombre", "ph": "Ej. Firulais", "max": 12}, "personal": None}
 out.insert([d["id"] for d in out].index("NVG-adorno-foto") + 1, MASCOTA)
 
+# Aldea de casitas de jengibre: el cliente escoge 1, 3 o 6 casitas, y el diseño y color de cada una (precios de Lilian: 1 × $99, 3 × $229, 6 × $419).
+# Horas = una casita (21.5 h las 6, con el soporte trasero repartido). Fotos propias de Lilian; rojo y verde aún no tiene foto de "dos picos" ni "dulce en el techo".
+_A = "../img/navidad/aldea-"
+ALDEA_DIS = [("alta", "Alta con ventana redonda", "16.1 × 21.2 cm"), ("picos", "Dos picos con moño en la puerta", "18.8 × 19.1 cm"),
+             ("rizos", "Techo de nieve con rizos", "16.2 × 16.8 cm"), ("torre", "Con torre", "21.2 × 18.8 cm"),
+             ("mono", "Moño en el techo", "18.8 × 17.8 cm"), ("menta", "Dulce de menta en el techo", "18.6 × 19.1 cm")]
+ALDEA_COL = [("rb", "Rojo y blanco"), ("rv", "Rosa y verde menta"), ("rve", "Rojo y verde")]
+_af = [(c, d) for c, _ in ALDEA_COL for d, _, _ in ALDEA_DIS if __import__("os").path.exists(f"img/navidad/aldea-{c}-{d}.jpg")]
+ALDEA = {"id": "NVG-aldea", "mw": "3484761", "nombre": "Aldea de casitas de jengibre", "badge": "Decoración",
+         "lead": "Casitas de jengibre llenas de dulces para armar tu propia aldea navideña en una repisa o una mesa.",
+         "bullets": ["1 casita por $99, 3 por $229 o la aldea completa de 6 por $419.", "Escoge el diseño y el color de cada una.", "Se paran solas con su soporte de atrás."],
+         "fotos": [_A + f"{c}-{d}.jpg" for c, d in _af],
+         "opciones": [{"k": f"{c}-{d}", "label": f"{dn} · {cn.lower()}", "d": d, "c": c, "precio": 99, "horas": 3.6, "gramos": 0, "mw": "3484761",
+                       **({"f": _af.index((c, d))} if (c, d) in _af else {})}
+                      for c, cn in ALDEA_COL for d, dn, _ in ALDEA_DIS],
+         "lote": {"tam": [[1, 99], [3, 229], [6, 419]], "sinNombre": True, "pieza": ["casita", "casitas"],
+                  "dis": [[d, dn] for d, dn, _ in ALDEA_DIS], "col": [[c, cn] for c, cn in ALDEA_COL]},
+         "personal": None, "_medidas": {dn: m for _, dn, m in ALDEA_DIS}}
+out.insert([d["id"] for d in out].index("NV2070704") + 1, ALDEA)
+
 # Categorías de la tienda (filtros arriba de la rejilla). Un producto puede estar en varias.
 # nombre = Personalizables · arbol = Esferas y adornos · deco = Decoración · cocina = Cocina y baño · ninos = Para niños
 CAT = {
  "NVG-adorno-nombre": "nombre arbol", "NVG-adorno-foto": "nombre arbol", "NV3485874": "nombre deco", "NVG-corona-texto": "nombre deco",
- "NVG-mascota": "nombre arbol", "NV817845": "nombre arbol", "NV3488535": "nombre deco", "NV2083881": "nombre arbol", "NVG-cuenta-regresiva": "deco ninos", "NVG-bandeja-santa": "cocina ninos",
+ "NVG-mascota": "nombre arbol", "NVG-aldea": "deco", "NV817845": "nombre arbol", "NV3488535": "nombre deco", "NV2083881": "nombre arbol", "NVG-cuenta-regresiva": "deco ninos", "NVG-bandeja-santa": "cocina ninos",
  "NVG-camara-santa": "ninos arbol deco", "NVG-porta-paneton": "cocina", "NVG-arbolitos": "deco", "NV14093": "deco", "NV2070704": "deco",
  "NV2087313": "deco ninos", "NV2027611": "deco", "NV3175033": "deco", "NV3337730": "deco", "NV3397234": "cocina", "NV3407142": "cocina",
  "NV2101416": "cocina", "NV2052441": "ninos", "NV1935739": "ninos", "NV3471108": "ninos", "NV1891706": "deco", "NV2078410": "deco",
@@ -530,6 +550,10 @@ MEDIDAS = {
  "Mano del Grinch para pared": {"*": "Aprox. 28-30 cm de alto × 15 cm de ancho × 13 cm de fondo"},
 }
 for d in out:
+    if "_medidas" in d:   # aldea: la medida va por diseño
+        dm = d.pop("_medidas")
+        for o in d["opciones"]: o["medida"] = dm[o["label"].split(" · ")[0]]
+        continue
     m = MEDIDAS.get(d["nombre"], {})
     for o in d["opciones"]:
         v = m.get(o["label"]) or m.get("*")

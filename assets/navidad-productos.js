@@ -814,6 +814,297 @@ window.NAVIDAD = [
   "cat": "deco"
  },
  {
+  "id": "NVG-aldea",
+  "mw": "3484761",
+  "nombre": "Aldea de casitas de jengibre",
+  "badge": "Decoración",
+  "lead": "Casitas de jengibre llenas de dulces para armar tu propia aldea navideña en una repisa o una mesa.",
+  "bullets": [
+   "1 casita por $99, 3 por $229 o la aldea completa de 6 por $419.",
+   "Escoge el diseño y el color de cada una.",
+   "Se paran solas con su soporte de atrás."
+  ],
+  "fotos": [
+   "../img/navidad/aldea-rb-alta.jpg",
+   "../img/navidad/aldea-rb-picos.jpg",
+   "../img/navidad/aldea-rb-rizos.jpg",
+   "../img/navidad/aldea-rb-torre.jpg",
+   "../img/navidad/aldea-rb-mono.jpg",
+   "../img/navidad/aldea-rb-menta.jpg",
+   "../img/navidad/aldea-rv-alta.jpg",
+   "../img/navidad/aldea-rv-picos.jpg",
+   "../img/navidad/aldea-rv-rizos.jpg",
+   "../img/navidad/aldea-rv-torre.jpg",
+   "../img/navidad/aldea-rv-mono.jpg",
+   "../img/navidad/aldea-rv-menta.jpg",
+   "../img/navidad/aldea-rve-alta.jpg",
+   "../img/navidad/aldea-rve-rizos.jpg",
+   "../img/navidad/aldea-rve-torre.jpg",
+   "../img/navidad/aldea-rve-mono.jpg"
+  ],
+  "opciones": [
+   {
+    "k": "rb-alta",
+    "label": "Alta con ventana redonda · rojo y blanco",
+    "d": "alta",
+    "c": "rb",
+    "precio": 99,
+    "horas": 3.6,
+    "mw": "3484761",
+    "f": 0,
+    "medida": "16.1 × 21.2 cm"
+   },
+   {
+    "k": "rb-picos",
+    "label": "Dos picos con moño en la puerta · rojo y blanco",
+    "d": "picos",
+    "c": "rb",
+    "precio": 99,
+    "horas": 3.6,
+    "mw": "3484761",
+    "f": 1,
+    "medida": "18.8 × 19.1 cm"
+   },
+   {
+    "k": "rb-rizos",
+    "label": "Techo de nieve con rizos · rojo y blanco",
+    "d": "rizos",
+    "c": "rb",
+    "precio": 99,
+    "horas": 3.6,
+    "mw": "3484761",
+    "f": 2,
+    "medida": "16.2 × 16.8 cm"
+   },
+   {
+    "k": "rb-torre",
+    "label": "Con torre · rojo y blanco",
+    "d": "torre",
+    "c": "rb",
+    "precio": 99,
+    "horas": 3.6,
+    "mw": "3484761",
+    "f": 3,
+    "medida": "21.2 × 18.8 cm"
+   },
+   {
+    "k": "rb-mono",
+    "label": "Moño en el techo · rojo y blanco",
+    "d": "mono",
+    "c": "rb",
+    "precio": 99,
+    "horas": 3.6,
+    "mw": "3484761",
+    "f": 4,
+    "medida": "18.8 × 17.8 cm"
+   },
+   {
+    "k": "rb-menta",
+    "label": "Dulce de menta en el techo · rojo y blanco",
+    "d": "menta",
+    "c": "rb",
+    "precio": 99,
+    "horas": 3.6,
+    "mw": "3484761",
+    "f": 5,
+    "medida": "18.6 × 19.1 cm"
+   },
+   {
+    "k": "rv-alta",
+    "label": "Alta con ventana redonda · rosa y verde menta",
+    "d": "alta",
+    "c": "rv",
+    "precio": 99,
+    "horas": 3.6,
+    "mw": "3484761",
+    "f": 6,
+    "medida": "16.1 × 21.2 cm"
+   },
+   {
+    "k": "rv-picos",
+    "label": "Dos picos con moño en la puerta · rosa y verde menta",
+    "d": "picos",
+    "c": "rv",
+    "precio": 99,
+    "horas": 3.6,
+    "mw": "3484761",
+    "f": 7,
+    "medida": "18.8 × 19.1 cm"
+   },
+   {
+    "k": "rv-rizos",
+    "label": "Techo de nieve con rizos · rosa y verde menta",
+    "d": "rizos",
+    "c": "rv",
+    "precio": 99,
+    "horas": 3.6,
+    "mw": "3484761",
+    "f": 8,
+    "medida": "16.2 × 16.8 cm"
+   },
+   {
+    "k": "rv-torre",
+    "label": "Con torre · rosa y verde menta",
+    "d": "torre",
+    "c": "rv",
+    "precio": 99,
+    "horas": 3.6,
+    "mw": "3484761",
+    "f": 9,
+    "medida": "21.2 × 18.8 cm"
+   },
+   {
+    "k": "rv-mono",
+    "label": "Moño en el techo · rosa y verde menta",
+    "d": "mono",
+    "c": "rv",
+    "precio": 99,
+    "horas": 3.6,
+    "mw": "3484761",
+    "f": 10,
+    "medida": "18.8 × 17.8 cm"
+   },
+   {
+    "k": "rv-menta",
+    "label": "Dulce de menta en el techo · rosa y verde menta",
+    "d": "menta",
+    "c": "rv",
+    "precio": 99,
+    "horas": 3.6,
+    "mw": "3484761",
+    "f": 11,
+    "medida": "18.6 × 19.1 cm"
+   },
+   {
+    "k": "rve-alta",
+    "label": "Alta con ventana redonda · rojo y verde",
+    "d": "alta",
+    "c": "rve",
+    "precio": 99,
+    "horas": 3.6,
+    "mw": "3484761",
+    "f": 12,
+    "medida": "16.1 × 21.2 cm"
+   },
+   {
+    "k": "rve-picos",
+    "label": "Dos picos con moño en la puerta · rojo y verde",
+    "d": "picos",
+    "c": "rve",
+    "precio": 99,
+    "horas": 3.6,
+    "mw": "3484761",
+    "medida": "18.8 × 19.1 cm"
+   },
+   {
+    "k": "rve-rizos",
+    "label": "Techo de nieve con rizos · rojo y verde",
+    "d": "rizos",
+    "c": "rve",
+    "precio": 99,
+    "horas": 3.6,
+    "mw": "3484761",
+    "f": 13,
+    "medida": "16.2 × 16.8 cm"
+   },
+   {
+    "k": "rve-torre",
+    "label": "Con torre · rojo y verde",
+    "d": "torre",
+    "c": "rve",
+    "precio": 99,
+    "horas": 3.6,
+    "mw": "3484761",
+    "f": 14,
+    "medida": "21.2 × 18.8 cm"
+   },
+   {
+    "k": "rve-mono",
+    "label": "Moño en el techo · rojo y verde",
+    "d": "mono",
+    "c": "rve",
+    "precio": 99,
+    "horas": 3.6,
+    "mw": "3484761",
+    "f": 15,
+    "medida": "18.8 × 17.8 cm"
+   },
+   {
+    "k": "rve-menta",
+    "label": "Dulce de menta en el techo · rojo y verde",
+    "d": "menta",
+    "c": "rve",
+    "precio": 99,
+    "horas": 3.6,
+    "mw": "3484761",
+    "medida": "18.6 × 19.1 cm"
+   }
+  ],
+  "lote": {
+   "tam": [
+    [
+     1,
+     99
+    ],
+    [
+     3,
+     229
+    ],
+    [
+     6,
+     419
+    ]
+   ],
+   "sinNombre": true,
+   "pieza": [
+    "casita",
+    "casitas"
+   ],
+   "dis": [
+    [
+     "alta",
+     "Alta con ventana redonda"
+    ],
+    [
+     "picos",
+     "Dos picos con moño en la puerta"
+    ],
+    [
+     "rizos",
+     "Techo de nieve con rizos"
+    ],
+    [
+     "torre",
+     "Con torre"
+    ],
+    [
+     "mono",
+     "Moño en el techo"
+    ],
+    [
+     "menta",
+     "Dulce de menta en el techo"
+    ]
+   ],
+   "col": [
+    [
+     "rb",
+     "Rojo y blanco"
+    ],
+    [
+     "rv",
+     "Rosa y verde menta"
+    ],
+    [
+     "rve",
+     "Rojo y verde"
+    ]
+   ]
+  },
+  "personal": null,
+  "cat": "deco"
+ },
+ {
   "id": "NV2087313",
   "mw": "2087313",
   "nombre": "Pueblito de jengibre para armar",
