@@ -182,6 +182,15 @@ details.opcional { border: 2px solid #e6dcc6; border-radius: 20px; padding: 0 16
 details.opcional[open] { padding-bottom: 16px; display: grid; gap: 14px; }
 details.opcional summary { min-height: 52px; display: flex; align-items: center; font-weight: 800; cursor: pointer; color: var(--pine); }
 details.opcional summary span { font-weight: 400; color: var(--muted); margin-left: 6px; }
+details.banco-det { border-color: var(--gold, #c9a227); background: var(--gold-l, #fff6dc); }
+details.banco-det summary { gap: 12px; padding: 10px 0; list-style: none; }
+details.banco-det summary::-webkit-details-marker { display: none; }
+details.banco-det summary .ico { margin: 0; font-size: 1.6rem; color: inherit; }
+details.banco-det summary .t { margin: 0; flex: 1; font-weight: 800; color: var(--pine); line-height: 1.25; }
+details.banco-det summary .t small { display: block; font-weight: 700; font-size: var(--t5); color: var(--berry, #b3261e); margin-top: 2px; }
+details.banco-det summary .flecha { margin: 0; width: 40px; height: 40px; flex: none; border-radius: 50%; background: var(--pine); color: #fff; display: grid; place-items: center; font-size: 1.1rem; transition: transform .25s; }
+details.banco-det[open] summary .flecha { transform: rotate(180deg); }
+details.banco-det[open] summary .t small { display: none; }
 
 .solo-pedido .hero, .solo-pedido nav.pills, .solo-pedido #paquete, .solo-pedido #cats, .solo-pedido #bar, .solo-pedido #como-duende, .solo-pedido .cred-duende { display: none !important; }
 .solo-pedido { padding-bottom: 24px; }
@@ -284,6 +293,10 @@ details.opcional summary span { font-weight: 400; color: var(--muted); margin-le
         <textarea id="fNote" name="nota" autocomplete="off" placeholder="Colores, idioma de los letreros, etc…"></textarea>
       </div>
       </details>
+      <details class="opcional banco-det" id="bankDet">
+        <summary><span class="ico" aria-hidden="true">🏦</span><span class="t">Datos para transferir el anticipo<small>Toca aquí para ver la cuenta y la CLABE</small></span><span class="flecha" aria-hidden="true">▾</span></summary>
+        <div class="bank" id="bankBox"></div>
+      </details>
       <div id="err" class="error" role="alert"></div>
       <div class="btns">
         <a class="btn wa" id="waBtn" href="#pedido" target="_blank" rel="noopener">Enviar mi pedido por WhatsApp</a>
@@ -291,10 +304,6 @@ details.opcional summary span { font-weight: 400; color: var(--muted); margin-le
       </div>
       <p class="msg" id="waInfo"></p>
       <div class="aviso"><b>¿Qué sigue?</b> Te contestamos por WhatsApp para acordar fecha, hora y lugar de entrega. Tu pedido entra a producción cuando recibimos el anticipo por transferencia.</div>
-      <details class="opcional" id="bankDet">
-        <summary>Datos para transferir el anticipo</summary>
-        <div class="bank" id="bankBox"></div>
-      </details>
       <div class="gracias" id="gracias" hidden role="status"><b>¡Gracias por tu pedido!</b><br>Te contestamos por WhatsApp para acordar la entrega. Cuando transfieras el anticipo, manda tu comprobante en el mismo chat.</div>
     </form>
   </section>
@@ -462,7 +471,7 @@ function metodo() { return "Transferencia"; }
 function bankText() {
   const fila = (lbl, num, txt) => `<div class="clabe"><div><small>${lbl}</small><span>${txt}</span></div>
     <button type="button" class="btn clabe-btn" data-copy="${num}">Copiar</button></div>`;
-  document.getElementById("bankBox").innerHTML = `<b>Datos para transferir el anticipo</b><br>${DATOS_BANCO}
+  document.getElementById("bankBox").innerHTML = `${DATOS_BANCO}
     <ol class="pasos">
       <li>Si tu banco es <b>BBVA</b>, copia el <b>número de cuenta</b>. Si es <b>otro banco</b>, copia la <b>CLABE</b>.</li>
       <li>Abre la app de tu banco, pega el número y transfiere el monto del <b>anticipo</b>.</li>
