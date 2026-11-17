@@ -128,6 +128,14 @@ input:focus-visible, select:focus-visible, textarea:focus-visible { border-color
 select:disabled { background: #f3efe6; color: var(--muted); }
 .summary { background: var(--cream); border-radius: 20px; padding: 14px 16px; display: grid; gap: 6px; font-variant-numeric: tabular-nums; }
 .summary .line { display: flex; justify-content: space-between; gap: 12px; }
+.summary .item-l { padding: 8px 0; border-bottom: 1px solid #fff; }
+.summary .item-l:last-of-type { border-bottom: 0; }
+.summary .ctl { display: flex; align-items: center; justify-content: space-between; gap: 10px; margin-top: 6px; }
+.summary .ctl .qty { background: #fff; }
+.summary .ctl .qty button { width: 40px; height: 40px; font-size: 1.15rem; }
+.summary .ctl .qty span { min-width: 22px; text-align: center; font-weight: 800; }
+.quitar { min-height: 40px; padding: 0 14px; border: 2px solid var(--berry, #b3261e); border-radius: 999px; background: #fff; color: var(--berry, #b3261e); font-weight: 800; cursor: pointer; }
+.quitar:active { transform: scale(.95); }
 .summary .tot { font-weight: 800; font-size: var(--t4); padding-top: 8px; margin-top: 4px; border-top: 2px solid #fff; }
 .summary .empty { color: var(--muted); }
 .pay { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; }
@@ -381,6 +389,15 @@ LIVAL.personales().forEach(p => { PRODUCTS[p.id] = { name: p.name, price: p.pric
 const qty = LIVAL.leer();
 Object.keys(qty).forEach(k => { if (!PRODUCTS[k] || !(qty[k] > 0)) delete qty[k]; });
 LIVAL.personales().forEach(p => { qty[p.id] = 1; });
+// Quitar un producto del pedido desde el resumen (los personalizados se borran también de la lista de personalizados)
+const PERSONAL = new Set(LIVAL.personales().map(p => p.id));
+function esc(t) { return String(t).replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c])); }
+document.body.addEventListener("click", e => {
+  const b = e.target.closest("button[data-quitar]"); if (!b) return;
+  const id = b.dataset.quitar;
+  if (PERSONAL.has(id)) { LIVAL.quitarPersonal(id); PERSONAL.delete(id); }
+  qty[id] = 0; update();
+});
 const money = n => "$" + n.toLocaleString("es-MX", { maximumFractionDigits: 0 });
 
 function howBlock(id) {
@@ -430,7 +447,9 @@ function update() {
     const card = document.querySelector(`.item[data-id="${id}"]`); if (card) card.classList.toggle("selected", (qty[id] || 0) > 0);
   });
   document.getElementById("summary").innerHTML = t.lines.length
-    ? t.lines.map(l => `<div class="line"><span>${l.n} × ${l.name}</span><span>${money(l.sub)}</span></div>`).join("") + (rc ? `<div class="line" style="color:var(--muted)"><span>${rc}</span></div>` : "") + `<div class="line tot"><span>Total</span><span>${money(t.total)}</span></div>`
+    ? t.lines.map(l => `<div class="item-l"><div class="line"><span>${l.n} × ${l.name}</span><span>${money(l.sub)}</span></div>
+        <div class="ctl">${PERSONAL.has(l.id) ? "<span></span>" : `<div class="qty"><button type="button" aria-label="Quitar uno de ${esc(l.name)}" data-act="-" data-id="${l.id}">−</button><span>${l.n}</span><button type="button" aria-label="Agregar uno de ${esc(l.name)}" data-act="+" data-id="${l.id}">+</button></div>`}
+        <button type="button" class="quitar" data-quitar="${l.id}" aria-label="Quitar ${esc(l.name)} del pedido">Quitar</button></div></div>`).join("") + (rc ? `<div class="line" style="color:var(--muted)"><span>${rc}</span></div>` : "") + `<div class="line tot"><span>Total</span><span>${money(t.total)}</span></div>`
     : `<div class="empty">Tu carrito está vacío. Elige tus regalos en <a href="../navidad/">Navidad</a>.</div>`;
   document.getElementById("pTotal").textContent = money(t.total);
   document.getElementById("pAnt").textContent = money(t.ant);
