@@ -482,11 +482,29 @@ ALDEA = {"id": "NVG-aldea", "mw": "3484761", "nombre": "Aldea de casitas de jeng
          "personal": None, "_medidas": {dn: m for _, dn, m in ALDEA_DIS}}
 out.insert([d["id"] for d in out].index("NV2070704") + 1, ALDEA)
 
+# Peluches navideños con nombre (no son impresión 3D: horas 0, no cuentan para el cupo). Texto y precios de Lilian.
+# Fotos de Lilian: dos ya traen su logo de marca de agua; la foto real lleva la marca de agua de la tienda.
+_P = "../img/navidad/"
+PELUCHES = {"id": "NVG-peluches", "nombre": "Peluches navideños con nombre", "badge": "Personalizado",
+            "lead": "¡Vuelven los favoritos de cada Navidad! Después de más de 300 peluches vendidos en los últimos 4 años, llega nuevamente la colección más tierna y pedida de la temporada.",
+            "bullets": ["Jenjis 22 cm: suavecitos y perfectos para fotos, regalitos o decoración.",
+                        "Renos 22 cm: incluyen certificado de adopción para hacer el momento aún más especial.",
+                        "Grinch 30 cm: el villano más amado convertido en tu peluche personalizado.",
+                        "Todos se personalizan con vinil textil duradero y hermoso.",
+                        "Ideales para regalos escolares, intercambios, detalles navideños y sesiones de fotos. ¡Se van rapidísimo todos los años!"],
+            "fotos": [_P + "peluches-coleccion.jpg", _P + "peluche-grinch.jpg", _P + "peluche-grinch-real.jpg"],
+            "opciones": [{"k": "jenji", "label": "Jenji 22 cm", "precio": 170, "horas": 0, "gramos": 0, "f": 0, "medida": "22 cm"},
+                         {"k": "reno", "label": "Reno 22 cm", "sub": "Incluye certificado de adopción", "precio": 170, "horas": 0, "gramos": 0, "f": 0, "medida": "22 cm"},
+                         {"k": "grinch", "label": "Grinch 30 cm", "precio": 190, "horas": 0, "gramos": 0, "f": 1, "medida": "30 cm"}],
+            "personal": {"label": "Nombre", "ph": "Ej. Shadya", "max": 12}, "_medidas": None}
+del PELUCHES["_medidas"]
+out.insert([d["id"] for d in out].index("NVG-mascota") + 1, PELUCHES)
+
 # Categorías de la tienda (filtros arriba de la rejilla). Un producto puede estar en varias.
 # nombre = Personalizables · arbol = Esferas y adornos · deco = Decoración · cocina = Cocina y baño · ninos = Para niños
 CAT = {
  "NVG-adorno-nombre": "nombre arbol", "NVG-adorno-foto": "nombre arbol", "NV3485874": "nombre deco", "NVG-corona-texto": "nombre deco",
- "NVG-mascota": "nombre arbol", "NVG-aldea": "deco", "NV817845": "nombre arbol", "NV3488535": "nombre deco", "NV2083881": "nombre arbol", "NVG-cuenta-regresiva": "deco ninos", "NVG-bandeja-santa": "cocina ninos",
+ "NVG-mascota": "nombre arbol", "NVG-aldea": "deco", "NVG-peluches": "nombre ninos", "NV817845": "nombre arbol", "NV3488535": "nombre deco", "NV2083881": "nombre arbol", "NVG-cuenta-regresiva": "deco ninos", "NVG-bandeja-santa": "cocina ninos",
  "NVG-camara-santa": "ninos arbol deco", "NVG-porta-paneton": "cocina", "NVG-arbolitos": "deco", "NV14093": "deco", "NV2070704": "deco",
  "NV2087313": "deco ninos", "NV2027611": "deco", "NV3175033": "deco", "NV3337730": "deco", "NV3397234": "cocina", "NV3407142": "cocina",
  "NV2101416": "cocina", "NV2052441": "ninos", "NV1935739": "ninos", "NV3471108": "ninos", "NV1891706": "deco", "NV2078410": "deco",
