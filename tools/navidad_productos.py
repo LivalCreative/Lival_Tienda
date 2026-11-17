@@ -496,7 +496,7 @@ PELUCHES = {"id": "NVG-peluches", "nombre": "Peluches navideños con nombre", "b
             "opciones": [{"k": "jenji", "label": "Jenji 22 cm", "precio": 170, "horas": 0, "gramos": 0, "f": 0, "medida": "22 cm"},
                          {"k": "reno", "label": "Reno 22 cm", "sub": "Incluye certificado de adopción", "precio": 170, "horas": 0, "gramos": 0, "f": 0, "medida": "22 cm"},
                          {"k": "grinch", "label": "Grinch 30 cm", "precio": 190, "horas": 0, "gramos": 0, "f": 1, "medida": "30 cm"}],
-            "personal": {"label": "Nombre", "ph": "Ej. Shadya", "max": 12}, "_medidas": None}
+            "personal": {"label": "Nombre", "ph": "Ej. Shadya", "max": 12, "tal": True}, "_medidas": None}
 del PELUCHES["_medidas"]
 out.insert([d["id"] for d in out].index("NVG-mascota") + 1, PELUCHES)
 

@@ -364,7 +364,8 @@ window.NAVIDAD = [
   "personal": {
    "label": "Nombre",
    "ph": "Ej. Shadya",
-   "max": 12
+   "max": 12,
+   "tal": true
   },
   "cat": "nombre ninos"
  },

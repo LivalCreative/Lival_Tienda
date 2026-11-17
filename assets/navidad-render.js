@@ -37,7 +37,7 @@
     } else if (p.personal) {
       det = `${p.opciones.length > 1 ? `<div class="lbl">Elige</div><div class="opts">${p.opciones.map((o, i) => `<button type="button" class="opt${i ? "" : " on"}" data-op="${o.k}">${esc(o.label)}${new Set(p.opciones.map(x => x.precio)).size > 1 ? " · " + money(o.precio) : ""}</button>`).join("")}</div>` : ""}
         <label class="lbl" for="t-${p.id}">${esc(p.personal.label)}</label>
-        <input class="campo may" id="t-${p.id}" maxlength="${p.personal.max}" placeholder="${esc(p.personal.ph)}" autocomplete="off">
+        <input class="campo${p.personal.tal ? "" : " may"}" id="t-${p.id}" maxlength="${p.personal.max}" placeholder="${esc(p.personal.ph)}" autocomplete="off">
         ${p.opciones.some(o => o.prev) ? `<div class="prevmini" data-hintprev${p.opciones[0].prev ? "" : " hidden"}><img alt="Así queda tu nombre" hidden><p class="hint">Escribe el nombre y aquí ves cómo queda.</p></div>` : ""}
         <div class="buy"><span class="price" data-precio>${money(p.opciones[0].precio)}</span><button type="button" class="btn add" data-addp="${p.id}">Agregar al pedido</button></div>
         <p class="err" data-err></p>
@@ -196,7 +196,7 @@
       err.textContent = "";
       const sel = art.querySelector("[data-op].on"), o = sel ? p.opciones.find(x => x.k === sel.dataset.op) : p.opciones[0];
       const det = p.opciones.length > 1 ? ` (${o.label})` : "";
-      txt = txt.toLocaleUpperCase("es-MX");   // los nombres se imprimen siempre en mayúsculas
+      if (!p.personal.tal) txt = txt.toLocaleUpperCase("es-MX");   // los nombres van en mayúsculas (menos en los peluches: tal como lo escribe el cliente)
       LIVAL.agregarPersonal({ id: p.id + "-" + Date.now().toString(36), tipo: p.id, name: `${p.nombre}${det} — ${p.personal.label.replace(/ \(.*/, "")}: "${txt}"`, resumen: `${o.label}: "${txt}"`, price: o.precio, horas: o.horas });
       inp.value = ""; vistaPrevia(art, p); pintarGen(); refrescarBarra(); bump(); return;
     }
