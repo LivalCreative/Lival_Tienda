@@ -491,7 +491,7 @@ PELUCHES = {"id": "NVG-peluches", "nombre": "Peluches navideños con nombre", "b
                         "Grinch 30 cm: el villano más amado convertido en tu peluche personalizado.",
                         "Todos se personalizan con vinil textil duradero y hermoso.",
                         "Ideales para regalos escolares, intercambios, detalles navideños y sesiones de fotos. ¡Se van rapidísimo todos los años!"],
-            "fotos": [_P + "peluche-grinch.jpg", _P + "peluches-coleccion.jpg", _P + "peluche-grinch-real.jpg"],
+            "fotos": [_P + "peluche-grinch.jpg", _P + "peluche-reno.jpg", _P + "peluches-coleccion.jpg", _P + "peluche-grinch-real.jpg"],
             "opciones": [{"k": "reno", "label": "Reno 22 cm", "sub": "Incluye certificado de adopción", "precio": 130, "horas": 0, "gramos": 0, "f": 1, "medida": "22 cm"},
                          {"k": "grinch", "label": "Grinch 30 cm", "precio": 190, "horas": 0, "gramos": 0, "f": 0, "medida": "30 cm"}],
             "personal": {"label": "Nombre", "ph": "Ej. Shadya", "max": 12, "tal": True}, "_medidas": None}

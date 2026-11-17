@@ -331,6 +331,7 @@ window.NAVIDAD = [
   ],
   "fotos": [
    "../img/navidad/peluche-grinch.jpg",
+   "../img/navidad/peluche-reno.jpg",
    "../img/navidad/peluches-coleccion.jpg",
    "../img/navidad/peluche-grinch-real.jpg"
   ],
