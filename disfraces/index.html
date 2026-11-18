@@ -64,6 +64,11 @@
 .nota-dz { color: var(--gris); font-size: .95rem; margin-top: 18px; }
 .disf-w { position: relative; }
 .disf-w .disf { width: 100%; height: 100%; }
+.disf .chk { font-size: 1rem; }
+.menos { position: absolute; bottom: 44px; right: 8px; z-index: 2; width: 44px; height: 44px; border: 3px solid var(--rojo); border-radius: 50%; background: #fff; color: var(--rojo); font: 900 1.4rem/1 sans-serif; cursor: pointer; display: grid; place-items: center; box-shadow: 0 2px 8px rgba(0,0,0,.18); }
+.menos[hidden] { display: none; }
+.ver-btns { display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; }
+.btn-dz.claro { background: #fff; color: var(--rojo); border: 2px solid var(--rojo); }
 .ver { position: absolute; top: 8px; left: 8px; z-index: 2; min-height: 34px; border: 0; border-radius: 999px; padding: 0 12px; background: rgba(18,58,44,.88); color: #fff; font: inherit; font-weight: 800; font-size: .9rem; cursor: pointer; }
 .ver-dz { border: 0; border-radius: 22px; padding: 14px; width: min(94vw, 560px); max-height: 92vh; background: #fff9f5; box-shadow: 0 20px 60px rgba(0,0,0,.35); text-align: center; }
 .ver-dz::backdrop { background: rgba(18,30,24,.7); }
@@ -107,7 +112,7 @@
     </div>
 
     <h2 id="t-elige">2. Elige tus disfraces</h2>
-    <p class="sub" id="instr">Toca los 3 disfraces que quieres.</p>
+    <p class="sub" id="instr">Toca los 3 disfraces que quieres. Puedes repetir el mismo.</p>
     <div class="disfs" id="disfs"></div>
 
     <h2>Frosty, edición especial</h2>
@@ -129,7 +134,7 @@
   <button type="button" class="cerrar" id="verCerrar" aria-label="Cerrar">✕</button>
   <img id="verImg" alt="">
   <h3 id="verNom"></h3>
-  <button type="button" class="btn-dz" id="verElegir">Elegir este disfraz</button>
+  <div class="ver-btns"><button type="button" class="btn-dz claro" id="verQuitar" hidden>Quitar uno</button><button type="button" class="btn-dz" id="verElegir">Elegir este disfraz</button></div>
 </dialog>
 
 <div class="barra-dz" role="region" aria-label="Tu paquete">
@@ -165,16 +170,20 @@
   const FROSTY = { id: "frosty", nombre: "Frosty, muñeco de nieve", horas: 4.5, precio: 130, foto: P + "frosty.jpg" };
   const PAQ = { 3: 180, 6: 330, 9: 465, 13: 580 };
 
-  let n = 3; const sel = new Set();
+  // picks: los disfraces elegidos en orden; se puede repetir el mismo (ej. 3 abejitas)
+  let n = 3, picks = [];
+  const cuantos = id => picks.filter(x => x === id).length;
   const box = document.getElementById("disfs"), cuenta = document.getElementById("cuenta"), btn = document.getElementById("addPaq"), instr = document.getElementById("instr");
   document.getElementById("imgFrosty").src = FROSTY.foto;
 
   function elegir(id) {
     if (n === 13) return false;
-    if (sel.has(id)) sel.delete(id);
-    else if (sel.size >= n) { aviso(`Ya elegiste ${n}. Quita uno o cambia a un paquete más grande.`); return false; }
-    else sel.add(id);
-    pinta(); return true;
+    if (picks.length >= n) { aviso(`Ya elegiste ${n}. Quita uno con el botón − o cambia a un paquete más grande.`); return false; }
+    picks.push(id); pinta(); return true;
+  }
+  function quitarUno(id) {
+    const i = picks.lastIndexOf(id); if (i < 0) return false;
+    picks.splice(i, 1); pinta(); return true;
   }
 
   DISFRACES.forEach(d => {
@@ -183,14 +192,17 @@
     b.type = "button"; b.className = "disf"; b.dataset.id = d.id; b.setAttribute("aria-pressed", "false");
     b.innerHTML = `<img src="${d.foto}" alt="Duende con disfraz de ${d.nombre.toLowerCase()}" loading="lazy" width="600" height="600"><span class="chk" aria-hidden="true">✓</span><b>${d.nombre}</b>`;
     b.addEventListener("click", () => elegir(d.id));
+    const m = document.createElement("button");
+    m.type = "button"; m.className = "menos"; m.dataset.menos = d.id; m.hidden = true; m.setAttribute("aria-label", "Quitar un " + d.nombre); m.textContent = "−";
+    m.addEventListener("click", () => quitarUno(d.id));
     const v = document.createElement("button");
     v.type = "button"; v.className = "ver"; v.setAttribute("aria-label", "Ver foto grande: " + d.nombre); v.innerHTML = "<span aria-hidden=\"true\">⤢</span> Ver";
     v.addEventListener("click", () => abrir(d));
-    w.append(b, v); box.appendChild(w);
+    w.append(b, v, m); box.appendChild(w);
   });
 
   // Foto grande para ver bien cada disfraz
-  const dlg = document.getElementById("verDz"), dImg = document.getElementById("verImg"), dNom = document.getElementById("verNom"), dBtn = document.getElementById("verElegir");
+  const dlg = document.getElementById("verDz"), dImg = document.getElementById("verImg"), dNom = document.getElementById("verNom"), dBtn = document.getElementById("verElegir"), dQuitar = document.getElementById("verQuitar");
   let actual = null;
   function abrir(d) {
     actual = d; dImg.src = d.foto; dImg.alt = "Duende con disfraz de " + d.nombre.toLowerCase(); dNom.textContent = d.nombre;
@@ -199,12 +211,15 @@
   }
   function pintaVer() {
     if (!actual) return;
-    if (actual.id === "frosty") { dBtn.hidden = true; return; }
+    if (actual.id === "frosty") { dBtn.hidden = true; dQuitar.hidden = true; return; }
     dBtn.hidden = false;
+    const c = cuantos(actual.id);
+    dQuitar.hidden = n === 13 || !c;
     if (n === 13) { dBtn.textContent = "Incluido en la colección completa"; dBtn.disabled = true; }
-    else { dBtn.disabled = false; dBtn.textContent = sel.has(actual.id) ? "Quitar de mi paquete" : "Elegir este disfraz"; }
+    else { dBtn.disabled = false; dBtn.textContent = c ? `Agregar otro (llevas ${c})` : "Elegir este disfraz"; }
   }
   dBtn.addEventListener("click", () => { if (elegir(actual.id)) dlg.close(); });
+  dQuitar.addEventListener("click", () => { quitarUno(actual.id); });
   document.getElementById("verCerrar").addEventListener("click", () => dlg.close());
   dlg.addEventListener("click", e => { if (e.target === dlg) dlg.close(); });
   document.getElementById("imgFrosty").addEventListener("click", () => abrir(FROSTY));
@@ -212,22 +227,26 @@
   document.querySelectorAll("[data-paq]").forEach(p => p.addEventListener("click", () => {
     n = +p.dataset.paq;
     document.querySelectorAll("[data-paq]").forEach(x => x.setAttribute("aria-pressed", x === p));
-    if (n === 13) DISFRACES.forEach(d => sel.add(d.id));
-    else if (sel.size > n || sel.size === DISFRACES.length) { [...sel].slice(n).forEach(id => sel.delete(id)); }
+    if (picks.length > n) picks = picks.slice(0, n);
     pinta();
     document.getElementById("t-elige").scrollIntoView({ behavior: "smooth", block: "start" });
   }));
 
   function pinta() {
-    box.querySelectorAll(".disf").forEach(b => { b.setAttribute("aria-pressed", sel.has(b.dataset.id)); b.disabled = n === 13; });
+    box.querySelectorAll(".disf").forEach(b => {
+      const c = n === 13 ? 1 : cuantos(b.dataset.id);
+      b.setAttribute("aria-pressed", c > 0); b.disabled = n === 13;
+      b.querySelector(".chk").textContent = c > 1 ? "×" + c : "✓";
+    });
+    box.querySelectorAll("[data-menos]").forEach(m => { m.hidden = n === 13 || !cuantos(m.dataset.menos); });
     if (n === 13) {
       instr.textContent = "La colección completa trae los 12 disfraces y además a Frosty.";
       cuenta.innerHTML = `Colección completa (13)<small>Incluye a Frosty · $${PAQ[13]}</small>`;
       btn.disabled = false;
     } else {
-      instr.textContent = `Toca los ${n} disfraces que quieres.`;
-      const falta = n - sel.size;
-      cuenta.innerHTML = `Llevas ${sel.size} de ${n}<small>${falta ? `Te ${falta === 1 ? "falta 1" : "faltan " + falta} · ` : "¡Listo! · "}Paquete de ${n} · $${PAQ[n]}</small>`;
+      instr.textContent = `Toca los ${n} disfraces que quieres. Puedes repetir el mismo: tócalo otra vez para agregar otro.`;
+      const falta = n - picks.length;
+      cuenta.innerHTML = `Llevas ${picks.length} de ${n}<small>${falta ? `Te ${falta === 1 ? "falta 1" : "faltan " + falta} · ` : "¡Listo! · "}Paquete de ${n} · $${PAQ[n]}</small>`;
       btn.disabled = falta !== 0;
     }
     btn.textContent = btn.disabled ? "Agregar al pedido" : `Agregar · $${PAQ[n]}`;
@@ -246,8 +265,9 @@
   }
 
   btn.addEventListener("click", () => {
-    const lista = n === 13 ? DISFRACES.concat(FROSTY) : DISFRACES.filter(d => sel.has(d.id));
-    const nombres = lista.map(d => d.nombre).join(", ");
+    const lista = n === 13 ? DISFRACES.concat(FROSTY) : picks.map(id => DISFRACES.find(d => d.id === id));
+    const nombres = n === 13 ? lista.map(d => d.nombre).join(", ")
+      : DISFRACES.filter(d => cuantos(d.id)).map(d => cuantos(d.id) > 1 ? `${d.nombre} ×${cuantos(d.id)}` : d.nombre).join(", ");
     const horas = Math.round(lista.reduce((s, d) => s + d.horas, 0) * 100) / 100;
     const titulo = n === 13 ? "Colección completa de disfraces para duende (13, con Frosty)" : `Paquete de ${n} disfraces para duende`;
     LIVAL.agregarPersonal({ id: "DISF-" + n + "-" + Date.now().toString(36), tipo: "disfraces", name: `${titulo}: ${nombres}`, resumen: nombres, price: PAQ[n], horas });
@@ -255,7 +275,7 @@
     let ok = document.getElementById("okPaq");
     if (!ok) { ok = document.createElement("div"); ok.id = "okPaq"; box.after(ok); }
     listo("okPaq", `Agregamos tu ${n === 13 ? "colección completa" : "paquete de " + n} al pedido.`);
-    sel.clear(); if (n === 13) DISFRACES.forEach(d => sel.add(d.id)); pinta();
+    picks = []; pinta();
     ok.scrollIntoView({ behavior: "smooth", block: "center" });
   });
 
