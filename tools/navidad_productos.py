@@ -508,7 +508,7 @@ _bro = [("grinch", "Grinch con gorro de Santa", "3628451", 1.77, 39, "Broche de 
          ["broche-grinch.jpg", "broche-grinch-1.jpg", "broche-grinch-2.jpg"]),
         ("mickey", "Corona de Mickey", "3564636", 3.64, 71, "Corona de 12 × 11 cm · palito de bastón de caramelo de 12.8 cm",
          ["corona-mickey.jpg", "corona-mickey-1.jpg", "corona-mickey-2.jpg"]),
-        ("reno", "Reno con acebo", "3597182", 2.83, 37, "Reno de 11.9 × 10.2 cm · palito con acebo de 16 cm",
+        ("reno", "Horquilla de reno", "3597182", 2.83, 37, "Reno de 11.9 × 10.2 cm · palito con acebo de 16 cm",
          ["broche-reno.jpg", "broche-reno-1.jpg", "broche-reno-2.jpg"])]
 _bro = [x for x in _bro if _os.path.exists("img/navidad/" + x[6][0])]
 _bf, _bo = [], []
