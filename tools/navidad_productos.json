@@ -1631,66 +1631,67 @@
   "cat": "ninos"
  },
  {
-  "id": "NV3628451",
-  "mw": "3628451",
-  "nombre": "Broche del Grinch para chongo",
+  "id": "NVG-broches",
+  "mw": "3628451,3564636",
+  "nombre": "Broches navideños para chongo",
   "badge": "Accesorio",
-  "lead": "El Grinch con su gorro de Santa sujetando tu chongo. Incluye el palito con corazón.",
+  "lead": "El peinado más navideño: una figura con su palito para sujetar el chongo. Escoge el que más te guste o arma tu trío.",
   "bullets": [
-   "Carita del Grinch con gorro de Santa.",
-   "Palito con corazón para sujetar el chongo.",
+   "1 broche por $80, 2 por $150 o el trío navideño de 3 por $210.",
+   "Escoge el diseño de cada uno; puedes repetir el mismo.",
    "Para posadas, fiestas y fotos navideñas."
   ],
   "fotos": [
    "../img/navidad/broche-grinch.jpg",
    "../img/navidad/broche-grinch-1.jpg",
-   "../img/navidad/broche-grinch-2.jpg"
-  ],
-  "opciones": [
-   {
-    "k": "u",
-    "label": "Broche y palito",
-    "sub": "",
-    "precio": 80,
-    "horas": 1.77,
-    "gramos": 39,
-    "mw": "3628451",
-    "f": 0,
-    "medida": "Broche de 10.4 × 12.3 cm · palito de 14 cm"
-   }
-  ],
-  "personal": null,
-  "cat": "ninos"
- },
- {
-  "id": "NV3564636",
-  "mw": "3564636",
-  "nombre": "Corona de Mickey para chongo",
-  "badge": "Accesorio",
-  "lead": "Una corona navideña con la silueta de Mickey, moño rojo y moritas, con su palito de bastón de caramelo para sujetar el chongo.",
-  "bullets": [
-   "Corona con moño y moritas.",
-   "Palito de bastón de caramelo.",
-   "Para posadas, fiestas y fotos navideñas."
-  ],
-  "fotos": [
+   "../img/navidad/broche-grinch-2.jpg",
    "../img/navidad/corona-mickey.jpg",
    "../img/navidad/corona-mickey-1.jpg",
    "../img/navidad/corona-mickey-2.jpg"
   ],
   "opciones": [
    {
-    "k": "u",
-    "label": "Corona y palito",
-    "sub": "",
-    "precio": 90,
+    "k": "grinch",
+    "label": "Grinch con gorro de Santa",
+    "precio": 80,
+    "horas": 1.77,
+    "gramos": 39,
+    "mw": "3628451",
+    "f": 0,
+    "medida": "Broche de 10.4 × 12.3 cm · palito con corazón de 14 cm"
+   },
+   {
+    "k": "mickey",
+    "label": "Corona de Mickey",
+    "precio": 80,
     "horas": 3.64,
     "gramos": 71,
     "mw": "3564636",
-    "f": 0,
-    "medida": "Corona de 12 × 11 cm · palito de 12.8 cm"
+    "f": 3,
+    "medida": "Corona de 12 × 11 cm · palito de bastón de caramelo de 12.8 cm"
    }
   ],
+  "lote": {
+   "tam": [
+    [
+     1,
+     80
+    ],
+    [
+     2,
+     150
+    ],
+    [
+     3,
+     210
+    ]
+   ],
+   "sinNombre": true,
+   "pieza": [
+    "broche",
+    "broches"
+   ]
+  },
   "personal": null,
   "cat": "ninos"
  },

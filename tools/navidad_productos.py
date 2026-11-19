@@ -498,31 +498,37 @@ PELUCHES = {"id": "NVG-peluches", "nombre": "Peluches navideños con nombre", "b
 del PELUCHES["_medidas"]
 out.insert([d["id"] for d in out].index("NVG-mascota") + 1, PELUCHES)
 
-# Broche del Grinch para chongo (precio de Lilian: $80). Horas y gramos del perfil Dual AMS de MakerWorld (1.8 h, 39 g; 2 placas).
-BROCHE_GRINCH = {"id": "NV3628451", "mw": "3628451", "nombre": "Broche del Grinch para chongo", "badge": "Accesorio",
-                 "lead": "El Grinch con su gorro de Santa sujetando tu chongo. Incluye el palito con corazón.",
-                 "bullets": ["Carita del Grinch con gorro de Santa.", "Palito con corazón para sujetar el chongo.", "Para posadas, fiestas y fotos navideñas."],
-                 "fotos": ["../img/navidad/broche-grinch.jpg", "../img/navidad/broche-grinch-1.jpg", "../img/navidad/broche-grinch-2.jpg"],
-                 "opciones": [{"k": "u", "label": "Broche y palito", "sub": "", "precio": 80, "horas": 1.77, "gramos": 39, "mw": "3628451", "f": 0,
-                               "medida": "Broche de 10.4 × 12.3 cm · palito de 14 cm"}],
-                 "personal": None}
-out.insert([d["id"] for d in out].index("NV3471108") + 1, BROCHE_GRINCH)
-
-# Corona de Mickey para chongo (precio de Lilian: $90). MakerWorld 3564636: 2 placas, 71 g, 3.6 h.
-CORONA_MICKEY = {"id": "NV3564636", "mw": "3564636", "nombre": "Corona de Mickey para chongo", "badge": "Accesorio",
-                 "lead": "Una corona navideña con la silueta de Mickey, moño rojo y moritas, con su palito de bastón de caramelo para sujetar el chongo.",
-                 "bullets": ["Corona con moño y moritas.", "Palito de bastón de caramelo.", "Para posadas, fiestas y fotos navideñas."],
-                 "fotos": ["../img/navidad/corona-mickey.jpg", "../img/navidad/corona-mickey-1.jpg", "../img/navidad/corona-mickey-2.jpg"],
-                 "opciones": [{"k": "u", "label": "Corona y palito", "sub": "", "precio": 90, "horas": 3.64, "gramos": 71, "mw": "3564636", "f": 0,
-                               "medida": "Corona de 12 × 11 cm · palito de 12.8 cm"}],
-                 "personal": None}
-out.insert([d["id"] for d in out].index("NV3628451") + 1, CORONA_MICKEY)
+# Broches navideños para chongo: un solo producto con los pines del Grinch, Mickey y reno (precios de Lilian:
+# 1 × $80, 2 × $150, trío 3 × $210; se puede repetir el mismo). Horas y gramos de MakerWorld (2 placas cada uno):
+# Grinch 3628451 (39 g, 1.77 h), Mickey 3564636 (71 g, 3.64 h), Reno 3597182 (37 g, 2.83 h).
+# El reno aparece en cuanto haya foto propia en img/navidad/broche-reno.jpg.
+import os as _os
+_B = "../img/navidad/"
+_bro = [("grinch", "Grinch con gorro de Santa", "3628451", 1.77, 39, "Broche de 10.4 × 12.3 cm · palito con corazón de 14 cm",
+         ["broche-grinch.jpg", "broche-grinch-1.jpg", "broche-grinch-2.jpg"]),
+        ("mickey", "Corona de Mickey", "3564636", 3.64, 71, "Corona de 12 × 11 cm · palito de bastón de caramelo de 12.8 cm",
+         ["corona-mickey.jpg", "corona-mickey-1.jpg", "corona-mickey-2.jpg"]),
+        ("reno", "Reno con acebo", "3597182", 2.83, 37, "Reno de 11.9 × 10.2 cm · palito con acebo de 16 cm",
+         ["broche-reno.jpg", "broche-reno-1.jpg", "broche-reno-2.jpg"])]
+_bro = [x for x in _bro if _os.path.exists("img/navidad/" + x[6][0])]
+_bf, _bo = [], []
+for k, l, mw, h, g, med, fs in _bro:
+    fs = [f for f in fs if _os.path.exists("img/navidad/" + f)]
+    _bo.append({"k": k, "label": l, "precio": 80, "horas": h, "gramos": g, "mw": mw, "f": len(_bf), "medida": med})
+    _bf += [_B + f for f in fs]
+BROCHES = {"id": "NVG-broches", "mw": ",".join(x[2] for x in _bro), "nombre": "Broches navideños para chongo", "badge": "Accesorio",
+           "lead": "El peinado más navideño: una figura con su palito para sujetar el chongo. Escoge el que más te guste o arma tu trío.",
+           "bullets": ["1 broche por $80, 2 por $150 o el trío navideño de 3 por $210.", "Escoge el diseño de cada uno; puedes repetir el mismo.", "Para posadas, fiestas y fotos navideñas."],
+           "fotos": _bf, "opciones": _bo,
+           "lote": {"tam": [[1, 80], [2, 150], [3, 210]], "sinNombre": True, "pieza": ["broche", "broches"]},
+           "personal": None}
+out.insert([d["id"] for d in out].index("NV3471108") + 1, BROCHES)
 
 # Categorías de la tienda (filtros arriba de la rejilla). Un producto puede estar en varias.
 # nombre = Personalizables · arbol = Esferas y adornos · deco = Decoración · cocina = Cocina y baño · ninos = Para niños
 CAT = {
  "NVG-adorno-nombre": "nombre arbol", "NVG-adorno-foto": "nombre arbol", "NV3485874": "nombre deco", "NVG-corona-texto": "nombre deco",
- "NVG-mascota": "nombre arbol", "NVG-aldea": "deco", "NVG-peluches": "nombre ninos", "NV3628451": "ninos", "NV3564636": "ninos", "NV817845": "nombre arbol", "NV3488535": "nombre deco", "NV2083881": "nombre arbol", "NVG-cuenta-regresiva": "deco ninos", "NVG-bandeja-santa": "cocina ninos",
+ "NVG-mascota": "nombre arbol", "NVG-aldea": "deco", "NVG-peluches": "nombre ninos", "NVG-broches": "ninos", "NV817845": "nombre arbol", "NV3488535": "nombre deco", "NV2083881": "nombre arbol", "NVG-cuenta-regresiva": "deco ninos", "NVG-bandeja-santa": "cocina ninos",
  "NVG-camara-santa": "ninos arbol deco", "NVG-porta-paneton": "cocina", "NVG-arbolitos": "deco", "NV14093": "deco", "NV2070704": "deco",
  "NV2087313": "deco ninos", "NV2027611": "deco", "NV3175033": "deco", "NV3337730": "deco", "NV3397234": "cocina", "NV3407142": "cocina",
  "NV2101416": "cocina", "NV2052441": "ninos", "NV1935739": "ninos", "NV3471108": "ninos", "NV1891706": "deco", "NV2078410": "deco",
