@@ -1502,7 +1502,7 @@ window.NAVIDAD = [
  },
  {
   "id": "NVG-broches",
-  "mw": "3628451,3564636",
+  "mw": "3628451,3564636,3597182",
   "nombre": "Broches navideños para chongo",
   "badge": "Accesorio",
   "lead": "El peinado más navideño: una figura con su palito para sujetar el chongo. Escoge el que más te guste o arma tu trío.",
@@ -1517,7 +1517,10 @@ window.NAVIDAD = [
    "../img/navidad/broche-grinch-2.jpg",
    "../img/navidad/corona-mickey.jpg",
    "../img/navidad/corona-mickey-1.jpg",
-   "../img/navidad/corona-mickey-2.jpg"
+   "../img/navidad/corona-mickey-2.jpg",
+   "../img/navidad/broche-reno.jpg",
+   "../img/navidad/broche-reno-1.jpg",
+   "../img/navidad/broche-reno-2.jpg"
   ],
   "opciones": [
    {
@@ -1537,6 +1540,15 @@ window.NAVIDAD = [
     "mw": "3564636",
     "f": 3,
     "medida": "Corona de 12 × 11 cm · palito de bastón de caramelo de 12.8 cm"
+   },
+   {
+    "k": "reno",
+    "label": "Horquilla de reno",
+    "precio": 80,
+    "horas": 2.83,
+    "mw": "3597182",
+    "f": 6,
+    "medida": "Reno de 11.9 × 10.2 cm · palito con acebo de 16 cm"
    }
   ],
   "lote": {
