@@ -498,11 +498,21 @@ PELUCHES = {"id": "NVG-peluches", "nombre": "Peluches navideños con nombre", "b
 del PELUCHES["_medidas"]
 out.insert([d["id"] for d in out].index("NVG-mascota") + 1, PELUCHES)
 
+# Broche del Grinch para chongo (precio de Lilian: $80). Horas y gramos del perfil Dual AMS de MakerWorld (1.8 h, 39 g; 2 placas).
+BROCHE_GRINCH = {"id": "NV3628451", "mw": "3628451", "nombre": "Broche del Grinch para chongo", "badge": "Accesorio",
+                 "lead": "El Grinch con su gorro de Santa sujetando tu chongo. Incluye el palito con corazón.",
+                 "bullets": ["Carita del Grinch con gorro de Santa.", "Palito con corazón para sujetar el chongo.", "Para posadas, fiestas y fotos navideñas."],
+                 "fotos": ["../img/navidad/broche-grinch.jpg", "../img/navidad/broche-grinch-1.jpg", "../img/navidad/broche-grinch-2.jpg"],
+                 "opciones": [{"k": "u", "label": "Broche y palito", "sub": "", "precio": 80, "horas": 1.77, "gramos": 39, "mw": "3628451", "f": 0,
+                               "medida": "Broche de 10.4 × 12.3 cm · palito de 14 cm"}],
+                 "personal": None}
+out.insert([d["id"] for d in out].index("NV3471108") + 1, BROCHE_GRINCH)
+
 # Categorías de la tienda (filtros arriba de la rejilla). Un producto puede estar en varias.
 # nombre = Personalizables · arbol = Esferas y adornos · deco = Decoración · cocina = Cocina y baño · ninos = Para niños
 CAT = {
  "NVG-adorno-nombre": "nombre arbol", "NVG-adorno-foto": "nombre arbol", "NV3485874": "nombre deco", "NVG-corona-texto": "nombre deco",
- "NVG-mascota": "nombre arbol", "NVG-aldea": "deco", "NVG-peluches": "nombre ninos", "NV817845": "nombre arbol", "NV3488535": "nombre deco", "NV2083881": "nombre arbol", "NVG-cuenta-regresiva": "deco ninos", "NVG-bandeja-santa": "cocina ninos",
+ "NVG-mascota": "nombre arbol", "NVG-aldea": "deco", "NVG-peluches": "nombre ninos", "NV3628451": "ninos", "NV817845": "nombre arbol", "NV3488535": "nombre deco", "NV2083881": "nombre arbol", "NVG-cuenta-regresiva": "deco ninos", "NVG-bandeja-santa": "cocina ninos",
  "NVG-camara-santa": "ninos arbol deco", "NVG-porta-paneton": "cocina", "NVG-arbolitos": "deco", "NV14093": "deco", "NV2070704": "deco",
  "NV2087313": "deco ninos", "NV2027611": "deco", "NV3175033": "deco", "NV3337730": "deco", "NV3397234": "cocina", "NV3407142": "cocina",
  "NV2101416": "cocina", "NV2052441": "ninos", "NV1935739": "ninos", "NV3471108": "ninos", "NV1891706": "deco", "NV2078410": "deco",
