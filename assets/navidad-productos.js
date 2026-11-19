@@ -1531,6 +1531,36 @@ window.NAVIDAD = [
   "cat": "ninos"
  },
  {
+  "id": "NV3564636",
+  "mw": "3564636",
+  "nombre": "Corona de Mickey para chongo",
+  "badge": "Accesorio",
+  "lead": "Una corona navideña con la silueta de Mickey, moño rojo y moritas, con su palito de bastón de caramelo para sujetar el chongo.",
+  "bullets": [
+   "Corona con moño y moritas.",
+   "Palito de bastón de caramelo.",
+   "Para posadas, fiestas y fotos navideñas."
+  ],
+  "fotos": [
+   "../img/navidad/corona-mickey.jpg",
+   "../img/navidad/corona-mickey-1.jpg",
+   "../img/navidad/corona-mickey-2.jpg"
+  ],
+  "opciones": [
+   {
+    "k": "u",
+    "label": "Corona y palito",
+    "precio": 90,
+    "horas": 3.64,
+    "mw": "3564636",
+    "f": 0,
+    "medida": "Corona de 12 × 11 cm · palito de 12.8 cm"
+   }
+  ],
+  "personal": null,
+  "cat": "ninos"
+ },
+ {
   "id": "NV1891706",
   "mw": "1891706",
   "nombre": "Mano del Grinch para pared",
