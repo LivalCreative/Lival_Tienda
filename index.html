@@ -190,6 +190,14 @@
       .powered .pw img { width: 34px; height: auto; }
       .powered p { margin: 6px 0 0; }
       .powered a { display: inline-block; margin-top: 8px; padding: 10px 18px; min-height: 44px; border-radius: 999px; background: #25d366; color: #fff; font-weight: 800; text-decoration: none; }
+      @media (min-width: 760px) {
+        footer.pie, footer.creditos { display: grid; grid-template-columns: auto 1fr; align-items: center; column-gap: 48px; max-width: 1040px; margin-left: auto; margin-right: auto; text-align: left; justify-items: stretch; }
+        footer.pie .sello, footer.creditos > img { grid-row: 1 / span 3; margin: 0; }
+        footer.pie > p, footer.creditos > p { margin: 0; }
+        .powered { grid-column: 2; max-width: none; margin: 16px 0 0; padding: 16px 0 0; text-align: left; display: grid; grid-template-columns: 1fr auto; align-items: center; column-gap: 24px; }
+        .powered .pw, .powered p { grid-column: 1; }
+        .powered a { grid-column: 2; grid-row: 1 / span 2; margin: 0; padding: 12px 26px; }
+      }
     </style>
     <span class="pw"><img src="img/logo-t.png" width="34" height="25" alt="" loading="lazy">Powered by Lival Creative ✨</span>
     <p>Tu tienda en línea está más cerca y es más fácil de lo que crees.</p>
