@@ -485,6 +485,49 @@ window.NAVIDAD = [
   "cat": "nombre arbol"
  },
  {
+  "id": "NV3563546",
+  "mw": "3563546",
+  "nombre": "Arbolito navideño con nombres",
+  "badge": "Personalizado",
+  "lead": "Un arbolito de Navidad hecho de anillos con los nombres de tu familia, con su estrella dorada. Con vela LED se ilumina por dentro.",
+  "bullets": [
+   "Hasta 6 nombres, uno por anillo.",
+   "Escoge sin vela o con vela LED para que brille de noche.",
+   "Ideal para la mesa de Navidad o para regalar."
+  ],
+  "fotos": [
+   "../img/navidad/arbolito-nombres.jpg",
+   "../img/navidad/arbolito-nombres-vela.jpg"
+  ],
+  "opciones": [
+   {
+    "k": "sin",
+    "label": "Sin vela",
+    "precio": 180,
+    "horas": 0,
+    "mw": "3563546",
+    "f": 0
+   },
+   {
+    "k": "vela",
+    "label": "Con vela LED",
+    "precio": 200,
+    "horas": 0,
+    "mw": "3563546",
+    "f": 1
+   }
+  ],
+  "personal": {
+   "label": "Nombres (hasta 6)",
+   "ph": "Ej. SOFIA",
+   "max": 10,
+   "n": 6,
+   "limpio": true,
+   "nota": "Solo letras, sin acentos ni símbolos. La Ñ se imprime como N."
+  },
+  "cat": "nombre deco"
+ },
+ {
   "id": "NV2083881",
   "mw": "2083881",
   "nombre": "Globo de nieve de jengibre con nombres",

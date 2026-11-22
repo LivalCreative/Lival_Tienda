@@ -36,8 +36,10 @@
         <div class="sel" data-lista hidden></div>`;
     } else if (p.personal) {
       det = `${p.opciones.length > 1 ? `<div class="lbl">Elige</div><div class="opts">${p.opciones.map((o, i) => `<button type="button" class="opt${i ? "" : " on"}" data-op="${o.k}">${esc(o.label)}${new Set(p.opciones.map(x => x.precio)).size > 1 ? " · " + money(o.precio) : ""}</button>`).join("")}</div>` : ""}
-        <label class="lbl" for="t-${p.id}">${esc(p.personal.label)}</label>
-        <input class="campo${p.personal.tal ? "" : " may"}" id="t-${p.id}" maxlength="${p.personal.max}" placeholder="${esc(p.personal.ph)}" autocomplete="off">
+        ${(p.personal.n || 1) > 1 ? `<div class="lbl">${esc(p.personal.label)}</div>${p.personal.nota ? `<p class="hint">${esc(p.personal.nota)}</p>` : ""}
+        <div class="nombres">${Array.from({ length: p.personal.n }, (_, i) => `<input class="campo may" data-limpio="${p.personal.limpio ? 1 : ""}" maxlength="${p.personal.max}" placeholder="${i ? "Nombre " + (i + 1) + " (opcional)" : esc(p.personal.ph)}" aria-label="Nombre ${i + 1}" autocomplete="off" autocapitalize="characters">`).join("")}</div>`
+        : `<label class="lbl" for="t-${p.id}">${esc(p.personal.label)}</label>
+        <input class="campo${p.personal.tal ? "" : " may"}" id="t-${p.id}" maxlength="${p.personal.max}" placeholder="${esc(p.personal.ph)}" autocomplete="off">`}
         ${p.opciones.some(o => o.prev) ? `<div class="prevmini" data-hintprev${p.opciones[0].prev ? "" : " hidden"}><img alt="Así queda tu nombre" hidden><p class="hint">Escribe el nombre y aquí ves cómo queda.</p></div>` : ""}
         <div class="buy"><span class="price" data-precio>${money(p.opciones[0].precio)}</span><button type="button" class="btn add" data-addp="${p.id}">Agregar al pedido</button></div>
         <p class="err" data-err></p>
@@ -191,14 +193,15 @@
     if (add) {
       const art = add.closest("article"), p = lista.find(x => x.id === add.dataset.addp);
       const inp = art.querySelector(".campo"), err = art.querySelector("[data-err]");
-      let txt = inp.value.trim();
-      if (!txt) { err.textContent = "Escribe " + p.personal.label.toLowerCase().replace(/ \(.*/, "") + "."; inp.focus(); return; }
+      const todos = [...art.querySelectorAll("input.campo")];
+      let txt = todos.length > 1 ? todos.map(i => i.value.trim()).filter(Boolean).join(", ") : inp.value.trim();
+      if (!txt) { if (todos.length > 1) { err.textContent = "Escribe al menos un nombre."; inp.focus(); return; } err.textContent = "Escribe " + p.personal.label.toLowerCase().replace(/ \(.*/, "") + "."; inp.focus(); return; }
       err.textContent = "";
       const sel = art.querySelector("[data-op].on"), o = sel ? p.opciones.find(x => x.k === sel.dataset.op) : p.opciones[0];
       const det = p.opciones.length > 1 ? ` (${o.label})` : "";
       if (!p.personal.tal) txt = txt.toLocaleUpperCase("es-MX");   // los nombres van en mayúsculas (menos en los peluches: tal como lo escribe el cliente)
       LIVAL.agregarPersonal({ id: p.id + "-" + Date.now().toString(36), tipo: p.id, name: `${p.nombre}${det} — ${p.personal.label.replace(/ \(.*/, "")}: "${txt}"`, resumen: `${o.label}: "${txt}"`, price: o.precio, horas: o.horas });
-      inp.value = ""; vistaPrevia(art, p); pintarGen(); refrescarBarra(); bump(); return;
+      todos.forEach(i => { i.value = ""; }); vistaPrevia(art, p); pintarGen(); refrescarBarra(); bump(); return;
     }
     const ap = e.target.closest("button[data-addpaq]");
     if (ap) {
@@ -212,8 +215,11 @@
     const q = e.target.closest("button[data-qp]");
     if (q) { LIVAL.quitarPersonal(q.dataset.qp); pintarGen(); refrescarBarra(); }
   });
+  // Solo letras A-Z y espacios (sin acentos ni símbolos; la Ñ se imprime como N)
+  const limpiar = t => t.toUpperCase().replace(/Ñ/g, "N").normalize("NFD").replace(/[\u0300-\u036f]/g, "").replace(/[^A-Z ]/g, "").replace(/ {2,}/g, " ");
   box.addEventListener("input", e => {
     const inp = e.target.closest("input.campo"), art = inp && inp.closest("article.gen"); if (!art) return;
+    if (inp.dataset.limpio) { const v = limpiar(inp.value); if (v !== inp.value) inp.value = v; }
     const p = lista.find(x => x.id === art.id); if (p && p.personal && p.opciones.some(o => o.prev)) vistaPrevia(art, p);
   });
   box.addEventListener("change", e => {

@@ -524,11 +524,24 @@ BROCHES = {"id": "NVG-broches", "mw": ",".join(x[2] for x in _bro), "nombre": "B
            "personal": None}
 out.insert([d["id"] for d in out].index("NV3471108") + 1, BROCHES)
 
+# Arbolito navideño con nombres (MakerWorld 3563546). Precios de Lilian: $180 sin vela, $200 con vela LED.
+# Hasta 6 nombres, solo letras sin acentos (la Ñ se imprime como N). Fotos de Lilian (ya traen su logo).
+# PENDIENTE: horas y gramos del slicer (Chrome no estaba disponible para leer MakerWorld).
+ARBOLITO = {"id": "NV3563546", "mw": "3563546", "nombre": "Arbolito navideño con nombres", "badge": "Personalizado",
+            "lead": "Un arbolito de Navidad hecho de anillos con los nombres de tu familia, con su estrella dorada. Con vela LED se ilumina por dentro.",
+            "bullets": ["Hasta 6 nombres, uno por anillo.", "Escoge sin vela o con vela LED para que brille de noche.", "Ideal para la mesa de Navidad o para regalar."],
+            "fotos": ["../img/navidad/arbolito-nombres.jpg", "../img/navidad/arbolito-nombres-vela.jpg"],
+            "opciones": [{"k": "sin", "label": "Sin vela", "precio": 180, "horas": 0, "gramos": 0, "mw": "3563546", "f": 0},
+                         {"k": "vela", "label": "Con vela LED", "precio": 200, "horas": 0, "gramos": 0, "mw": "3563546", "f": 1}],
+            "personal": {"label": "Nombres (hasta 6)", "ph": "Ej. SOFIA", "max": 10, "n": 6, "limpio": True,
+                         "nota": "Solo letras, sin acentos ni símbolos. La Ñ se imprime como N."}}
+out.insert([d["id"] for d in out].index("NV817845") + 1, ARBOLITO)
+
 # Categorías de la tienda (filtros arriba de la rejilla). Un producto puede estar en varias.
 # nombre = Personalizables · arbol = Esferas y adornos · deco = Decoración · cocina = Cocina y baño · ninos = Para niños
 CAT = {
  "NVG-adorno-nombre": "nombre arbol", "NVG-adorno-foto": "nombre arbol", "NV3485874": "nombre deco", "NVG-corona-texto": "nombre deco",
- "NVG-mascota": "nombre arbol", "NVG-aldea": "deco", "NVG-peluches": "nombre ninos", "NVG-broches": "ninos", "NV817845": "nombre arbol", "NV3488535": "nombre deco", "NV2083881": "nombre arbol", "NVG-cuenta-regresiva": "deco ninos", "NVG-bandeja-santa": "cocina ninos",
+ "NVG-mascota": "nombre arbol", "NVG-aldea": "deco", "NVG-peluches": "nombre ninos", "NVG-broches": "ninos", "NV3563546": "nombre deco", "NV817845": "nombre arbol", "NV3488535": "nombre deco", "NV2083881": "nombre arbol", "NVG-cuenta-regresiva": "deco ninos", "NVG-bandeja-santa": "cocina ninos",
  "NVG-camara-santa": "ninos arbol deco", "NVG-porta-paneton": "cocina", "NVG-arbolitos": "deco", "NV14093": "deco", "NV2070704": "deco",
  "NV2087313": "deco ninos", "NV2027611": "deco", "NV3175033": "deco", "NV3337730": "deco", "NV3397234": "cocina", "NV3407142": "cocina",
  "NV2101416": "cocina", "NV2052441": "ninos", "NV1935739": "ninos", "NV3471108": "ninos", "NV1891706": "deco", "NV2078410": "deco",
