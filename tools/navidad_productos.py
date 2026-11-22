@@ -531,8 +531,8 @@ ARBOLITO = {"id": "NV3563546", "mw": "3563546", "nombre": "Arbolito navideño co
             "lead": "Un arbolito de Navidad hecho de anillos con los nombres de tu familia, con su estrella dorada. Con vela LED se ilumina por dentro.",
             "bullets": ["Hasta 6 nombres, uno por anillo.", "Escoge sin vela o con vela LED para que brille de noche.", "Ideal para la mesa de Navidad o para regalar."],
             "fotos": ["../img/navidad/arbolito-nombres.jpg", "../img/navidad/arbolito-nombres-vela.jpg"],
-            "opciones": [{"k": "sin", "label": "Sin vela", "precio": 180, "horas": 0, "gramos": 0, "mw": "3563546", "f": 0},
-                         {"k": "vela", "label": "Con vela LED", "precio": 200, "horas": 0, "gramos": 0, "mw": "3563546", "f": 1}],
+            "opciones": [{"k": "sin", "label": "Sin vela", "precio": 180, "horas": 0, "gramos": 0, "mw": "3563546", "f": 0, "medida": "15 cm de diámetro × 19.2 cm de alto, más la estrella de 4.4 cm"},
+                         {"k": "vela", "label": "Con vela LED", "precio": 200, "horas": 0, "gramos": 0, "mw": "3563546", "f": 1, "medida": "15 cm de diámetro × 19.2 cm de alto, más la estrella de 4.4 cm"}],
             "personal": {"label": "Nombres (hasta 6)", "ph": "Ej. SOFIA", "max": 10, "n": 6, "limpio": True,
                          "nota": "Solo letras, sin acentos ni símbolos. La Ñ se imprime como N."}}
 out.insert([d["id"] for d in out].index("NV817845") + 1, ARBOLITO)

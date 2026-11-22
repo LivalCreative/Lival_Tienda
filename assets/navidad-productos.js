@@ -506,7 +506,8 @@ window.NAVIDAD = [
     "precio": 180,
     "horas": 0,
     "mw": "3563546",
-    "f": 0
+    "f": 0,
+    "medida": "15 cm de diámetro × 19.2 cm de alto, más la estrella de 4.4 cm"
    },
    {
     "k": "vela",
@@ -514,7 +515,8 @@ window.NAVIDAD = [
     "precio": 200,
     "horas": 0,
     "mw": "3563546",
-    "f": 1
+    "f": 1,
+    "medida": "15 cm de diámetro × 19.2 cm de alto, más la estrella de 4.4 cm"
    }
   ],
   "personal": {
