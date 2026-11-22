@@ -504,7 +504,7 @@ window.NAVIDAD = [
     "k": "sin",
     "label": "Sin vela",
     "precio": 180,
-    "horas": 0,
+    "horas": 6.63,
     "mw": "3563546",
     "f": 0,
     "medida": "15 cm de diámetro × 19.2 cm de alto, más la estrella de 4.4 cm"
@@ -513,7 +513,7 @@ window.NAVIDAD = [
     "k": "vela",
     "label": "Con vela LED",
     "precio": 200,
-    "horas": 0,
+    "horas": 6.63,
     "mw": "3563546",
     "f": 1,
     "medida": "15 cm de diámetro × 19.2 cm de alto, más la estrella de 4.4 cm"

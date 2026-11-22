@@ -526,13 +526,13 @@ out.insert([d["id"] for d in out].index("NV3471108") + 1, BROCHES)
 
 # Arbolito navideño con nombres (MakerWorld 3563546). Precios de Lilian: $180 sin vela, $200 con vela LED.
 # Hasta 6 nombres, solo letras sin acentos (la Ñ se imprime como N). Fotos de Lilian (ya traen su logo).
-# PENDIENTE: horas y gramos del slicer (Chrome no estaba disponible para leer MakerWorld).
+# Slicer de Lilian (A1, 0.20 mm, 6 nombres): 2 placas, 108.3 g, 6 h 38 min.
 ARBOLITO = {"id": "NV3563546", "mw": "3563546", "nombre": "Arbolito navideño con nombres", "badge": "Personalizado",
             "lead": "Un arbolito de Navidad hecho de anillos con los nombres de tu familia, con su estrella dorada. Con vela LED se ilumina por dentro.",
             "bullets": ["Hasta 6 nombres, uno por anillo.", "Escoge sin vela o con vela LED para que brille de noche.", "Ideal para la mesa de Navidad o para regalar."],
             "fotos": ["../img/navidad/arbolito-nombres.jpg", "../img/navidad/arbolito-nombres-vela.jpg"],
-            "opciones": [{"k": "sin", "label": "Sin vela", "precio": 180, "horas": 0, "gramos": 0, "mw": "3563546", "f": 0, "medida": "15 cm de diámetro × 19.2 cm de alto, más la estrella de 4.4 cm"},
-                         {"k": "vela", "label": "Con vela LED", "precio": 200, "horas": 0, "gramos": 0, "mw": "3563546", "f": 1, "medida": "15 cm de diámetro × 19.2 cm de alto, más la estrella de 4.4 cm"}],
+            "opciones": [{"k": "sin", "label": "Sin vela", "precio": 180, "horas": 6.63, "gramos": 108, "mw": "3563546", "f": 0, "medida": "15 cm de diámetro × 19.2 cm de alto, más la estrella de 4.4 cm"},
+                         {"k": "vela", "label": "Con vela LED", "precio": 200, "horas": 6.63, "gramos": 108, "mw": "3563546", "f": 1, "medida": "15 cm de diámetro × 19.2 cm de alto, más la estrella de 4.4 cm"}],
             "personal": {"label": "Nombres (hasta 6)", "ph": "Ej. SOFIA", "max": 10, "n": 6, "limpio": True,
                          "nota": "Solo letras, sin acentos ni símbolos. La Ñ se imprime como N."}}
 out.insert([d["id"] for d in out].index("NV817845") + 1, ARBOLITO)
