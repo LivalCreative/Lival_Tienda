@@ -604,6 +604,7 @@ const HORAS = {"T02": 0.4, "T04": 0.7, "T05": 0.7, "T17": 1.1, "T29": 0.4, "T10"
 Object.entries(LIVAL.EXTRA).forEach(([k, v]) => { HORAS[k] = v.horas; });
 LIVAL.personales().forEach(p => { HORAS[p.id] = p.horas; });
 let OCUP = { cupo_por_dia: 4, horas_por_dia: 16, horas_pendientes: 0, entregas_por_fecha: {} };
+const ESPERA_DIAS = 10;   // días mínimos de espera mientras estemos llenos (bájalo cuando se libere la agenda)
 const DIAS_ES = ["domingo", "lunes", "martes", "miércoles", "jueves", "viernes", "sábado"];
 const MESES_ES = ["enero", "febrero", "marzo", "abril", "mayo", "junio", "julio", "agosto", "septiembre", "octubre", "noviembre", "diciembre"];
 function isoLocal(d) { return `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, "0")}-${String(d.getDate()).padStart(2, "0")}`; }
@@ -612,7 +613,9 @@ function fechasDisponibles() {
   const hpd = OCUP.horas_por_dia || 16, cupo = OCUP.cupo_por_dia || 4;
   const hc = horasCarrito();
   const dias = Math.ceil((OCUP.horas_pendientes || 0) / hpd) + Math.max(1, Math.ceil(hc / hpd)) + 1;
-  const d0 = new Date(); d0.setHours(12, 0, 0, 0); d0.setDate(d0.getDate() + Math.max(2, dias));
+  // Temporada llena: la primera fecha es hoy + ESPERA_DIAS (el 23 nov da el 3 dic; cada día se recorre uno).
+  // Los domingos (Plaza Esfera y Arcos) quedan en el primer domingo después de esa fecha.
+  const d0 = new Date(); d0.setHours(12, 0, 0, 0); d0.setDate(d0.getDate() + Math.max(2, dias, ESPERA_DIAS));
   const out = [];
   for (let k = 0; out.length < 21 && k < 90; k++) {
     const d = new Date(d0); d.setDate(d0.getDate() + k);
