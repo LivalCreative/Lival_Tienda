@@ -182,6 +182,7 @@ details.opcional { border: 2px solid #e6dcc6; border-radius: 20px; padding: 0 16
 details.opcional[open] { padding-bottom: 16px; display: grid; gap: 14px; }
 details.opcional summary { min-height: 52px; display: flex; align-items: center; font-weight: 800; cursor: pointer; color: var(--pine); }
 details.opcional summary span { font-weight: 400; color: var(--muted); margin-left: 6px; }
+.oblig { color: var(--berry, #b3261e); font-weight: 800; }
 details.banco-det { border-color: var(--gold, #c9a227); background: var(--gold-l, #fff6dc); }
 details.banco-det summary { gap: 12px; padding: 10px 0; list-style: none; }
 details.banco-det summary::-webkit-details-marker { display: none; }
@@ -271,23 +272,23 @@ details.banco-det[open] summary .t small { display: none; }
         <div><small>Segundo pago (al entregar)</small><b id="pRest">$0</b></div>
       </div>
       <div>
-        <label for="fName">Nombre</label>
+        <label for="fName">Nombre <span class="oblig">*</span></label>
         <input type="text" id="fName" name="nombre" autocomplete="name" placeholder="Tu nombre completo, ej. Ana López…">
       </div>
-      <details class="opcional">
-        <summary>¿Ya sabes cuándo y dónde lo quieres? <span>(opcional)</span></summary>
       <div>
-        <label for="fDate">Fecha de entrega</label>
+        <label for="fDate">Fecha de entrega <span class="oblig">*</span></label>
         <select id="fDate" name="fecha"><option value="">Calculando fechas…</option></select>
         <p class="hint" id="fechaInfo" style="margin:.35rem 0 0;font-size:var(--t5);color:var(--pine)"></p>
         <p class="error" id="sabado" hidden style="margin:.35rem 0 0">Los sábados no hay entregas. Elige otro día, por favor.</p>
       </div>
       <div>
-        <label for="fPlace">Lugar de entrega</label>
+        <label for="fPlace">Lugar de entrega <span class="oblig">*</span></label>
         <select id="fPlace" name="lugar" disabled><option value="">Elige primero la fecha</option></select>
         <p class="hint" id="placeHint" style="margin:.35rem 0 0;font-size:var(--t5);opacity:.85">Lunes a viernes: Uptown Juriquilla, Urban Center Jurica, Portal Querétaro, UTEQ, Santander de 5 de Febrero o Walmart de Bernardo Quintana. Domingo: los mismos puntos, más Plaza Esfera (McDonald's Plaza de Toros) y Arcos (Editorial Trillas). <b>Sábados no hay entregas.</b> La hora te la confirmamos por WhatsApp.</p>
       </div>
 <input type="hidden" id="fTime" value="">
+      <details class="opcional">
+        <summary>¿Quieres agregar una nota? <span>(opcional)</span></summary>
       <div>
         <label for="fNote">Nota</label>
         <textarea id="fNote" name="nota" autocomplete="off" placeholder="Colores, idioma de los letreros, etc…"></textarea>
@@ -538,7 +539,9 @@ function faltantes() {
   if (!totals().count) f.push("elige al menos un producto");
   if (!document.getElementById("fName").value.trim()) f.push("tu nombre");
   const fd = document.getElementById("fDate").value;
-  if (fd && (lugaresDe(fd) || []).length === 0) f.push("una fecha que no sea sábado");
+  if (!fd) f.push("la fecha de entrega");
+  else if ((lugaresDe(fd) || []).length === 0) f.push("una fecha que no sea sábado");
+  else if (!document.getElementById("fPlace").value) f.push("el lugar de entrega");
   return f;
 }
 
