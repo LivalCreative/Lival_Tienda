@@ -4,13 +4,14 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Tu pedido · Lival Creative Studio</title>
+<!-- Página de pedido (checkout compartido). Se edita directo aquí. -->
 <meta name="theme-color" content="#f8f2e4">
 <link rel="icon" href="../img/logo.png">
 <link rel="preload" href="../fonts/bricolage-latin-800-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="../assets/lival.css?v=20261109b">
 <link rel="stylesheet" href="../assets/temporada.css?v=20261109b">
 <style>
-/* Travesuras del Duende: su propio mundo en verde pino, rojo y oro sobre crema navideña.
+/* Tu pedido: estilo verde pino, rojo y oro sobre crema navideña.
    La base (letras, barra, botones) viene de ../assets/lival.css. */
 :root {
   --pine: #123a2c; --pine-2: #1b4d3b; --cream: #f8f2e4; --paper: #ffffff;
@@ -193,7 +194,6 @@ details.banco-det summary .flecha { margin: 0; width: 40px; height: 40px; flex: 
 details.banco-det[open] summary .flecha { transform: rotate(180deg); }
 details.banco-det[open] summary .t small { display: none; }
 
-.solo-pedido .hero, .solo-pedido nav.pills, .solo-pedido #paquete, .solo-pedido #cats, .solo-pedido #bar, .solo-pedido #como-duende, .solo-pedido .cred-duende { display: none !important; }
 .solo-pedido { padding-bottom: 24px; }
 .solo-pedido #pedido { margin-top: 8px; }
 #pedido > h1 { font-size: var(--t2); color: var(--pine); }
@@ -208,55 +208,15 @@ details.banco-det[open] summary .t small { display: none; }
 <header class="barra"><div class="marco">
   <a class="logo-link" href="../" aria-label="Lival Creative Studio, inicio"><img src="../img/logo-t.png" width="360" height="267" alt=""></a>
   <nav aria-label="Secciones">
-    <!-- Duende en pausa: <a class="link" href="../duende/">Duende</a> -->
     <a class="link" href="../disfraces/">Disfraces de duende</a>
     <a class="link" href="../navidad/">Navidad</a>
     <a class="link" href="../productos/">Más productos</a>
     <a class="bolsa" href="#pedido" aria-current="page">Mi pedido (<span data-carrito-n>0</span>)</a>
   </nav>
 </div></header>
-<section class="hero" aria-labelledby="t-duende">
-  <div class="snow" id="snow" aria-hidden="true"></div>
-  <div class="wrap">
-    <div class="texto">
-      <h1 id="t-duende">Travesuras del Duende</h1>
-      <p>Escenas impresas en 3D para que tu duende navideño haga una travesura distinta cada día de diciembre. Elige lo que te guste, ve tu total y manda tu pedido por WhatsApp.</p>
-      <p class="count"><b>--</b><span>días para el 1 de diciembre</span></p>
-      <ul class="notas"><li>Hecho sobre pedido</li><li>Entrega en persona</li><li>Apartas con anticipo</li><li>Duende no incluido</li></ul>
-      <a class="cta" href="#paquete">Ver las travesuras</a>
-    </div>
-    <div class="polas" id="polas"></div>
-  </div>
-</section>
-<nav class="pills" aria-label="Travesuras por tamaño"><div class="in">
-  <a href="#paquete" class="hot">Paquete de 24</a><a href="#chicas">Chiquitas</a><a href="#medianas">Medianas</a><a href="#grandes">Grandes</a><a href="#accesorios">Disfraces</a><a href="#pedido">Mi pedido</a>
-</div></nav>
 
 <main class="wrap" id="contenido">
-  <section id="paquete">
-    <h2>El paquete de 24</h2>
-    <p class="sub">Una travesura para cada día, del 1 al 24 de diciembre. Es lo más pedido y el cupo es limitado.</p>
-    <div class="featured item" data-id="PAQ24">
-      <div>
-        <h3>Paquete de 24 Travesuras Navideñas</h3>
-        <ul>
-          <li>24 travesuras en bolsitas numeradas por día, con instrucciones</li>
-          <li>Día 1: el duende llega con su letrero "¡He vuelto!"; día 24: se despide por un portal mágico</li>
-          <li>Incluye pastel sorpresa, tiro con arco, choque de tráfico, cocina desastrosa y más</li>
-        </ul>
-        <div class="paqfotos" id="paqfotos"></div>
-        <div id="paqHow"></div>
-      </div>
-      <div style="display:grid; gap:8px; justify-items:end">
-        <div class="price">$1,350</div>
-        <div class="save">Por separado: <s>$3,276</s></div>
-        <div class="saveb">Ahorras $1,926</div>
-        <div class="qty" data-qty="PAQ24"></div>
-      </div>
-    </div>
-  </section>
 
-  <div id="cats"></div>
 
   <section id="pedido">
     <h1>Tu pedido</h1>
@@ -309,19 +269,10 @@ details.banco-det[open] summary .t small { display: none; }
     </form>
   </section>
 
-  <section id="como-duende">
-    <h2>Cómo funciona</h2>
-    <div class="steps">
-      <div><b>Elige</b> Eliges tus travesuras y mandas tu pedido por WhatsApp.</div>
-      <div><b>Aparta</b> Pagas el anticipo y mandas tu comprobante. Ahí empezamos a imprimir.</div>
-      <div><b>Recibe</b> Te entregamos en persona el día acordado y pagas el resto.</div>
-    </div>
-  </section>
 
   <footer class="creditos">
     <img src="../img/logo-t.png" width="120" height="89" loading="lazy" alt="Lival Creative Studio" translate="no">
     <p>Lival Creative Studio · Querétaro · WhatsApp 442&nbsp;279&nbsp;1488</p>
-    <p class="cred-duende">Diseños de O3ga_3dprinting, impresos con licencia comercial · Duende no incluido · Piezas compatibles con duendes navideños de tamaño estándar</p>
   <div class="powered">
     <style>
       .powered { margin: 22px auto 0; padding: 14px 16px; max-width: 420px; border-top: 1px solid rgba(0,0,0,.12); text-align: center; font-size: .9rem; line-height: 1.45; color: inherit; }
@@ -345,7 +296,6 @@ details.banco-det[open] summary .t small { display: none; }
   </footer>
 </main>
 
-<div class="bar" id="bar"><div class="t" id="barT">$0<small>0 productos</small></div><a href="#pedido">Ver mi pedido</a></div>
 
 <script src="../assets/navidad-productos.js?v=20261121d"></script>
 <script src="../assets/carrito.js?v=20261107a"></script>
@@ -357,63 +307,8 @@ const DATOS_BANCO = "Banco: <b>BBVA</b><br>A nombre de: Lilian Valladares López
 const CLABE = "012680004682074457";
 const CUENTA = "0468207445";
 const DIAS_MINIMOS = 3; // días mínimos entre el pedido y la entrega
-const ANTICIPO_PAQUETE = 750;
 
-const CATS = [
- { id: "chicas", title: "Travesuras chiquitas", sub: "Rápidas de montar, perfectas para entre semana.", items: [
-  ["T02","nº 2","Desayuno sorpresa","El duende deja un 'regalito' de popó en la taza del desayuno.",49],
-  ["T04","nº 4","El pinta-caras","Le pinta bigote y lentes a un muñeco y lo cachan con el plumón.",49],
-  ["T05","nº 5","El sospechoso habitual","Un muñeco tirado, un charco rojo y el duende con cara de inocente.",49],
-  ["T17","nº 17","¡No más pantallas!","'Estrella' la pantalla del celular con su martillo de juguete (es una lámina).",49],
-  ["T29","nº 29","Teléfono de lata","Dos vasitos y una cuerda: el juego clásico de antes.",49],
-  ["T10","nº 10","Incidente con el hacha","El duende y un hacha gigante junto a un muñeco 'herido'.",69],
-  ["T24","nº 24","Beso bajo el muérdago","Una gorra con muérdago colgando: a quien se acerque le toca beso.",69],
-  ["T06","nº 6","Ángeles en la harina","Plantilla para dejar un ángel de nieve perfecto con harina.",79],
-  ["T01","nº 1","Letrero '¡He vuelto!'","Para el primer día: el duende anuncia que regresó. En español o inglés.",89],
-  ["T09","nº 9","El cepo medieval","Los juguetes se vengan y lo atrapan en un cepo.",89],
-  ["T20","nº 20","Pastel sorpresa","Al levantar el pastel aparece una popó escondida.",89],
-  ["T28","nº 28","Ser o no ser","El duende se pone dramático con su calavera de teatro.",99]
- ]},
- { id: "medianas", title: "Travesuras medianas", sub: "Escenas con varias piezas.", items: [
-  ["T03","nº 3","Tiro al blanco con arco","Practica con arco y flechas usando un muñeco de diana.",119],
-  ["T11","nº 11","Ya huele a Navidad","Inventa una 'máquina de aire fresco' muy sospechosa.",119],
-  ["T15","nº 15","Patito mágico","El duende mago convierte a su amigo en patito de goma.",159],
-  ["T07","nº 7","Regalo sorpresa","Pide perdón con un regalo… que trae una popó adentro.",179],
-  ["T12","nº 12","Accidente de tráfico","Conos tirados, señal de alto y cinta policial tras el choque.",179],
-  ["T08","nº 8","Escena sospechosa","Cintas policiales y una silueta en el piso: ¿qué pasó?",189],
-  ["T25","nº 25","El hechizo se volvió contra él","Ensaya frente al espejo y él termina hecho patito.",199],
-  ["T27","nº 27","Ejercicio de puntería","Flecha, manzana y árbol al estilo Guillermo Tell.",209]
- ]},
- { id: "grandes", title: "Travesuras grandes", sub: "Las más espectaculares. Entrega de 5 a 7 días.", items: [
-  ["T23","nº 23","Fregó y a nadie avisó","Cubeta, trapeador y letrero de piso mojado escondido.",239],
-  ["T18","nº 18","Afinando la puntería","Resortera y 'vidrios rotos' de botellas que no lastiman.",249],
-  ["T21","nº 21","Desastre en la cocina","Estufita de leña con luz, sartén, huevo y papas fritas.",259],
-  ["T14","nº 14","Show de magia: el serrucho","La caja de magia para 'partir' a un muñeco en dos.",309],
-  ["T26","nº 26","Christmas Fight Club","Saco de boxeo con soporte y base con emblema.",319],
-  ["TFIN","Final","Portal al Polo Norte","La despedida: silueta mágica, círculo y letrero.",349],
-  ["T16","nº 16","Tiro al blanco vikingo","Diana giratoria con hachas 'clavadas' alrededor.",419],
-  ["T19","nº 19","Operación caca-pesca","Una grúa en el baño para pescar lo que nadie quiere.",589],
-  ["T22","nº 22","Muñeco de nieve mágico","Día 1 muñeco de nieve; día 2 se 'derrite' en helado.",629]
- ]},
- { id: "accesorios", title: "Disfraces y accesorios", sub: "Para armar escenas propias todo el año.", items: [
-  ["Z1","Accesorio","Zapatos magnéticos (1 par)","Con imanes para que se pare en patinetas y tablas.",49],
-  ["Z4","Accesorio","Zapatos magnéticos (4 tipos)","Botas, tacones y pantuflas con o sin pompón.",119],
-  ["DMAN","Disfraz","Disfraz de manitas","Casco y cinturón con herramientas que se quitan y ponen.",119],
-  ["CAM","Accesorio","ELF-CAM","Cámara de vigilancia para 'grabar' las travesuras.",159],
-  ["HUE","Accesorio","Moldes de huellitas","Para dejar huellas de harina por toda la casa.",179],
-  ["DMAG","Disfraz","Disfraz de mago","Sombrero de copa, pantalón, zapatos y varita.",209],
-  ["DPOL","Disfraz","Disfraz de policía","Gorra, placa, esposas y cinturón policial.",209],
-  ["CONT","Decoración","Contador 'Días sin travesuras'","Letrero magnético para el refri que siempre marca 000.",239],
-  ["MAGA","Accesorio","Accesorios magnéticos","Snowboard, esquís, patineta y tabla de surf.",259],
-  ["MODA","Disfraz","Set de moda","Piernas, falda y zapatos para vestir al duende.",269],
-  ["JING","Personaje","Jingles, la mascota","Un regalo que cobró vida: caja con dientes y patitas.",479]
- ]}
-];
-
-const DETALLES = {"T01": {"como": "Primer día de diciembre: el duende regresa a casa después de un año y lo anuncia con un letrerito, arrancando el mes de travesuras.", "incluye": "Letrero clásico o con cara traviesa, en una pieza o por partes, con mango corto o largo; en español, inglés ('I'm back') o francés.", "necesitas": "Nada extra, solo tu duende."}, "T02": {"como": "El duende se sienta sobre una taza vacía del desayuno… y en el fondo deja un 'regalito': una popó impresa.", "incluye": "Varios modelos de popó a escala del duende (3 diseños nuevos más uno tipo cómic).", "necesitas": "Una taza (mejor si es transparente)."}, "T03": {"como": "El duende practica tiro con arco usando de diana a uno de los muñecos favoritos de los niños… y cada flecha queda un poco más cerca del blanco.", "incluye": "Arco, flechas, diana y soporte de diana.", "necesitas": "Nada extra, solo tu duende."}, "T04": {"como": "Mientras todos dormían, el duende le pintó bigote, lentes y garabatos en la cara a un muñeco… y lo atraparon con el plumón en la mano.", "incluye": "Plumón (completo, o dividido en piezas para imprimir con pausas).", "necesitas": "Un plumón borrable y un muñeco de la casa."}, "T05": {"como": "Un muñeco aparece tirado sobre un charco rojo y el duende sostiene un cuchillo enorme con cara de inocente: ¿fue él o llegó tarde? Humor de caricatura.", "incluye": "Cuchillo desmontable (hoja y dos piezas de mango), mancha roja para el cuchillo y charco para el piso.", "necesitas": "Un muñeco de la casa."}, "T06": {"como": "El duende hizo un 'ángel de nieve' con harina en el piso. Una plantilla deja la silueta perfecta sin ensuciar al muñeco, que queda sentado junto a su obra.", "incluye": "Plantilla con forma de ángel y agarradera integrada.", "necesitas": "Harina, azúcar glas o cacao."}, "T07": {"como": "El duende parece arrepentido: espera en el sillón con un regalito y un letrero que dice 'Lo siento… te mereces este regalo'. Al abrir la caja, sale una popó impresa.", "incluye": "Caja articulada que se abre sola (con tapa y moño) o caja desmontable, letrero de disculpa (español, inglés o francés) con bastón de soporte, y 3 modelos nuevos de popó.", "necesitas": "Nada extra, solo tu duende."}, "T08": {"como": "La policía del Polo Norte encuentra una escena misteriosa con cintas y una silueta en el piso… y resulta que el duende la montó él mismo y está escondido viendo cómo todos la investigan.", "incluye": "Cintas policiales con letreros (POLICÍA, NO PASAR, POLICE LINE, DO NOT CROSS), postes de soporte (rectos, inclinados y laterales) y silueta para el piso.", "necesitas": "Nada extra."}, "T09": {"como": "La venganza de los juguetes: atrapan al duende en un cepo medieval, con la cabeza y las manos inmovilizadas, para que piense en todas sus travesuras.", "incluye": "Cepo (varias piezas), bisagra con clavo, patas y herrajes decorativos.", "necesitas": "Nada extra, solo tu duende."}, "T10": {"como": "Un muñeco de la casa aparece tirado junto a un charco rojo y el duende a su lado con un hacha gigante de juguete: humor exagerado tipo caricatura.", "incluye": "Hacha grande (hoja y mango por separado) y charco rojo decorativo.", "necesitas": "Un muñeco de la casa."}, "T11": {"como": "El duende inventa la 'máquina de aire fresco': se sienta en un tubo largo con asiento y asas y apunta el otro extremo a un muñeco dormido. El letrero dice 'Aroma de elfo'.", "incluye": "Tubo principal, asiento, patas, asas y letreros con textos chistosos (aroma de elfo, perfume de elfo, máquina de aire fresco) en español, inglés o francés.", "necesitas": "Otro muñeco 'dormido' como víctima."}, "T12": {"como": "El duende manejó demasiado rápido y chocó: la escena del accidente tiene conos tirados, señal de alto, cinta policial y marcas de derrape hechas con café.", "incluye": "4 conos de tráfico, señal de STOP y barrera policial (en español o inglés).", "necesitas": "Un cochecito de juguete y un poco de café molido para la tierra."}, "T14": {"como": "El duende mago presenta el clásico truco de la caja y el serrucho: otro duende (o un muñeco separado por la cintura) queda 'partido' en dos dentro de la caja.", "incluye": "Caja de magia desmontable con dos tapas (la de la cabeza con letrero del show), serrucho (hoja, mango y tornillos), dos candados decorativos, patas, 4 pasadores de bisagra con topes.", "necesitas": "Un segundo duende o un muñeco articulado."}, "T15": {"como": "El duende mago practica con su varita y convierte una figura en un patito de goma navideño con gorro de Santa. Es la primera parte de la historia del patito (sigue en la nº 25).", "incluye": "Patito (con la parte blanca del gorro integrada), parte roja del gorro y ojos.", "necesitas": "Nada extra, solo tu duende."}, "T16": {"como": "El duende se vuelve lanzador de hachas vikingo: amarra al muñeco favorito del niño a una diana giratoria y deja las hachas 'clavadas' a su alrededor.", "incluye": "Diana a 3 colores, base, soportes, pasadores y cierres, poste, 6 hachas (mango y hoja) y exhibidor de hachas con patas.", "necesitas": "Un muñeco favorito y una liga o cordón."}, "T17": {"como": "El duende 'estrella' la pantalla del celular con su martillo de juguete: una lámina de 0.8 mm simula el vidrio roto para la foto. Mensaje: menos pantalla y más juego.", "incluye": "Martillo completo, mango aparte, efecto de pantalla rota y efecto de pantalla rota con la cabeza del martillo incrustada.", "necesitas": "Nada extra, solo tu duende."}, "T18": {"como": "El duende practicó con su resortera y 'rompió' varias botellas y una taza: los pedazos están impresos y encajan entre sí, así que parecen vidrio roto de verdad sin ningún peligro.", "incluye": "Resortera (configuración A para diestro o zurdo y configuración B), canasta y fragmentos de botellas y taza (dos modelos de botella, uno con forma de botella de refresco).", "necesitas": "Nada extra, solo tu duende."}, "T19": {"como": "El duende se aficiona a la pesca… en el inodoro: con una grúa enganchada a la tapa del baño y un anzuelo enorme intenta sacar su 'captura' (una popó).", "incluye": "Base de clip para el WC (normal o magnética), mecanismo de grúa con poleas, brazo, manivela, anzuelo y popó.", "necesitas": "Hilo de coser o sedal fino."}, "T20": {"como": "El duende sostiene un pastel precioso, pero al levantarlo aparece una 'popó' escondida en la charola.", "incluye": "Pastel hueco con charola, charola auxiliar con la popó, base para la popó, bolitas y guirnaldas de merengue (3 juegos de cada una).", "necesitas": "Nada extra, solo tu duende."}, "T21": {"como": "El duende se queda solo en la cocina y se prepara la cena en su estufita de leña: papas fritas, huevo, harina regada… y la estufa todavía 'encendida' en la mañana.", "incluye": "Mini estufa de leña desmontable (base, estructura, chimenea, puerta abatible, tapa y placa), sartén, espumadera, huevo (clara y yema) y papas fritas.", "necesitas": "Vela LED (incluida en el paquete), harina y papitas para la escena."}, "T22": {"como": "Día 1: aparece un muñeco de nieve con gorro, escoba y botones sobre un plato. Día 2: en su lugar hay tres bolas de helado con sus accesorios encima, como si se hubiera derretido.", "incluye": "Muñeco en 3 esferas (base, torso y cabeza para gorro), botones, ojos y sonrisa, nariz de zanahoria, gorro navideño, escoba (palo y cepillo), cinturón con hebilla y pajarita.", "necesitas": "Un plato y helado de verdad para el día 2."}, "T23": {"como": "El duende trapea el piso y 'se le olvida' poner el letrero de piso mojado, que esconde detrás de la pierna mientras alguien se resbala.", "incluye": "Cubeta, escurridor, trapeador desmontable (para ponerle lana) y letrero de 'piso mojado' en español, inglés, francés, italiano y alemán.", "necesitas": "Otra figura que 'se resbale'."}, "T24": {"como": "El duende se fabrica una gorra con un gancho que le deja un muérdago colgando sobre la cabeza: a quien se le acerque le toca beso, por tradición.", "incluye": "Hojas de muérdago con bolitas rojas, gancho para el muérdago y gorra perforada.", "necesitas": "Una segunda figura para el beso."}, "T25": {"como": "El duende mago ensaya hechizos frente al espejo, el conjuro le rebota y termina convertido en patito de goma. Continúa la historia del duende mago.", "incluye": "Patito de goma, pajarita, varita mágica, hebilla de cinturón de mago y ojos.", "necesitas": "Un espejo."}, "T26": {"como": "El duende decide ponerse en forma y abre su propio Christmas Fight Club con un saco de boxeo colgante.", "incluye": "Saco de boxeo colgante, soporte vertical con gancho y base redonda con emblema en relieve (67 / SIX SEVEN, CHRISTMAS FIGHT CLUB).", "necesitas": "Nada extra, solo tu duende."}, "T27": {"como": "El duende practica tiro con arco al estilo Guillermo Tell: la manzana termina atravesada por la flecha y clavada en el árbol o en la diana.", "incluye": "Arco, flechas, carcaj, cinturón con hebilla, manzana (con o sin hoja), diana con soportes o árbol (tronco y 3 copas); versión de árbol y diana para A1 mini.", "necesitas": "Nada extra, solo tu duende."}, "T28": {"como": "El duende se pone dramático y monta su propia escena de teatro, mirando una calavera como en Hamlet: ¿ser o no ser?", "incluye": "Calavera, barra de montaje y base (3 piezas). La calavera va sobre un pedestal porque los brazos del duende son de tela.", "necesitas": "Nada extra, solo tu duende."}, "T29": {"como": "El duende saca un teléfono de lata hecho con dos vasos y una cuerda: un juego de antes que además sirve de experimento para ver cómo viaja el sonido.", "incluye": "2 vasos (1 placa). También trae el STL de un vaso suelto para imprimir más.", "necesitas": "Lana o cordón (incluido)."}, "TFIN": {"como": "La despedida: el duende regresa al Polo Norte por un portal mágico. Queda su silueta marcada con cacao o azúcar glas, rodeada del círculo mágico y un letrero de instrucciones.", "incluye": "Círculo mágico (semicírculos, uno con inscripción), letrero de instrucciones con poste y base (español, inglés o francés) y plantilla para la silueta con 4 esquinas.", "necesitas": "Cacao o azúcar glas."}, "CONT": {"como": "Letrero magnético para el refri que cuenta los días sin travesuras, con números intercambiables… que con este duende siempre marcan 000.", "incluye": "Letrero/contador y números intercambiables (en relieve o sin relieve).", "necesitas": "Una superficie metálica, como el refri."}, "DMAN": {"como": "Disfraz de manitas: el duende se pone casco de obra y cinturón de herramientas, listo para 'arreglar' (o desarmar) lo que encuentre; sirve para muchas escenas.", "incluye": "Casco de obra, cinturón portaherramientas, martillo, pinzas y dos llaves fijas; las herramientas se sacan y se vuelven a meter al cinturón.", "necesitas": "El pantalón del set de moda."}, "DMAG": {"como": "Disfraz de mago para el duende: sombrero de copa, pajarita, pantalón, zapatos, cinturón y varita. Es parte del sistema de moda del Polo Norte y se combina con los trucos de magia.", "incluye": "Sombrero de copa, pajarita, pantalón, zapatos, calcetines con pompón, cinturón con hebilla y varita mágica.", "necesitas": "Nada extra, solo tu duende."}, "DPOL": {"como": "Los juguetes llamaron a la Policía del Polo Norte: este disfraz convierte a un duende en agente para acompañar escenas como la celda, el choque o el cepo medieval.", "incluye": "Pantalón (negro o azul con blanco), botas con pompones, calcetines, gorra con estrella, cinturón con pistola y tolete que se sacan de sus fundas, esposas con cadena articulada y placa con cartera para colgar al cuello.", "necesitas": "Nada extra, solo tu duende."}, "JING": {"como": "Jingles es un regalo olvidado que cobró vida por magia: una caja con dientes, lengua, patas y cola que acompaña al duende en sus travesuras.", "incluye": "Caja (parte superior, inferior, interior y bisagra), 10 dientes, lengua, 4 patas, cola, cintas, moño y ojos.", "necesitas": "Nada extra, solo tu duende."}, "HUE": {"como": "Moldes para dejar huellitas del duende con harina o azúcar glas por la casa, con la forma de los zapatos del set de moda del Polo Norte.", "incluye": "Huellas positivas (botas, tacones, tenis y pantuflas, izquierda y derecha) y moldes negativos por tipo de zapato (recto, curva a la izquierda y a la derecha), más una espátula.", "necesitas": "Harina o azúcar glas."}, "MAGA": {"como": "Equipo deportivo que se pega 'por arte de magia' a las botas magnéticas del duende: snowboard, esquís, longboard con ruedas que giran y tabla de surf.", "incluye": "Tabla de snowboard, esquís, longboard (tabla, ejes y ruedas funcionales) y tabla de surf con aletas e invento; también versiones lisas para personalizar.", "necesitas": "Los zapatos magnéticos y el set de moda (se venden aparte)."}, "Z1": {"como": "Zapatos con imanes escondidos para que el duende se quede parado en patinetas, tablas y superficies metálicas, como por arte de magia.", "incluye": "Un par de zapatos con imanes escondidos (elige botas, tacones o pantuflas).", "necesitas": "El set de moda para ponérselos."}, "Z4": {"como": "Zapatos con imanes escondidos para que el duende se quede parado en patinetas, tablas y superficies metálicas, como por arte de magia.", "incluye": "Botas (suela café o negra), zapatos de tacón para la duendecita y pantuflas con o sin pompón (4 tipos de calzado, uno por placa).", "necesitas": "El set de moda para ponérselos."}, "MODA": {"como": "La base de todos los disfraces: piernas modulares para el duende de tela (pantalón o leotardo), falda, tirantes, hebillas y zapatos que se combinan entre sí.", "incluye": "Pantalón estándar o leotardo a rayas con calcetines, pompones, falda con cinturón, tirantes (varias configuraciones), 5 hebillas y 4 modelos de zapato.", "necesitas": "Nada extra, solo tu duende."}, "CAM": {"como": "Una cámara de vigilancia de mentiritas: los papás toman fotos del duende 'en plena travesura' y las convierten con IA en capturas de cámara nocturna, para que los niños crean que lo grabó.", "incluye": "Cámara (cuerpo, lente, tapa y articulación), base con o sin cable, soporte de pared y letrero ELFCAM.", "necesitas": "Tomar fotos del duende en acción; te damos la idea para convertirlas en 'capturas de cámara'."}, "PAQ24": {"como": "Cada noche abres la bolsita del día, sigues la instrucción y montas la escena antes de que despierten los niños. Empieza el 1 de diciembre con el letrero '¡He vuelto!' y termina el 24 con la despedida por el portal mágico.", "incluye": "24 travesuras impresas en 3D (nº 1 a 12, 15, 17, 18, 20, 21, 23, 24, 25, 27, 28, 29 y el portal), cada una en su bolsa numerada con instrucciones, dentro de una caja.", "necesitas": "Tu duende y algunas cosas de casa (harina, una taza, un muñeco). En cada instrucción te decimos qué usar."}};
-const FOTOS = {}; // id: foto real // id: "data:image/jpeg;base64,..." — aquí van tus fotos reales
-const PRODUCTS = { PAQ24: { name: "Paquete de 24 Travesuras", price: 1350, paquete: true } };
-CATS.forEach(c => c.items.forEach(([id, num, name, desc, price]) => { PRODUCTS[id] = { name: (num.startsWith("nº") ? num + " " : "") + name, price }; }));
+const PRODUCTS = {};
 Object.entries(LIVAL.EXTRA).forEach(([k, v]) => { PRODUCTS[k] = { name: v.name, price: v.price }; });
 LIVAL.personales().forEach(p => { PRODUCTS[p.id] = { name: p.name, price: p.price }; });
 const qty = LIVAL.leer();
@@ -430,22 +325,6 @@ document.body.addEventListener("click", e => {
 });
 const money = n => "$" + n.toLocaleString("es-MX", { maximumFractionDigits: 0 });
 
-function howBlock(id) {
-  const x = DETALLES[id]; if (!x) return "";
-  return `<details class="how"><summary>¿Cómo funciona?</summary><dl><dt>La travesura</dt><dd>${x.como}</dd><dt>Incluye</dt><dd>${x.incluye}</dd><dt>Necesitas (no incluido)</dt><dd>${x.necesitas}</dd></dl></details>`;
-}
-function fotoBlock(id) { return FOTOS[id] ? `<img class="foto" loading="lazy" draggable="false" oncontextmenu="return false" src="${FOTOS[id]}" alt="">` : ""; }
-function qtyControl(id) {
-  return `<button type="button" aria-label="Quitar uno" data-act="-" data-id="${id}">−</button><span id="q-${id}">0</span><button type="button" aria-label="Agregar uno" data-act="+" data-id="${id}">+</button>`;
-}
-document.getElementById("cats").innerHTML = CATS.map(c => `
-  <section id="${c.id}"><h2>${c.title}</h2><p class="sub">${c.sub}</p><div class="grid">
-  ${c.items.map(([id, num, name, desc, price]) => `
-    <div class="item" data-id="${id}">${fotoBlock(id)}<div class="top"><h3>${name}</h3><span class="num">${num}</span></div>
-    <p>${desc}</p>${howBlock(id)}<div class="bottom"><span class="p">${money(price)}</span><div class="qty" data-qty="${id}">${qtyControl(id)}</div></div></div>`).join("")}
-  </div></section>`).join("");
-document.querySelector('[data-qty="PAQ24"]').innerHTML = qtyControl("PAQ24");
-document.getElementById("paqHow").innerHTML = howBlock("PAQ24");
 
 document.body.addEventListener("click", e => {
   const b = e.target.closest("button[data-act]");
@@ -457,7 +336,6 @@ document.body.addEventListener("click", e => {
 
 function anticipoDe(id, n) {
   const p = PRODUCTS[id];
-  if (p.paquete) return ANTICIPO_PAQUETE * n;
   return Math.ceil(p.price * n * 0.5 / 10) * 10;
 }
 
@@ -484,7 +362,6 @@ function update() {
   document.getElementById("pTotal").textContent = money(t.total);
   document.getElementById("pAnt").textContent = money(t.ant);
   document.getElementById("pRest").textContent = money(t.rest);
-  document.getElementById("barT").innerHTML = `${money(t.total)}<small>${t.count} producto${t.count === 1 ? "" : "s"} · anticipo ${money(t.ant)}</small>`;
   buildLink();
 }
 
@@ -605,7 +482,7 @@ document.getElementById("orderForm").addEventListener("submit", e => e.preventDe
 
 
 // ===== Fechas disponibles según producción y pedidos (ocupacion.json se actualiza solo desde el tablero) =====
-const HORAS = {"T02": 0.4, "T04": 0.7, "T05": 0.7, "T17": 1.1, "T29": 0.4, "T10": 1.4, "T24": 1.5, "T06": 1.3, "T01": 2.1, "T09": 1.9, "T20": 2.3, "T28": 2.8, "T03": 2.6, "T11": 3.9, "T15": 4.6, "T07": 5.7, "T12": 5.4, "T08": 6.7, "T25": 5.9, "T27": 7.3, "T23": 8.2, "T18": 10.0, "T21": 7.6, "T14": 7.7, "T26": 8.8, "TFIN": 9.4, "T16": 11.0, "T19": 16.8, "T22": 18.3, "Z1": 1.2, "Z4": 3.5, "DMAN": 4.0, "CAM": 3.8, "HUE": 5.5, "DMAG": 6.4, "DPOL": 6.9, "CONT": 6.3, "MAGA": 7.3, "MODA": 8.7, "JING": 17.1, "PAQ24": 93.9};
+const HORAS = {};
 Object.entries(LIVAL.EXTRA).forEach(([k, v]) => { HORAS[k] = v.horas; });
 LIVAL.personales().forEach(p => { HORAS[p.id] = p.horas; });
 let OCUP = { cupo_por_dia: 4, horas_por_dia: 16, horas_pendientes: 0, entregas_por_fecha: {} };
@@ -644,27 +521,6 @@ function refreshFechas() {
 document.body.addEventListener("click", e => { if (e.target.closest("button[data-act]")) refreshFechas(); });
 fetch("../ocupacion.json?v=" + Date.now()).then(r => r.ok ? r.json() : null).then(j => { if (j) OCUP = Object.assign(OCUP, j); }).catch(() => {}).finally(refreshFechas);
 
-(function wow() {
-  const s = document.getElementById("snow");
-  if (!matchMedia("(prefers-reduced-motion: reduce)").matches) {
-    s.innerHTML = Array.from({ length: 34 }, () => {
-      const z = 3 + Math.random() * 5;
-      return `<i style="left:${Math.random() * 100}%;width:${z}px;height:${z}px;opacity:${.35 + Math.random() * .55};--dx:${(Math.random() * 60 - 30) | 0}px;animation-duration:${7 + Math.random() * 9}s;animation-delay:-${Math.random() * 14}s"></i>`;
-    }).join("");
-  }
-  const hoy = new Date(); hoy.setHours(0, 0, 0, 0);
-  let meta = new Date(hoy.getFullYear(), 11, 1); if (hoy > meta) meta = new Date(hoy.getFullYear() + 1, 11, 1);
-  const d = Math.round((meta - hoy) / 864e5);
-  document.querySelector(".hero .count").innerHTML = d === 0 ? "<b>¡Hoy!</b><span>empiezan las travesuras</span>" : `<b>${d}</b><span>día${d === 1 ? "" : "s"} para el 1 de diciembre</span>`;
-  const pick = ids => ids.filter(i => FOTOS[i]).map(i => `<div><img src="${FOTOS[i]}" alt="" draggable="false"></div>`).join("");
-  document.getElementById("polas").innerHTML = pick(["T21", "T20", "T12"]);
-  document.getElementById("paqfotos").innerHTML = ["T01", "T07", "T16", "TFIN"].filter(i => FOTOS[i]).map(i => `<img src="${FOTOS[i]}" alt="" draggable="false">`).join("");
-  const bar = document.getElementById("bar");
-  document.body.addEventListener("click", e => {
-    const b = e.target.closest('button[data-act="+"]'); if (!b) return;
-    bar.classList.remove("bump"); void bar.offsetWidth; bar.classList.add("bump");
-  });
-})();
 
 bankText(); update();
 </script>

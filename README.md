@@ -9,8 +9,8 @@ en la carpeta "Catalogo Lival".
 - `index.html` — inicio con las secciones.
 - `navidad/` — productos navideños.
 - `productos/` — más productos (muy pronto).
-- `pedido/` — carrito y pedido por WhatsApp (se genera con `tools/build_pedido.py`).
-- `duende/` — Travesuras del Duende (en pausa).
+- `pedido/` — carrito y pedido por WhatsApp.
+- `duende/` — se quitó (solo redirige al inicio).
 - `assets/` — estilos y código compartido (carrito, productos de Navidad).
 - `img/` — fotos de la tienda, con marca de agua.
 - `ocupacion.json` — fechas ocupadas y cupo de Navidad, generado desde el tablero Pedidos 3D con `tools/ocupacion.py`. No contiene nombres ni montos.
