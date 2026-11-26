@@ -9,7 +9,7 @@ Todo en español (México). La dueña es Lilian; los clientes compran desde el c
 - `pedido/index.html` — checkout compartido (carrito, fechas, lugares, datos bancarios y mensaje de WhatsApp). Se edita directo; ya no se genera.
 - `disfraces/index.html` — "Disfraces para tu duende": el cliente escoge paquete (3 $180, 6 $330, 9 $465, colección completa 13 con Frosty $580) y marca los disfraces; Frosty solo va en la colección completa o aparte ($130). Datos (nombres, horas, fotos) en el script de la página. Fotos con marca de agua en `img/disfraces/`. Aviso verde arriba de todo en el inicio y en Navidad (`.aviso-dz` en lival.css), botón rojo en la portada y banda más abajo en el inicio.
 - `navidad/index.html` — productos navideños en rejilla (3 por fila en computadora, 2 en celular); cada tarjeta se abre en vista completa.
-- `productos/index.html` — "Más productos" (muy pronto).
+- `productos/index.html` — "Más productos" (todo el año). Productos en `assets/mas-productos.js` (mismo formato que Navidad, se dibujan con navidad-render.js; también lo carga el pedido). Fotos en `img/mas/`.
 - `assets/carrito.js` — carrito compartido (localStorage), precios y horas de los productos fuera del duende, productos personalizados (chimenea).
 - `assets/tienda.js` — detalles compartidos de la vista (número del carrito en la barra, animaciones, nieve, cuenta regresiva, fotos protegidas). No toca precios ni pedidos.
 - Estilo "Taller de regalos": `assets/lival.css` (lavanda y durazno, letra Bricolage Grotesque + Nunito en `fonts/`). La página de pedido usa verde pino, rojo y oro.

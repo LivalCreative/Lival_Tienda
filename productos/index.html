@@ -23,6 +23,160 @@
 <!-- Visitas (GoatCounter: sin cookies, no guarda quién es cada persona) -->
 <script data-goatcounter="https://livalcreative.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
 <script>document.addEventListener("click",function(e){var gc=window.goatcounter;if(!gc||!gc.count||!e.target.closest)return;var a=e.target.closest('a[href*="wa.me"],[data-abrir],[data-filtro]');if(!a)return;var p,t="";if(a.dataset.abrir){p="producto/"+a.dataset.abrir;var pr=document.getElementById(a.dataset.abrir),h=pr&&pr.querySelector("h3");t=h?h.textContent:"";}else if(a.dataset.filtro!==undefined){p="categoria/"+(a.dataset.filtro||"todo");t=a.textContent;}else{p="whatsapp"+location.pathname;t="Clic en WhatsApp";}gc.count({path:p,title:t.trim().slice(0,80),event:true});},true);</script>
+<style>
+/* Navidad: catálogo en rejilla (2 por fila en celular, 3 en computadora). "Ver opciones" abre el producto completo. */
+.cabeza { padding: 8px 0 28px; }
+.cabeza h1 { font-size: var(--t2); }
+.prods { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:12px; padding-bottom: 24px; }
+.especial { grid-column:1 / -1; background:var(--lav); border-radius:28px; padding:28px 22px; display:flex; flex-direction:column; align-items:flex-start; gap:14px; }
+.especial h2 { font-size:var(--t2); }
+.especial p { max-width:40ch; }
+@media (min-width:900px) { .especial { grid-column:span 2; justify-content:center; padding:40px; } }
+@media (min-width:900px) { .prods { grid-template-columns:repeat(3,minmax(0,1fr)); gap:20px; } }
+.prod { background:var(--durazno-l); border-radius:28px; overflow:hidden; display:flex; flex-direction:column; padding:8px; min-width:0; transition:transform .45s var(--rebote); }
+.prods .prod:nth-child(even) { background:var(--lav-l); }
+@media (hover:hover) { .prods .prod:not(.open):hover { transform:translateY(-6px) rotate(-.6deg); } }
+.gal { display:flex; overflow-x:auto; scroll-snap-type:x mandatory; scrollbar-width:none; border-radius:20px; flex:none; }
+.gal::-webkit-scrollbar { display:none; }
+.gal img { flex:none; width:100%; aspect-ratio:1; object-fit:cover; scroll-snap-align:center; pointer-events:none; -webkit-touch-callout:none; -webkit-user-select:none; user-select:none; }
+#casita .gal img { object-position:center 70%; }
+.dots { display:none; gap:6px; justify-content:center; margin-top:-22px; position:relative; }
+.dots i { width:8px; height:8px; border-radius:50%; background:rgba(255,255,255,.65); transition:width .3s; }
+.dots i.on { background:#fff; width:20px; border-radius:4px; }
+.info { padding:12px 6px 6px; display:flex; flex-direction:column; flex:1; }
+.prod h3 { order:1; font-size:1.25rem; line-height:1; margin:4px 0 0; }
+.badge { order:2; font-size:var(--t5); color:var(--gris); margin-top:6px; }
+.lead { order:3; margin:8px 0 0; font-size:var(--t5); display:-webkit-box; -webkit-line-clamp:3; -webkit-box-orient:vertical; overflow:hidden; }
+.mini { order:4; margin-top:auto; padding-top:12px; display:flex; flex-direction:column; gap:10px; }
+.det { order:5; }
+.desde { font-size:var(--t5); } .desde b { font:800 var(--t3) var(--disp); letter-spacing:-.03em; font-variant-numeric:tabular-nums; margin-left:4px; }
+.btn.ver { background:var(--tinta); color:#fff; width:100%; min-height:48px; padding:0 14px; }
+.btn.ver:hover { background:var(--lav-d); }
+@media (max-width:420px) { .lead { display:none; } }
+@media (min-width:900px) { .prod h3 { font-size:var(--t3); } .info { padding:16px 10px 10px; } .mini { flex-direction:row; align-items:center; justify-content:space-between; } .btn.ver { width:auto; } }
+.prod .det, .prod .cerrar { display:none; }
+
+/* Producto abierto a pantalla completa */
+.prod.open { position:fixed; inset:0; z-index:50; overflow-y:auto; overscroll-behavior:contain; border-radius:0; padding:0; background:var(--suelo); transform:none; }
+.media { position:relative; flex:none; }
+.thumbs, .flecha { display:none; }
+.prod.open .gal { border-radius:0; background:#fff; }
+.prod.open .gal img { aspect-ratio:auto; height:auto; max-height:72vh; object-fit:contain; background:#fff; }
+.prod.open .dots { display:none; }
+.prod.open .thumbs { display:flex; gap:8px; overflow-x:auto; scrollbar-width:none; padding:12px var(--m) 0; }
+.prod.open .thumbs::-webkit-scrollbar { display:none; }
+.thumbs button { flex:none; width:64px; height:64px; padding:0; border:3px solid transparent; border-radius:14px; overflow:hidden; background:#fff; cursor:pointer; opacity:.65; transition:opacity .2s, border-color .2s; }
+.thumbs button.on { border-color:var(--lav-d); opacity:1; }
+.thumbs img { width:100%; height:100%; object-fit:cover; pointer-events:none; -webkit-touch-callout:none; user-select:none; }
+.prod.open .flecha { display:grid; place-items:center; position:absolute; top:50%; z-index:2; width:44px; height:44px; margin-top:-22px; border:0; border-radius:50%; background:rgba(255,255,255,.92); color:var(--tinta); font:800 1.7rem/1 var(--disp); box-shadow:0 3px 12px rgba(43,34,64,.2); cursor:pointer; }
+.prod.open .flecha.ant { left:10px; } .prod.open .flecha.sig { right:10px; }
+@media (hover:none) { .prod.open .flecha { display:none; } }
+@media (min-width:860px) {
+  .prod.open { display:grid; grid-template-columns:minmax(0,1.15fr) minmax(0,1fr); gap:48px; align-items:start; padding:40px max(40px, calc((100vw - 1240px) / 2)) 0; }
+  .prod.open .media { position:sticky; top:40px; }
+  .prod.open .gal { border-radius:28px; }
+  .prod.open .gal img { max-height:calc(100vh - 190px); }
+  .prod.open .thumbs { padding:14px 0 40px; flex-wrap:wrap; }
+  .prod.open .thumbs button { width:78px; height:78px; }
+  .prod.open .info { max-width:none; margin:0; padding:8px 0 140px; }
+  .prod.open h3 { font-size:clamp(2.2rem, 3.4vw, 3.2rem); }
+}
+.prod.open .info { max-width:640px; margin:0 auto; width:100%; padding:22px var(--m) 120px; }
+.prod.open h3 { font-size:clamp(2.2rem, 8vw, 3.2rem); }
+.prod.open .badge { font-size:var(--t4); color:var(--lav-d); font-weight:800; margin-top:10px; }
+.prod.open .lead { display:block; -webkit-line-clamp:unset; font-size:1.125rem; margin-top:14px; }
+.prod.open .mini { display:none; }
+.prod.open .det { display:block; margin-top:18px; }
+.prod.open .cerrar { display:grid; place-items:center; position:fixed; top:12px; right:12px; z-index:60; width:48px; height:48px; border-radius:50%; border:0; background:var(--suelo); box-shadow:0 4px 14px rgba(43,34,64,.25); font-size:1.15rem; font-weight:800; cursor:pointer; color:var(--tinta); transition:transform .35s var(--rebote); }
+.prod.open .cerrar:hover { transform:rotate(90deg); }
+.prods .prod.open { background:var(--suelo); }
+body.abierto { overflow:hidden; }
+body.abierto .nbar { z-index:70; }
+
+.prod ul { margin:0 0 18px; padding-left:1.2rem; }
+.prod li { margin-bottom:6px; }
+.sw { display:inline-block; width:12px; height:12px; border-radius:50%; vertical-align:-1px; margin-left:4px; }
+.sw.r{background:#e53935}.sw.g{background:#2ecc40}.sw.b{background:#1e6fd9}.sw.w{background:#f4efe6;border:1px solid #d8d2c4}
+
+.med { margin:4px 0 16px; padding:14px 16px; border-radius:20px; background:#fff; border:2px dashed #cfc4e4; }
+.med-t { display:flex; align-items:center; gap:8px; font-weight:800; margin-bottom:6px; }
+.med-ic { width:22px; height:22px; flex:none; color:var(--lav-d, #6b5b95); }
+.med-uno { margin:0; font:800 1.15rem/1.3 var(--disp); letter-spacing:-.01em; font-variant-numeric:tabular-nums; }
+.med dl { margin:0; display:grid; gap:2px; }
+.med dl div { display:flex; justify-content:space-between; gap:12px; padding:6px 0; border-top:1px solid #eee7f6; }
+.med dl div:first-child { border-top:0; }
+.med dt { color:var(--muted); }
+.med-nota { margin:10px 0 0; font-size:.85rem; color:var(--muted); line-height:1.35; }
+.med dd { margin:0; font-weight:800; text-align:right; font-variant-numeric:tabular-nums; }
+.var { display:grid; gap:8px; margin-bottom:14px; }
+.vrow { display:flex; align-items:center; justify-content:space-between; gap:10px; padding:10px 10px 10px 14px; background:#fff; border-radius:20px; }
+.vrow.set { background:var(--oro-l); flex-wrap:wrap; }
+.vrow.set .nm { flex:1 1 100%; }
+.vrow .qty { flex:none; }
+.vrow .nm { font-weight:800; display:flex; align-items:center; gap:10px; }
+.vrow .nm small { display:block; font-weight:400; font-size:var(--t5); }
+.vrow .pr { font-weight:800; margin-left:auto; margin-right:6px; font-variant-numeric:tabular-nums; }
+.vrow .sw { width:20px; height:20px; margin:0; flex:none; }
+.sws { display:flex; gap:3px; }
+.qty { display:inline-flex; align-items:center; background:var(--lav-l); border-radius:999px; }
+.qty button { width:44px; height:44px; border:0; border-radius:50%; background:transparent; color:var(--tinta); font-size:1.3rem; font-weight:800; cursor:pointer; transition:transform .3s var(--rebote), background-color .2s; }
+.qty button:active { transform:scale(.88); }
+.qty button.mas { background:var(--tinta); color:#fff; }
+.qty span { min-width:30px; text-align:center; font-weight:800; font-variant-numeric:tabular-nums; }
+.sel { background:var(--lav-l); border-radius:20px; padding:14px 16px; }
+.sel b.tot { font:800 var(--t3) var(--disp); letter-spacing:-.03em; }
+
+.lbl { display:block; font-weight:800; margin:16px 0 8px; }
+.opts { display:flex; gap:8px; flex-wrap:wrap; margin-bottom:6px; }
+.opt { min-height:44px; border:2px solid var(--tinta); background:#fff; border-radius:999px; padding:0 16px; font:inherit; font-weight:800; color:var(--tinta); cursor:pointer; transition:background-color .2s; }
+.opt.on { background:var(--tinta); color:#fff; }
+.campo { width:100%; min-height:52px; padding:0 16px; border:2px solid #cfc4e4; border-radius:16px; font:inherit; background:#fff; color:var(--tinta); }
+.paq { margin-top:18px; padding:14px 16px 16px; border-radius:20px; background:#f3effa; }
+.paq .lbl { margin-top:0; }
+.paq-tx { margin:0 0 10px; color:var(--muted); font-size:.95rem; }
+.paq-f { display:flex; align-items:center; gap:10px; margin-bottom:8px; }
+.paq-f span { flex:none; width:28px; height:28px; border-radius:50%; display:grid; place-items:center; background:var(--lav-d, #6b5b95); color:#fff; font-weight:800; font-size:.9rem; }
+.paq select.campo { appearance:auto; }
+.vrow.agot { opacity:.55; } .vrow.agot .pr { font-size:.85rem; }
+.agot-msg { margin:14px 0 0; padding:12px 14px; border-radius:16px; background:#fde7e4; color:#8a2b1f; font-weight:700; }
+.prod.agotado .desde { color:#8a2b1f; font-weight:800; }
+.campo.may, #chLetrero, #chNombres input { text-transform:uppercase; }
+.campo.may::placeholder, #chLetrero::placeholder, #chNombres input::placeholder { text-transform:none; }
+.campo:focus-visible { border-color:var(--lav-d); outline-offset:1px; }
+.nombres { display:grid; gap:8px; }
+.nombres .n { display:flex; align-items:center; gap:10px; }
+.bota { width:26px; height:30px; flex:none; }
+.hint { font-size:var(--t5); color:var(--gris); margin:8px 0 14px; }
+.prevmini img { display:block; width:min(70%, 240px); margin:10px auto 0; border-radius:16px; box-shadow:0 6px 18px rgba(0,0,0,.12); pointer-events:none; -webkit-touch-callout:none; user-select:none; }
+.prevmini img[hidden] { display:none; }
+.lote-f { margin-top:6px; }
+.lote-of { display:block; font-size:var(--t5); font-weight:700; color:var(--rojo, #b3261e); }
+.lote-f select { margin-bottom:6px; }
+.buy { display:flex; align-items:center; justify-content:space-between; gap:12px; flex-wrap:wrap; }
+.price { font:800 var(--t2)/1 var(--disp); letter-spacing:-.03em; font-variant-numeric:tabular-nums; }
+.btn.add { background:var(--tinta); color:#fff; }
+.btn.add:hover { background:var(--lav-d); }
+.err { color:var(--rojo); font-weight:800; min-height:1em; margin:10px 0 0; }
+.ch-item { display:flex; justify-content:space-between; gap:10px; align-items:flex-start; padding:10px 0; }
+.ch-item + .ch-item { border-top:2px solid #fff; }
+.ch-item button { min-height:44px; border:0; background:none; color:var(--rojo); font-weight:800; cursor:pointer; font:inherit; }
+
+/* Productos de la colección Navidad 2026: fotos del CDN de MakerWorld con marca de agua encima */
+.galwrap { position:relative; flex:none; }
+.galwrap .wm { position:absolute; inset:0; pointer-events:none; z-index:1; background-image:url("data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20width%3D%27260%27%20height%3D%27150%27%3E%3Ctext%20x%3D%270%27%20y%3D%2790%27%20transform%3D%27rotate%28-28%20130%2075%29%27%20font-family%3D%27Arial%2Csans-serif%27%20font-weight%3D%27700%27%20font-size%3D%2717%27%20fill%3D%27white%27%20fill-opacity%3D%27.30%27%20stroke%3D%27black%27%20stroke-opacity%3D%27.12%27%20stroke-width%3D%27.6%27%3ELIVAL%20CREATIVE%20STUDIO%3C/text%3E%3C/svg%3E"); background-size:220px auto; }
+.galwrap .wm::after { content:"© Lival Creative Studio"; position:absolute; right:8px; bottom:8px; background:rgba(0,0,0,.45); color:#fff; font:700 11px/1 Arial,sans-serif; padding:5px 7px; border-radius:6px; }
+/* Filtros por categoría: en el celular se deslizan de lado */
+.filtros { display:flex; gap:8px; overflow-x:auto; scrollbar-width:none; padding:2px 2px 14px; margin:0 0 4px; -webkit-overflow-scrolling:touch; }
+.filtros::-webkit-scrollbar { display:none; }
+.filtro { flex:none; min-height:44px; border:2px solid var(--tinta); background:#fff; border-radius:999px; padding:0 16px; font:inherit; font-weight:800; color:var(--tinta); cursor:pointer; white-space:nowrap; transition:background-color .2s; }
+.filtro.on { background:var(--tinta); color:#fff; }
+@media (min-width:900px) { .filtros { flex-wrap:wrap; overflow:visible; } }
+.prod.fuera { display:none !important; }
+.promo-dz { display:grid; grid-template-columns:1fr auto; align-items:center; gap:2px 12px; background:var(--pino); color:#fff; text-decoration:none; border-radius:18px; padding:14px 18px; margin:0 0 16px; box-shadow:0 6px 18px rgba(18,58,44,.25); }
+.promo-dz .t { font-family:var(--disp); font-size:1.2rem; line-height:1.15; }
+.promo-dz .s { grid-column:1; color:#f7ebcc; font-weight:700; font-size:.95rem; }
+.promo-dz .f { grid-row:1 / span 2; grid-column:2; width:40px; height:40px; border-radius:50%; background:var(--oro); color:var(--pino); display:grid; place-items:center; font-size:1.6rem; font-weight:900; }
+</style>
 </head>
 <body class="temporada-navidad">
 <a class="saltar" href="#contenido">Saltar al contenido</a>
@@ -37,20 +191,14 @@
 </div></header>
 
 <main id="contenido">
-  <section class="pronto" aria-labelledby="t-mas">
-    <div data-entra>
-      <h1 id="t-mas">Más productos</h1>
-      <p class="intro">Estamos subiendo piezas para todo el año. Muy pronto las verás aquí.</p>
-      <ul class="lista"><li>Clips</li><li>Pines</li><li>Decoración</li></ul>
-      <div class="acciones"><a class="btn osc" href="https://wa.me/524422791488?text=%C2%A1Hola%21%20Quiero%20informaci%C3%B3n%20de%20la%20secci%C3%B3n%20M%C3%A1s%20productos%20de%20Lival%20Creative%20Studio" target="_blank" rel="noopener">Pregúntanos por WhatsApp</a></div>
-    </div>
-    <div class="aldea" data-aldea aria-hidden="true"></div>
-  </section>
-
   <div class="marco">
-    <section class="secciones pronto-mientras" aria-label="Mientras tanto">
-      <a class="sec nav" href="../navidad/"><h3>Navidad</h3><div class="fila"><img class="foto" src="../img/navidad/foco-1.jpg" width="900" height="1125" loading="lazy" alt=""><img class="foto" src="../img/navidad/casita-divisiones.jpg" width="900" height="1125" loading="lazy" alt=""><img class="foto" src="../img/navidad/adorno-corona.jpg" width="900" height="1125" loading="lazy" alt=""></div><p>Mientras, conoce los regalos de Navidad.</p><span class="enlace">Entrar a Navidad →</span></a>
-      <a class="sec mas" href="https://wa.me/524422791488?text=%C2%A1Hola!%20Quiero%20un%20pedido%20especial%20de%20Lival%20Creative%20Studio" target="_blank" rel="noopener"><h3>¿Buscas algo en especial?</h3><p>Escríbenos y lo diseñamos contigo: nombres, colores, tamaños o una idea nueva.</p><span class="enlace">Escríbenos por WhatsApp →</span></a>
+    <section class="cabeza" aria-labelledby="t-mas">
+      <h1 id="t-mas">Más productos</h1>
+      <p class="intro">Regalos y detalles para todo el año, impresos en 3D en Querétaro. Toca un producto para ver más fotos.</p>
+    </section>
+    <div class="prods"></div>
+    <section class="secciones pronto-mientras" aria-label="Más opciones">
+      <a class="sec mas" href="https://wa.me/524422791488?text=%C2%A1Hola!%20Quiero%20un%20pedido%20especial%20de%20Lival%20Creative%20Studio" target="_blank" rel="noopener"><h3>¿Buscas algo en especial?</h3><p>Escríbenos y lo diseñamos para ti.</p></a>
     </section>
   </div>
 </main>
@@ -80,7 +228,58 @@
     <a href="https://wa.me/524422791488?text=%C2%A1Hola%21%20Me%20gustar%C3%ADa%20m%C3%A1s%20informaci%C3%B3n%20sobre%20el%20servicio%20de%20p%C3%A1ginas%20web%20para%20negocios%20y%20emprendimientos." target="_blank" rel="noopener" data-goatcounter-click="lival-paginas-web">¡Contáctanos!</a>
   </div>
 </footer>
+<script src="../assets/mas-productos.js?v=20261125a"></script>
 <script src="../assets/carrito.js?v=20261107a"></script>
+<script src="../assets/navidad-render.js?v=20261125a"></script>
+<script>
+(function () {
+  function abrir(id) {
+    const a = document.getElementById(id); if (!a) return;
+    const g = a.querySelector(".gal"), i = g ? idx(g) : 0;
+    a.classList.add("open"); document.body.classList.add("abierto"); a.scrollTop = 0;
+    if (g) g.scrollLeft = i * g.clientWidth;
+    try { history.replaceState(null, "", "#" + id); } catch (e) {}
+  }
+  function cerrar() {
+    document.querySelectorAll(".prod.open").forEach(a => { const g = a.querySelector(".gal"), i = g ? idx(g) : 0; a.classList.remove("open"); if (g) g.scrollLeft = i * g.clientWidth; });
+    document.body.classList.remove("abierto");
+    try { history.replaceState(null, "", location.pathname); } catch (e) {}
+  }
+  document.addEventListener("click", e => {
+    const b = e.target.closest("[data-abrir]"); if (b) { abrir(b.dataset.abrir); return; }
+    if (e.target.closest("[data-cerrar]")) { cerrar(); return; }
+    const card = e.target.closest(".prods .prod:not(.open)");
+    if (card && (e.target.closest(".gal") || e.target.closest("h3"))) abrir(card.id);
+  });
+  document.addEventListener("keydown", e => { if (e.key === "Escape") cerrar(); });
+  // Vista completa: foto grande con miniaturas y flechas (de un lado en computadora, arriba en celular)
+  document.querySelectorAll(".prods .prod").forEach(a => {
+    const g = a.querySelector(".gal"); if (!g) return;
+    if (!g.closest(".galwrap")) { const w = document.createElement("div"); w.className = "galwrap"; g.before(w); w.append(g); }
+    const foto = g.closest(".galwrap"), dots = a.querySelector(".dots");
+    const media = document.createElement("div"); media.className = "media";
+    foto.before(media); media.append(foto); if (dots) media.append(dots);
+    const imgs = [...g.querySelectorAll("img")];
+    if (imgs.length > 1) {
+      const th = document.createElement("div"); th.className = "thumbs";
+      th.innerHTML = imgs.map((im, i) => `<button type="button" aria-label="Foto ${i + 1}"${i ? "" : ' class="on"'}><img src="${im.getAttribute("src")}" alt="" loading="lazy" draggable="false"></button>`).join("");
+      media.append(th);
+      th.addEventListener("click", e => { const b = e.target.closest("button"); if (b) ir(g, [...th.children].indexOf(b)); });
+      const fl = (d, t) => { const b = document.createElement("button"); b.type = "button"; b.className = "flecha " + (d < 0 ? "ant" : "sig"); b.setAttribute("aria-label", t); b.textContent = d < 0 ? "‹" : "›"; b.onclick = () => ir(g, idx(g) + d); return b; };
+      foto.append(fl(-1, "Foto anterior"), fl(1, "Foto siguiente"));
+    }
+    g.addEventListener("scroll", () => {
+      const i = idx(g);
+      a.querySelectorAll(".dots i").forEach((d, k) => d.classList.toggle("on", k === i));
+      a.querySelectorAll(".thumbs button").forEach((d, k) => d.classList.toggle("on", k === i));
+    }, { passive: true });
+  });
+  function idx(g) { return Math.round(g.scrollLeft / Math.max(1, g.clientWidth)); }
+  function ir(g, i) { const n = g.children.length; i = (i + n) % n; g.scrollTo({ left: i * g.clientWidth, behavior: "smooth" }); }
+  const h = location.hash.slice(1), dest = h;
+  if (dest && document.getElementById(dest)) abrir(dest);
+})();
+</script>
 <script src="../assets/tienda.js?v=20261102c"></script>
 </body>
 </html>

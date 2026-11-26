@@ -75,7 +75,7 @@
     const gal = art.querySelector(".gal"), wm = art.querySelector(".wm");
     const marca = () => {
       const im = gal.children[Math.round(gal.scrollLeft / (gal.clientWidth || 1))];
-      wm.hidden = !!im && (im.dataset.orig || im.getAttribute("src")).indexOf("img/navidad/") >= 0;
+      wm.hidden = !!im && /img\/(navidad|mas)\//.test(im.dataset.orig || im.getAttribute("src"));
     };
     gal.addEventListener("scroll", marca, { passive: true }); marca();
   });
